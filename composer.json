@@ -1,0 +1,38 @@
+{
+  "name": "org_heigl/holidaychecker",
+  "description": "Check for holidays - localeaware",
+  "type": "library",
+  "require-dev": {
+    "phpunit/phpunit": "^6.0"
+  },
+  "license": "MIT",
+  "authors": [{
+    "name": "Andreas Heigl",
+    "email": "andreas@heigl.org"
+  }],
+  "autoload" : {
+    "psr-4" : {
+      "Org_Heigl\\Holidaychecker\\" : "src/"
+    }
+  },
+  "autoload-dev" : {
+    "psr-4" : {
+      "Org_Heigl\\HolidaycheckerTest\\" : "tests/"
+    }
+  },
+  "require": {
+    "org_heigl/dateintervalcomparator": "^1.0"
+  },
+  "scripts" : {
+    "check": [
+      "@cs-check",
+      "@test"
+    ],
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "test": "phpunit --colors=always",
+    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+    "upload-coverage": "coveralls -v",
+    "lintxml" : "for i in `ls share/*.xml` ; do xmllint --noout --schema share/holidays.xsd $i; done"
+  }
+}
