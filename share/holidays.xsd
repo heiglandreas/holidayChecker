@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://www.heigl.org"
+           xmlns="https://www.heigl.org"
+           elementFormDefault="qualified">
+    <xs:simpleType name="monthInt">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="dayInt">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="31"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:attributeGroup name="easterAttributes">
+        <xs:attribute name="offset" type="xs:integer" use="required"/>
+        <xs:attribute name="free" type="xs:boolean" use="required"/>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="dateAttributes">
+        <xs:attribute name="day" type="dayInt" use="required"/>
+        <xs:attribute name="month" type="monthInt" use="required"/>
+        <xs:attribute name="year" type="xs:integer" />
+        <xs:attribute name="free" type="xs:boolean" use="required"/>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="relativeAttributes">
+        <xs:attribute name="day" type="dayInt" use="required"/>
+        <xs:attribute name="month" type="monthInt" use="required"/>
+        <xs:attribute name="relation" type="xs:string" use="required"/>
+        <xs:attribute name="free" type="xs:boolean" use="required"/>
+    </xs:attributeGroup>
+    <xs:element name="holidays">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="easter" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attributeGroup ref="easterAttributes"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="easterorthodox" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attributeGroup ref="easterAttributes"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="date" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attributeGroup ref="dateAttributes"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="relative" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attributeGroup ref="relativeAttributes"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

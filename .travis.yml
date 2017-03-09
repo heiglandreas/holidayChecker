@@ -1,0 +1,87 @@
+sudo: false
+
+language: php
+
+addons:
+  apt:
+    packages:
+      - libxml2
+
+env:
+  global:
+    - COMPOSER_ARGS="--no-interaction --ignore-platform-reqs"
+
+matrix:
+  include:
+    - php: 7
+      env:
+        - DEPS=lowest
+    - php: 7
+      env:
+        - DEPS=locked
+    - php: 7
+      env:
+        - DEPS=latest
+    - php: 7.1
+      env:
+        - DEPS=lowest
+    - php: 7.1
+      env:
+        - DEPS=locked
+    - php: 7.1
+      env:
+        - TEST_COVERAGE=true
+        - CHECK_CS=true
+        - DEPS=latest
+        - XMLLINT=true
+    - php: nightly
+      env:
+        - DEPS=lowest
+    - php: nightly
+      env:
+        - DEPS=locked
+    - php: nightly
+      env:
+        - DEPS=latest
+    - php: hhvm
+      env:
+        - DEPS=lowest
+    - php: hhvm
+      env:
+        - DEPS=locked
+    - php: hhvm
+      env:
+        - DEPS=latest
+  allow_failures:
+    - php: hhvm
+    - php: nightly
+
+before_install:
+  - travis_retry composer self-update
+  - if [[ $TEST_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
+
+install:
+  - if [[ $DEPS == 'latest' ]]; then travis_retry composer update $COMPOSER_ARGS ; fi
+  - if [[ $DEPS == 'lowest' ]]; then travis_retry composer update --prefer-lowest --prefer-stable $COMPOSER_ARGS ; fi
+  - if [[ $TEST_COVERAGE == 'true' ]]; then travis_retry composer require $COMPOSER_ARGS --dev satooshi/php-coveralls ; fi
+  - travis_retry composer install $COMPOSER_ARGS
+  - composer show --installed
+
+before_script:
+  - phpenv config-add .ci/php.ini || return 0
+  - .ci/OpenLDAP_run.sh
+  - .ci/load_fixtures.sh
+
+script:
+  - if [[ $XMLLINT == 'true' ]]; then composer lintxml ; fi
+  - if [[ $TEST_COVERAGE == 'true' ]]; then composer test-coverage ; fi
+  - if [[ $TEST_COVERAGE != 'true' ]]; then composer test ; fi
+  - if [[ $CHECK_CS == 'true' ]]; then composer cs-check ; fi
+  - if [[ $DEPLOY_DOCS == "true" && "$TRAVIS_TEST_RESULT" == "0" ]]; then wget -O theme-installer.sh "https://raw.githubusercontent.com/zendframework/zf-mkdoc-theme/master/theme-installer.sh" ; chmod 755 theme-installer.sh ; ./theme-installer.sh ; fi
+
+after_success:
+  - if [[ $DEPLOY_DOCS == "true" ]]; then echo "Preparing to build and deploy documentation" ; ./zf-mkdoc-theme/deploy.sh ; echo "Completed deploying documentation" ; fi
+
+
+after_script:
+  - if [[ $TEST_COVERAGE == 'true' ]]; then travis_retry composer upload-coverage ; fi
