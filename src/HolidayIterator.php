@@ -31,8 +31,12 @@ namespace Org_Heigl\Holidaychecker;
 
 class HolidayIterator extends \ArrayObject
 {
-    public function append(HolidayIteratorItemInterface $item)
+    public function append($value)
     {
-        parent::append($item);
+        if (! $value instanceof HolidayIteratorItemInterface) {
+            return;
+        }
+
+        parent::append($value);
     }
 }
