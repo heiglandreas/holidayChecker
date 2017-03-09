@@ -37,4 +37,16 @@ class Holidaychecker
     {
         $this->iterator = $iterator;
     }
+
+    public function check(\DateTimeInterface $date) : Holiday
+    {
+        /** @var \Org_Heigl\Holidaychecker\HolidayIteratorItemInterface $entry */
+        foreach ($this->iterator as $entry) {
+            if ($entry->dateMatches($date)) {
+                return new Holiday($entry->isHoliday(), $entry->getName());
+            }
+        }
+
+        return new Holiday(false);
+    }
 }

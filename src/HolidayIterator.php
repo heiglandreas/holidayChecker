@@ -29,6 +29,10 @@
 
 namespace Org_Heigl\Holidaychecker;
 
+use Org_Heigl\Holidaychecker\IteratorItem\Date;
+use Org_Heigl\Holidaychecker\IteratorItem\Easter;
+use Org_Heigl\Holidaychecker\IteratorItem\Relative;
+
 class HolidayIterator extends \ArrayObject
 {
     public function append($value)
