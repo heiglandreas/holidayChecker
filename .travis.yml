@@ -67,11 +67,6 @@ install:
   - travis_retry composer install $COMPOSER_ARGS
   - composer show --installed
 
-before_script:
-  - phpenv config-add .ci/php.ini || return 0
-  - .ci/OpenLDAP_run.sh
-  - .ci/load_fixtures.sh
-
 script:
   - if [[ $XMLLINT == 'true' ]]; then composer lintxml ; fi
   - if [[ $TEST_COVERAGE == 'true' ]]; then composer test-coverage ; fi
