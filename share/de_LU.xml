@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+>
+    <date day="1" month="1" free="true">Neujahr</date>
+    <easter offset="0" free="false">Ostersonntag</easter>
+    <easter offset="1" free="true">Ostermontag</easter>
+    <date day="1" month="5" free="true">Tag der Arbeit</date>
+    <easter offset="40" free="true">Christi Himmelfahrt</easter>
+    <easter offset="49" free="true">Pfingstsonntag</easter>
+    <easter offset="50" free="true">Pfingstmontag</easter>
+    <date day="23" month="6" free="true">Nationalfeiertag</date>
+    <date day="15" month="8" free="true">Maria Himmelfahrt</date>
+    <date day="1" month="11" free="true">Allerheiligen</date>
+    <date day="25" month="12" free="true">Weihnachten</date>
+    <date day="26" month="12" free="true">Zweiter Weihnachtsfeiertag</date>
+</holidays>

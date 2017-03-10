@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+>
+    <date day="1" month="1" free="true">Neijoerschdag</date>
+    <easter offset="0" free="false">Ouschter</easter>
+    <easter offset="1" free="true">Ouschterméindeg</easter>
+    <date day="1" month="5" free="true">Dag vun der Aarbecht</date>
+    <easter offset="40" free="true">Christi Himmelfaart</easter>
+    <easter offset="49" free="true">Péngscht</easter>
+    <easter offset="50" free="true">Péngschtméindeg</easter>
+    <date day="23" month="6" free="true">Groussherzogsgebuertsdag</date>
+    <date day="15" month="8" free="true">Mariä Himmelfaart</date>
+    <date day="1" month="11" free="true">Allerhellgen</date>
+    <date day="25" month="12" free="true">Chrëschtdag</date>
+    <date day="26" month="12" free="true">Stiefesdag</date>
+</holidays>
