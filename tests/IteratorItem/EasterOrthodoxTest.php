@@ -35,7 +35,13 @@ use PHPUnit\Framework\TestCase;
 
 class EasterOrthodoxTest extends TestCase
 {
-    /** @dataProvider easterProvider */
+    /**
+     * @dataProvider easterProvider
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::getName
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::isHoliday
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::__construct
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::dateMatches
+     */
     public function testThatEasterIsIdentifiedCorrectly($dateTime, $offset, $result, $name, $isHoliday)
     {
         $this->markTestSkipped('Not yet to be done');

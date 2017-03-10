@@ -34,7 +34,13 @@ use PHPUnit\Framework\TestCase;
 
 class DateTest extends TestCase
 {
-    /** @dataProvider dateProvider */
+    /**
+     * @dataProvider dateProvider
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::getName
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::isHoliday
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::__construct
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::dateMatches
+     */
     public function testThatDateTestWorks($dateTime, $day, $month, $year, $result, $name, $isHoliday)
     {
         $easter = new Date($name, $isHoliday, $day, $month, $year);

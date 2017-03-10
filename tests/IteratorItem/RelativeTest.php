@@ -29,13 +29,18 @@
 
 namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
-use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
 use PHPUnit\Framework\TestCase;
 
 class RelativeTest extends TestCase
 {
-    /** @dataProvider dateProvider */
+    /**
+     * @dataProvider dateProvider
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::getName
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::isHoliday
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::__construct
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::dateMatches
+     */
     public function testThatDateTestWorks($dateTime, $day, $month, $relation, $result, $name, $isHoliday)
     {
         $easter = new Relative($name, $isHoliday, $day, $month, $relation);

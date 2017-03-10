@@ -35,7 +35,27 @@ use PHPUnit\Framework\TestCase;
 
 class HolidaycheckerTest extends TestCase
 {
-    /** @dataProvider integrationProvider */
+    /**
+     * @dataProvider integrationProvider
+     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::createIteratorFromXmlFile
+     * @covers \Org_Heigl\Holidaychecker\Holidaychecker::__construct
+     * @covers \Org_Heigl\Holidaychecker\Holidaychecker::check
+     * @covers \Org_Heigl\Holidaychecker\Holiday::isHoliday
+     * @covers \Org_Heigl\Holidaychecker\Holiday::isNamed
+     * @covers \Org_Heigl\Holidaychecker\Holiday::getName
+     * @covers \Org_Heigl\Holidaychecker\Holiday::__construct
+     * @covers \Org_Heigl\Holidaychecker\HolidayIterator::append
+     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::getElement
+     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::getFree
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::__construct
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::dateMatches
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::__construct
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::dateMatches
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::getEaster
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::getName
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::isHoliday
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::__construct
+     */
     public function testIntegration($date, $holiday, $named, $name)
     {
         $factory = new HolidayIteratorFactory();
@@ -56,6 +76,31 @@ class HolidaycheckerTest extends TestCase
         ];
     }
 
+    /**
+     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::createIteratorFromXmlFile
+     * @covers \Org_Heigl\Holidaychecker\Holidaychecker::__construct
+     * @covers \Org_Heigl\Holidaychecker\Holidaychecker::check
+     * @covers \Org_Heigl\Holidaychecker\Holiday::isHoliday
+     * @covers \Org_Heigl\Holidaychecker\Holiday::isNamed
+     * @covers \Org_Heigl\Holidaychecker\Holiday::getName
+     * @covers \Org_Heigl\Holidaychecker\Holiday::__construct
+     * @covers \Org_Heigl\Holidaychecker\HolidayIterator::append
+     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::getElement
+     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::getFree
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::__construct
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::dateMatches
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::__construct
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::dateMatches
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::getEaster
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::getName
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::isHoliday
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::__construct
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::getName
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::isHoliday
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::dateMatches
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::getName
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::isHoliday
+     */
     public function testSpeed()
     {
         $factory = new HolidayIteratorFactory();

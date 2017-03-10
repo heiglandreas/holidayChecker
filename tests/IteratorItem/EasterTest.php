@@ -34,7 +34,14 @@ use PHPUnit\Framework\TestCase;
 
 class EasterTest extends TestCase
 {
-    /** @dataProvider easterProvider */
+    /**
+     * @dataProvider easterProvider
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::getName
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::isHoliday
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::__construct
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::dateMatches
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::getEaster
+     */
     public function testThatEasterIsIdentifiedCorrectly($dateTime, $offset, $result, $name, $isHoliday)
     {
         $easter = new Easter($name, $isHoliday, $offset);
