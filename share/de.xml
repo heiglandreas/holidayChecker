@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd">
+    <date day="1" month="1" free="true">Neujahr</date>
+    <date day="6" month="1" free="false">Hl. Drei Könige</date>
+    <easter offset="-48" free="false">Rosenmontag</easter>
+    <easter offset="-47" free="false">Faschingsdienstag</easter>
+    <easter offset="-46" free="false">Aschermittwoch</easter>
+    <easter offset="-3" free="false">Gründonnerstag</easter>
+    <easter offset="-2" free="true">Karfreitag</easter>
+    <easter offset="1" free="true">Ostermontag</easter>
+    <easter offset="0" free="false">Ostersonntag</easter>
+    <date day="1" month="5" free="true">Tag der Arbeit</date>
+    <easter offset="49" free="false">Pfingstsonntag</easter>
+    <easter offset="50" free="true">Pfingstmontag</easter>
+    <easter offset="39" free="true">Christi Himmelfahrt</easter>
+    <easter offset="60" free="true">Fronleichnam</easter>
+    <date day="3" month="10" free="true">Tag d. Dt. Einheit</date>
+    <date day="31" month="10" free="false">Reformationstag</date>
+    <date day="1" month="11" free="false">Allerheiligen</date>
+    <relative day="23" month="11" free="false" relation="last wednesday">Buß- und Bettag</relative>
+    <relative day="25" month="12" free="false" relation="last sunday -3 weeks">1. Advent</relative>
+    <relative day="25" month="12" free="false" relation="last sunday -2 weeks">2. Advent</relative>
+    <relative day="25" month="12" free="false" relation="last sunday -1 weeks">3. Advent</relative>
+    <relative day="25" month="12" free="false" relation="last sunday">4. Advent</relative>
+    <date day="24" month="12" free="false">Heilig Abend</date>
+    <date day="25" month="12" free="true">1. Weihnachtstag</date>
+    <date day="26" month="12" free="true">2. Weihnachtstag</date>
+    <date day="31" month="12" free="false">Silvester</date>
+</holidays>

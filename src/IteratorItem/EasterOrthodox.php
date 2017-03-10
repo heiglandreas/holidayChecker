@@ -62,8 +62,6 @@ class EasterOrthodox extends Easter
         $orthodoxEaster = $this->getOrthodoxEaster($year);
         if ($endOfPessach > $orthodoxEaster) {
             $weekday = $endOfPessach->format('w');
-            var_Dump('foo');
-            var_Dump($endOfPessach->add(new \DateInterval('P' . (7-$weekday) . 'D')));
             return $endOfPessach->add(new \DateInterval('P' . (7-$weekday) . 'D'));
         }
 
