@@ -105,7 +105,7 @@ class HolidayIteratorFactory
                     $child->getAttribute('month'),
                     ($child->hasAttribute('year')?$child->getAttribute('year'): null)
                 );
-            case 'dateFollowUp' :
+            case 'dateFollowUp':
                 return new DateFollowUp(
                     $child->textContent,
                     $this->getFree($child),
