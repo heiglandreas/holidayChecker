@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude">
+    <dateFollowUp day="1" month="1" followup="tuesday" free="true">New Year's Day</dateFollowUp>
+    <dateFollowUp day="2" month="1" followup="monday" free="true">New Year's Day</dateFollowUp>
+    <easter offset="1" free="false">Easter Monday</easter>
+    <relative day="31" month="7" relation="next monday" free="true">August Bank Holiday</relative>
+    <xi:include href="GB.xml" parse="xml" xpointer="xpointer(*/*)">
+            <xi:fallback></xi:fallback>
+    </xi:include>
+</holidays>

@@ -15,6 +15,17 @@
             <xs:maxInclusive value="31"/>
         </xs:restriction>
     </xs:simpleType>
+    <xs:simpleType name="daynames">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="sunday"/>
+            <xs:enumeration value="monday"/>
+            <xs:enumeration value="tuesday"/>
+            <xs:enumeration value="wednesday"/>
+            <xs:enumeration value="thursday"/>
+            <xs:enumeration value="friday"/>
+            <xs:enumeration value="saturday"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:attributeGroup name="easterAttributes">
         <xs:attribute name="offset" type="xs:integer" use="required"/>
         <xs:attribute name="free" type="xs:boolean" use="required"/>
@@ -24,6 +35,13 @@
         <xs:attribute name="day" type="dayInt" use="required"/>
         <xs:attribute name="month" type="monthInt" use="required"/>
         <xs:attribute name="year" type="xs:integer" />
+        <xs:attribute name="free" type="xs:boolean" use="required"/>
+        <xs:attribute name="comment" type="xs:string"/>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="dateFollowUpAttributes">
+        <xs:attribute name="day" type="dayInt" use="required"/>
+        <xs:attribute name="month" type="monthInt" use="required"/>
+        <xs:attribute name="followup" type="daynames" use="required" />
         <xs:attribute name="free" type="xs:boolean" use="required"/>
         <xs:attribute name="comment" type="xs:string"/>
     </xs:attributeGroup>
@@ -60,6 +78,15 @@
                         <xs:simpleContent>
                             <xs:extension base="xs:string">
                                 <xs:attributeGroup ref="dateAttributes"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="dateFollowUp" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attributeGroup ref="dateFollowUpAttributes"/>
                             </xs:extension>
                         </xs:simpleContent>
                     </xs:complexType>

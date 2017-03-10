@@ -30,6 +30,7 @@
 namespace Org_Heigl\Holidaychecker;
 
 use Org_Heigl\Holidaychecker\IteratorItem\Date;
+use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
 
@@ -103,6 +104,14 @@ class HolidayIteratorFactory
                     $child->getAttribute('day'),
                     $child->getAttribute('month'),
                     ($child->hasAttribute('year')?$child->getAttribute('year'): null)
+                );
+            case 'dateFollowUp':
+                return new DateFollowUp(
+                    $child->textContent,
+                    $this->getFree($child),
+                    $child->getAttribute('day'),
+                    $child->getAttribute('month'),
+                    $child->getAttribute('followup')
                 );
             case 'relative':
                 return new Relative(
