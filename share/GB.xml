@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+>
+    <date day="1" month="1" free="true">New Year's Day</date>
+    <easter offset="-2" free="true">Good Friday</easter>
+    <easter offset="1" free="true">Easter Monday</easter>
+    <easter offset="0" free="false">Easter Sunday</easter>
+    <relative day="30" month="4" relation="next monday" free="true">Early May Bank Holiday</relative>
+    <relative day="1" month="6" relation="previous monday" free="true">Spring Bank Holiday</relative>
+    <dateFollowUp day="25" month="12" free="true" followup="tuesday">Christmas Day</dateFollowUp>
+    <dateFollowUp day="26" month="12" free="true" followup="monday">Boxing Day</dateFollowUp>
+</holidays>

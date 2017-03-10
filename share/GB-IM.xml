@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude">
+    <relative day="7" month="6" relation="next friday" free="true">Tourist Trophy Senior Race Day</relative>
+    <date day="5" month="7" free="true">Tynwald Day</date>
+    <xi:include href="GB.xml" parse="xml" xpointer="xpointer(*/*)">
+            <xi:fallback></xi:fallback>
+    </xi:include>
+</holidays>
