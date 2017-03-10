@@ -76,15 +76,17 @@ class HolidayIteratorFactory
      */
     public function createIteratorFromISO3166(string $isoCode) : HolidayIterator
     {
-        $file = __DIR__ . '/../share/' . strtoupper($isoCode) . '.xml';
-        if (! is_readable($file)) {
+        $file = __DIR__ . '/../share/%s.xml';
+        $file1 = sprintf($file, $isoCode);
+
+        if (! is_readable($file1)) {
             throw new \UnexpectedValueException(sprintf(
                 'There is no holiday-file for %s',
                 $isoCode
             ));
         }
 
-        return self::createIteratorFromXmlFile($file);
+        return self::createIteratorFromXmlFile($file1);
     }
 
 

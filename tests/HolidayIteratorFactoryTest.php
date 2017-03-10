@@ -80,5 +80,4 @@ class HolidayIteratorFactoryTest extends TestCase
 
         $this->assertInstanceof(HolidayIterator::class, $result);
     }
-
 }
