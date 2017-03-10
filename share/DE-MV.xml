@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude">
+    <date day="31" month="10" free="true">Reformationstag</date>
+    <xi:include href="DE.xml" parse="xml" xpointer="xpointer(*/*)">
+        <xi:fallback></xi:fallback>
+    </xi:include>
+</holidays>

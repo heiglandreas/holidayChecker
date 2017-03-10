@@ -35,12 +35,24 @@ use Org_Heigl\Holidaychecker\IteratorItem\Relative;
 
 class HolidayIteratorFactory
 {
+    /**
+     * Create a HolidayIterator from an XML-File
+     *
+     * The provided XML-File has to validate against the holiday.xsd-file you
+     * can find in this projects "share" folder.
+     *
+     * @param string $file
+     *
+     * @return \Org_Heigl\Holidaychecker\HolidayIterator
+     */
     public function createIteratorFromXmlFile(string $file) : HolidayIterator
     {
         $iterator = new HolidayIterator();
 
         $dom = new \DOMDocument('1.0', 'UTF-8');
         $dom->load($file);
+        $dom->xinclude();
+
         if (! $dom->schemaValidate(__DIR__ . '/../share/holidays.xsd')) {
             throw new \Exception('XML-File does not validate agains schema');
         }
@@ -53,6 +65,27 @@ class HolidayIteratorFactory
 
         return $iterator;
     }
+
+    /**
+     * Create a HolidayIterator from an ISO 3166-code.
+     *
+     * @param string $isoCode
+     *
+     * @return \Org_Heigl\Holidaychecker\HolidayIterator
+     */
+    public function createIteratorFromISO3166(string $isoCode) : HolidayIterator
+    {
+        $file = __DIR__ . '/../share/' . strtoupper($isoCode) . '.xml';
+        if (! is_readable($file)) {
+            throw new \UnexpectedValueException(sprintf(
+                'There is no holiday-file for %s',
+                $isoCode
+            ));
+        }
+
+        return self::createIteratorFromXmlFile($file);
+    }
+
 
     private function getElement(\DOMElement $child) : HolidayIteratorItemInterface
     {

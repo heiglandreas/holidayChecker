@@ -18,18 +18,21 @@
     <xs:attributeGroup name="easterAttributes">
         <xs:attribute name="offset" type="xs:integer" use="required"/>
         <xs:attribute name="free" type="xs:boolean" use="required"/>
+        <xs:attribute name="comment" type="xs:string"/>
     </xs:attributeGroup>
     <xs:attributeGroup name="dateAttributes">
         <xs:attribute name="day" type="dayInt" use="required"/>
         <xs:attribute name="month" type="monthInt" use="required"/>
         <xs:attribute name="year" type="xs:integer" />
         <xs:attribute name="free" type="xs:boolean" use="required"/>
+        <xs:attribute name="comment" type="xs:string"/>
     </xs:attributeGroup>
     <xs:attributeGroup name="relativeAttributes">
         <xs:attribute name="day" type="dayInt" use="required"/>
         <xs:attribute name="month" type="monthInt" use="required"/>
         <xs:attribute name="relation" type="xs:string" use="required"/>
         <xs:attribute name="free" type="xs:boolean" use="required"/>
+        <xs:attribute name="comment" type="xs:string"/>
     </xs:attributeGroup>
     <xs:element name="holidays">
         <xs:complexType>

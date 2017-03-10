@@ -59,7 +59,7 @@ class HolidaycheckerTest extends TestCase
     public function testIntegration($date, $holiday, $named, $name)
     {
         $factory = new HolidayIteratorFactory();
-        $iterator = $factory->createIteratorFromXmlFile(__DIR__ . '/../share/de_hes.xml');
+        $iterator = $factory->createIteratorFromXmlFile(__DIR__ . '/../share/DE-HE.xml');
         $checker = new Holidaychecker($iterator);
 
         $result = $checker->check($date);
@@ -104,7 +104,7 @@ class HolidaycheckerTest extends TestCase
     public function testSpeed()
     {
         $factory = new HolidayIteratorFactory();
-        $iterator = $factory->createIteratorFromXmlFile(__DIR__ . '/../share/de_hes.xml');
+        $iterator = $factory->createIteratorFromXmlFile(__DIR__ . '/../share/DE-HE.xml');
         $checker = new Holidaychecker($iterator);
 
         $start = new \DateTimeImmutable('2016-01-01');
