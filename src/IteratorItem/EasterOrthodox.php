@@ -61,10 +61,10 @@ class EasterOrthodox extends Easter
     {
         $jewishYear = 3760 + $year;
         $endOfPessach = new \DateTimeImmutable(
-            '@' . jdtounix(jewishtojd(1,20,$jewishYear))
+            '@' . jdtounix(jewishtojd(1, 20, $jewishYear))
         );
         $orthodoxEaster = $this->getOrthodoxEaster($year);
-        var_Dump('pessach', jdtounix(jewishtojd(1,20,$jewishYear)), $endOfPessach);
+        var_Dump('pessach', jdtounix(jewishtojd(1, 20, $jewishYear)), $endOfPessach);
         var_Dump($orthodoxEaster);
         if ($endOfPessach > $orthodoxEaster) {
             $weekday = $endOfPessach->format('w');

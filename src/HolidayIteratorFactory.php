@@ -49,8 +49,6 @@ class HolidayIteratorFactory
                 continue;
             }
             $iterator->append($this->getElement($child));
-            /** @var \DOMElement $child */
-
         }
 
         return $iterator;
