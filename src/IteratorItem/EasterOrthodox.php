@@ -29,9 +29,6 @@
 
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
-use Org_Heigl\DateIntervalComparator\DateIntervalComparator;
-use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
-
 class EasterOrthodox extends Easter
 {
     /**
@@ -56,7 +53,6 @@ class EasterOrthodox extends Easter
         return $date;
     }
 
-    /** TODO: Fixme!! */
     protected function getEaster(int $year) : \DateTimeImmutable
     {
         $jewishYear = 3760 + $year;
@@ -64,8 +60,6 @@ class EasterOrthodox extends Easter
             '@' . jdtounix(jewishtojd(1, 20, $jewishYear))
         );
         $orthodoxEaster = $this->getOrthodoxEaster($year);
-        var_Dump('pessach', jdtounix(jewishtojd(1, 20, $jewishYear)), $endOfPessach);
-        var_Dump($orthodoxEaster);
         if ($endOfPessach > $orthodoxEaster) {
             $weekday = $endOfPessach->format('w');
             var_Dump('foo');
@@ -73,8 +67,6 @@ class EasterOrthodox extends Easter
             return $endOfPessach->add(new \DateInterval('P' . (7-$weekday) . 'D'));
         }
 
-        var_Dump('bar');
-        var_Dump($orthodoxEaster);
         return $orthodoxEaster;
     }
 }

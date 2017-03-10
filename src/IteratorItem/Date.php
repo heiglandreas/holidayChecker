@@ -29,7 +29,6 @@
 
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
-use Org_Heigl\DateIntervalComparator\DateIntervalComparator;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
 
 class Date implements HolidayIteratorItemInterface
