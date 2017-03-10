@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+>
+    <date day="1" month="1" free="true">Jour de l'An</date>
+    <easter offset="1" free="true">Lundi de Pâques</easter>
+    <date day="1" month="5" free="true">Fête du travail</date>
+    <date day="8" month="5" free="true">Fête de la Victoire</date>
+    <easter offset="49" free="true">Pentecôte</easter>
+    <easter offset="50" free="true">Lundi de Pentecôte</easter>
+    <easter offset="39" free="true">Ascension</easter>
+    <date day="14" month="7" free="true">Fête Nationale de la France</date>
+    <date day="15" month="8" free="true">Assomption</date>
+    <date day="3" month="10" free="true">Tag d. Dt. Einheit</date>
+    <date day="1" month="11" free="true">Toussaint</date>
+    <date day="11" month="11" free="true">Armistice 1918</date>
+    <relative day="23" month="11" free="false" relation="last wednesday">Buß- und Bettag</relative>
+    <date day="25" month="12" free="true">Noël</date>
+</holidays>
