@@ -48,6 +48,18 @@ $result has 3 methods:
 * **isNamed** is ```true``` when the day has a special name despite being not a free day.
 * **getName** contains the name of a named day. 
 
+## Available Countries
+
+Currently these countries are available:
+
+* Germany (all Bundesländer, german)
+* Luxemburg (german, french and luxembourgisch)
+* Belgium (flamisch and french)
+* Netherlands (dutch)
+* France (Mainland and overseas, adaptions for Elsass/Lothringen, french)
+* United Kingdom (Islands, Walse, Scotland, Northern Ireland and England, englisch)
+
+But the list is constantly extending.
 
 ## Extending
 
