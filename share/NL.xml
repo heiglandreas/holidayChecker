@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+>
+    <date day="1" month="1" free="true">Nieuwjaarsdag</date>
+    <easter offset="-2" free="false">Goede Vrijdag</easter>
+    <easter offset="1" free="true">Pasen</easter>
+    <easter offset="0" free="false">Pasen</easter>
+    <date day="27" month="4" free="true">Koningsdag</date>
+    <date day="5" month="5" free="true">Bevrijdingsdag</date>
+    <easter offset="40" free="true">Hemelvaartsdag</easter>
+    <easter offset="49" free="true">Pinksteren</easter>
+    <easter offset="50" free="true">Pinksteren</easter>
+    <date day="5" month="12" free="false">Pakjesavond</date>
+    <date day="25" month="12" free="true">Kerstmis</date>
+    <date day="26" month="12" free="true">Kerstmis</date>
+</holidays>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+>
+    <date day="1" month="1" free="true">Nieuwjaar</date>
+    <easter offset="0" free="false">Paas</easter>
+    <easter offset="1" free="true">Paasmaandag</easter>
+    <date day="1" month="5" free="true">Dag van de arbeid</date>
+    <easter offset="40" free="true">Onze Lieve Heer hemelvaart</easter>
+    <easter offset="49" free="true">Pinkster</easter>
+    <easter offset="50" free="true">Pinkstermaandag</easter>
+    <date day="21" month="7" free="true">Nationale feestdag</date>
+    <date day="15" month="8" free="true">Onze Lieve Vrouw hemelvaart</date>
+    <date day="1" month="11" free="true">Allerheiligen</date>
+    <date day="11" month="11" free="true">Wapenstilstand</date>
+    <date day="25" month="12" free="true">Kerstmis</date>
+</holidays>
