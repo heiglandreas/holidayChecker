@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org ../../share/holidays.xsd"
+>
+    <date day="1" month="1" free="true">date</date>
+    <dateFollowUp day="1" month="1" followup="thursday" free="true">dateFollowUp</dateFollowUp>
+    <relative day="1" month="1" relation="next monday" free="true">relative</relative>
+    <easter offset="0" free="true">easter</easter>
+</holidays>

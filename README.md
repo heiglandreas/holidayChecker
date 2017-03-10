@@ -47,3 +47,20 @@ $result has 3 methods:
 * **isHoliday** is ```true``` when the day is a free day according to the local law. Otherwise it's ```false```
 * **isNamed** is ```true``` when the day has a special name despite being not a free day.
 * **getName** contains the name of a named day. 
+
+
+## Extending
+
+Currently not all countries holidays are available. We are trying to fix that 
+but you might find that exactly the country you need is missing.
+
+As the holidays are retrieved from XML-files you can add your own ones without 
+issue. They need to correspond to the [Schema-file](https://github.com/heiglandreas/holidayChecker/blob/master/share/holidays.xsd) 
+and before the schema is checked any XInclude-statements are executed. 
+
+You can then load the holidays from your file using the ```createIteratorFromXmlFile```-method.
+
+If you think the XML-files might be usefull for others you should think about 
+contributing back and open a PullRequest here or attach them to an issue you open.
+
+We'd be very thankfull!
