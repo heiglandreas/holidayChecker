@@ -48,6 +48,21 @@ $result has 3 methods:
 * **isNamed** is ```true``` when the day has a special name despite being not a free day.
 * **getName** contains the name of a named day. 
 
+You can also get a ```HolidayIterator``` with a 2-letter [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1)
+or a 4-letter [ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2) code. And when different language-variations are available you can get them 
+by adding the [ISO 639-1 language-code](https://en.wikipedia.org/wiki/ISO_3166-2) before the ISO 3166-code:
+
+```php
+// Get the holidays for mainland france
+$iterator = $factory->createIteratorFromIso3166('FR');
+
+// Get the holidays for the french overseas-department La Reunion
+$iterator = $factory->createIteratorFromIso3166('FR-RE');
+
+// Get the dutch holidays for belgium
+$iterator = $factory->createIteratorFromIso3166('fr_BE');
+```
+
 ## Available Countries
 
 Currently these countries are available:
