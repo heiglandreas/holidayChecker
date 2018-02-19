@@ -7,6 +7,12 @@ addons:
     packages:
       - libxml2
 
+php:
+- 7.0
+- 7.1
+- 7.2
+- nightly
+
 env:
   global:
     - COMPOSER_ARGS="--no-interaction --ignore-platform-reqs"
@@ -14,11 +20,10 @@ env:
   - DEPS=latest
   - DEPS=lowest
 
-php:
-- 7.0
-- 7.1
-- 7.2
-- nightly
+matrix:
+  fast_finish : true
+  allow_failures:
+  - php: nightly
 
 stages:
 - checkcode
@@ -64,10 +69,6 @@ jobs:
     - ./theme-installer.sh
     - ./zf-mkdoc-theme/deploy.sh
     - echo "Completed deploying documentation"
-
-matrix:
-  allow_failures:
-    - php: nightly
 
 before_install:
   - travis_retry composer self-update
