@@ -32,6 +32,7 @@ namespace Org_Heigl\Holidaychecker;
 use Org_Heigl\Holidaychecker\IteratorItem\Date;
 use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
+use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
 
 class HolidayIteratorFactory
@@ -95,6 +96,12 @@ class HolidayIteratorFactory
         switch ($child->nodeName) {
             case 'easter':
                 return new Easter(
+                    $child->textContent,
+                    $this->getFree($child),
+                    $child->getAttribute('offset')
+                );
+            case 'easterorthodox':
+                return new EasterOrthodox(
                     $child->textContent,
                     $this->getFree($child),
                     $child->getAttribute('offset')
