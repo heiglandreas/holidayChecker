@@ -29,11 +29,25 @@
       "@cs-check",
       "@test"
     ],
-    "cs-check": "phpcs",
+    "upload-coverage": [
+      "curl -o coveralls -L https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar",
+      "chmod 755 coveralls",
+      "./coveralls -v"
+    ],
+    "cs-download" : [
+      "curl -o phpcs -L https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.2.2/phpcs.phar",
+      "curl -o phpcs.asc -L https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.2.2/phpcs.phar.asc",
+      "# gpg --verify phpcs.asc phpcs",
+      "chmod 755 phpcs"
+    ],
+
+    "cs-check": [
+      "@cs-download",
+      "./phpcs --version && ./phpcs"
+    ],
     "cs-fix": "phpcbf",
     "test": "phpunit --colors=always",
     "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
-    "upload-coverage": "coveralls -v",
     "lintxml" : "for i in `ls share/*.xml` ; do xmllint --xinclude --noout --schema share/holidays.xsd $i; if [ ! $? -eq 0 ] ; then exit 1; fi; done || exit 1"
   }
 }
