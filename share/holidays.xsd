@@ -53,9 +53,23 @@
         <xs:attribute name="comment" type="xs:string"/>
     </xs:attributeGroup>
     <xs:element name="holidays">
+        <!--
+        All elements have to be within the root element "holidays".
+
+        Within this root element we expect a list of entries of type
+        "easter", "easterorthodox", "date", "dateFollowUp" or "relative"
+
+        Explanations follow on the respective elements
+        -->
         <xs:complexType>
             <xs:choice maxOccurs="unbounded">
                 <xs:element name="easter" minOccurs="0" maxOccurs="unbounded">
+                    <!--
+                    Days that are relative to the Easter date as calculated for the
+                    Western christian churches. The actual day is referenced by an
+                    offset from easter-sunday. Days before easter sunday have a
+                    negative offset, days after have a positive offset
+                    -->
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="xs:string">
@@ -65,6 +79,12 @@
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="easterorthodox" minOccurs="0" maxOccurs="unbounded">
+                    <!--
+                    Days that are relative to the Easter date as calculated for the
+                    Eastern Chsristian churches. The actual day is referenced by an
+                    offset from easter-sunday. Days before easter sunday have a
+                    negative offset, days after have a positive offset
+                    -->
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="xs:string">
@@ -74,6 +94,15 @@
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="date" minOccurs="0" maxOccurs="unbounded">
+                    <!--
+                    Days that are defined by their actual date like the 4th of July
+                    or 25th of December.
+
+                    The actual day is referenced by at least a day and a month attribute.
+                    For special occasions where a day is only a holiday in a certain year
+                    it can also have a year attribute. Note that you will need multiple
+                    entries for multiple years.
+                    -->
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="xs:string">
@@ -83,6 +112,15 @@
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="dateFollowUp" minOccurs="0" maxOccurs="unbounded">
+                    <!--
+                    Days that are defined by a certain weekday after a fixed date
+
+                    The actual day is referenced by the day and month the weekday
+                    follows as well as the weekday. So the first sunday after the
+                    21st of March would be referenced as follows:
+
+                    day="21" month="3" followup="sunday"
+                    -->
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="xs:string">
@@ -92,6 +130,17 @@
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="relative" minOccurs="0" maxOccurs="unbounded">
+                    <!--
+                    This is similar to the dateFollowUp but the relation can be
+                    more complext.
+
+                    Again the date the relation is referenced from is given via
+                    day and month attributes but the relation itself is given in
+                    the relation attribute and can be anything that
+                    http://php.net/manual/de/datetimeimmutable.modify.php
+                    can handle. Like "last sunday -3 weeks" from 25th of december
+                    would be the 1st sunday in advent
+                    -->
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="xs:string">
