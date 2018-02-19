@@ -8,10 +8,11 @@ addons:
       - libxml2
 
 env:
-  - DEPS=lowest
-  - DEPS=latest
   global:
     - COMPOSER_ARGS="--no-interaction --ignore-platform-reqs"
+  matrix:
+  - DEPS=latest
+  - DEPS=lowest
 
 php:
 - 7.0
@@ -32,7 +33,7 @@ jobs:
     php: 7.2
     script:
     - composer cs-check
-  -stage: checkxml
+  - stage: checkxml
     php: 7.2
     script:
     - composer lintxml
