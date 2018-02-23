@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+>
+    <date day="1" month="1" free="true" comment="New years">Новый год</date>
+    <date day="2" month="1" free="true" comment="New years holidays">Новогодние каникулы</date>
+    <date day="3" month="1" free="true" comment="New years holidays">Новогодние каникулы</date>
+    <date day="4" month="1" free="true" comment="New years holidays">Новогодние каникулы</date>
+    <date day="5" month="1" free="true" comment="New years holidays">Новогодние каникулы</date>
+    <date day="6" month="1" free="true" comment="New years holidays">Новогодние каникулы</date>
+    <date day="7" month="1" free="true" comment="New years holidays">Рождество Христово</date>
+    <date day="8" month="1" free="true" comment="New years holidays">Новогодние каникулы</date>
+    <date day="23" month="2" free="true" comment="Motherland defenders day">День защитников отечества</date>
+    <date day="8" month="3" free="true" comment="International Women's Day">Международный женский день</date>
+    <date day="1" month="5" free="true" comment="Labour day">День международной солидарности трудящихся</date>
+    <date day="9" month="5" free="true" comment="Victory day">День победы</date>
+    <date day="12" month="6" free="true" comment="Russia Day">День России</date>
+    <date day="22" month="8" free="true" comment="National Flag Day">National FLag Day</date>
+    <date day="4" month="11" free="true" comment="National Unity Day">День народного единства</date>
+    <date day="31" month="12" free="true" comment="New years eve">Новый год</date>
+</holidays>
