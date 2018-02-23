@@ -118,6 +118,6 @@ class HolidaycheckerTest extends TestCase
         }
         $duration = microtime(true) - $time;
 
-        $this->assertTrue($duration < 0.2);
+        $this->assertTrue($duration < 0.4);
     }
 }
