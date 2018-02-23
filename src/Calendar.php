@@ -44,7 +44,7 @@ class Calendar
 
     public static function isValidCalendarName(string $calendarname) : bool
     {
-        switch($calendarname) {
+        switch ($calendarname) {
             case self::BUDDHIST:
             case self::CHINESE:
             case self::COPTIC:
@@ -61,5 +61,4 @@ class Calendar
 
         return false;
     }
-
 }

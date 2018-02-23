@@ -51,7 +51,7 @@ class EasterOrthodox extends Easter
         // Don't touch this. It just seems to work…
         // And doing the "same" in DateTime (adding a period of $RC days doesn't
         // yield the same result…
-        return new \DateTimeImmutable('@' . jdtounix ( juliantojd ( 3, 21, $year ) + $RC ));
+        return new \DateTimeImmutable('@' . jdtounix(juliantojd(3, 21, $year) + $RC));
     }
 
     protected function getEaster(int $year) : \DateTimeImmutable
