@@ -112,10 +112,12 @@ class HolidaycheckerTest extends TestCase
         $interval = new \DateInterval('P1D');
         $period = new \DatePeriod($start, $interval, $end);
 
+        $time = microtime(true);
         foreach ($period as $date) {
             $result = $checker->check($date);
         }
+        $duration = microtime(true) - $time;
 
-        $this->assertTrue(true);
+        $this->assertTrue($duration < 0.2);
     }
 }
