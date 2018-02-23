@@ -3,17 +3,48 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="https://www.heigl.org holidays.xsd"
 >
-    <date day="1" month="1" free="true" comment="New Year's day">Πρωτοχρονιά</date>
-    <date day="6" month="1" free="true" comment="Epiphany">Θεοφάνεια</date>
-    <easterorthodox offset="-48" free="true">Καθαρά Δευτέρα</easterorthodox>
-    <date day="25" month="3" free="true" comment="Annunciation/Independence Day">Ευαγγελισμός της Θεοτόκου/Εικοστή Πέμπτη Μαρτίου</date>
-    <easterorthodox offset="-2" free="true" comment="Good Friday">Μεγάλη Παρασκευή</easterorthodox>
-    <easterorthodox offset="0" free="true" comment="Easter Sunday">Κυριακή του Πάσχα</easterorthodox>
-    <easterorthodox offset="-1" free="true" comment="Easter Monday">Δευτέρα του Πάσχα</easterorthodox>
-    <date day="1" month="5" free="true" comment="Labour Day">Εργατική Πρωτομαγιά</date>
-    <easterorthodox offset="49" free="true" comment="Pentecost">Πεντηκοστή'</easterorthodox>
-    <easterorthodox offset="50" free="true" comment="Pentecost Monday">Δευτέρα Πεντηκοστής</easterorthodox>
-    <date day="15" month="8" free="true" comment="Assumption">Κοίμηση της Θεοτόκου</date>
-    <date day="25" month="12" free="true">Χριστούγεννα</date>
-    <date day="26" month="12" free="true">Σύναξις Υπεραγίας Θεοτόκου Μαρίας</date>
+    <date day="1" month="1" free="true" comment="New Year's day">Yılbaşı</date>
+    <date day="23" month="4" free="true" comment="National Sovereignty and Children's Day">
+        Ulusal Egemenlik ve Çocuk Bayramı
+    </date>
+    <date day="1" month="5" free="true" comment="Labour Day">
+        Emek ve Dayanışma Günü
+    </date>
+    <date day="19" month="5" free="true" comment="Commemoration of Atatürk, Youth and Sports Day">
+        Atatürk'ü Anma Gençlik ve Spor Bayramı
+    </date>
+    <date day="15" month="7" free="true" comment="Democracy and National Unity Day">
+        Demokrasi ve Millî Birlik Günü
+    </date>
+    <date day="30" month="8" free="true" comment="Victory Day">
+        Zafer Bayramı
+    </date>
+    <date day="28" month="10" free="true" comment="half day before Republic Day">
+        Cumhuriyet Bayramı
+    </date>
+    <date day="29" month="10" free="true" comment="Republic Day">
+        Cumhuriyet Bayramı
+    </date>
+    <!--date calendar="islamic" day="" month="" free="true" comment="Afternoon at End of Ramadan">
+        Ramazan Bayramı or Şeker Bayramı
+    </date-->
+    <date calendar="islamic" day="1" month="10" free="true" comment="First day after Ramadan">
+        Ramazan Bayramı or Şeker Bayramı
+    </date>
+    <date calendar="islamic" day="2" month="10" free="true" comment="Second day after Ramadan">
+        Ramazan Bayramı or Şeker Bayramı
+    </date>
+    <date calendar="islamic" day="3" month="10" free="true" comment="Third day after Ramadan">
+        Ramazan Bayramı or Şeker Bayramı
+    </date>
+    <date calendar="islamic" day="10" month="12" free="true" comment="First day of Sacrifice Feast">
+        Kurban Bayramı
+    </date>
+    <date calendar="islamic" day="11" month="12" free="true" comment="Second day of Sacrifice Feast">
+        Kurban Bayramı
+    </date>
+    <date calendar="islamic" day="12" month="12" free="true" comment="Third day of Sacrifice Feast">
+        Kurban Bayramı
+    </date>
+    <!-- Resource: https://en.wikipedia.org/wiki/Public_holidays_in_Turkey -->
 </holidays>

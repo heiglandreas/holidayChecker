@@ -73,6 +73,8 @@ Currently these countries are available:
 * Netherlands (dutch)
 * France (Mainland and overseas, adaptions for Elsass/Lothringen, french)
 * United Kingdom (Islands, Walse, Scotland, Northern Ireland and England, englisch)
+* Greece
+* Turkey
 
 But the list is constantly extending.
 
