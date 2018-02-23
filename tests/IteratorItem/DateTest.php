@@ -29,6 +29,8 @@
 
 namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
+use Org_Heigl\Holidaychecker\Calendar;
+use Org_Heigl\Holidaychecker\CalendarDayFactory;
 use Org_Heigl\Holidaychecker\IteratorItem\Date;
 use PHPUnit\Framework\TestCase;
 
@@ -43,7 +45,11 @@ class DateTest extends TestCase
      */
     public function testThatDateTestWorks($dateTime, $day, $month, $year, $result, $name, $isHoliday)
     {
-        $easter = new Date($name, $isHoliday, $day, $month, $year);
+        $calendarDate = CalendarDayFactory::createCalendarDay($day, $month, Calendar::GREGORIAN);
+        if ($year) {
+            $calendarDate->setYear($year);
+        }
+        $easter = new Date($name, $isHoliday, $calendarDate);
         $this->assertEquals($result, $easter->dateMatches($dateTime));
         $this->assertEquals($name, $easter->getName());
         $this->assertEquals($isHoliday, $easter->isHoliday());

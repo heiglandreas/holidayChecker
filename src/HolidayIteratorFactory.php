@@ -107,12 +107,18 @@ class HolidayIteratorFactory
                     $child->getAttribute('offset')
                 );
             case 'date':
+                $day = CalendarDayFactory::createCalendarDay(
+                    $child->getAttribute('day'),
+                    $child->getAttribute('month'),
+                    ($child->hasAttribute('calendar')?$child->getAttribute('calendar'): 'gregorian')
+                );
+                if ($child->hasAttribute('year')) {
+                    $day->setYear($child->getAttribute('year'));
+                }
                 return new Date(
                     $child->textContent,
                     $this->getFree($child),
-                    $child->getAttribute('day'),
-                    $child->getAttribute('month'),
-                    ($child->hasAttribute('year')?$child->getAttribute('year'): null)
+                    $day
                 );
             case 'dateFollowUp':
                 return new DateFollowUp(

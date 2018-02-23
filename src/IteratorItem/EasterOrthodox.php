@@ -48,9 +48,10 @@ class EasterOrthodox extends Easter
         $R5 = $RB % 7;
         $RC = $R4 + $R5;
 
-        $date = new \DateTimeImmutable($year . '-03-21', new \DateTimeZone('UTC'));
-        $date = $date->add(new \DateInterval("P{$RC}D"));
-        return $date;
+        // Don't touch this. It just seems to work…
+        // And doing the "same" in DateTime (adding a period of $RC days doesn't
+        // yield the same result…
+        return new \DateTimeImmutable('@' . jdtounix ( juliantojd ( 3, 21, $year ) + $RC ));
     }
 
     protected function getEaster(int $year) : \DateTimeImmutable

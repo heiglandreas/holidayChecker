@@ -23,42 +23,15 @@
  * @author    Andreas Heigl<andreas@heigl.org>
  * @copyright Andreas Heigl
  * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
- * @since     08.03.2017
+ * @since     22.02.2018
  * @link      http://github.com/heiglandreas/org.heigl.Holidaychecker
  */
 
-namespace Org_Heigl\Holidaychecker\IteratorItem;
+namespace Org_Heigl\Holidaychecker\Exceptions;
 
-use Org_Heigl\Holidaychecker\CalendarDay;
-use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
+use UnexpectedValueException;
 
-class Date implements HolidayIteratorItemInterface
+class UnknownCalendar extends UnexpectedValueException
 {
-    private $calendarDay;
 
-    private $holiday;
-
-    private $name;
-
-    public function __construct(string $name, bool $holiday, CalendarDay $day)
-    {
-        $this->calendarDay = $day;
-        $this->holiday = $holiday;
-        $this->name = $name;
-    }
-
-    public function dateMatches(\DateTimeInterface $date) : bool
-    {
-        return $this->calendarDay->isSameDay($date);
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    public function isHoliday(): bool
-    {
-        return $this->holiday;
-    }
 }

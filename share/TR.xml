@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+>
+    <date day="1" month="1" free="true" comment="New Year's day">Πρωτοχρονιά</date>
+    <date day="6" month="1" free="true" comment="Epiphany">Θεοφάνεια</date>
+    <easterorthodox offset="-48" free="true">Καθαρά Δευτέρα</easterorthodox>
+    <date day="25" month="3" free="true" comment="Annunciation/Independence Day">Ευαγγελισμός της Θεοτόκου/Εικοστή Πέμπτη Μαρτίου</date>
+    <easterorthodox offset="-2" free="true" comment="Good Friday">Μεγάλη Παρασκευή</easterorthodox>
+    <easterorthodox offset="0" free="true" comment="Easter Sunday">Κυριακή του Πάσχα</easterorthodox>
+    <easterorthodox offset="-1" free="true" comment="Easter Monday">Δευτέρα του Πάσχα</easterorthodox>
+    <date day="1" month="5" free="true" comment="Labour Day">Εργατική Πρωτομαγιά</date>
+    <easterorthodox offset="49" free="true" comment="Pentecost">Πεντηκοστή'</easterorthodox>
+    <easterorthodox offset="50" free="true" comment="Pentecost Monday">Δευτέρα Πεντηκοστής</easterorthodox>
+    <date day="15" month="8" free="true" comment="Assumption">Κοίμηση της Θεοτόκου</date>
+    <date day="25" month="12" free="true">Χριστούγεννα</date>
+    <date day="26" month="12" free="true">Σύναξις Υπεραγίας Θεοτόκου Μαρίας</date>
+</holidays>

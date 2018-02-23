@@ -26,6 +26,20 @@
             <xs:enumeration value="saturday"/>
         </xs:restriction>
     </xs:simpleType>
+    <xs:simpleType name="calendars">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="buddhist"/>
+            <xs:enumeration value="chinese"/>
+            <xs:enumeration value="coptic"/>
+            <xs:enumeration value="ethiopian"/>
+            <xs:enumeration value="gregorian"/>
+            <xs:enumeration value="hebrew"/>
+            <xs:enumeration value="indian"/>
+            <xs:enumeration value="islamic"/>
+            <xs:enumeration value="japanese"/>
+            <xs:enumeration value="persian"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:attributeGroup name="easterAttributes">
         <xs:attribute name="offset" type="xs:integer" use="required"/>
         <xs:attribute name="free" type="xs:boolean" use="required"/>
@@ -37,6 +51,7 @@
         <xs:attribute name="year" type="xs:integer" />
         <xs:attribute name="free" type="xs:boolean" use="required"/>
         <xs:attribute name="comment" type="xs:string"/>
+        <xs:attribute name="calendar" type="calendars"/>
     </xs:attributeGroup>
     <xs:attributeGroup name="dateFollowUpAttributes">
         <xs:attribute name="day" type="dayInt" use="required"/>

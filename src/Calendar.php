@@ -23,42 +23,43 @@
  * @author    Andreas Heigl<andreas@heigl.org>
  * @copyright Andreas Heigl
  * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
- * @since     08.03.2017
+ * @since     22.02.2018
  * @link      http://github.com/heiglandreas/org.heigl.Holidaychecker
  */
 
-namespace Org_Heigl\Holidaychecker\IteratorItem;
+namespace Org_Heigl\Holidaychecker;
 
-use Org_Heigl\Holidaychecker\CalendarDay;
-use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
-
-class Date implements HolidayIteratorItemInterface
+class Calendar
 {
-    private $calendarDay;
+    const BUDDHIST  = 'buddhist';
+    const CHINESE   = 'chinese';
+    const COPTIC    = 'coptic';
+    const ETHIOPIAN = 'ethiopian';
+    const GREGORIAN = 'gregorian';
+    const HEBREW    = 'hebrew';
+    const INDIAN    = 'indian';
+    const ISLAMIC   = 'islamic';
+    const JAPANESE  = 'japanese';
+    const PERSIAN   = 'persian';
 
-    private $holiday;
-
-    private $name;
-
-    public function __construct(string $name, bool $holiday, CalendarDay $day)
+    public static function isValidCalendarName(string $calendarname) : bool
     {
-        $this->calendarDay = $day;
-        $this->holiday = $holiday;
-        $this->name = $name;
+        switch($calendarname) {
+            case self::BUDDHIST:
+            case self::CHINESE:
+            case self::COPTIC:
+            case self::ETHIOPIAN:
+            case self::GREGORIAN:
+            case self::HEBREW:
+            case self::INDIAN:
+            case self::ISLAMIC:
+            case self::JAPANESE:
+            case self::PERSIAN:
+                return true;
+            default:
+        }
+
+        return false;
     }
 
-    public function dateMatches(\DateTimeInterface $date) : bool
-    {
-        return $this->calendarDay->isSameDay($date);
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    public function isHoliday(): bool
-    {
-        return $this->holiday;
-    }
 }
