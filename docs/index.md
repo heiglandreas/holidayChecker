@@ -4,8 +4,6 @@ title: "holidayChecker"
 permalink: /
 ---
 
-Check whether a given date is a holiday - locale-aware
-
 This library allows you to check a single day against one or multiple calendars 
 to see whether the given day is a holiday or not.
 

@@ -1,0 +1,12 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+nav.site-nav a{
+    display: block;
+}
+
+nav.site-nav a:before {
+    content: "~ ";
+}

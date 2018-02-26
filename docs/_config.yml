@@ -16,7 +16,7 @@
 title: holidayChecker
 email: andreas@heigl.org
 description: >- # this means to ignore newlines until "baseurl:"
-  Check whether a given date is a holiday - locale-aware
+  Check whether a given date is a holiday – locale-aware
 baseurl: "/holidayChecker" # the subpath of your site, e.g. /blog
 url: "https://heiglandreas.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
@@ -34,6 +34,8 @@ plugins:
 permalink: /:year/:month/:day/:title/
 paginate_path: /posts/:num/
 paginate: 5
+
+show_downloads: false
 
 jekyll-archives:
   enabled:
