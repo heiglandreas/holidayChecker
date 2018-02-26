@@ -24,7 +24,7 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
-theme: jekyll-whiteglass
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-archives
   - jekyll-paginate
