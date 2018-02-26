@@ -31,7 +31,6 @@ stages:
 - checkxml
 - test
 - coverage
-- deploy_docs
 
 jobs:
   include:
@@ -44,7 +43,7 @@ jobs:
     script:
     - composer lintxml
     after_success:
-    - curl --ftp-create-dirs -T share/holidays.xsd -u $FTP_USER:$FTP_PASS ftps://ftp.heigl.org/holidays.xsd
+    - curl --ftp-create-dirs -T share/holidays.xsd -u $FTP_USER:$FTP_PASS ftps://ftp.heigl.org:21/holidays.xsd
   - stage: test
     before_install:
     - phpenv config-rm xdebug.ini || return 0
@@ -60,18 +59,6 @@ jobs:
     - travis_retry composer require $COMPOSER_ARGS --dev satooshi/php-coveralls ;
     - composer test-coverage
     - travis_retry composer upload-coverage
-  - stage: deploy_docs
-    if: branch = master AND type = push
-    php: 7.2
-    script:
-    - ls
-    after-script:
-    - echo "Preparing to build and deploy documentation"
-    - wget -O theme-installer.sh "https://raw.githubusercontent.com/zendframework/zf-mkdoc-theme/master/theme-installer.sh"
-    - chmod 755 theme-installer.sh
-    - ./theme-installer.sh
-    - ./zf-mkdoc-theme/deploy.sh
-    - echo "Completed deploying documentation"
 
 before_install:
   - travis_retry composer self-update
