@@ -43,7 +43,7 @@ jobs:
     script:
     - composer lintxml
     after_success:
-    - curl --ftp-create-dirs -T share/holidays.xsd -u $FTP_USER:$FTP_PASS ftps://ftp.heigl.org:21/holidays.xsd
+    - curl --ftp-create-dirs -T share/holidays.xsd -u $FTP_USER:$FTP_PASS ftp://ftp.heigl.org:21/holidays.xsd
   - stage: test
     before_install:
     - phpenv config-rm xdebug.ini || return 0
