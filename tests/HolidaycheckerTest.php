@@ -118,7 +118,7 @@ class HolidaycheckerTest extends TestCase
         }
         $duration = microtime(true) - $time;
 
-        if ($duration < 0.2) {
+        if ($duration >= 0.2) {
             $this->markTestSkipped('Test took ' . round($duration, 5));
         }
         $this->assertTrue($duration < 0.2);
