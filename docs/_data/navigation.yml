@@ -6,6 +6,6 @@ main:
 #  - title: "Achives"
 #    url: /archives/
   - title: "Extend"
-    url: /extend_xml/
-  - title: "GitHub"
-    url: https://github.com/heiglandreas/holidayChecker
+    url: /extend_xml
+#  - title: "GitHub"
+#    url: https://github.com/heiglandreas/holidayChecker
