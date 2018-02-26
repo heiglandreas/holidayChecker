@@ -127,15 +127,6 @@
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="dateFollowUp" minOccurs="0" maxOccurs="unbounded">
-                    <!--
-                    Days that are defined by a certain weekday after a fixed date
-
-                    The actual day is referenced by the day and month the weekday
-                    follows as well as the weekday. So the first sunday after the
-                    21st of March would be referenced as follows:
-
-                    day="21" month="3" followup="sunday"
-                    -->
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="xs:string">
