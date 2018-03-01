@@ -67,7 +67,9 @@ class CalendarDay
         $cal         = clone $this->calendar;
         $cal->setTime($dateTime->getTimestamp() * 1000);
 
-        if (null !== $this->year && $cal->get(IntlCalendar::FIELD_YEAR) !== $this->calendar->get(IntlCalendar::FIELD_YEAR)) {
+        if (null !== $this->year &&
+            $cal->get(IntlCalendar::FIELD_YEAR) !== $this->calendar->get(IntlCalendar::FIELD_YEAR)
+        ) {
             return false;
         }
 
@@ -105,7 +107,6 @@ class CalendarDay
         }
 
         return true;
-
     }
 
     public function getWeekdayForGregorianYear(int $year) : int
