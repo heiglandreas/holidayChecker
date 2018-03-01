@@ -76,7 +76,7 @@ but you might find that exactly the country you need is missing.
 As the holidays are retrieved from XML-files you can add your own ones without 
 issue. They need to correspond to the [Schema-file](https://www.heigl.org/xml/xsd/holidays.xsd)
 and before the schema is checked any XInclude-statements are executed. For more
-information on that have a look at the [more detailed description](extend_xml/)
+information on that have a look at the [more detailed description](extend_xml)
 
 You can then load the holidays from your file using the ```createIteratorFromXmlFile```-method.
 

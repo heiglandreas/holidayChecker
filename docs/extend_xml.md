@@ -157,3 +157,11 @@ and like this for germany
     Easter Sunday
 </easter>
 ```
+
+## Note on Non-Gregorian calendars.
+
+Currently there is an issue with the Islamic calendars in that it seems to be off
+by one day due to differences in the calculation of the underlying ICU-Implementation
+and some online calendars. But due to the way months are determined in the islamic
+calendar that can always be the case also on short notice. For more informations have
+a look at [Wikipedias entry on the Islamic Calendar](https://en.wikipedia.org/wiki/Islamic_calendar)
