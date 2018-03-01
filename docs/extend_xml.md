@@ -103,6 +103,8 @@ An example for St. Patricks day in Northern Ireland looks like this:
 </datefollowup>
 ```
 
+DateFollowup also supports the calendar-attribute.
+
 ## Relative Dates
 
 Sometimes dates are relative to a certain date like "The 4th sunday before the 25th
