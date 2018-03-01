@@ -121,11 +121,16 @@ class HolidayIteratorFactory
                     $day
                 );
             case 'dateFollowUp':
+                $day = CalendarDayFactory::createCalendarDay(
+                    $child->getAttribute('day'),
+                    $child->getAttribute('month'),
+                    ($child->hasAttribute('calendar')?$child->getAttribute('calendar'): 'gregorian')
+                );
+
                 return new DateFollowUp(
                     $child->textContent,
                     $this->getFree($child),
-                    $child->getAttribute('day'),
-                    $child->getAttribute('month'),
+                    $day,
                     $child->getAttribute('followup')
                 );
             case 'relative':

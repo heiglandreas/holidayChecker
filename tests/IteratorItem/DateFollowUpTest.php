@@ -29,6 +29,8 @@
 
 namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
+use Org_Heigl\Holidaychecker\Calendar;
+use Org_Heigl\Holidaychecker\CalendarDayFactory;
 use Org_Heigl\Holidaychecker\IteratorItem\Date;
 use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
 use PHPUnit\Framework\TestCase;
@@ -44,17 +46,19 @@ class DateFollowUpTest extends TestCase
      */
     public function testThatDateFollowupTestWorks($dateTime, $day, $month, $followup, $result, $name, $isHoliday)
     {
-        $easter = new DateFollowUp($name, $isHoliday, $day, $month, $followup);
-        $this->assertEquals($result, $easter->dateMatches($dateTime));
-        $this->assertEquals($name, $easter->getName());
-        $this->assertEquals($isHoliday, $easter->isHoliday());
+        $calendarDate = CalendarDayFactory::createCalendarDay($day, $month, Calendar::GREGORIAN);
+
+        $followUp = new DateFollowUp($name, $isHoliday, $calendarDate, $followup);
+        $this->assertEquals($result, $followUp->dateMatches($dateTime));
+        $this->assertEquals($name, $followUp->getName());
+        $this->assertEquals($isHoliday, $followUp->isHoliday());
     }
 
     public function dateProvider()
     {
         return [
-            [new \DateTime('2017-07-11 12:00:00+00:00'), 8, 7, 'tuesday', true, 'test', true],
-            [new \DateTime('2017-07-10 12:00:00+00:00'), 9, 7, 'monday', true, 'test', true],
+            [new \DateTimeImmutable('2018-03-01 12:00:00+00:00'), 25, 2, 'thursday', true, 'test', true],
+            [new \DateTimeImmutable('2018-02-26 12:00:00+00:00'), 24, 2, 'monday', true, 'test', true],
         ];
     }
 }

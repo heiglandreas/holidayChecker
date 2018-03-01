@@ -107,8 +107,9 @@ class HolidaycheckerTest extends TestCase
         $iterator = $factory->createIteratorFromXmlFile(__DIR__ . '/../share/DE-HE.xml');
         $checker = new Holidaychecker($iterator);
 
-        $start = new \DateTimeImmutable('2016-01-01');
-        $end   = new \DateTimeImmutable('2016-12-31');
+        $currentYear = date('Y');
+        $start = new \DateTimeImmutable($currentYear . '-01-01');
+        $end   = new \DateTimeImmutable($currentYear . '-12-31');
         $interval = new \DateInterval('P1D');
         $period = new \DatePeriod($start, $interval, $end);
 
@@ -119,7 +120,11 @@ class HolidaycheckerTest extends TestCase
         $duration = microtime(true) - $time;
 
         if ($duration >= 0.2) {
-            $this->markTestSkipped('Test took ' . round($duration, 5));
+            $this->markTestSkipped(sprintf(
+                'Parsing the complete year of %1$s took %2$0.5f seconds',
+                $currentYear,
+                $duration
+            ));
         }
         $this->assertTrue($duration < 0.2);
     }

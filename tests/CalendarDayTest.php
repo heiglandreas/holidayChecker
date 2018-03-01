@@ -70,11 +70,52 @@ class CalendarDayTest extends TestCase
             'Month doesnt match' => [1, 1, null, Calendar::GREGORIAN, new DateTimeImmutable('1.2.2000'), false],
             'Day doesnt match'   => [1, 1, null, Calendar::GREGORIAN, new DateTimeImmutable('2.1.2000'), false],
             'Matches'            => [1, 1, null, Calendar::GREGORIAN, new DateTimeImmutable('1.1.2000'), true],
-            'Matches'            => [1, 1, 2017, Calendar::GREGORIAN, new DateTimeImmutable('1.1.2000'), false],
+            'Matches year'       => [1, 1, 2017, Calendar::GREGORIAN, new DateTimeImmutable('1.1.2000'), false],
             'Rosh Hashana 5779'  => [1, 1, null, Calendar::HEBREW, new DateTimeImmutable('10.9.2018'), true],
             'Rosh Hashana 5778'  => [1, 1, null, Calendar::HEBREW, new DateTimeImmutable('21.9.2017'), true],
             // This should be the 15th of june according to https://en.wikipedia.org/wiki/Eid_al-Fitr
             'Eid al-Fitr 1439'   => [1, 10, null, Calendar::ISLAMIC, new DateTimeImmutable('14.6.2018'), true],
+        ];
+    }
+
+    /** @dataProvider provideTheWeekdayIsReturnedCorrectly */
+    public function testThatTheWeekdayIsReturnedCorrectly($day, $month, $year, $calendar, $result)
+    {
+        $cal = IntlCalendar::createInstance(null, '@calendar=' . $calendar);
+        $class = new CalendarDay($day, $month, $cal);
+
+        $this->assertSame($result, $class->getWeekdayForGregorianYear($year));
+    }
+
+    public function provideTheWeekdayIsReturnedCorrectly()
+    {
+        return [
+            '1.January.2018 is Monday'   =>
+                [1, 1, 2018, Calendar::GREGORIAN, IntlCalendar::DOW_MONDAY],
+            '1.Tishrei.5780 is Monday'   =>
+                [1, 1, 2019, Calendar::HEBREW, IntlCalendar::DOW_MONDAY],
+            '1.Tishrei.5779 is Monday'   =>
+                [1, 1, 2018, Calendar::HEBREW, IntlCalendar::DOW_MONDAY],
+            '1.Tishrei.5778 is Thursday' =>
+                [1, 1, 2017, Calendar::HEBREW, IntlCalendar::DOW_THURSDAY],
+            '1.Tishrei.5777 is Monday'   =>
+                [1, 1, 2016, Calendar::HEBREW, IntlCalendar::DOW_MONDAY],
+            '1.Adar.5780 is Wednesday'   =>
+                [1, 7, 2020, Calendar::HEBREW, IntlCalendar::DOW_WEDNESDAY],
+            '1.Adar II.5779 is Friday'   =>
+                [1, 7, 2019, Calendar::HEBREW, IntlCalendar::DOW_FRIDAY],
+            '1.Adar.5778 is Friday' =>
+                [1, 7, 2018, Calendar::HEBREW, IntlCalendar::DOW_FRIDAY],
+            '1.Adar.5777 is Monday' =>
+                [1, 7, 2017, Calendar::HEBREW, IntlCalendar::DOW_MONDAY],
+            '4.Jumādá al-ākhirah 1440 should be Saturday'  =>
+                [4, 6, 2019, Calendar::ISLAMIC, IntlCalendar::DOW_FRIDAY],
+            '4.Jumādá al-ākhirah 1439 should be Tuesday'  =>
+                [4, 6, 2018, Calendar::ISLAMIC, IntlCalendar::DOW_MONDAY],
+            '4.Jumādá al-ākhirah 1438 should be Friday'  =>
+                [4, 6, 2017, Calendar::ISLAMIC, IntlCalendar::DOW_THURSDAY],
+            '4.Jumādá al-ākhirah 1437 should be Sunday'  =>
+                [4, 6, 2016, Calendar::ISLAMIC, IntlCalendar::DOW_SUNDAY],
         ];
     }
 }

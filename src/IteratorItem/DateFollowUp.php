@@ -29,13 +29,13 @@
 
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
+use Org_Heigl\Holidaychecker\CalendarDay;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
+use IntlCalendar;
 
 class DateFollowUp implements HolidayIteratorItemInterface
 {
     private $day;
-
-    private $month;
 
     private $holiday;
 
@@ -43,10 +43,9 @@ class DateFollowUp implements HolidayIteratorItemInterface
 
     private $followup;
 
-    public function __construct(string $name, bool $holiday, int $day, int $month, string $followup)
+    public function __construct(string $name, bool $holiday, CalendarDay $day, string $followup)
     {
         $this->day = $day;
-        $this->month = $month;
         $this->followup = $followup;
         $this->holiday = $holiday;
         $this->name = $name;
@@ -54,12 +53,18 @@ class DateFollowUp implements HolidayIteratorItemInterface
 
     public function dateMatches(\DateTimeInterface $date) : bool
     {
-        $day = new \DateTimeImmutable($date->format('Y') . '-' . $this->month . '-' . $this->day);
-        if ($day->format('w') === "0" || $day->format('w') === "6") {
-            $day = $day->modify('next ' . $this->followup);
+        $weekday = $this->day->getWeekdayForGregorianYear($date->format('Y'));
+
+        $days = [
+            IntlCalendar::DOW_SATURDAY,
+            IntlCalendar::DOW_SUNDAY,
+        ];
+
+        if (in_array($weekday, $days)) {
+            return $this->day->isFollowUpDay($date, $this->followup);
         }
 
-        return $date->format('Y-m-d') === $day->format('Y-m-d');
+        return $this->day->isSameDay($date);
     }
 
     public function getName(): string
