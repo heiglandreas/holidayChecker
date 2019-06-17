@@ -87,12 +87,12 @@ class CalendarDay
     public function isFollowUpDay(DateTimeInterface $dateTime, string $followUpDay) : bool
     {
         $cal = clone $this->calendar;
+        $cal->set(IntlCalendar::FIELD_YEAR, (int) $dateTime->format('Y'));
         $day = $cal->toDateTime();
         $day->modify('next ' . $followUpDay);
         $cal->setTime($day->getTimestamp() * 1000);
         $cal2         = clone $this->calendar;
         $cal2->setTime($dateTime->getTimestamp() * 1000);
-
 
         if (null !== $this->year && $cal->get(IntlCalendar::FIELD_YEAR) !== $cal2->get(IntlCalendar::FIELD_YEAR)) {
             return false;

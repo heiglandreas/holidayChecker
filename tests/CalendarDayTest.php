@@ -46,9 +46,6 @@ class CalendarDayTest extends TestCase
         $class = new CalendarDay(2, 3, $calendar);
 
         self::assertInstanceOf(CalendarDay::class, $class);
-        self::assertAttributeEquals(2, 'day', $class);
-        self::assertAttributeEquals(3, 'month', $class);
-        self::assertAttributeEquals($calendar, 'calendar', $class);
     }
 
     /** @dataProvider theSameDayWithoutCheckingYearProvider */
