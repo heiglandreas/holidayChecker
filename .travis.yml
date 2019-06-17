@@ -9,9 +9,9 @@ addons:
     - libxml2-utils
 
 php:
-- 7.0
-- 7.1
 - 7.2
+- 7.3
+- 7.4
 - nightly
 
 env:
@@ -35,11 +35,11 @@ stages:
 jobs:
   include:
   - stage: checkcode
-    php: 7.2
+    php: 7.3
     script:
     - composer cs-check
   - stage: checkxml
-    php: 7.2
+    php: 7.3
     script:
     - composer lintxml
     after_success:
@@ -51,7 +51,7 @@ jobs:
     - composer test
   - stage: coverage
     if: branch = master AND type = push
-    php: 7.2
+    php: 7.3
     env: TEST_COVERAGE=true
     script:
     - ls
