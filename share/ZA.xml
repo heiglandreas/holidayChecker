@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://www.heigl.org"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+>
+    <date day="1" month="1" free="true">New Year</date>
+    <date day="21" month="3" free="true">Human Rights Day</date>
+    <easter offset="-2" free="true">Good Friday</easter>
+    <easter offset="0" free="false">Easter Sunday</easter>
+    <easter offset="1" free="true">Family Day</easter>
+    <easter offset="39" free="true">Ascension Day</easter>
+    <date day="27" month="4" free="true">Freedom Day</date>
+    <date day="1" month="5" free="true">Workers' Day</date>
+    <date day="16" month="6" free="true">Youth Day</date>
+    <date day="9" month="8" free="true">National Women’s Day</date>
+    <date day="24" month="9" free="true">Heritage Day</date>
+    <date day="16" month="12" free="true" comment="Geloftedag">Day of Reconciliation</date>
+    <date day="25" month="12" free="true">Christmas Day</date>
+    <date day="26" month="12" free="true">Day of Goodwill</date>
+</holidays>
