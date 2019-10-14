@@ -77,6 +77,7 @@ Currently these countries are available:
 * Russia
 * Greece
 * Turkey
+* South Africa
 
 But the list is constantly extending.
 
