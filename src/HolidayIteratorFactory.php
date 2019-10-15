@@ -34,6 +34,7 @@ use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
+use function explode;
 
 class HolidayIteratorFactory
 {
@@ -131,7 +132,8 @@ class HolidayIteratorFactory
                     $child->textContent,
                     $this->getFree($child),
                     $day,
-                    $child->getAttribute('followup')
+                    $child->getAttribute('followup'),
+                    ($child->hasAttribute('replaced')?explode(' ', $child->getAttribute('replaced')):[])
                 );
             case 'relative':
                 return new Relative(

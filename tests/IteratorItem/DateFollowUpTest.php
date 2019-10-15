@@ -44,11 +44,19 @@ class DateFollowUpTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::dateMatches
      */
-    public function testThatDateFollowupTestWorks($dateTime, $day, $month, $followup, $result, $name, $isHoliday)
-    {
+    public function testThatDateFollowupTestWorks(
+        $dateTime,
+        $day,
+        $month,
+        $followup,
+        $replaced,
+        $result,
+        $name,
+        $isHoliday
+    ) {
         $calendarDate = CalendarDayFactory::createCalendarDay($day, $month, Calendar::GREGORIAN);
 
-        $followUp = new DateFollowUp($name, $isHoliday, $calendarDate, $followup);
+        $followUp = new DateFollowUp($name, $isHoliday, $calendarDate, $followup, $replaced);
         $this->assertEquals($result, $followUp->dateMatches($dateTime));
         $this->assertEquals($name, $followUp->getName());
         $this->assertEquals($isHoliday, $followUp->isHoliday());
@@ -57,8 +65,37 @@ class DateFollowUpTest extends TestCase
     public function dateProvider()
     {
         return [
-            [new \DateTimeImmutable('2018-03-01 12:00:00+00:00'), 25, 2, 'thursday', true, 'test', true],
-            [new \DateTimeImmutable('2018-02-26 12:00:00+00:00'), 24, 2, 'monday', true, 'test', true],
+            [new \DateTimeImmutable('2018-03-01 12:00:00+00:00'), 25, 2, 'thursday', [], true, 'test', true],
+            [new \DateTimeImmutable('2018-02-26 12:00:00+00:00'), 24, 2, 'monday', [], true, 'test', true],
+   //         [new \DateTimeImmutable('2019-01-01 12:00:00+00:00'), 30, 12, 'tuesday', [], true, 'test', true],
+            [
+                new \DateTimeImmutable('2019-10-12 12:00:00+00:00'),
+                11,
+                10,
+                'saturday',
+                ['thursday', 'friday'],
+                true,
+                'test',
+                true
+            ], [
+                new \DateTimeImmutable('2019-10-12 12:00:00+00:00'),
+                10,
+                10,
+                'saturday',
+                ['thursday', 'friday'],
+                true,
+                'test',
+                true
+            ], [
+                new \DateTimeImmutable('2019-10-09 12:00:00+00:00'),
+                9,
+                10,
+                'saturday',
+                ['thursday', 'friday'],
+                true,
+                'test',
+                true
+            ],
         ];
     }
 }

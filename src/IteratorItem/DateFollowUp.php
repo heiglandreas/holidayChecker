@@ -43,24 +43,22 @@ class DateFollowUp implements HolidayIteratorItemInterface
 
     private $followup;
 
-    public function __construct(string $name, bool $holiday, CalendarDay $day, string $followup)
+    private $replaced;
+
+    public function __construct(string $name, bool $holiday, CalendarDay $day, string $followup, array $replaced = [])
     {
         $this->day = $day;
         $this->followup = $followup;
         $this->holiday = $holiday;
         $this->name = $name;
+        $this->replaced = $this->replacedDays($replaced);
     }
 
     public function dateMatches(\DateTimeInterface $date) : bool
     {
         $weekday = $this->day->getWeekdayForGregorianYear($date->format('Y'));
 
-        $days = [
-            IntlCalendar::DOW_SATURDAY,
-            IntlCalendar::DOW_SUNDAY,
-        ];
-
-        if (in_array($weekday, $days)) {
+        if (in_array($weekday, $this->replaced)) {
             return $this->day->isFollowUpDay($date, $this->followup);
         }
 
@@ -75,5 +73,32 @@ class DateFollowUp implements HolidayIteratorItemInterface
     public function isHoliday(): bool
     {
         return $this->holiday;
+    }
+
+    private static function replacedDays(array $replaced): array
+    {
+        $daymap = [
+            'sunday' => IntlCalendar::DOW_SUNDAY,
+            'monday' => IntlCalendar::DOW_MONDAY,
+            'tuesday' => IntlCalendar::DOW_TUESDAY,
+            'wednesday' => IntlCalendar::DOW_WEDNESDAY,
+            'thursday' => IntlCalendar::DOW_THURSDAY,
+            'friday' => IntlCalendar::DOW_FRIDAY,
+            'saturday' => IntlCalendar::DOW_SATURDAY,
+        ];
+
+        if ([] === $replaced) {
+            return [
+                IntlCalendar::DOW_SATURDAY,
+                IntlCalendar::DOW_SUNDAY,
+            ];
+        }
+
+        return array_map(function ($day) use ($daymap) {
+            if (! isset($daymap[$day])) {
+                return null;
+            }
+            return $daymap[$day];
+        }, $replaced);
     }
 }
