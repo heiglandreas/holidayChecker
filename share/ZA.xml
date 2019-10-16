@@ -3,18 +3,18 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="https://www.heigl.org holidays.xsd"
 >
-    <date day="1" month="1" free="true">New Year</date>
-    <date day="21" month="3" free="true">Human Rights Day</date>
+    <dateFollowUp day="1" month="1" followup="monday" free="true" replaced="sunday">New Year</dateFollowUp>
+    <dateFollowUp day="21" month="3" followup="monday" free="true" replaced="sunday">Human Rights Day</dateFollowUp>
     <easter offset="-2" free="true">Good Friday</easter>
     <easter offset="0" free="false">Easter Sunday</easter>
     <easter offset="1" free="true">Family Day</easter>
     <easter offset="39" free="true">Ascension Day</easter>
-    <date day="27" month="4" free="true">Freedom Day</date>
-    <date day="1" month="5" free="true">Workers' Day</date>
-    <date day="16" month="6" free="true">Youth Day</date>
-    <date day="9" month="8" free="true">National Women’s Day</date>
-    <date day="24" month="9" free="true">Heritage Day</date>
-    <date day="16" month="12" free="true" comment="Geloftedag">Day of Reconciliation</date>
-    <date day="25" month="12" free="true">Christmas Day</date>
-    <date day="26" month="12" free="true">Day of Goodwill</date>
+    <dateFollowUp day="27" month="4" followup="monday" free="true" replaced="sunday">Freedom Day</dateFollowUp>
+    <dateFollowUp day="1" month="5" followup="monday" free="true" replaced="sunday">Workers' Day</dateFollowUp>
+    <dateFollowUp day="16" month="6" followup="monday" free="true" replaced="sunday">Youth Day</dateFollowUp>
+    <dateFollowUp day="9" month="8" followup="monday" free="true" replaced="sunday">National Women’s Day</dateFollowUp>
+    <dateFollowUp day="24" month="9" followup="monday" free="true" replaced="sunday">Heritage Day</dateFollowUp>
+    <dateFollowUp day="16" month="12" followup="monday" free="true" comment="Geloftedag" replaced="sunday">Day of Reconciliation</dateFollowUp>
+    <dateFollowUp day="25" month="12" followup="monday" free="true" replaced="sunday">Christmas Day</dateFollowUp>
+    <dateFollowUp day="26" month="12" followup="monday" free="true" replaced="sunday">Day of Goodwill</dateFollowUp>
 </holidays>
