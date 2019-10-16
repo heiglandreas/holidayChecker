@@ -26,6 +26,9 @@
             <xs:enumeration value="saturday"/>
         </xs:restriction>
     </xs:simpleType>
+    <xs:simpleType name="daynamelist">
+        <xs:list itemType="daynames" />
+    </xs:simpleType>
     <xs:simpleType name="calendars">
         <xs:restriction base="xs:string">
             <xs:enumeration value="buddhist"/>
@@ -57,6 +60,7 @@
         <xs:attribute name="day" type="dayInt" use="required"/>
         <xs:attribute name="month" type="monthInt" use="required"/>
         <xs:attribute name="followup" type="daynames" use="required" />
+        <xs:attribute name="replaced" type="daynamelist" use="optional" />
         <xs:attribute name="free" type="xs:boolean" use="required"/>
         <xs:attribute name="comment" type="xs:string"/>
         <xs:attribute name="calendar" type="calendars"/>
