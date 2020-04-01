@@ -17,9 +17,9 @@ php:
 env:
   global:
     - COMPOSER_ARGS="--no-interaction --ignore-platform-reqs"
-  matrix:
-  - DEPS=latest
-  - DEPS=lowest
+#  matrix:
+#  - DEPS=latest
+#  - DEPS=lowest
 
 matrix:
   fast_finish : true
