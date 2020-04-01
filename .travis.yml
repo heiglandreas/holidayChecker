@@ -17,13 +17,15 @@ php:
 env:
   global:
     - COMPOSER_ARGS="--no-interaction --ignore-platform-reqs"
-#  matrix:
-#  - DEPS=latest
-#  - DEPS=lowest
+  matrix:
+  - DEPS=latest
+  - DEPS=lowest
 
 matrix:
   fast_finish : true
   allow_failures:
+  - php: 7.2
+    env: DEPS=latest
   - php: 7.4
   - php: nightly
 
