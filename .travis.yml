@@ -36,11 +36,11 @@ stages:
 jobs:
   include:
   - stage: checkcode
-    php: 7.2
+    php: 7.4
     script:
     - composer cs-check
   - stage: checkxml
-    php: 7.2
+    php: 7.4
     script:
     - composer lintxml
     after_success:
@@ -52,7 +52,7 @@ jobs:
     - composer test
   - stage: coverage
     if: branch = master AND type = push
-    php: 7.2
+    php: 7.4
     env: TEST_COVERAGE=true
     script:
     - ls
