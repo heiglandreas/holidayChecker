@@ -8,20 +8,23 @@
     "packages": [
         {
             "name": "org_heigl/dateintervalcomparator",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heiglandreas/DateIntervalComparator.git",
-                "reference": "895ca96238fba2f8ec61aed1e639f5624bd84147"
+                "reference": "f2b5a96c9d493a85fa4a24f8c1a68c09c7c51752"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heiglandreas/DateIntervalComparator/zipball/895ca96238fba2f8ec61aed1e639f5624bd84147",
-                "reference": "895ca96238fba2f8ec61aed1e639f5624bd84147",
+                "url": "https://api.github.com/repos/heiglandreas/DateIntervalComparator/zipball/f2b5a96c9d493a85fa4a24f8c1a68c09c7c51752",
+                "reference": "f2b5a96c9d493a85fa4a24f8c1a68c09c7c51752",
                 "shasum": ""
             },
+            "require": {
+                "php": "^7.1"
+            },
             "require-dev": {
-                "phpunit/phpunit": "^5.6"
+                "phpunit/phpunit": "^5.6 || ^6.0 || ^7.0 || ^8.0"
             },
             "type": "library",
             "autoload": {
@@ -40,7 +43,7 @@
                 }
             ],
             "description": "Compare two DateInterval-Objects with one another",
-            "time": "2016-10-11T13:27:25+00:00"
+            "time": "2020-01-14T09:59:03+00:00"
         }
     ],
     "packages-dev": [
