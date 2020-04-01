@@ -72,6 +72,13 @@
         <xs:attribute name="free" type="xs:boolean" use="required"/>
         <xs:attribute name="comment" type="xs:string"/>
     </xs:attributeGroup>
+    <xs:attributeGroup name="resourceAttributes">
+        <xs:attribute name="href" type="xs:anyURI" use="required"/>
+        <xs:attribute name="lastChecked" type="xs:date" use="required" />
+    </xs:attributeGroup>
+    <xs:element name="resources">
+
+    </xs:element>
     <xs:element name="holidays">
         <!--
         All elements have to be within the root element "holidays".
@@ -83,6 +90,21 @@
         -->
         <xs:complexType>
             <xs:choice maxOccurs="unbounded">
+                <xs:element name="resources" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="resource" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attributeGroup ref="resourceAttributes"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="easter" minOccurs="0" maxOccurs="unbounded">
                     <!--
                     Days that are relative to the Easter date as calculated for the

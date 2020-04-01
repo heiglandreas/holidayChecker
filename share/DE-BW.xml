@@ -3,6 +3,9 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="https://www.heigl.org holidays.xsd"
           xmlns:xi="http://www.w3.org/2001/XInclude">
+    <resources>
+        <resource href="http://www.landesrecht-bw.de/jportal/?quelle=jlink&amp;query=FeiertG+BW&amp;psml=bsbawueprod.psml&amp;max=true&amp;aiz=true" lastChecked="2020-04-01"/>
+    </resources>
     <date day="6" month="1" free="true">Epiphanias</date>
     <easter offset="60" free="true">Fronleichnam</easter>
     <date day="1" month="11" free="true">Allerheiligen</date>
