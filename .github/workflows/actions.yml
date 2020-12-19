@@ -16,8 +16,22 @@ jobs:
         run: phive --no-progress install --trust-gpg-keys 31C7E470E2138192 phpcs
       - name: check
         run: ./tools/phpcs
+  xml-lint:
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+      - name: Install xmllint
+        run: sudo apt-get install libxml2-utils
+      - name: lint
+        run: composer lintxml
   test:
-    needs: check
+    needs: [check, xml-lint]
     runs-on: ubuntu-latest # ${{ matrix.operating-system }}
     continue-on-error: ${{ matrix.experimental }}
     strategy:
