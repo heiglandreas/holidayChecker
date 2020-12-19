@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <dates day="1" month="1" free="true">date</dates>
+</holidays>

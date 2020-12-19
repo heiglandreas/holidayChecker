@@ -46,6 +46,7 @@ class DateFollowUpTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::isHoliday
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::dateMatches
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::replacedDays
      */
     public function testThatDateFollowupTestWorks(
         $dateTime,
