@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true">Ano Novo</date>
+    <easter offset="-47" free="true">Carnaval</easter>
+    <easter offset="-2" free="true">Sexta-feira Santa</easter>
+    <easter offset="0" free="true">Domingo de Páscoa</easter>
+    <easter offset="60" free="true">Corpo de Deus</easter>
+    <date day="25" month="4" free="true">Dia da Liberdade</date>
+    <date day="1" month="5" free="true">Dia do Trabalhador</date>
+    <date day="10" month="6" free="true">Dia de Portugal, de Camões e das Comunidades Portuguesas</date>
+    <date day="15" month="8" free="true">Assunção de Nossa Senhora</date>
+    <date day="5" month="10" free="true">Implantação da República</date>
+    <date day="1" month="11" free="true">Dia de Todos-os-Santos</date>
+    <date day="1" month="12" free="true">Restauração da Independência</date>
+    <date day="8" month="12" free="true">Imaculada Conceição</date>
+    <date day="25" month="12" free="true">Natal</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Portugal" lastChecked="2020-12-19">Wikipedia</resource>
+        <resource href="http://cite.gov.pt/asstscite/downloads/legislacao/CT25092017.pdf#page=95" lastChecked="2020-12-19">Official holiday rules</resource>
+    </resources>
+</holidays>
