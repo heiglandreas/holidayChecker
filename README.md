@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/heiglandreas/holidayChecker.svg?branch=master)](https://travis-ci.org/heiglandreas/holidayChecker)
+[![Build Status](https://github.com/heiglandreas/holidayChecker/workflows/Build/badge.svg)](https://github.com/heiglandreas/holidayChecker/actions?query=workflow%3ABuild)
 [![Coverage Status](https://coveralls.io/repos/github/heiglandreas/holidayChecker/badge.svg?branch=master)](https://coveralls.io/github/heiglandreas/holidayChecker?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/heiglandreas/holidayChecker/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/heiglandreas/holidayChecker/?branch=master)
 [![Code Climate](https://lima.codeclimate.com/github/heiglandreas/holidayChecker/badges/gpa.svg)](https://lima.codeclimate.com/github/heiglandreas/holidayChecker)
