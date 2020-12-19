@@ -83,6 +83,7 @@ Currently these countries are available:
 * Ireland (english and irish)
 * Spain (all provinces, spanish)
 * Portugal (mainland, Madeira and Azores, portuguese)
+* Denmark (danish)
 
 But the list is constantly extending.
 
