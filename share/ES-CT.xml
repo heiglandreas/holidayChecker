@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+    <xi:include href="ES.xml" parse="xml" xpointer="xpointer(*/*)">
+        <xi:fallback></xi:fallback>
+    </xi:include>
+    <date day="11" month="9" free="true">Diada Nacional de Catalunya</date>
+    <date day="26" month="12" free="true">Sant Esteve</date>
+    <easter offset="1" free="true">Lunes de Pascua</easter>
+</holidays>
