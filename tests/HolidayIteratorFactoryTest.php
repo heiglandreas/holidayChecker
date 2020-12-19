@@ -39,6 +39,7 @@ use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
 use PHPUnit\Framework\TestCase;
+use UnexpectedValueException;
 
 class HolidayIteratorFactoryTest extends TestCase
 {
@@ -82,5 +83,17 @@ class HolidayIteratorFactoryTest extends TestCase
         $result = $factory->createIteratorFromISO3166('DE');
 
         $this->assertInstanceof(HolidayIterator::class, $result);
+    }
+
+    /**
+     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::createIteratorFromISO3166
+     */
+    public function testThatFactoryThrowsExceptionForUnknownISOCode()
+    {
+        self::expectException(UnexpectedValueException::class);
+
+        $factory = new HolidayIteratorFactory();
+
+        $factory->createIteratorFromISO3166('unknown');
     }
 }
