@@ -86,6 +86,7 @@ Currently these countries are available:
 * Denmark (danish)
 * Sweden (swedish)
 * Norway (bokmål)
+* Poland (polish)
 
 But the list is constantly extending.
 
