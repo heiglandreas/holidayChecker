@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<holidays xmlns="https://www.heigl.org"
+<holidays xmlns="https://heigl.org/holidays"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
           xmlns:xi="http://www.w3.org/2001/XInclude">
     <resources>
         <resource href="http://www.landesrecht-bw.de/jportal/?quelle=jlink&amp;query=FeiertG+BW&amp;psml=bsbawueprod.psml&amp;max=true&amp;aiz=true" lastChecked="2020-04-01"/>

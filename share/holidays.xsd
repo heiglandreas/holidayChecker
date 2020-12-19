@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="https://www.heigl.org"
-           xmlns="https://www.heigl.org"
+           targetNamespace="https://heigl.org/holidays"
+           xmlns="https://heigl.org/holidays"
            elementFormDefault="qualified">
     <xs:simpleType name="monthInt">
         <xs:restriction base="xs:integer">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<holidays xmlns="https://www.heigl.org"
+<holidays xmlns="https://heigl.org/holidays"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
           xmlns:xi="http://www.w3.org/2001/XInclude">
     <dateFollowUp day="17" month="3" followup="monday" free="true">Saint Patrick's Day</dateFollowUp>
     <dateFollowUp day="12" month="7" followup="monday" free="true">Battle of the Boyne</dateFollowUp>

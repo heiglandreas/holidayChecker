@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<holidays xmlns="https://www.heigl.org"
+<holidays xmlns="https://heigl.org/holidays"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="https://www.heigl.org holidays.xsd"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
 >
     <date day="1" month="1" free="true">Nouvel An</date>
     <easter offset="0" free="false">Pâques</easter>
