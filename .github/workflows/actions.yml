@@ -95,7 +95,6 @@ jobs:
         run: ./tools/psalm
   coverage:
     needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     continue-on-error: false
     steps:
