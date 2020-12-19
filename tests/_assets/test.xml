@@ -7,4 +7,5 @@
     <dateFollowUp day="1" month="1" followup="thursday" free="true">dateFollowUp</dateFollowUp>
     <relative day="1" month="1" relation="next monday" free="true">relative</relative>
     <easter offset="0" free="true">easter</easter>
+    <easterorthodox offset="0" free="true">easter</easterorthodox>
 </holidays>

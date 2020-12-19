@@ -32,11 +32,13 @@ declare(strict_types=1);
 
 namespace Org_Heigl\HolidaycheckerTest;
 
+use Exception;
 use Org_Heigl\Holidaychecker\HolidayIterator;
 use Org_Heigl\Holidaychecker\HolidayIteratorFactory;
 use Org_Heigl\Holidaychecker\IteratorItem\Date;
 use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
+use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
 use PHPUnit\Framework\TestCase;
 use UnexpectedValueException;
@@ -64,6 +66,7 @@ class HolidayIteratorFactoryTest extends TestCase
         $this->assertInstanceof(DateFollowUp::class, $result[1]);
         $this->assertInstanceof(Relative::class, $result[2]);
         $this->assertInstanceof(Easter::class, $result[3]);
+        $this->assertInstanceof(EasterOrthodox::class, $result[4]);
     }
 
     /**
@@ -95,5 +98,14 @@ class HolidayIteratorFactoryTest extends TestCase
         $factory = new HolidayIteratorFactory();
 
         $factory->createIteratorFromISO3166('unknown');
+    }
+
+    public function testThatFactoryThrowsExceptionForInvalidXmlFile(): void
+    {
+        self::expectException(Exception::class);
+
+        $factory = new HolidayIteratorFactory();
+
+        $factory->createIteratorFromXmlFile(__DIR__ . '/_assets/invalid.xml');
     }
 }
