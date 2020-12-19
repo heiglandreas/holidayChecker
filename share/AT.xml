@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true">Neujahr</date>
+    <date day="6" month="1" free="true">Heilige Drei Könige</date>
+    <easter offset="-2" free="true" comment="Bank holiday but not a federal public holiday">Karfreitag</easter>
+    <easter offset="1" free="true">Ostermontag</easter>
+    <date day="1" month="5" free="true">Staatsfeiertag</date>
+    <easter offset="39" free="true">Christi Himmelfahrt</easter>
+    <easter offset="50" free="true">Pfingstmontag</easter>
+    <easter offset="60" free="true">Fronleichnam</easter>
+    <date day="15" month="8" free="true">Mariä Himmelfahrt</date>
+    <date day="26" month="10" free="true">Nationalfeiertag</date>
+    <date day="1" month="11" free="true">Allerheiligen</date>
+    <date day="8" month="12" free="true">Mariä Empfängnis</date>
+    <date day="24" month="12" free="true" comment="Bank holiday but not a federal public holiday">Weihnachten</date>
+    <date day="25" month="12" free="true">Christtag</date>
+    <date day="26" month="12" free="true">Stefanitag</date>
+    <date day="31" month="12" free="true" comment="Bank holiday but not a federal public holiday">Silvester</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Austria" lastChecked="2020-12-19">Wikipedia</resource>
+    </resources>
+</holidays>

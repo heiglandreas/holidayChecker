@@ -87,6 +87,7 @@ Currently these countries are available:
 * Sweden (swedish)
 * Norway (bokmål)
 * Poland (polish)
+* Austria (german)
 
 But the list is constantly extending.
 
