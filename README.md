@@ -82,6 +82,7 @@ Currently these countries are available:
 * South Africa (english)
 * Ireland (english and irish)
 * Spain (all provinces, spanish)
+* Portugal (mainland, Madeira and Azores, portuguese)
 
 But the list is constantly extending.
 
