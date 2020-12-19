@@ -57,7 +57,24 @@ jobs:
         run: composer update
       - name: test
         run: composer test
-#  analyze:
+  upload-xsd-file:
+    needs: [xml-lint, test]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    environment: github-actions
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Upload XST-File to heigl.org
+        shell: bash
+        env:
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
+        run: |
+          curl --ftp-create-dirs -T share/holidays.xsd -u "$FTP_USER":"$FTP_PASS" ftp://ftp.heigl.org:21/holidays.xsd
+
+  #  analyze:
 #    needs: test
 #    runs-on: ubuntu-latest
 #    continue-on-error: false
@@ -77,7 +94,7 @@ jobs:
 #        run: ./tools/psalm
   coverage:
     needs: test
-    #if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     continue-on-error: false
     steps:
@@ -92,11 +109,7 @@ jobs:
         run: composer update
       - name: run testsuite
         run: composer test-coverage
-#      - name: Upload coverage results to Coveralls
-#        env:
-#          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        run: composer upload-coverage
-      - name: upload2
+      - name: upload
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
