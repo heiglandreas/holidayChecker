@@ -33,6 +33,7 @@ declare(strict_types=1);
 namespace Org_Heigl\HolidaycheckerTest;
 
 use DateTimeImmutable;
+use DateTimeInterface;
 use IntlCalendar;
 use Mockery as M;
 use Org_Heigl\Holidaychecker\Calendar;
@@ -116,6 +117,32 @@ class CalendarDayTest extends TestCase
                 [4, 6, 2017, Calendar::ISLAMIC, IntlCalendar::DOW_THURSDAY],
             '4.Jumādá al-ākhirah 1437 should be Sunday'  =>
                 [4, 6, 2016, Calendar::ISLAMIC, IntlCalendar::DOW_SUNDAY],
+        ];
+    }
+
+    /**
+     * @dataProvider followUpIsCalculatedCorrectlyProvider
+     */
+    public function testThatFollowUpIsCalculatedCorrectly(
+        int $day,
+        int $month,
+        DateTimeInterface $dateTime,
+        string $followUp
+    ): void {
+        $cal = IntlCalendar::createInstance(null, '@calendar=' . Calendar::GREGORIAN);
+
+        $class = new CalendarDay($day, $month, $cal);
+        $class->setYear(2020);
+
+        self::assertTrue($class->isFollowUpDay($dateTime, $followUp));
+    }
+
+    public function followUpIsCalculatedCorrectlyProvider(): array
+    {
+        return [
+            [25, 11, new DateTimeImmutable('2020-11-29T12:00:00Z'), 'sunday'],
+            [30, 11, new DateTimeImmutable('2020-12-06T12:00:00Z'), 'sunday'],
+//            [28, 12, new DateTimeImmutable('2021-01-03T12:00:00Z'), 'sunday'],
         ];
     }
 }
