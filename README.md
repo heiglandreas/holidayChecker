@@ -84,6 +84,7 @@ Currently these countries are available:
 * Spain (all provinces, spanish)
 * Portugal (mainland, Madeira and Azores, portuguese)
 * Denmark (danish)
+* Sweden (swedish)
 
 But the list is constantly extending.
 
