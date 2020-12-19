@@ -85,6 +85,7 @@ Currently these countries are available:
 * Portugal (mainland, Madeira and Azores, portuguese)
 * Denmark (danish)
 * Sweden (swedish)
+* Norway (bokmål)
 
 But the list is constantly extending.
 
