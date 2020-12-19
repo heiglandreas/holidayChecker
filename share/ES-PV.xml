@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+    <xi:include href="ES.xml" parse="xml" xpointer="xpointer(*/*)">
+        <xi:fallback></xi:fallback>
+    </xi:include>
+    <easter offset="-3" free="true">Jueves Santo</easter>
+    <easter offset="1" free="true">Lunes de Pascua</easter>
+    <date day="25" month="10" free="true">Euskadi Eguna</date>
+</holidays>

@@ -79,8 +79,9 @@ Currently these countries are available:
 * Russia
 * Greece
 * Turkey
-* South Africa
-* Ireland
+* South Africa (english)
+* Ireland (english and irish)
+* Spain (all provinces, spanish)
 
 But the list is constantly extending.
 
