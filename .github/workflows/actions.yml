@@ -14,6 +14,8 @@ jobs:
           tools: phive
       - name: Download codesniffer
         run: phive --no-progress install --trust-gpg-keys 31C7E470E2138192 phpcs
+      - name: Install
+        run: composer install
       - name: check
         run: ./tools/phpcs
   xml-lint:
