@@ -1,6 +1,6 @@
 [![Build Status](https://github.com/heiglandreas/holidayChecker/workflows/Build/badge.svg)](https://github.com/heiglandreas/holidayChecker/actions?query=workflow%3ABuild)
-[![Coverage Status](https://coveralls.io/repos/github/heiglandreas/holidayChecker/badge.svg?branch=master)](https://coveralls.io/github/heiglandreas/holidayChecker?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/heiglandreas/holidayChecker/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/heiglandreas/holidayChecker/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/heiglandreas/holidayChecker/badge.svg?branch=main)](https://coveralls.io/github/heiglandreas/holidayChecker?branch=main)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/heiglandreas/holidayChecker/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/heiglandreas/holidayChecker/?branch=main)
 [![Code Climate](https://lima.codeclimate.com/github/heiglandreas/holidayChecker/badges/gpa.svg)](https://lima.codeclimate.com/github/heiglandreas/holidayChecker)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/151d3ea7c58d4f4eb7dc7b2073781657)](https://www.codacy.com/app/github_70/holidayChecker?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=heiglandreas/holidayChecker&amp;utm_campaign=Badge_Grade)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/36a28cf5-b7e4-474d-bded-8f6b70fa9ea8/mini.png)](https://insight.sensiolabs.com/projects/36a28cf5-b7e4-474d-bded-8f6b70fa9ea8)
