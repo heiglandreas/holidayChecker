@@ -10,6 +10,7 @@
   "require": {
     "php": "^7.3|^8.0",
     "ext-intl": "*",
+    "ext-dom": "*",
     "org_heigl/dateintervalcomparator": "^1.0"
   },
   "require-dev": {
@@ -26,6 +27,9 @@
     "psr-4" : {
       "Org_Heigl\\HolidaycheckerTest\\" : "tests/"
     }
+  },
+  "config": {
+    "sort-packages": true
   },
   "scripts" : {
     "check": [
@@ -50,7 +54,7 @@
     ],
     "cs-fix": "phpcbf",
     "test": "phpunit --colors=always",
-    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
-    "lintxml" : "for i in `ls share/*.xml` ; do xmllint --xinclude --noout --schema share/holidays.xsd $i; if [ ! $? -eq 0 ] ; then exit 1; fi; done || exit 1"
+    "lintxml" : "for i in `ls share/*.xml` ; do xmllint --xinclude --noout --schema share/holidays.xsd $i; if [ ! $? -eq 0 ] ; then exit 1; fi; done || exit 1",
+    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
   }
 }

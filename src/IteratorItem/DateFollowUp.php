@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -35,14 +38,19 @@ use IntlCalendar;
 
 class DateFollowUp implements HolidayIteratorItemInterface
 {
+    /** @var CalendarDay */
     private $day;
 
+    /** @var bool */
     private $holiday;
 
+    /** @var string */
     private $name;
 
+    /** @var string */
     private $followup;
 
+    /** @var array */
     private $replaced;
 
     public function __construct(string $name, bool $holiday, CalendarDay $day, string $followup, array $replaced = [])
@@ -56,7 +64,7 @@ class DateFollowUp implements HolidayIteratorItemInterface
 
     public function dateMatches(\DateTimeInterface $date) : bool
     {
-        $weekday = $this->day->getWeekdayForGregorianYear($date->format('Y'));
+        $weekday = $this->day->getWeekdayForGregorianYear((int) $date->format('Y'));
 
         if (in_array($weekday, $this->replaced)) {
             return $this->day->isFollowUpDay($date, $this->followup);
@@ -94,7 +102,7 @@ class DateFollowUp implements HolidayIteratorItemInterface
             ];
         }
 
-        return array_map(function ($day) use ($daymap) {
+        return array_map(function (string $day) use ($daymap) {
             if (! isset($daymap[$day])) {
                 return null;
             }

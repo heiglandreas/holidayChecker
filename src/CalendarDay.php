@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -34,12 +37,16 @@ use IntlCalendar;
 
 class CalendarDay
 {
+    /** @var int */
     private $day;
 
+    /** @var int */
     private $month;
 
+    /** @var int|null */
     private $year;
 
+    /** @var IntlCalendar */
     private $calendar;
 
     public function __construct(int $day, int $month, IntlCalendar $calendar)
@@ -56,7 +63,7 @@ class CalendarDay
         $this->calendar->set(IntlCalendar::FIELD_MILLISECOND, 0);
     }
 
-    public function setYear(int $year)
+    public function setYear(int $year): void
     {
         $this->year = $year;
         $this->calendar->set(IntlCalendar::FIELD_YEAR, $year);
@@ -121,7 +128,7 @@ class CalendarDay
         $cal = clone $this->calendar;
 
         $datetime = $cal->toDateTime();
-        $yearDiff = $gregorianYear - $datetime->format('Y');
+        $yearDiff = $gregorianYear - (int) $datetime->format('Y');
         $cal->set(IntlCalendar::FIELD_YEAR, $cal->get(IntlCalendar::FIELD_YEAR) + $yearDiff);
         $cal->set(IntlCalendar::FIELD_MONTH, $this->month - 1);
         $cal->set(IntlCalendar::FIELD_DAY_OF_MONTH, $this->day);

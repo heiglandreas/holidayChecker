@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,11 +32,13 @@
 
 namespace Org_Heigl\Holidaychecker;
 
+use DOMElement;
 use Org_Heigl\Holidaychecker\IteratorItem\Date;
 use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
+use RuntimeException;
 use function explode;
 
 class HolidayIteratorFactory
@@ -92,29 +97,29 @@ class HolidayIteratorFactory
     }
 
 
-    private function getElement(\DOMElement $child) : HolidayIteratorItemInterface
+    private function getElement(DOMElement $child) : HolidayIteratorItemInterface
     {
         switch ($child->nodeName) {
             case 'easter':
                 return new Easter(
                     $child->textContent,
                     $this->getFree($child),
-                    $child->getAttribute('offset')
+                    (int) $child->getAttribute('offset')
                 );
             case 'easterorthodox':
                 return new EasterOrthodox(
                     $child->textContent,
                     $this->getFree($child),
-                    $child->getAttribute('offset')
+                    (int) $child->getAttribute('offset')
                 );
             case 'date':
                 $day = CalendarDayFactory::createCalendarDay(
-                    $child->getAttribute('day'),
-                    $child->getAttribute('month'),
+                    (int) $child->getAttribute('day'),
+                    (int) $child->getAttribute('month'),
                     ($child->hasAttribute('calendar')?$child->getAttribute('calendar'): 'gregorian')
                 );
                 if ($child->hasAttribute('year')) {
-                    $day->setYear($child->getAttribute('year'));
+                    $day->setYear((int) $child->getAttribute('year'));
                 }
                 return new Date(
                     $child->textContent,
@@ -123,8 +128,8 @@ class HolidayIteratorFactory
                 );
             case 'dateFollowUp':
                 $day = CalendarDayFactory::createCalendarDay(
-                    $child->getAttribute('day'),
-                    $child->getAttribute('month'),
+                    (int) $child->getAttribute('day'),
+                    (int) $child->getAttribute('month'),
                     ($child->hasAttribute('calendar')?$child->getAttribute('calendar'): 'gregorian')
                 );
 
@@ -139,14 +144,16 @@ class HolidayIteratorFactory
                 return new Relative(
                     $child->textContent,
                     $this->getFree($child),
-                    $child->getAttribute('day'),
-                    $child->getAttribute('month'),
+                    (int) $child->getAttribute('day'),
+                    (int) $child->getAttribute('month'),
                     $child->getAttribute('relation')
                 );
+            default:
+                throw new RuntimeException('Unknown element encountered');
         }
     }
 
-    private function getFree(\DOMElement $element)
+    private function getFree(DOMElement $element): bool
     {
         return ($element->getAttribute('free') === "true");
     }

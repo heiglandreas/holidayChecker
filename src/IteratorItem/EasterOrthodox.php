@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,15 +32,18 @@
 
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
+use DateInterval;
+use DateTimeImmutable;
+
 class EasterOrthodox extends Easter
 {
     /**
      * @param int $year
      *
      * @see http://www.smart.net/~mmontes/ortheast.html
-     * @return \DateTimeImmutable
+     * @return DateTimeImmutable
      */
-    private function getOrthodoxEaster(int $year) : \DateTimeImmutable
+    private function getOrthodoxEaster(int $year) : DateTimeImmutable
     {
         $R1 = $year % 19;
         $R2 = $year % 4;
@@ -51,19 +57,19 @@ class EasterOrthodox extends Easter
         // Don't touch this. It just seems to work…
         // And doing the "same" in DateTime (adding a period of $RC days doesn't
         // yield the same result…
-        return new \DateTimeImmutable('@' . jdtounix(juliantojd(3, 21, $year) + $RC));
+        return new DateTimeImmutable('@' . jdtounix(juliantojd(3, 21, $year) + $RC));
     }
 
-    protected function getEaster(int $year) : \DateTimeImmutable
+    protected function getEaster(int $year) : DateTimeImmutable
     {
         $jewishYear = 3760 + $year;
-        $endOfPessach = new \DateTimeImmutable(
+        $endOfPessach = new DateTimeImmutable(
             '@' . jdtounix(jewishtojd(1, 20, $jewishYear))
         );
         $orthodoxEaster = $this->getOrthodoxEaster($year);
         if ($endOfPessach > $orthodoxEaster) {
-            $weekday = $endOfPessach->format('w');
-            return $endOfPessach->add(new \DateInterval('P' . (7-$weekday) . 'D'));
+            $weekday = (int) $endOfPessach->format('w');
+            return $endOfPessach->add(new DateInterval('P' . (7-$weekday) . 'D'));
         }
 
         return $orthodoxEaster;
