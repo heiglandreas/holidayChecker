@@ -1,0 +1,117 @@
+name: Build
+on: [push]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+          tools: phive
+      - name: Download codesniffer
+        run: phive --no-progress install --trust-gpg-keys 31C7E470E2138192 phpcs
+      - name: check
+        run: ./tools/phpcs
+  xml-lint:
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+      - name: Install xmllint
+        run: sudo apt-get install libxml2-utils
+      - name: lint
+        run: composer lintxml
+  test:
+    needs: [check, xml-lint]
+    runs-on: ubuntu-latest # ${{ matrix.operating-system }}
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      matrix:
+        # operating-system: [ubuntu-latest, windows-latest, macos-latest]
+        php-versions: ['7.3', '7.4', '8.0']
+        experimental: [false]
+        include:
+          - php-versions: '8.1'
+            experimental: true
+    name: PHP ${{ matrix.php-versions }} # Test on ${{ matrix.operating-system }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: sodium
+          ini-values: post_max_size=256M, short_open_tag=On
+          coverage: xdebug
+      - name: prepare
+        run: composer update
+      - name: test
+        run: composer test
+  upload-xsd-file:
+    needs: [xml-lint, test]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    environment: github-actions
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Upload XST-File to heigl.org
+        shell: bash
+        env:
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
+        run: |
+          curl --ftp-create-dirs -T share/holidays.xsd -u "$FTP_USER":"$FTP_PASS" ftp://ftp.heigl.org:21/holidays.xsd
+
+  #  analyze:
+#    needs: test
+#    runs-on: ubuntu-latest
+#    continue-on-error: false
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#      - name: Setup PHP
+#        uses: shivammathur/setup-php@v2
+#        with:
+#          php-version: "7.4"
+#          tools: phive
+#      - name: Download psalm
+#        run: phive --no-progress install --trust-gpg-keys 8A03EA3B385DBAA1 psalm
+#      - name: install
+#        run: composer update --no-dev
+#      - name: analyze
+#        run: ./tools/psalm
+  coverage:
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+          coverage: xdebug
+      - name: Install
+        run: composer update
+      - name: run testsuite
+        run: composer test-coverage
+      - name: upload
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          composer global require php-coveralls/php-coveralls
+          php-coveralls --coverage_clover=clover.xml -v
