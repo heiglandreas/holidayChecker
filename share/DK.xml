@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true">Nytårsdag</date>
+    <easter offset="-7" free="true">Palmesøndag</easter>
+    <easter offset="-3" free="true">Skærtorsdag</easter>
+    <easter offset="-2" free="true">Langfredag</easter>
+    <easter offset="0" free="true">Påskedag</easter>
+    <easter offset="1" free="true">Anden påskedag</easter>
+    <easter offset="25" free="true">Store bededag</easter>
+    <easter offset="39" free="true">Kristi Himmelfartsdag</easter>
+    <easter offset="49" free="true">Pinsedag</easter>
+    <easter offset="50" free="true">Anden Pinsedag</easter>
+    <date day="5" month="6" free="true">Grundlovsdag</date>
+    <date day="24" month="12" free="true" comment="shops are closed">Juleaften</date>
+    <date day="25" month="12" free="true">Juledag</date>
+    <date day="26" month="12" free="true">Anden juledag</date>
+    <date day="31" month="12" free="true" comment="Shops close at 3PM">Nytårsaften</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Denmark" lastChecked="2020-12-19">Wikipedia</resource>
+    </resources>
+</holidays>

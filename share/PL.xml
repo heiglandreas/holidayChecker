@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true">Nowy Rok</date>
+    <date day="6" month="6" free="true">Święto Trzech Króli</date>
+    <easter offset="0" free="true">pierwszy dzień Wielkiej Nocy</easter>
+    <easter offset="1" free="true">drugi dzień Wielkiej Nocy </easter>
+    <date day="1" month="5" free="true">Święto Państwowe</date>
+    <date day="3" month="5" free="true">Święto Narodowe Trzeciego Maja</date>
+    <easter offset="49" free="true">pierwszy dzień Zielonych Świątek</easter>
+    <easter offset="60" free="true">dzień Bożego Ciała</easter>
+    <date day="15" month="8" free="true">Wniebowzięcie Najświętszej Maryi Panny</date>
+    <date day="1" month="11" free="true">Wszystkich Świętych</date>
+    <date day="11" month="11" free="true">Narodowe Święto Niepodległości</date>
+    <date day="25" month="12" free="true">pierwszy dzień Bożego Narodzenia</date>
+    <date day="26" month="12" free="true">drugi dzień Bożego Narodzenia</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Poland" lastChecked="2020-12-19">Wikipedia</resource>
+    </resources>
+</holidays>

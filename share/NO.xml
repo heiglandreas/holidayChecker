@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true">Første nyttårsdag</date>
+    <easter offset="-3" free="true">Skjærtorsdag</easter>
+    <easter offset="-2" free="true">Langfredag</easter>
+    <easter offset="0" free="true">Første påskedag</easter>
+    <easter offset="1" free="true">	Andre påskedag</easter>
+    <date day="1" month="5" free="true">Første mai</date>
+    <date day="17" month="5" free="true">Syttende mai or Grunnlovsdagen</date>
+    <easter offset="39" free="true">Kristi himmelfartsdag</easter>
+    <easter offset="49" free="true">Første pinsedag</easter>
+    <easter offset="50" free="true">Andre pinsedag</easter>
+    <date day="25" month="12" free="true">Første juledag</date>
+    <date day="26" month="12" free="true">Andre juledag</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Norway" lastChecked="2020-12-19">Wikipedia</resource>
+    </resources>
+</holidays>

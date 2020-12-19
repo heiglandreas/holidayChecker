@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true">Nyårsdagen</date>
+    <date day="6" month="1" free="true">Trettondedag jul</date>
+    <easter offset="-2" free="true">Långfredagen</easter>
+    <easter offset="0" free="true">påskdagen</easter>
+    <easter offset="1" free="true">Annandag påsk</easter>
+    <date day="1" month="5" free="true">Första Maj</date>
+    <easter offset="39" free="true">Kristi himmelsfärds dag</easter>
+    <date day="6" month="6" free="true">Sveriges nationaldag</date>
+    <easter offset="49" free="true">pingstdagen</easter>
+    <relative day="18" month="6" relation="next friday" free="true">midsommarafton</relative>
+    <relative day="19" month="6" relation="next saturday" free="true">Midsommardagen</relative>
+    <relative day="30" month="10" relation="next saturday" free="true">Alla helgons dag</relative>
+    <date day="24" month="12" free="true" comment="shops are closed">julafton</date>
+    <date day="25" month="12" free="true">Juldagen</date>
+    <date day="26" month="12" free="true">Annandag jul</date>
+    <date day="31" month="12" free="true" comment="Shops close at 3PM">nyårsafton</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Sweden" lastChecked="2020-12-19">Wikipedia</resource>
+    </resources>
+</holidays>
