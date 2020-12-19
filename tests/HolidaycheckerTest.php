@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,9 +32,16 @@
 
 namespace Org_Heigl\HolidaycheckerTest;
 
+use DateInterval;
+use DatePeriod;
+use DateTime;
+use DateTimeImmutable;
 use Org_Heigl\Holidaychecker\Holidaychecker;
 use Org_Heigl\Holidaychecker\HolidayIteratorFactory;
 use PHPUnit\Framework\TestCase;
+use function date;
+use function microtime;
+use function sprintf;
 
 class HolidaycheckerTest extends TestCase
 {
@@ -71,8 +81,8 @@ class HolidaycheckerTest extends TestCase
     public function integrationProvider()
     {
         return [
-            [new \DateTime('2017-04-16'), false, true, 'Ostersonntag'],
-            [new \DateTime('2017-04-17'), true, true, 'Ostermontag'],
+            [new DateTime('2017-04-16'), false, true, 'Ostersonntag'],
+            [new DateTime('2017-04-17'), true, true, 'Ostermontag'],
         ];
     }
 
@@ -108,10 +118,10 @@ class HolidaycheckerTest extends TestCase
         $checker = new Holidaychecker($iterator);
 
         $currentYear = date('Y');
-        $start = new \DateTimeImmutable($currentYear . '-01-01');
-        $end   = new \DateTimeImmutable($currentYear . '-12-31');
-        $interval = new \DateInterval('P1D');
-        $period = new \DatePeriod($start, $interval, $end);
+        $start = new DateTimeImmutable($currentYear . '-01-01');
+        $end   = new DateTimeImmutable($currentYear . '-12-31');
+        $interval = new DateInterval('P1D');
+        $period = new DatePeriod($start, $interval, $end);
 
         $time = microtime(true);
         foreach ($period as $date) {

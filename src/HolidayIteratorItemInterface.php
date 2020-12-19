@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,11 +32,13 @@
 
 namespace Org_Heigl\Holidaychecker;
 
+use DateTimeInterface;
+
 interface HolidayIteratorItemInterface
 {
-    public function dateMatches(\DateTimeInterface $date) : bool;
+    public function dateMatches(DateTimeInterface $date): bool;
 
-    public function getName() : string;
+    public function getName(): string;
 
-    public function isHoliday() : bool;
+    public function isHoliday(): bool;
 }

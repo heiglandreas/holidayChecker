@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -31,10 +34,11 @@ namespace Org_Heigl\Holidaychecker;
 
 use IntlCalendar;
 use Org_Heigl\Holidaychecker\Exceptions\UnknownCalendar;
+use function sprintf;
 
 class CalendarDayFactory
 {
-    public static function createCalendarDay(int $day, int $month, string $calendar) : CalendarDay
+    public static function createCalendarDay(int $day, int $month, string $calendar): CalendarDay
     {
         if (! Calendar::isValidCalendarName($calendar)) {
             throw new UnknownCalendar(sprintf(

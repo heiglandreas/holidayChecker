@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -33,5 +36,4 @@ use UnexpectedValueException;
 
 class UnknownCalendar extends UnexpectedValueException
 {
-
 }

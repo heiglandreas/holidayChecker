@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,6 +32,7 @@
 
 namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
+use DateTime;
 use Org_Heigl\Holidaychecker\Calendar;
 use Org_Heigl\Holidaychecker\CalendarDayFactory;
 use Org_Heigl\Holidaychecker\IteratorItem\Date;
@@ -58,10 +62,10 @@ class DateTest extends TestCase
     public function dateProvider()
     {
         return [
-            [new \DateTime('2017-12-24 12:00:00+00:00'), 24, 12, null, true, 'test', true],
-            [new \DateTime('2017-12-25 12:00:00+00:00'), 24, 12, null, false, 'test', true],
-            [new \DateTime('2017-04-17 12:00:00+00:00'), 17, 04, 2017, true, 'test', false],
-            [new \DateTime('2016-04-17 12:00:00+00:00'), 17, 04, 2017, false, 'test', true],
+            [new DateTime('2017-12-24 12:00:00+00:00'), 24, 12, null, true, 'test', true],
+            [new DateTime('2017-12-25 12:00:00+00:00'), 24, 12, null, false, 'test', true],
+            [new DateTime('2017-04-17 12:00:00+00:00'), 17, 04, 2017, true, 'test', false],
+            [new DateTime('2016-04-17 12:00:00+00:00'), 17, 04, 2017, false, 'test', true],
         ];
     }
 }

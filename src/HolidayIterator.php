@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,7 +32,9 @@
 
 namespace Org_Heigl\Holidaychecker;
 
-class HolidayIterator extends \ArrayObject
+use ArrayObject;
+
+class HolidayIterator extends ArrayObject
 {
     public function append($value)
     {

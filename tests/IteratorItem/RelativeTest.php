@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,6 +32,7 @@
 
 namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
+use DateTime;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
 use PHPUnit\Framework\TestCase;
 
@@ -52,11 +56,11 @@ class RelativeTest extends TestCase
     public function dateProvider()
     {
         return [
-            [new \DateTime('2017-12-03 12:00:00+00:00'), 25, 12, 'last sunday -3 weeks', true, 'test', true],
-            [new \DateTime('2017-12-17 12:00:00+00:00'), 24, 12, 'last sunday', true, 'test', true],
-            [new \DateTime('2017-12-18 12:00:00+00:00'), 24, 12, 'last sunday', false, 'test', true],
-            [new \DateTime('2017-06-19 12:00:00+00:00'), 17, 04, 'next wednesday +2 months', true, 'test', false],
-            [new \DateTime('2017-06-18 12:00:00+00:00'), 17, 04, 'next wednesday +2 months', false, 'test', false],
+            [new DateTime('2017-12-03 12:00:00+00:00'), 25, 12, 'last sunday -3 weeks', true, 'test', true],
+            [new DateTime('2017-12-17 12:00:00+00:00'), 24, 12, 'last sunday', true, 'test', true],
+            [new DateTime('2017-12-18 12:00:00+00:00'), 24, 12, 'last sunday', false, 'test', true],
+            [new DateTime('2017-06-19 12:00:00+00:00'), 17, 04, 'next wednesday +2 months', true, 'test', false],
+            [new DateTime('2017-06-18 12:00:00+00:00'), 17, 04, 'next wednesday +2 months', false, 'test', false],
         ];
     }
 }

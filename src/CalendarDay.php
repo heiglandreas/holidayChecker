@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -34,12 +37,16 @@ use IntlCalendar;
 
 class CalendarDay
 {
+    /** @var int */
     private $day;
 
+    /** @var int */
     private $month;
 
+    /** @var int|null */
     private $year;
 
+    /** @var IntlCalendar */
     private $calendar;
 
     public function __construct(int $day, int $month, IntlCalendar $calendar)
@@ -49,20 +56,20 @@ class CalendarDay
         $this->year     = null;
         $this->calendar = $calendar;
         $this->calendar->set(IntlCalendar::FIELD_DAY_OF_MONTH, $day);
-        $this->calendar->set(IntlCalendar::FIELD_MONTH, ($month - 1));
+        $this->calendar->set(IntlCalendar::FIELD_MONTH, $month - 1);
         $this->calendar->set(IntlCalendar::FIELD_HOUR_OF_DAY, 12);
         $this->calendar->set(IntlCalendar::FIELD_MINUTE, 0);
         $this->calendar->set(IntlCalendar::FIELD_SECOND, 0);
         $this->calendar->set(IntlCalendar::FIELD_MILLISECOND, 0);
     }
 
-    public function setYear(int $year)
+    public function setYear(int $year): void
     {
         $this->year = $year;
         $this->calendar->set(IntlCalendar::FIELD_YEAR, $year);
     }
 
-    public function isSameDay(DateTimeInterface $dateTime) : bool
+    public function isSameDay(DateTimeInterface $dateTime): bool
     {
         $cal         = clone $this->calendar;
         $cal->setTime($dateTime->getTimestamp() * 1000);
@@ -73,18 +80,14 @@ class CalendarDay
             return false;
         }
 
-        if ($cal->get(IntlCalendar::FIELD_MONTH) !== ($this->calendar->get(IntlCalendar::FIELD_MONTH))) {
+        if ($cal->get(IntlCalendar::FIELD_MONTH) !== $this->calendar->get(IntlCalendar::FIELD_MONTH)) {
             return false;
         }
 
-        if ($cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) !== $this->calendar->get(IntlCalendar::FIELD_DAY_OF_MONTH)) {
-            return false;
-        }
-
-        return true;
+        return $cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) === $this->calendar->get(IntlCalendar::FIELD_DAY_OF_MONTH);
     }
 
-    public function isFollowUpDay(DateTimeInterface $dateTime, string $followUpDay) : bool
+    public function isFollowUpDay(DateTimeInterface $dateTime, string $followUpDay): bool
     {
         $cal = clone $this->calendar;
         $cal->set(IntlCalendar::FIELD_YEAR, (int) $dateTime->format('Y'));
@@ -98,30 +101,26 @@ class CalendarDay
             return false;
         }
 
-        if ($cal->get(IntlCalendar::FIELD_MONTH) !== ($cal2->get(IntlCalendar::FIELD_MONTH))) {
+        if ($cal->get(IntlCalendar::FIELD_MONTH) !== $cal2->get(IntlCalendar::FIELD_MONTH)) {
             return false;
         }
 
-        if ($cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) !== $cal2->get(IntlCalendar::FIELD_DAY_OF_MONTH)) {
-            return false;
-        }
-
-        return true;
+        return $cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) === $cal2->get(IntlCalendar::FIELD_DAY_OF_MONTH);
     }
 
-    public function getWeekdayForGregorianYear(int $year) : int
+    public function getWeekdayForGregorianYear(int $year): int
     {
         $cal = $this->getDayForGregorianYear($year);
 
         return $cal->get(IntlCalendar::FIELD_DAY_OF_WEEK);
     }
 
-    private function getDayForGregorianYear(int $gregorianYear) : IntlCalendar
+    private function getDayForGregorianYear(int $gregorianYear): IntlCalendar
     {
         $cal = clone $this->calendar;
 
         $datetime = $cal->toDateTime();
-        $yearDiff = $gregorianYear - $datetime->format('Y');
+        $yearDiff = $gregorianYear - (int) $datetime->format('Y');
         $cal->set(IntlCalendar::FIELD_YEAR, $cal->get(IntlCalendar::FIELD_YEAR) + $yearDiff);
         $cal->set(IntlCalendar::FIELD_MONTH, $this->month - 1);
         $cal->set(IntlCalendar::FIELD_DAY_OF_MONTH, $this->day);

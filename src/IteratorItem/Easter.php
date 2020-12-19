@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,8 +32,13 @@
 
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
+use DateInterval;
+use DateTimeImmutable;
+use DateTimeInterface;
+use DateTimeZone;
 use Org_Heigl\DateIntervalComparator\DateIntervalComparator;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
+use function easter_days;
 
 class Easter implements HolidayIteratorItemInterface
 {
@@ -47,21 +55,17 @@ class Easter implements HolidayIteratorItemInterface
         $this->name = $name;
     }
 
-    public function dateMatches(\DateTimeInterface $date) : bool
+    public function dateMatches(DateTimeInterface $date): bool
     {
         $easter = $this->getEaster((int) $date->format('Y'));
         if ($this->offset < 0) {
-            $day = $easter->sub(new \DateInterval('P' . $this->offset * -1 . 'D'));
+            $day = $easter->sub(new DateInterval('P' . $this->offset * -1 . 'D'));
         } else {
-            $day = $easter->add(new \DateInterval('P' . $this->offset . 'D'));
+            $day = $easter->add(new DateInterval('P' . $this->offset . 'D'));
         }
 
         $comparator = new DateIntervalComparator();
-        if (0 <= $comparator->compare($day->diff($date), new \DateInterval('P1D'))) {
-            return false;
-        }
-
-        return true;
+        return 0 > $comparator->compare($day->diff($date), new DateInterval('P1D'));
     }
 
     public function getName(): string
@@ -74,12 +78,11 @@ class Easter implements HolidayIteratorItemInterface
         return $this->holiday;
     }
 
-
-    protected function getEaster(int $year) : \DateTimeImmutable
+    protected function getEaster(int $year): DateTimeImmutable
     {
-        $base = new \DateTimeImmutable($year . "-03-21", new \DateTimeZone('UTC'));
+        $base = new DateTimeImmutable($year . "-03-21", new DateTimeZone('UTC'));
         $days = easter_days($year);
 
-        return $base->add(new \DateInterval("P{$days}D"));
+        return $base->add(new DateInterval("P{$days}D"));
     }
 }

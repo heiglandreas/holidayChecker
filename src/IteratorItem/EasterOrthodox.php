@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,41 +32,47 @@
 
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
+use DateInterval;
+use DateTimeImmutable;
+use function jdtounix;
+use function jewishtojd;
+use function juliantojd;
+
 class EasterOrthodox extends Easter
 {
     /**
      * @param int $year
      *
      * @see http://www.smart.net/~mmontes/ortheast.html
-     * @return \DateTimeImmutable
+     * @return DateTimeImmutable
      */
-    private function getOrthodoxEaster(int $year) : \DateTimeImmutable
+    private function getOrthodoxEaster(int $year): DateTimeImmutable
     {
-        $R1 = $year % 19;
-        $R2 = $year % 4;
-        $R3 = $year % 7;
-        $RA = 19 * $R1 + 16;
-        $R4 = $RA % 30;
-        $RB = 2 * $R2 + 4 * $R3 + 6 * $R4;
-        $R5 = $RB % 7;
-        $RC = $R4 + $R5;
+        $r1 = $year % 19;
+        $r2 = $year % 4;
+        $r3 = $year % 7;
+        $rA = 19 * $r1 + 16;
+        $r4 = $rA % 30;
+        $rB = 2 * $r2 + 4 * $r3 + 6 * $r4;
+        $r5 = $rB % 7;
+        $rC = $r4 + $r5;
 
         // Don't touch this. It just seems to work…
-        // And doing the "same" in DateTime (adding a period of $RC days doesn't
+        // And doing the "same" in DateTime (adding a period of $rC days doesn't
         // yield the same result…
-        return new \DateTimeImmutable('@' . jdtounix(juliantojd(3, 21, $year) + $RC));
+        return new DateTimeImmutable('@' . jdtounix(juliantojd(3, 21, $year) + $rC));
     }
 
-    protected function getEaster(int $year) : \DateTimeImmutable
+    protected function getEaster(int $year): DateTimeImmutable
     {
         $jewishYear = 3760 + $year;
-        $endOfPessach = new \DateTimeImmutable(
+        $endOfPessach = new DateTimeImmutable(
             '@' . jdtounix(jewishtojd(1, 20, $jewishYear))
         );
         $orthodoxEaster = $this->getOrthodoxEaster($year);
         if ($endOfPessach > $orthodoxEaster) {
-            $weekday = $endOfPessach->format('w');
-            return $endOfPessach->add(new \DateInterval('P' . (7-$weekday) . 'D'));
+            $weekday = (int) $endOfPessach->format('w');
+            return $endOfPessach->add(new DateInterval('P' . (7-$weekday) . 'D'));
         }
 
         return $orthodoxEaster;

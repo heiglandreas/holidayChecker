@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,6 +32,7 @@
 
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
+use DateTimeInterface;
 use Org_Heigl\Holidaychecker\CalendarDay;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
 
@@ -47,7 +51,7 @@ class Date implements HolidayIteratorItemInterface
         $this->name = $name;
     }
 
-    public function dateMatches(\DateTimeInterface $date) : bool
+    public function dateMatches(DateTimeInterface $date): bool
     {
         return $this->calendarDay->isSameDay($date);
     }

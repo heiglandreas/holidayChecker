@@ -14,6 +14,8 @@ jobs:
           tools: phive
       - name: Download codesniffer
         run: phive --no-progress install --trust-gpg-keys 31C7E470E2138192 phpcs
+      - name: Install
+        run: composer install
       - name: check
         run: ./tools/phpcs
   xml-lint:
@@ -73,25 +75,24 @@ jobs:
           FTP_PASS: ${{ secrets.FTP_PASS }}
         run: |
           curl --ftp-create-dirs -T share/holidays.xsd -u "$FTP_USER":"$FTP_PASS" ftp://ftp.heigl.org:21/holidays.xsd
-
-  #  analyze:
-#    needs: test
-#    runs-on: ubuntu-latest
-#    continue-on-error: false
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v2
-#      - name: Setup PHP
-#        uses: shivammathur/setup-php@v2
-#        with:
-#          php-version: "7.4"
-#          tools: phive
-#      - name: Download psalm
-#        run: phive --no-progress install --trust-gpg-keys 8A03EA3B385DBAA1 psalm
-#      - name: install
-#        run: composer update --no-dev
-#      - name: analyze
-#        run: ./tools/psalm
+  analyze:
+    needs: test
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+          tools: phive
+      - name: Download psalm
+        run: phive --no-progress install --trust-gpg-keys 8A03EA3B385DBAA1 psalm
+      - name: install
+        run: composer update --no-dev
+      - name: analyze
+        run: ./tools/psalm
   coverage:
     needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'

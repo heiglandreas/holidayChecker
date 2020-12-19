@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
@@ -29,6 +32,7 @@
 
 namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
+use DateTime;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use PHPUnit\Framework\TestCase;
 
@@ -53,10 +57,10 @@ class EasterTest extends TestCase
     public function easterProvider()
     {
         return [
-            [new \DateTime('2017-04-06 12:00:00+00:00'), -10, true, 'test', true],
-            [new \DateTime('2017-04-16 12:00:00+00:00'), 0, true, 'test', true],
-            [new \DateTime('2017-04-17 12:00:00+00:00'), 0, false, 'test', false],
-            [new \DateTime('2017-04-17 12:00:00+00:00'), 1, true, 'test', true],
+            [new DateTime('2017-04-06 12:00:00+00:00'), -10, true, 'test', true],
+            [new DateTime('2017-04-16 12:00:00+00:00'), 0, true, 'test', true],
+            [new DateTime('2017-04-17 12:00:00+00:00'), 0, false, 'test', false],
+            [new DateTime('2017-04-17 12:00:00+00:00'), 1, true, 'test', true],
         ];
     }
 }
