@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude">
+    <date day="1" month="1" free="true">New Year's Day</date>
+    <date day="17" month="3" free="true">Saint Patrick's Day</date>
+    <easter offset="1" free="true">Easter Monday</easter>
+    <relative day="1" month="5" relation="first monday" free="true">May Day</relative>
+    <relative day="1" month="6" relation="first monday" free="true">June Holiday</relative>
+    <relative day="1" month="8" relation="first monday" free="true">August Holiday</relative>
+    <relative day="1" month="8" relation="last monday" free="true">October Holiday</relative>
+    <date day="25" month="12" free="true">Christmas Day</date>
+    <date day="26" month="12" free="true">Saint Stephen's Day</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_the_Republic_of_Ireland" lastChecked="2020-12-19">Wikipedia</resource>
+    </resources>
+</holidays>
