@@ -32,7 +32,10 @@ declare(strict_types=1);
 
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
+use DateTimeImmutable;
+use DateTimeInterface;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
+use function sprintf;
 
 class Relative implements HolidayIteratorItemInterface
 {
@@ -55,9 +58,9 @@ class Relative implements HolidayIteratorItemInterface
         $this->name = $name;
     }
 
-    public function dateMatches(\DateTimeInterface $date) : bool
+    public function dateMatches(DateTimeInterface $date): bool
     {
-        $day = new \DateTimeImmutable(sprintf(
+        $day = new DateTimeImmutable(sprintf(
             '%s-%s-%s',
             $date->format('Y'),
             $this->month,
@@ -66,7 +69,7 @@ class Relative implements HolidayIteratorItemInterface
 
         $day = $day->modify($this->relation);
 
-        return $date->format('Y-m-d') == $day->format('Y-m-d');
+        return $date->format('Y-m-d') === $day->format('Y-m-d');
     }
 
     public function getName(): string

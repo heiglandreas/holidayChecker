@@ -44,17 +44,17 @@ class Holiday
         $this->name = $name;
     }
 
-    public function isHoliday() : bool
+    public function isHoliday(): bool
     {
         return $this->holiday;
     }
 
-    public function isNamed() : bool
+    public function isNamed(): bool
     {
         return $this->name !== '';
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }

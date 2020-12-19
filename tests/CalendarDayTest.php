@@ -32,12 +32,12 @@ declare(strict_types=1);
 
 namespace Org_Heigl\HolidaycheckerTest;
 
+use DateTimeImmutable;
+use IntlCalendar;
+use Mockery as M;
 use Org_Heigl\Holidaychecker\Calendar;
 use Org_Heigl\Holidaychecker\CalendarDay;
 use PHPUnit\Framework\TestCase;
-use IntlCalendar;
-use DateTimeImmutable;
-use Mockery as M;
 
 class CalendarDayTest extends TestCase
 {

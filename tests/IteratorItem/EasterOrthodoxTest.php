@@ -32,7 +32,7 @@ declare(strict_types=1);
 
 namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
-use Org_Heigl\Holidaychecker\IteratorItem\Easter;
+use DateTime;
 use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
 use PHPUnit\Framework\TestCase;
 
@@ -56,10 +56,10 @@ class EasterOrthodoxTest extends TestCase
     public function easterProvider()
     {
         return [
-            [new \DateTime('2016-04-20 12:00:00+00:00'), -10, true, 'test', true],
-            [new \DateTime('2016-05-01 12:00:00+00:00'), 0, true, 'test', true],
-            [new \DateTime('2017-04-16 12:00:00+00:00'), 0, true, 'test', false],
-            [new \DateTime('2018-04-08 12:00:00+00:00'), 0, true, 'test', true],
+            [new DateTime('2016-04-20 12:00:00+00:00'), -10, true, 'test', true],
+            [new DateTime('2016-05-01 12:00:00+00:00'), 0, true, 'test', true],
+            [new DateTime('2017-04-16 12:00:00+00:00'), 0, true, 'test', false],
+            [new DateTime('2018-04-08 12:00:00+00:00'), 0, true, 'test', true],
         ];
     }
 }

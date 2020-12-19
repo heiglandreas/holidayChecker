@@ -32,6 +32,8 @@ declare(strict_types=1);
 
 namespace Org_Heigl\Holidaychecker;
 
+use DateTimeInterface;
+
 class Holidaychecker
 {
     private $iterator;
@@ -41,9 +43,9 @@ class Holidaychecker
         $this->iterator = $iterator;
     }
 
-    public function check(\DateTimeInterface $date) : Holiday
+    public function check(DateTimeInterface $date): Holiday
     {
-        /** @var \Org_Heigl\Holidaychecker\HolidayIteratorItemInterface $entry */
+        /** @var HolidayIteratorItemInterface $entry */
         foreach ($this->iterator as $entry) {
             if ($entry->dateMatches($date)) {
                 return new Holiday($entry->isHoliday(), $entry->getName());

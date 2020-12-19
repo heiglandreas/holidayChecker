@@ -32,14 +32,19 @@ declare(strict_types=1);
 
 namespace Org_Heigl\Holidaychecker;
 
+use DOMDocument;
 use DOMElement;
+use Exception;
 use Org_Heigl\Holidaychecker\IteratorItem\Date;
 use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
 use RuntimeException;
+use UnexpectedValueException;
 use function explode;
+use function is_readable;
+use function sprintf;
 
 class HolidayIteratorFactory
 {
@@ -51,21 +56,21 @@ class HolidayIteratorFactory
      *
      * @param string $file
      *
-     * @return \Org_Heigl\Holidaychecker\HolidayIterator
+     * @return HolidayIterator
      */
-    public function createIteratorFromXmlFile(string $file) : HolidayIterator
+    public function createIteratorFromXmlFile(string $file): HolidayIterator
     {
         $iterator = new HolidayIterator();
 
-        $dom = new \DOMDocument('1.0', 'UTF-8');
+        $dom = new DOMDocument('1.0', 'UTF-8');
         $dom->load($file);
         $dom->xinclude();
 
         if (! $dom->schemaValidate(__DIR__ . '/../share/holidays.xsd')) {
-            throw new \Exception('XML-File does not validate agains schema');
+            throw new Exception('XML-File does not validate agains schema');
         }
         foreach ($dom->documentElement->childNodes as $child) {
-            if (! $child instanceof \DOMElement) {
+            if (! $child instanceof DOMElement) {
                 continue;
             }
             $iterator->append($this->getElement($child));
@@ -79,15 +84,15 @@ class HolidayIteratorFactory
      *
      * @param string $isoCode
      *
-     * @return \Org_Heigl\Holidaychecker\HolidayIterator
+     * @return HolidayIterator
      */
-    public function createIteratorFromISO3166(string $isoCode) : HolidayIterator
+    public function createIteratorFromISO3166(string $isoCode): HolidayIterator
     {
         $file = __DIR__ . '/../share/%s.xml';
         $file1 = sprintf($file, $isoCode);
 
         if (! is_readable($file1)) {
-            throw new \UnexpectedValueException(sprintf(
+            throw new UnexpectedValueException(sprintf(
                 'There is no holiday-file for %s',
                 $isoCode
             ));
@@ -96,8 +101,7 @@ class HolidayIteratorFactory
         return self::createIteratorFromXmlFile($file1);
     }
 
-
-    private function getElement(DOMElement $child) : HolidayIteratorItemInterface
+    private function getElement(DOMElement $child): HolidayIteratorItemInterface
     {
         switch ($child->nodeName) {
             case 'easter':

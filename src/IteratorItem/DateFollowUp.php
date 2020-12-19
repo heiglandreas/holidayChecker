@@ -32,9 +32,12 @@ declare(strict_types=1);
 
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
+use DateTimeInterface;
+use IntlCalendar;
 use Org_Heigl\Holidaychecker\CalendarDay;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
-use IntlCalendar;
+use function array_map;
+use function in_array;
 
 class DateFollowUp implements HolidayIteratorItemInterface
 {
@@ -62,7 +65,7 @@ class DateFollowUp implements HolidayIteratorItemInterface
         $this->replaced = $this->replacedDays($replaced);
     }
 
-    public function dateMatches(\DateTimeInterface $date) : bool
+    public function dateMatches(DateTimeInterface $date): bool
     {
         $weekday = $this->day->getWeekdayForGregorianYear((int) $date->format('Y'));
 

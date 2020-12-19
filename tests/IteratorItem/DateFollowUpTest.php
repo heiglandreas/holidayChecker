@@ -32,9 +32,9 @@ declare(strict_types=1);
 
 namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
+use DateTimeImmutable;
 use Org_Heigl\Holidaychecker\Calendar;
 use Org_Heigl\Holidaychecker\CalendarDayFactory;
-use Org_Heigl\Holidaychecker\IteratorItem\Date;
 use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
 use PHPUnit\Framework\TestCase;
 
@@ -68,36 +68,36 @@ class DateFollowUpTest extends TestCase
     public function dateProvider()
     {
         return [
-            [new \DateTimeImmutable('2018-03-01 12:00:00+00:00'), 25, 2, 'thursday', [], true, 'test', true],
-            [new \DateTimeImmutable('2018-02-26 12:00:00+00:00'), 24, 2, 'monday', [], true, 'test', true],
+            [new DateTimeImmutable('2018-03-01 12:00:00+00:00'), 25, 2, 'thursday', [], true, 'test', true],
+            [new DateTimeImmutable('2018-02-26 12:00:00+00:00'), 24, 2, 'monday', [], true, 'test', true],
    //         [new \DateTimeImmutable('2019-01-01 12:00:00+00:00'), 30, 12, 'tuesday', [], true, 'test', true],
             [
-                new \DateTimeImmutable('2019-10-12 12:00:00+00:00'),
+                new DateTimeImmutable('2019-10-12 12:00:00+00:00'),
                 11,
                 10,
                 'saturday',
                 ['thursday', 'friday'],
                 true,
                 'test',
-                true
+                true,
             ], [
-                new \DateTimeImmutable('2019-10-12 12:00:00+00:00'),
+                new DateTimeImmutable('2019-10-12 12:00:00+00:00'),
                 10,
                 10,
                 'saturday',
                 ['thursday', 'friday'],
                 true,
                 'test',
-                true
+                true,
             ], [
-                new \DateTimeImmutable('2019-10-09 12:00:00+00:00'),
+                new DateTimeImmutable('2019-10-09 12:00:00+00:00'),
                 9,
                 10,
                 'saturday',
                 ['thursday', 'friday'],
                 true,
                 'test',
-                true
+                true,
             ],
         ];
     }
