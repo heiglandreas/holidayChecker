@@ -67,6 +67,8 @@ $iterator = $factory->createIteratorFromIso3166('fr_BE');
 
 Currently these countries are available:
 
+![Map of the world](world.svg)
+
 * Germany (all Bundesländer, german)
 * Luxemburg (german, french and luxembourgisch)
 * Belgium (flamisch and french)
@@ -78,6 +80,7 @@ Currently these countries are available:
 * Greece
 * Turkey
 * South Africa
+* Ireland
 
 But the list is constantly extending.
 
