@@ -74,7 +74,7 @@ Currently these countries are available:
 * Belgium (flamisch and french)
 * Netherlands (dutch)
 * France (Mainland and overseas, adaptions for Elsass/Lothringen, french)
-* United Kingdom (Islands, Walse, Scotland, Northern Ireland and England, englisch)
+* United Kingdom (Islands, Wales, Scotland, Northern Ireland and England, englisch)
 * Finland
 * Russia
 * Greece
