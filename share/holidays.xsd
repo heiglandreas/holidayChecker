@@ -123,7 +123,7 @@
                 <xs:element name="easterorthodox" minOccurs="0" maxOccurs="unbounded">
                     <!--
                     Days that are relative to the Easter date as calculated for the
-                    Eastern Chsristian churches. The actual day is referenced by an
+                    Eastern Christian churches. The actual day is referenced by an
                     offset from easter-sunday. Days before easter sunday have a
                     negative offset, days after have a positive offset
                     -->
