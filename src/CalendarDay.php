@@ -69,6 +69,17 @@ class CalendarDay
         $this->calendar->set(IntlCalendar::FIELD_YEAR, $year);
     }
 
+    public function setGregorianYear(int $year): void
+    {
+        $calendarYear = (int) $this->calendar->toDateTime()->format('Y');
+
+        $diff = $year - $calendarYear;
+        $realYear = $this->calendar->get(IntlCalendar::FIELD_YEAR);
+
+        $this->year = $realYear + $diff;
+        $this->calendar->add(IntlCalendar::FIELD_YEAR, $diff);
+    }
+
     public function isSameDay(DateTimeInterface $dateTime): bool
     {
         $cal         = clone $this->calendar;
