@@ -44,6 +44,8 @@ class EasterOrthodoxTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::isHoliday
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::dateMatches
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::getOrthodoxEaster
+     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::getEaster
      */
     public function testThatEasterIsIdentifiedCorrectly($dateTime, $offset, $result, $name, $isHoliday)
     {
