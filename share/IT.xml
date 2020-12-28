@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd">
+    <date day="1" month="1" free="true">Capodanno</date>
+    <date day="6" month="1" free="true">Epifania</date>
+    <date day="25" month="4" free="true">Festa della Liberazione</date>
+    <easter offset="0" free="true">Pasqua</easter>
+    <easter offset="1" free="true">Pasquetta</easter>
+    <date day="1" month="5" free="true">Festa del Lavoro</date>
+    <date day="2" month="6" free="true">Festa della Repubblica</date>
+    <date day="15" month="8" free="true">Assunzione</date>
+    <date day="1" month="11" free="true">Tutti i santi</date>
+    <date day="8" month="12" free="true">Immacolata Concezione</date>
+    <date day="25" month="12" free="true">Natale</date>
+    <date day="26" month="12" free="true">Santo Stefano</date>
+    <date day="7" month="1" free="false">Festa del tricolore</date>
+    <date day="27" month="1" free="false">Giorno della Memoria</date>
+    <date day="4" month="11" free="false">Giorno dell'Unità Nazionale e Festa delle Forze Armate</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Italy" lastChecked="2020-12-27">Wikipedia</resource>
+    </resources>
+</holidays>

@@ -3,9 +3,8 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd"
           xmlns:xi="http://www.w3.org/2001/XInclude">
-    <easter offset="-2" free="true">Vendredi Saint</easter>
-    <date day="26" month="12" free="true">Lendemain de Noël</date>
-    <xi:include href="FR.xml" parse="xml" xpointer="xpointer(*/*)">
-            <xi:fallback/>
+    <xi:include href="IT.xml" xpointer="xpointer(*/*)">
+        <xi:fallback/>
     </xi:include>
+    <easter offset="50" free="true">Lunedì di Pentecoste</easter>
 </holidays>
