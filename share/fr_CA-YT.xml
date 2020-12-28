@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:include href="fr_CA.xml" xpointer="xpointer(*/*)">
+        <xi:fallback/>
+    </xi:include>
+    <relative day="25" month="5" relation="previous monday" free="true">Fête de la Reine</relative>
+    <date day="21" month="6" free="true">Journée nationale des Autochthones</date>
+    <date day="24" month="6" free="true">Saint-Jean-Baptiste</date>
+    <relative day="1" month="8" relation="first monday of this month" free="true">Fête du patrimoine</relative>
+    <relative day="1" month="8" relation="third monday of this month" free="true">Jour de la Découverte</relative>
+    <relative day="1" month="10" relation="second monday of this month" free="true">Action de grâce</relative>
+    <date day="11" month="11" free="true">Jour du Souvenir</date>
+</holidays>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:include href="en_CA.xml" xpointer="xpointer(*/*)">
+        <xi:fallback/>
+    </xi:include>
+    <date day="17" month="3" free="true">Saint Patrick's Day</date>
+    <date day="23" month="4" free="true">Saint George's Day</date>
+    <date day="24" month="6" free="true">Discovery Day</date>
+    <date day="12" month="7" free="true">Orangemen's Day</date>
+    <relative day="1" month="8" relation="first monday of this month" free="true">Civic Holiday</relative>
+    <date day="11" month="11" free="true">Armistice Day</date>
+</holidays>

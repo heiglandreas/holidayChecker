@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:include href="en_CA.xml" xpointer="xpointer(*/*)">
+        <xi:fallback/>
+    </xi:include>
+    <relative day="1" month="2" relation="third monday of this month" free="true">Heritage Day</relative>
+    <relative day="25" month="5" relation="previous monday" free="true">Victoria Day</relative>
+    <relative day="1" month="8" relation="first monday of this month" free="true">Natal Day</relative>
+    <date day="11" month="11" free="true">Remembrance Day</date>
+    <date day="26" month="12" free="true">Boxing Day</date>
+</holidays>

@@ -89,6 +89,7 @@ Currently these countries are available:
 * Poland (polish)
 * Austria (german)
 * Italy (italian)
+* Canada (french and english)
 
 But the list is constantly extending.
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true">New Year's Day</date>
+    <easter offset="-3" free="true">Good Friday</easter>
+    <date day="1" month="7" free="true">Canada Day</date>
+    <relative day="31" month="8" relation="next monday" free="true" comment="First Monday in September">Labour Day</relative>
+    <date day="25" month="12" free="true">Christmas Day</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Canada" lastChecked="2020-12-27">Wikipedia</resource>
+    </resources>
+</holidays>

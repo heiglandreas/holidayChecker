@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:include href="fr_CA.xml" xpointer="xpointer(*/*)">
+        <xi:fallback/>
+    </xi:include>
+    <relative day="1" month="2" relation="third monday of this month" free="true">Journée Louis Riel</relative>
+    <relative day="25" month="5" relation="previous monday" free="true">Fête de la Reine</relative>
+    <relative day="1" month="8" relation="first monday of this month" free="true">Jour de Saskatchewan</relative>
+    <relative day="1" month="10" relation="second monday of this month" free="true">Action de grâce</relative>
+</holidays>
