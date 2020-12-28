@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true" comment="New years day">元旦</date>
+    <date day="1" month="1" free="true" comment="Chinese new year" calendar="chinese">春节</date>
+    <date day="2" month="1" free="true" comment="Chinese new year" calendar="chinese">春节</date>
+    <!-- TODO: Calculate tomb-sweeping day according to solar term -->
+    <date day="4" month="4" free="true" comment="Tomb-sweeping day" year="2020">清明节</date>
+    <date day="1" month="5" free="true" comment="Labour Day">劳动节</date>
+    <date day="5" month="5" free="true" comment="Dragoin boat festival" calendar="chinese">端午节</date>
+    <date day="15" month="8" free="true" comment="Mid-autumn festival" calendar="chinese">中秋节</date>
+    <date day="1" month="10" free="true" comment="National Day">国庆节</date>
+    <date day="2" month="10" free="true" comment="National Day">国庆节</date>
+    <date day="3" month="10" free="true" comment="National Day">国庆节</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_China" lastChecked="2020-12-27">
+            Wikipedia
+        </resource>
+    </resources>
+</holidays>

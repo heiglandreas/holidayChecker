@@ -93,6 +93,7 @@ Currently these countries are available:
 * United States (Federal holidays only - english)
 * Brazil (brazilian portuguese)
 * Japan (needs better way to handle Equinoxes)
+* Chinese (Needs better way to handle solar terms)
 
 But the list is constantly extending.
 
