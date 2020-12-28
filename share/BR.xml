@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true">Ano Novo</date>
+    <date day="21" month="4" free="true">Dia de Tiradentes</date>
+    <date day="1" month="5" free="true">Dia do Trabalhador</date>
+    <date day="7" month="9" free="true">Dia da Independência</date>
+    <date day="12" month="10" free="true">Nossa Senhora Aparecida</date>
+    <date day="2" month="11" free="true">Dia de Finados</date>
+    <date day="15" month="11" free="true">Proclamação da República</date>
+    <date day="25" month="12" free="true">Natal</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Brazil" lastChecked="2020-12-27">
+            Wikipedia
+        </resource>
+    </resources>
+</holidays>
