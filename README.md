@@ -90,6 +90,7 @@ Currently these countries are available:
 * Austria (german)
 * Italy (italian)
 * Canada (french and english)
+* United States (Federal holidays only - english)
 
 But the list is constantly extending.
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true">New Year's Day</date>
+    <relative day="1" month="1" relation="third monday of this month" free="true">Birthday of Martin Luther King, Jr.</relative>
+    <relative day="1" month="2" relation="third monday of this month" free="true">Washington's Birthday</relative>
+    <relative day="1" month="5" relation="last monday of this month" free="true">Memorial Day</relative>
+    <date day="4" month="7" free="true">Independence Day</date>
+    <relative day="1" month="9" relation="first monday of this month" free="true">Labor Day</relative>
+    <relative day="1" month="10" relation="second monday of this month" free="true">Columbus Day</relative>
+    <date day="11" month="11" free="true">Veterans Day</date>
+    <relative day="1" month="11" relation="fourth thursday of this month" free="true">Thanksgiving Day</relative>
+    <date day="25" month="12" free="true">Christmas Day</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Federal_holidays_in_the_United_States" lastChecked="2020-12-27">
+            Wikipedia
+        </resource>
+    </resources>
+</holidays>
