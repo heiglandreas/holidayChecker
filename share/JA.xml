@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/holidays https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <date day="1" month="1" free="true" comment="New Years day">元日</date>
+    <relative day="1" month="1" relation="second monday of this month" free="true" comment="Coming of age day">
+        成人の日
+    </relative>
+    <date day="11" month="2" free="true" comment="National foundation day">建国記念の日</date>
+    <date day="23" month="2" free="true" comment="The emperors birthday">天皇誕生日</date>
+    <!-- TODO: This needs to be replaced by a calculation -->
+    <date day="20" month="3" year="2020" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="20" month="3" year="2021" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="21" month="3" year="2022" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="21" month="3" year="2023" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="20" month="3" year="2024" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="20" month="3" year="2025" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="20" month="3" year="2026" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="21" month="3" year="2027" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="20" month="3" year="2028" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="20" month="3" year="2029" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="20" month="3" year="2030" free="true" comment="Vernal equinox day">春分の日</date>
+    <date day="29" month="4" free="true" comment="Showa Day">昭和の日</date>
+    <date day="3" month="5" free="true" comment="Constitutional memorial day">憲法記念日</date>
+    <date day="4" month="5" free="true" comment="Greenery Day">みどりの日</date>
+    <date day="5" month="5" free="true" comment="Children's Day">こどもの日</date>
+    <relative day="1" month="6" relation="third monday of this month" free="true" comment="Marine Day">
+        海の日
+    </relative>
+    <date day="11" month="8" free="true" comment="Mountain day">山の日</date>
+    <relative day="1" month="9" relation="third monday of this month" free="true" comment="Respect for the aged day">
+        敬老の日
+    </relative>
+    <!-- TODO: This needs to be replaced with a calculation! -->
+    <date day="22" month="9" year="2020" free="true" comment="Autumnal equinox">秋分の日</date>
+    <date day="23" month="9" year="2021" free="true" comment="Autumnal equinox">秋分の日</date>
+    <date day="23" month="9" year="2022" free="true" comment="Autumnal equinox">秋分の日</date>
+    <date day="23" month="9" year="2023" free="true" comment="Autumnal equinox">秋分の日</date>
+    <date day="22" month="9" year="2024" free="true" comment="Autumnal equinox">秋分の日</date>
+    <date day="23" month="9" year="2025" free="true" comment="Autumnal equinox">秋分の日</date>
+    <date day="23" month="9" year="2026" free="true" comment="Autumnal equinox">秋分の日</date>
+    <date day="23" month="9" year="2027" free="true" comment="Autumnal equinox">秋分の日</date>
+    <date day="22" month="9" year="2028" free="true" comment="Autumnal equinox">秋分の日</date>
+    <date day="23" month="9" year="2029" free="true" comment="Autumnal equinox">秋分の日</date>
+    <date day="23" month="9" year="2030" free="true" comment="Autumnal equinox">秋分の日</date>
+    <relative day="1" month="10" relation="second monday of this month" free="true" comment="Health and Sports day">
+        体育の日
+    </relative>
+    <date day="3" month="11" free="true" comment="Culture day">文化の日</date>
+    <date day="23" month="11" free="true" comment="Labour Thanksgiving day">勤労感謝の日</date>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Japan" lastChecked="2020-12-27">
+            Wikipedia
+        </resource>
+    </resources>
+</holidays>

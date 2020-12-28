@@ -92,6 +92,7 @@ Currently these countries are available:
 * Canada (french and english)
 * United States (Federal holidays only - english)
 * Brazil (brazilian portuguese)
+* Japan (needs better way to handle Equinoxes)
 
 But the list is constantly extending.
 
