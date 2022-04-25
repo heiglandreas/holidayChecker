@@ -34,8 +34,15 @@ namespace Org_Heigl\Holidaychecker;
 
 use ArrayObject;
 
+/**
+ * @template-extends ArrayObject<int, HolidayIteratorItemInterface>
+ */
 class HolidayIterator extends ArrayObject
 {
+    /**
+     * @param mixed $value
+     * @return void
+     */
     public function append($value)
     {
         if (! $value instanceof HolidayIteratorItemInterface) {
