@@ -1,6 +1,7 @@
 {
   "name": "org_heigl/holidaychecker",
   "description": "Check for holidays - localeaware",
+  "keywords": ["holiday", "check", "calendar", "country", "bank holiday"],
   "type": "library",
   "license": "MIT",
   "authors": [{
