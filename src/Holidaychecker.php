@@ -45,7 +45,6 @@ class Holidaychecker
 
     public function check(DateTimeInterface $date): Holiday
     {
-        /** @var HolidayIteratorItemInterface $entry */
         foreach ($this->iterator as $entry) {
             if ($entry->dateMatches($date)) {
                 return new Holiday($entry->isHoliday(), $entry->getName());
