@@ -110,13 +110,13 @@ class CalendarDayTest extends TestCase
             '1.Adar.5777 is Monday' =>
                 [1, 7, 2017, Calendar::HEBREW, IntlCalendar::DOW_MONDAY],
             '4.Jumādá al-ākhirah 1440 should be Saturday'  =>
-                [4, 6, 2019, Calendar::ISLAMIC, IntlCalendar::DOW_FRIDAY],
+                [4, 6, 2019, Calendar::ISLAMIC_UMALQURA, IntlCalendar::DOW_SATURDAY],
             '4.Jumādá al-ākhirah 1439 should be Tuesday'  =>
-                [4, 6, 2018, Calendar::ISLAMIC, IntlCalendar::DOW_MONDAY],
+                [4, 6, 2018, Calendar::ISLAMIC_UMALQURA, IntlCalendar::DOW_TUESDAY],
             '4.Jumādá al-ākhirah 1438 should be Friday'  =>
-                [4, 6, 2017, Calendar::ISLAMIC, IntlCalendar::DOW_THURSDAY],
+                [4, 6, 2017, Calendar::ISLAMIC_UMALQURA, IntlCalendar::DOW_FRIDAY],
             '4.Jumādá al-ākhirah 1437 should be Sunday'  =>
-                [4, 6, 2016, Calendar::ISLAMIC, IntlCalendar::DOW_SUNDAY],
+                [4, 6, 2016, Calendar::ISLAMIC_UMALQURA, IntlCalendar::DOW_SUNDAY],
         ];
     }
 

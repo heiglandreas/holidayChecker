@@ -43,6 +43,7 @@ class HolidayIterator extends ArrayObject
      * @param mixed $value
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function append($value)
     {
         if (! $value instanceof HolidayIteratorItemInterface) {
