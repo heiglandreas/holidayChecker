@@ -61,7 +61,7 @@ jobs:
         run: composer test
   upload-xsd-file:
     needs: [xml-lint, test]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: ${{ false }} && github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     continue-on-error: false
     environment: github-actions
