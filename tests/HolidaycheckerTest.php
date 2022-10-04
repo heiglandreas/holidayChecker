@@ -138,4 +138,24 @@ class HolidaycheckerTest extends TestCase
         }
         $this->assertTrue($duration < 0.2);
     }
+
+    /**
+     * @dataProvider datesProvider
+     */
+    public function testDates(string $code, DateTimeImmutable $date, string $dayname)
+    {
+        $factory = new HolidayIteratorFactory();
+        $iterator = $factory->createIteratorFromXmlFile(__DIR__ . '/../share/' . $code . '.xml');
+        $checker = new Holidaychecker($iterator);
+
+        $result = $checker->check($date);
+        $this->assertEquals($dayname, $result->getName());
+    }
+
+    public function datesProvider()
+    {
+        return [
+            ['AF', new DateTimeImmutable('2022-10-08'), 'Mawlid'],
+        ];
+    }
 }

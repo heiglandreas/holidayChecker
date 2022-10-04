@@ -73,6 +73,9 @@ class HolidayIteratorFactory
             if (! $child instanceof DOMElement) {
                 continue;
             }
+            if ($child->nodeName === 'resources') {
+                continue;
+            }
             $iterator->append($this->getElement($child));
         }
 

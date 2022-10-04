@@ -129,12 +129,19 @@ class CalendarDay
     private function getDayForGregorianYear(int $gregorianYear): IntlCalendar
     {
         $cal = clone $this->calendar;
+        $cal->set(IntlCalendar::FIELD_MONTH, $this->month - 1);
+        $cal->set(IntlCalendar::FIELD_DAY_OF_MONTH, $this->day);
 
         $datetime = $cal->toDateTime();
         $yearDiff = $gregorianYear - (int) $datetime->format('Y');
+
         $cal->set(IntlCalendar::FIELD_YEAR, $cal->get(IntlCalendar::FIELD_YEAR) + $yearDiff);
-        $cal->set(IntlCalendar::FIELD_MONTH, $this->month - 1);
-        $cal->set(IntlCalendar::FIELD_DAY_OF_MONTH, $this->day);
+        if ($cal->toDateTime()->format('Y') < $gregorianYear) {
+            $cal->set(IntlCalendar::FIELD_YEAR, $cal->get(IntlCalendar::FIELD_YEAR) + 1);
+        }
+        if ($cal->toDateTime()->format('Y') > $gregorianYear) {
+            $cal->set(IntlCalendar::FIELD_YEAR, $cal->get(IntlCalendar::FIELD_YEAR) - 1);
+        }
 
         return $cal;
     }
