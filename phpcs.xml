@@ -80,7 +80,7 @@
         <properties>
             <property name="allowFallbackGlobalConstants" value="false"/>
             <property name="allowFallbackGlobalFunctions" value="false"/>
-            <property name="allowFullyQualifiedGlobalClasses" value="false"/>
+            <property name="allowFullyQualifiedGlobalClasses" value="true"/>
             <property name="allowFullyQualifiedGlobalConstants" value="false"/>
             <property name="allowFullyQualifiedGlobalFunctions" value="false"/>
             <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>

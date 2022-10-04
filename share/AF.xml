@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Afghanistan" lastChecked="2022-10-03">
+            Wikipedia
+        </resource>
+    </resources>
+    <date day="15" month="2" free="false" comment="Liberation Day">Liberation Day</date>
+    <date day="21" month="3" free="false" comment="Nowruz">Nauruz</date>
+    <date day="28" month="4" free="false" comment="Mujahideen Victory Day">Mujahideen Victory Day</date>
+    <date day="1" month="5" free="false" comment="International Workers' Day">International Workers' Day</date>
+    <date day="15" month="8" free="false" comment="'Afghan Jihad' Victory Day">"Afghan Jihad" Victory Day</date>
+    <date day="19" month="8" free="false" comment="Afghan Independence Day">Azadi</date>
+    <date day="9" month="9" free="false" comment="Martyrs' Day">Martyrs' Day</date>
+    <date calendar="islamic-civil" day="1" month="10" free="true" comment="Eid al-Fitr">Eid al-Fitr</date>
+    <date calendar="islamic-civil" day="9" month="12" free="true" comment="Day of Arafa ">ruz Arafa</date>
+    <date calendar="islamic-civil" day="10" month="12" free="true" comment="Eid al-Adha">Eid kalan</date>
+    <date calendar="islamic-civil" day="10" month="1" free="true" comment="Ashura">Ashura</date>
+    <date calendar="islamic-civil" day="12" month="3" free="true" comment="Birthday of the prophet Muhammad">Mawlid</date>
+</holidays>
