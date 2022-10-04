@@ -143,4 +143,19 @@ available this library requires the DOM-extension (XML) as well as the INTL-exte
 holidays based on different calendaring systems. This library also requires a library to compare dateintervals which is
 used in the calculation of the easter-date.
 
+### Missing Features
 
+#### Business-Days
+Some people were asking about a feature to calculate working days. While that seems to be a neat function I decided against
+implementing it in the library as business-days are very domain-specific. While there are some generally accepted
+terms of "working days" being monday through saturday excludign the public holidays that is not always and
+everywhere the correct way. SO depending on your business-domain workdays might only be monday through friday
+and not all public holidays are actually excluded but only a subset. Like bank-holidays in the UK that are only
+for banks a holiday, but for a lot of other businesses they mean business-as-usual. Or perhaps not, depending on
+a lot of different factors.
+
+To not lead people into false expectations and use amagic that will bite back rather sooner than later I decided to
+not implement this in the library but leave that to your business-logic.
+
+I might at a future time implement something that you can use to calculate business-days but that will for sure
+require some business-logic related code to work properly.
