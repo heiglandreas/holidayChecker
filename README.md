@@ -94,6 +94,7 @@ Currently these countries are available:
 * Brazil (brazilian portuguese)
 * Japan (needs better way to handle Equinoxes)
 * Chinese (Needs better way to handle solar terms)
+* Afghanistan (english)
 
 But the list is constantly extending.
 

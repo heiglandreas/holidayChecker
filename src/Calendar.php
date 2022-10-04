@@ -42,6 +42,10 @@ class Calendar
     public const HEBREW    = 'hebrew';
     public const INDIAN    = 'indian';
     public const ISLAMIC   = 'islamic';
+    public const ISLAMIC_CIVIL    = 'islamic-civil';
+    public const ISLAMIC_UMALQURA = 'islamic-umalqura';
+    public const ISLAMIC_RGSA     = 'islamic-rgsa';
+    public const ISLAMIC_TBLA     = 'islamic-tbla';
     public const JAPANESE  = 'japanese';
     public const PERSIAN   = 'persian';
 
@@ -56,6 +60,10 @@ class Calendar
             case self::HEBREW:
             case self::INDIAN:
             case self::ISLAMIC:
+            case self::ISLAMIC_CIVIL:
+            case self::ISLAMIC_RGSA:
+            case self::ISLAMIC_TBLA:
+            case self::ISLAMIC_UMALQURA:
             case self::JAPANESE:
             case self::PERSIAN:
                 return true;

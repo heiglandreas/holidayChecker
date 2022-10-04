@@ -39,6 +39,10 @@
             <xs:enumeration value="hebrew"/>
             <xs:enumeration value="indian"/>
             <xs:enumeration value="islamic"/>
+            <xs:enumeration value="islamic-civil"/>
+            <xs:enumeration value="islamic-umalqura"/>
+            <xs:enumeration value="islamic-rgsa"/>
+            <xs:enumeration value="islamic-tbla"/>
             <xs:enumeration value="japanese"/>
             <xs:enumeration value="persian"/>
         </xs:restriction>
