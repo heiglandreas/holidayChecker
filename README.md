@@ -139,7 +139,7 @@ Given this difference the Yasumi-Library currently only allows usage of dates be
 is free in the daterange to be used.
 
 Another difference are the requirements. While Yasumi only requires a PHP of up to PHP7.4 with the JSON extension
-available this library requires the DMO-extension (XML) as well as the INTL-extension as we are using that to calculate
+available this library requires the DOM-extension (XML) as well as the INTL-extension as we are using that to calculate
 holidays based on different calendaring systems. This library also requires a library to compare dateintervals which is
 used in the calculation of the easter-date.
 
