@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Albania" lastChecked="2022-10-12">Wikipedia</resource>
+    </resources>
+    <dateFollowUp day="1" month="1" followup="tuesday" free="true" comment="New Year">Viti i Ri</dateFollowUp>
+    <dateFollowUp day="2" month="1" followup="monday" free="true" comment="New Year">Viti i Ri</dateFollowUp>
+    <dateFollowUp day="14" month="3" followup="monday" free="true" comment="Summer Day">Dita e Verës</dateFollowUp>
+    <dateFollowUp day="22" month="3" followup="monday" free="true" comment="Nowruz">Dita e Nevruzit</dateFollowUp>
+    <easter offset="0" free="true" comment="Catholic easter">Pashkët Katolike</easter>
+    <easter offset="1" free="true" comment="Catholic easter">Pashkët Katolike</easter>
+    <easterorthodox offset="0" free="true" comment="orthodox easter">Pashkët Ortodokse</easterorthodox>
+    <easterorthodox offset="1" free="true" comment="orthodox easter">Pashkët Ortodokse</easterorthodox>
+    <dateFollowUp day="1" followup="monday" free="true" month="5" comment="May Day">Dita Ndërkombëtare e Punonjësve</dateFollowUp>
+    <dateFollowUp day="1" followup="monday" free="true" month="10" calendar="islamic-civil" comment="Eid al-Fitr">Bajrami i Madh</dateFollowUp>
+    <dateFollowUp day="10" followup="monday" free="true" month="12" calendar="islamic-civil" comment="Eid al-Adha">Bajrami i Vogël</dateFollowUp>
+    <dateFollowUp day="5" followup="monday" free="true" month="9" comment="Mother Theresa Day">Dita e Nënë Terezës</dateFollowUp>
+    <dateFollowUp day="28" followup="monday" free="true" month="11" comment="Independence Day">Dita e Pavarësisë</dateFollowUp>
+    <dateFollowUp day="29" followup="monday" free="true" month="11" comment="Liberation Day">Dita e Çlirimit</dateFollowUp>
+    <dateFollowUp day="8" followup="monday" free="true" month="12" comment="National Youth Day">Dita Kombëtare e Rinisë</dateFollowUp>
+    <dateFollowUp day="25" followup="monday" free="true" month="12" comment="Christmas Day">Krishtlindjet</dateFollowUp>
+</holidays>
