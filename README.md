@@ -95,6 +95,7 @@ Currently these countries are available:
 * Japan (needs better way to handle Equinoxes)
 * Chinese (Needs better way to handle solar terms)
 * Afghanistan (english)
+* Albania (ALbanian)
 
 But the list is constantly extending.
 
