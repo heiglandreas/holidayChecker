@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Algeria" lastChecked="2022-10-11">Wikipedia</resource>
+    </resources>
+    <date day="1" month="1" free="true">New Year's Day</date>
+    <date day="12" month="1" free="true">Amazigh New Year</date>
+    <date day="1" month="5" free="true">Labour Day</date>
+    <date day="5" month="7" free="true">Independence Day</date>
+    <date day="1" month="11" free="true">Revolution Day</date>
+    <date day="1" month="1" free="true" calendar="islamic-civil">Islamic New Year</date>
+    <date day="10" month="1" free="true" calendar="islamic-civil">Ashura</date>
+    <date day="12" month="3" free="true" calendar="islamic-civil">Mawlid</date>
+    <date calendar="islamic-civil" day="1" month="10" free="true" comment="Eid al-Fitr">Eid al-Fitr</date>
+    <date calendar="islamic-civil" day="10" month="12" free="true" comment="Eid al-Adha">Eid al-Adha</date>
+</holidays>
