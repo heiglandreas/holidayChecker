@@ -162,5 +162,51 @@ a lot of different factors.
 To not lead people into false expectations and use amagic that will bite back rather sooner than later I decided to
 not implement this in the library but leave that to your business-logic.
 
-I might at a future time implement something that you can use to calculate business-days but that will for sure
-require some business-logic related code to work properly.
+To give you an idea how such a feature could look like I wrote an example that show that most of the required code is
+actually business-case related or required for setup. Only three lines are related to this library. So having
+a dedicated class for that in this library doesn't seem to make sense.
+
+```php
+<?php
+/**
+ * Copyright Andreas Heigl <andreas@heigl.org>
+ *
+ * Licenses under the MIT-license. For details see the included file LICENSE.md
+ */
+
+use Org_Heigl\Holidaychecker\Holidaychecker;
+use Org_Heigl\Holidaychecker\HolidayIteratorFactory;
+
+$factory  = new HolidayIteratorFactory();
+$iterator = $factory->createIteratorFromISO3166('DE');
+$checker  = new Holidaychecker($iterator);
+
+$startDate = new DateTimeImmutable('2022-10-10');
+$endDate   = new DateTimeImmutable('2022-10-31');
+$dateIterator = new DatePeriod(
+    $startDate,
+    new DateInterval('P1D'),
+    $endDate
+);
+
+$numberOfBusinessDays = 0;
+
+foreach ($dateIterator as $date) {
+    if ($checker->check($date)->isHoliday()) {
+        continue;
+    }
+
+    // Your business-Logic here
+    // This is where the magic actually happens.
+    // Whether you count only sundays.
+    // Or saturdays AND sundays or whatever else your general days off are!
+    $numberOfBusinessDays++;
+}
+
+echo sprintf(
+    'There are %1$d business-days between %2$s and %3$s',
+    $numberOfBusinessDays,
+    $startDate->format('d.m.Y'),
+    $endDate->format('d.m.Y'),
+);
+```
