@@ -99,6 +99,7 @@ Currently these countries are available:
 * Algeria (English)
 * Andorra (all parishes)
 * Angola
+* Antigua and Barbuda
 
 But the list is constantly extending.
 
