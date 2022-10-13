@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Andorra" lastChecked="2022-10-12">Wikipedia</resource>
+    </resources>
+    <date day="1" month="1" free="true" comment="New Years Day">Any nou</date>
+    <date day="6" month="1" free="true" comment="Epiphany">Reis</date>
+    <easter offset="-50" free="true" comment="Carnival">Carnaval</easter>
+    <date day="14" month="3" free="true" comment="Constitution Day">Dia de la Constitució</date>
+    <easter offset="-2" free="true" comment="Good Friday">Divendres Sant</easter>
+    <easter offset="1" free="true" comment="Easter Monday">Dilluns de Pasqua</easter>
+    <date day="1" month="5" free="true" comment="Labour Day">Festa del Treball</date>
+    <easter offset="50" free="true" comment="Whit Monday">Dilluns de Pentecosta</easter>
+    <date day="15" month="8" free="true" comment="Assumption Day">Assumpció</date>
+    <date day="8" month="9" free="true" comment="National Day">Mare de Déu de Meritxell</date>
+    <date day="1" month="11" free="true" comment="All Saints">Tots Sants</date>
+    <date day="8" month="12" free="true" comment="Immaculate Conception">Immaculada Concepció</date>
+    <date day="25" month="12" free="true" comment="Christmas Day">Nadal</date>
+    <date day="26" month="12" free="true" comment="Saint Stephen's Day">Sant Esteve</date>
+</holidays>
