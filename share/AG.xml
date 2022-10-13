@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Antigua_and_Barbuda" lastChecked="2022-10-12">Wikipedia</resource>
+    </resources>
+    <dateFollowUp followup="monday" day="1" month="1" free="true" replaced="sunday">New Year's Day</dateFollowUp>
+    <easter offset="-2" free="true">Good Friday</easter>
+    <easter offset="1" free="true">Easter Monday</easter>
+    <relative day="31" month="4" relation="next monday" free="true">Labour Day</relative>
+    <easter offset="50" free="true">Whit Monday</easter>
+    <relative day="31" month="7" relation="next monday" free="true">August Monday</relative>
+    <relative day="31" month="7" relation="next monday next tuesday" free="true">August Tuesday</relative>
+    <dateFollowUp day="1" followup="monday" month="11" free="true">Independence Day</dateFollowUp>
+    <date day="9" month="12" free="true">National Heroes Day</date>
+    <dateFollowUp day="25" month="12" followup="tuesday" free="true">Christmas Day</dateFollowUp>
+    <dateFollowUp day="26" month="12" followup="monday" free="true">Boxing Day</dateFollowUp>
+</holidays>
