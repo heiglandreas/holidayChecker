@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Angola" lastChecked="2022-10-12">Wikipedia</resource>
+    </resources>
+    <date day="1" month="1" free="true" comment="New Year's Day">Dia de Ano Novo</date>
+    <date day="4" month="2" free="true" comment="Liberation Day">Dia do Libertação</date>
+    <easter offset="-45" free="true" comment="Carnival">Carnaval</easter>
+    <date day="8" month="3" free="true" comment="International Womens Day">Dia Internacional da Mulher</date>
+    <date day="23" month="3" free="true" comment="Day of South African Liberation">Dia da Libertação da África Austral</date>
+    <easter offset="-2" free="true" comment="Good Friday">Boa sexta-feira</easter>
+    <date day="4" month="4" free="true" comment="Peace Day">Dia da Paz</date>
+    <date day="1" month="5" free="true" comment="Labour Day">Dia do Trabalho</date>
+    <date day="17" month="9" free="true" comment="National Heroes Day">Dia Nacional dos Heróis</date>
+    <date day="2" month="11" free="true" comment="All Souls Day">Dia de Todas as Almas</date>
+    <date day="11" month="11" free="true" comment="Independence Day">Dia da Independência</date>
+    <date day="25" month="12" free="true" comment="Christmas Day">Dia de Natal</date>
+</holidays>
