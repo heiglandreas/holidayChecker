@@ -98,6 +98,7 @@ Currently these countries are available:
 * Albania (Albanian)
 * Algeria (English)
 * Andorra (all parishes)
+* Angola
 
 But the list is constantly extending.
 
