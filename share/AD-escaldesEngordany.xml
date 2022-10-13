@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+    <xi:include href="AD.xml" parse="xml" xpointer="xpointer(*/*)">
+        <xi:fallback></xi:fallback>
+    </xi:include>
+    <date day="25" month="7" free="true">Escaldes–Engordany Annual Festival</date>
+    <date day="26" month="7" free="true">Escaldes–Engordany Annual Festival</date>
+</holidays>

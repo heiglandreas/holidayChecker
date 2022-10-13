@@ -97,6 +97,7 @@ Currently these countries are available:
 * Afghanistan (english)
 * Albania (Albanian)
 * Algeria (English)
+* Andorra (all parishes)
 
 But the list is constantly extending.
 
