@@ -89,6 +89,7 @@ Currently the holidays for these countries are available:
 * Andorra (all parishes)
 * Angola
 * Antigua and Barbuda
+* Argentina
 
 But the list is constantly extending.
 
