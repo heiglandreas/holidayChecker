@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+    <xi:include href="AR.xml" parse="xml" xpointer="xpointer(*/*)">
+        <xi:fallback></xi:fallback>
+    </xi:include>
+    <date day="24" month="4" free="true" comment="Day of Action for Tolerance and Respect among Peoples">Día de Acción por la Tolerancia y el Respeto entre los Pueblos</date>
+</holidays>
