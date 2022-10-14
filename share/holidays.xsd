@@ -68,8 +68,6 @@
         <xs:attribute name="free" type="xs:boolean" use="required"/>
         <xs:attribute name="comment" type="xs:string"/>
         <xs:attribute name="calendar" type="calendars"/>
-        <xs:attribute name="previous" type="daynames" use="optional"/>
-        <xs:attribute name="previouswhen" type="daynamelist" use="optional"/>
     </xs:attributeGroup>
     <xs:attributeGroup name="relativeAttributes">
         <xs:attribute name="day" type="dayInt" use="required"/>
