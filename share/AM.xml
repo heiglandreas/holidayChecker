@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Armenia" lastChecked="2022-10-14">Wikipedia</resource>
+    </resources>
+    <date day="1" month="1" free="true" comment="New Year's Day">Ամանոր</date>
+    <date day="2" month="1" free="true" comment="New Year's Day">Ամանոր</date>
+    <date day="6" month="1" free="true" comment="Christmas Day">Սուրբ Ծնունդ</date>
+    <date day="28" month="1" free="true" comment="Army Day">Բանակի օր</date>
+    <date day="8" month="3" free="true" comment="Womens Day">Կանանց տոն</date>
+    <date day="24" month="4" free="true" comment="Armenian Genozide Rememberance Day">Եղեռնի զոհերի հիշատակի օր</date>
+    <date day="1" month="5" free="true" comment="Labour Day">Աշխատանքի օր</date>
+    <date day="9" month="5" free="true" comment="Victory and Peace Day">Հաղթանակի եւ Խաղաղության տոն</date>
+    <date day="28" month="5" free="true" comment="Republic Day">Հանրապետության օր</date>
+    <date day="5" month="7" free="true" comment="Constitution Day">Սահմանադրության օր</date>
+    <date day="21" month="9" free="true" comment="Independence Day">Անկախության օր</date>
+    <date day="31" month="12" free="true" comment="New Year'S Eve">Ամանոր</date>
+</holidays>
