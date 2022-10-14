@@ -68,6 +68,8 @@
         <xs:attribute name="free" type="xs:boolean" use="required"/>
         <xs:attribute name="comment" type="xs:string"/>
         <xs:attribute name="calendar" type="calendars"/>
+        <xs:attribute name="previous" type="daynames" use="optional"/>
+        <xs:attribute name="previouswhen" type="daynamelist" use="optional"/>
     </xs:attributeGroup>
     <xs:attributeGroup name="relativeAttributes">
         <xs:attribute name="day" type="dayInt" use="required"/>
@@ -79,6 +81,14 @@
     <xs:attributeGroup name="resourceAttributes">
         <xs:attribute name="href" type="xs:anyURI" use="required"/>
         <xs:attribute name="lastChecked" type="xs:date" use="required" />
+    </xs:attributeGroup>
+    <xs:attributeGroup name="forward">
+        <xs:attribute name="forwardto" type="daynames" use="optional"/>
+        <xs:attribute name="forwardwhen" type="daynamelist" use="optional" />
+    </xs:attributeGroup>
+    <xs:attributeGroup name="rewind">
+        <xs:attribute name="rewindto" type="daynames" use="optional"/>
+        <xs:attribute name="rewindwhen" type="daynamelist" use="optional" />
     </xs:attributeGroup>
     <xs:element name="resources">
 
@@ -153,6 +163,8 @@
                         <xs:simpleContent>
                             <xs:extension base="xs:string">
                                 <xs:attributeGroup ref="dateAttributes"/>
+                                <xs:attributeGroup ref="rewind"/>
+                                <xs:attributeGroup ref="forward"/>
                             </xs:extension>
                         </xs:simpleContent>
                     </xs:complexType>

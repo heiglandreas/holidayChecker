@@ -80,9 +80,25 @@ class CalendarDay
         $this->calendar->add(IntlCalendar::FIELD_YEAR, $diff);
     }
 
+    public static function setGregorianYearForDate(int $year, IntlCalendar $calendar): IntlCalendar
+    {
+        $datetime = $calendar->toDateTime();
+        $yearDiff = $year - (int) $datetime->format('Y');
+
+        $calendar->set(IntlCalendar::FIELD_YEAR, $calendar->get(IntlCalendar::FIELD_YEAR) + $yearDiff);
+        if ($calendar->toDateTime()->format('Y') < $year) {
+            $calendar->set(IntlCalendar::FIELD_YEAR, $calendar->get(IntlCalendar::FIELD_YEAR) + 1);
+        }
+        if ($calendar->toDateTime()->format('Y') > $year) {
+            $calendar->set(IntlCalendar::FIELD_YEAR, $calendar->get(IntlCalendar::FIELD_YEAR) - 1);
+        }
+
+        return $calendar;
+    }
+
     public function isSameDay(DateTimeInterface $dateTime): bool
     {
-        $cal         = clone $this->calendar;
+        $cal = clone $this->calendar;
         $cal->setTime($dateTime->getTimestamp() * 1000);
 
         if (null !== $this->year &&
@@ -101,9 +117,30 @@ class CalendarDay
     public function isFollowUpDay(DateTimeInterface $dateTime, string $followUpDay): bool
     {
         $cal = clone $this->calendar;
-        $cal->set(IntlCalendar::FIELD_YEAR, (int) $dateTime->format('Y'));
+        $cal = self::setGregorianYearForDate((int) $dateTime->format('Y'), $cal);
         $day = $cal->toDateTime();
         $day->modify('next ' . $followUpDay);
+        $cal->setTime($day->getTimestamp() * 1000);
+        $cal2         = clone $this->calendar;
+        $cal2->setTime($dateTime->getTimestamp() * 1000);
+
+        if (null !== $this->year && $cal->get(IntlCalendar::FIELD_YEAR) !== $cal2->get(IntlCalendar::FIELD_YEAR)) {
+            return false;
+        }
+
+        if ($cal->get(IntlCalendar::FIELD_MONTH) !== $cal2->get(IntlCalendar::FIELD_MONTH)) {
+            return false;
+        }
+
+        return $cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) === $cal2->get(IntlCalendar::FIELD_DAY_OF_MONTH);
+    }
+
+    public function isPreviousDay(DateTimeInterface $dateTime, string $previousDay): bool
+    {
+        $cal = clone $this->calendar;
+        $cal = self::setGregorianYearForDate((int) $dateTime->format('Y'), $cal);
+        $day = $cal->toDateTime();
+        $day->modify('previous ' . $previousDay);
         $cal->setTime($day->getTimestamp() * 1000);
         $cal2         = clone $this->calendar;
         $cal2->setTime($dateTime->getTimestamp() * 1000);
@@ -132,16 +169,7 @@ class CalendarDay
         $cal->set(IntlCalendar::FIELD_MONTH, $this->month - 1);
         $cal->set(IntlCalendar::FIELD_DAY_OF_MONTH, $this->day);
 
-        $datetime = $cal->toDateTime();
-        $yearDiff = $gregorianYear - (int) $datetime->format('Y');
-
-        $cal->set(IntlCalendar::FIELD_YEAR, $cal->get(IntlCalendar::FIELD_YEAR) + $yearDiff);
-        if ($cal->toDateTime()->format('Y') < $gregorianYear) {
-            $cal->set(IntlCalendar::FIELD_YEAR, $cal->get(IntlCalendar::FIELD_YEAR) + 1);
-        }
-        if ($cal->toDateTime()->format('Y') > $gregorianYear) {
-            $cal->set(IntlCalendar::FIELD_YEAR, $cal->get(IntlCalendar::FIELD_YEAR) - 1);
-        }
+        $cal = self::setGregorianYearForDate($gregorianYear, $cal);
 
         return $cal;
     }

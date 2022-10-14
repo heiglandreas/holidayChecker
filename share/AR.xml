@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Argentina" lastChecked="2022-10-13">Wikipedia</resource>
+    </resources>
+    <date day="1" month="1" free="true" comment="New Year's Day">Año Nuevo</date>
+    <easter offset="-48" free="true" comment="Carnival">Carnaval</easter>
+    <easter offset="-47" free="true" comment="Carnival">Carnaval</easter>
+    <date day="24" month="3" free="true" comment="Day of rememberance for truth and justice">Día Nacional de la Memoria por la Verdad y la Justicia</date>
+    <date day="2" month="4" free="true" comment="Day of the veterans and fallen of the falklands war">Día del Veterano y de los Caídos en la Guerra de Malvinas</date>
+    <easter offset="-2" free="true" comment="Good Friday">Viernes Santo</easter>
+    <date day="1" month="5" free="true" comment="Labour Day">Día del Trabajador</date>
+    <date day="25" month="5" forwardto="monday" forwardwhen="thursday friday saturday sunday" free="true" rewindto="monday" rewindwhen="tuesday wednesday" comment="May Revolution">
+        Día de la Revolución de Mayo
+    </date>
+    <date day="17" forwardto="monday" free="true" month="6" forwardwhen="thursday friday saturday sunday" rewindto="monday" rewindwhen="tuesday wednesday" comment="Anniversary of the Passing of General Martín Miguel de Güemes">
+        Paso a la Inmortalidad del General Martín Miguel de Güemes
+    </date>
+    <date day="20" month="6" free="true" comment="General Manuel Belgrano Memorial Day">Paso a la Inmortalidad del General Manuel Belgrano</date>
+    <date day="9" month="7" free="true" comment="Independence Day">Día de la Independencia</date>
+    <date day="17" forwardto="monday" free="true" month="8" forwardwhen="thursday friday saturday sunday" rewindto="monday" rewindwhen="tuesday wednesday" comment="General José de San Martín Memorial Day">
+        Paso a la Inmortalidad del General José de San Martín
+    </date>
+    <date day="12" forwardto="monday" free="true" month="10" forwardwhen="thursday friday saturday sunday" rewindto="monday" rewindwhen="tuesday wednesday" comment="Day of Respect for Cultural Diversity">
+        Día del Respeto a la Diversidad Cultural
+    </date>
+    <date day="20" forwardto="monday" free="true" month="11" forwardwhen="thursday friday saturday sunday" rewindto="monday" rewindwhen="tuesday wednesday" comment="National Sovereignty Day">
+        Día de la Soberanía Nacional
+    </date>
+    <date day="8" month="12" free="true" comment="Immaculate Conception Day">Día de la Inmaculada Concepción de María</date>
+    <date day="25" month="12" free="true" comment="Christmas">Navidad</date>
+</holidays>

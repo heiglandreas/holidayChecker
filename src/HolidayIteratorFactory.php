@@ -131,7 +131,11 @@ class HolidayIteratorFactory
                 return new Date(
                     $child->textContent,
                     $this->getFree($child),
-                    $day
+                    $day,
+                    $child->hasAttribute('forwardto')?$child->getAttribute('forwardto'):'',
+                    $child->hasAttribute('forwardwhen')?explode(' ', $child->getAttribute('forwardwhen')):[],
+                    $child->hasAttribute('rewindto')?$child->getAttribute('rewindto'):'',
+                    $child->hasAttribute('rewindwhen')?explode(' ', $child->getAttribute('rewindwhen')):[],
                 );
             case 'dateFollowUp':
                 $day = CalendarDayFactory::createCalendarDay(
