@@ -90,6 +90,7 @@ Currently the holidays for these countries are available:
 * Angola
 * Antigua and Barbuda
 * Argentina
+* Armenia
 
 But the list is constantly extending.
 
