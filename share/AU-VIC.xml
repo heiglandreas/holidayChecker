@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Australia" lastChecked="2022-10-14">Wikipedia</resource>
+    </resources>
+    <relative day="1" month="3" relation="second monday" free="true">Labour Day</relative>
+    <easter offset="-1" free="true">Saturday before Easter Sunday</easter>
+    <easter offset="0" free="true">Easter Sunday</easter>
+    <date day="25" month="4" free="true">Anzac Day</date>
+    <relative day="1" month="6" relation="second monday" free="true">Kings Birthday</relative>
+    <relative day="1" month="10" relation="last saturday - 1 day" free="true" comment="The last saturday in september usually is the date for the finals"
+    <relative day="1" month="10" relation="first tuesday" free="true">Melbourne Cup</relative>
+    <date day="26" month="12" free="true" forwardwhen="saturday sunday" forwardto="monday">Boxing Day</date>
+    <xi:include href="AU.xml" parse="xml" xpointer="xpointer(*/*)">
+        <xi:fallback></xi:fallback>
+    </xi:include>
+</holidays>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Australia" lastChecked="2022-10-14">Wikipedia</resource>
+    </resources>
+    <easter offset="-1" free="true">Easter Saturday</easter>
+    <date day="25" month="4" free="true" forwardwhen="saturday sunday" forwardto="monday">Anzac Day</date>
+    <relative day="1" month="5" relation="first monday" free="true">May Day</relative>
+    <relative day="1" month="6" relation="second monday" free="true">Kings Birthday</relative>
+    <relative day="1" month="8" relation="first monday" free="true">Picnic Day</relative>
+    <date day="24" month="12" free="true" restriction="from 7pm until midnight">Christmas Eve</date>
+    <date day="26" month="12" free="true" forwardwhen="saturday sunday" forwardto="monday">Boxing Day</date>
+    <date day="31" month="12" free="true" restriction="from 7pm until midnight">New Year's Eve</date>
+    <xi:include href="AU.xml" parse="xml" xpointer="xpointer(*/*)">
+        <xi:fallback></xi:fallback>
+    </xi:include>
+</holidays>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Australia" lastChecked="2022-10-14">Wikipedia</resource>
+    </resources>
+    <date day="1" month="1" free="true" forwardwhen="saturday sunday" forwardto="monday">New Year's Day</date>
+    <date day="26" month="1" free="true" forwardwhen="saturday sunday" forwardto="monday">Australia Day</date>
+    <easter offset="-2" free="true">Good Friday</easter>
+    <easter offset="1" free="true">Easter Monday</easter>
+    <date day="25" month="12" free="true"  forwardwhen="saturday sunday" forwardto="monday">Christmas Day</date>
+</holidays>
