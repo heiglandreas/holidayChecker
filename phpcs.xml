@@ -22,6 +22,7 @@
 		<exclude name="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse"/>
 		<!-- checked by SlevomatCodingStandard.Namespaces.NamespaceSpacing -->
 		<exclude name="PSR2.Namespaces.NamespaceDeclaration.BlankLineAfter"/>
+		<exclude name="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" />
 	</rule>
 
 	<!-- Force array element indentation with 4 spaces -->

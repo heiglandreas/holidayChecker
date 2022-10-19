@@ -35,14 +35,10 @@ namespace Org_Heigl\Holidaychecker\IteratorItem;
 use DateTimeImmutable;
 use DateTimeInterface;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
-use Org_Heigl\Holidaychecker\ObservanceInterface;
-use Org_Heigl\Holidaychecker\ObservanceTrait;
 use function sprintf;
 
-class Relative implements HolidayIteratorItemInterface, ObservanceInterface
+class Relative implements HolidayIteratorItemInterface
 {
-    use ObservanceTrait;
-
     private $day;
 
     private $month;
@@ -65,9 +61,6 @@ class Relative implements HolidayIteratorItemInterface, ObservanceInterface
     public function dateMatches(DateTimeInterface $date): bool
     {
         $year = (int) $date->format('Y');
-        if (! $this->isWithinObservance($year)) {
-            return false;
-        }
 
         $day = new DateTimeImmutable(sprintf(
             '%s-%s-%s',

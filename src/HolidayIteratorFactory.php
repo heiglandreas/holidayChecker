@@ -167,12 +167,14 @@ class HolidayIteratorFactory
             default:
                 throw new RuntimeException('Unknown element encountered');
         }
-        if ($return instanceof ObservanceInterface) {
-            $return->setObservances(
+        if ($child->hasAttribute('firstobservance') || $child->hasAttribute('lastobservance')) {
+            $return = new ObservanceDecorator(
+				$return,
                 $child->hasAttribute('firstobservance')?(int) $child->getAttribute('firstobservance'):null,
                 $child->hasAttribute('lastobservance')?(int) $child->getAttribute('lastobservance'):null,
             );
         }
+
         return $return;
     }
 
