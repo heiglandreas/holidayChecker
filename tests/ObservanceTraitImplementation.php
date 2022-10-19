@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright Andreas Heigl <andreas@heigl.org>
  *

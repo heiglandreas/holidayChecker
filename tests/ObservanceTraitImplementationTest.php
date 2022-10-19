@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Copyright Andreas Heigl <andreas@heigl.org>
  *
@@ -23,7 +26,7 @@ class ObservanceTraitImplementationTest extends TestCase
     }
 
     /**
-     * @return array<array{int|null, int|null, int, boolean}>
+     * @return array<array{(int|null), (int|null), int, bool}>
      */
     public function provider(): array
     {
