@@ -11,7 +11,7 @@ name like "Maundy Thursday".
 [![Build Status](https://github.com/heiglandreas/holidayChecker/workflows/Build/badge.svg)](https://github.com/heiglandreas/holidayChecker/actions?query=workflow%3ABuild)
 [![Coverage Status](https://coveralls.io/repos/github/heiglandreas/holidayChecker/badge.svg?branch=main)](https://coveralls.io/github/heiglandreas/holidayChecker?branch=main)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/heiglandreas/holidayChecker/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/heiglandreas/holidayChecker/?branch=main)
-[![Code Climate](https://lima.codeclimate.com/github/heiglandreas/holidayChecker/badges/gpa.svg)](https://lima.codeclimate.com/github/heiglandreas/holidayChecker)
+[![Maintainability](https://api.codeclimate.com/v1/badges/77df2174aea5070e4321/maintainability)](https://codeclimate.com/github/heiglandreas/holidayChecker/maintainability)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0469f932688c45e58e64b1333fb80c71)](https://www.codacy.com/gh/heiglandreas/holidayChecker/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=heiglandreas/holidayChecker&amp;utm_campaign=Badge_Grade)
 
 [![Latest Stable Version](https://poser.pugx.org/org_heigl/holidaychecker/v/stable)](https://packagist.org/packages/org_heigl/holidaychecker)
