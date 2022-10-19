@@ -35,152 +35,124 @@ namespace Org_Heigl\Holidaychecker;
 use DOMDocument;
 use DOMElement;
 use Exception;
-use Org_Heigl\Holidaychecker\IteratorItem\Date;
-use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
-use Org_Heigl\Holidaychecker\IteratorItem\Easter;
-use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
-use Org_Heigl\Holidaychecker\IteratorItem\Relative;
+use Org_Heigl\Holidaychecker\Factory\DateFactory;
+use Org_Heigl\Holidaychecker\Factory\DateFollowupFactory;
+use Org_Heigl\Holidaychecker\Factory\DecorateFromDomElement;
+use Org_Heigl\Holidaychecker\Factory\EasterFactory;
+use Org_Heigl\Holidaychecker\Factory\EasterOrthodoxFactory;
+use Org_Heigl\Holidaychecker\Factory\ItemFromDomElementCreator;
+use Org_Heigl\Holidaychecker\Factory\ObservanceDecoratorFactory;
+use Org_Heigl\Holidaychecker\Factory\RelativeFactory;
 use RuntimeException;
 use Throwable;
 use UnexpectedValueException;
-use function explode;
 use function is_readable;
 use function sprintf;
 
 class HolidayIteratorFactory
 {
-    /**
-     * Create a HolidayIterator from an XML-File
-     *
-     * The provided XML-File has to validate against the holiday.xsd-file you
-     * can find in this projects "share" folder.
-     *
-     * @param string $file
-     *
-     * @return HolidayIterator
-     */
-    public function createIteratorFromXmlFile(string $file): HolidayIterator
-    {
-        $iterator = new HolidayIterator();
+	/** @var ItemFromDomElementCreator[] */
+	private $factories;
 
-        $dom = new DOMDocument('1.0', 'UTF-8');
-        $dom->load($file);
-        $dom->xinclude();
+	/** @var DecorateFromDomElement[] */
+	private $decorators;
 
-        if (! @$dom->schemaValidate(__DIR__ . '/../share/holidays.xsd')) {
-            throw new Exception('XML-File does not validate agains schema');
-        }
-        foreach ($dom->documentElement->childNodes as $child) {
-            if (! $child instanceof DOMElement) {
-                continue;
-            }
-            if ($child->nodeName === 'resources') {
-                continue;
-            }
+	public function __construct()
+	{
+		$this->factories = [
+			new EasterFactory(),
+			new EasterOrthodoxFactory(),
+			new DateFactory(),
+			new DateFollowupFactory(),
+			new RelativeFactory(),
+		];
+
+		$this->decorators = [
+			new ObservanceDecoratorFactory(),
+		];
+	}
+
+	/**
+	 * Create a HolidayIterator from an XML-File
+	 *
+	 * The provided XML-File has to validate against the holiday.xsd-file you
+	 * can find in this projects "share" folder.
+	 *
+	 * @param string $file
+	 *
+	 * @return HolidayIterator
+	 */
+	public function createIteratorFromXmlFile(string $file): HolidayIterator
+	{
+		$iterator = new HolidayIterator();
+
+		$dom = new DOMDocument('1.0', 'UTF-8');
+		$dom->load($file);
+		$dom->xinclude();
+
+		if (!@$dom->schemaValidate(__DIR__ . '/../share/holidays.xsd')) {
+			throw new Exception('XML-File does not validate agains schema');
+		}
+		foreach ($dom->documentElement->childNodes as $child) {
+			if (!$child instanceof DOMElement) {
+				continue;
+			}
+			if ($child->nodeName === 'resources') {
+				continue;
+			}
 
 			try {
 				$element = $this->getElement($child);
-				if ($child->hasAttribute('firstobservance') || $child->hasAttribute('lastobservance')) {
-					$element = new ObservanceDecorator(
-						$element,
-						$child->hasAttribute('firstobservance') ? (int) $child->getAttribute('firstobservance') : null,
-						$child->hasAttribute('lastobservance') ? (int) $child->getAttribute('lastobservance') : null,
-					);
-				}
-
+				$element = $this->decorateElement($element, $child);
 				$iterator->append($element);
 			} catch (Throwable $e) {
 				// Do nothing on purpose
 			}
-        }
+		}
 
-        return $iterator;
-    }
-
-    /**
-     * Create a HolidayIterator from an ISO 3166-code.
-     *
-     * @param string $isoCode
-     *
-     * @return HolidayIterator
-     */
-    public function createIteratorFromISO3166(string $isoCode): HolidayIterator
-    {
-        $file = __DIR__ . '/../share/%s.xml';
-        $file1 = sprintf($file, $isoCode);
-
-        if (! is_readable($file1)) {
-            throw new UnexpectedValueException(sprintf(
-                'There is no holiday-file for %s',
-                $isoCode
-            ));
-        }
-
-        return self::createIteratorFromXmlFile($file1);
-    }
-
-    private function getElement(DOMElement $child): HolidayIteratorItemInterface
-    {
-        switch ($child->nodeName) {
-            case 'easter':
-                return new Easter(
-                    $child->textContent,
-                    $this->getFree($child),
-                    (int) $child->getAttribute('offset')
-                );
-            case 'easterorthodox':
-                return new EasterOrthodox(
-                    $child->textContent,
-                    $this->getFree($child),
-                    (int) $child->getAttribute('offset')
-                );
-            case 'date':
-                $day = CalendarDayFactory::createCalendarDay(
-                    (int) $child->getAttribute('day'),
-                    (int) $child->getAttribute('month'),
-                    ($child->hasAttribute('calendar')?$child->getAttribute('calendar'): 'gregorian')
-                );
-                if ($child->hasAttribute('year')) {
-                    $day->setYear((int) $child->getAttribute('year'));
-                }
-                return new Date(
-                    $child->textContent,
-                    $this->getFree($child),
-                    $day,
-                    $child->hasAttribute('forwardto')?$child->getAttribute('forwardto'):'',
-                    $child->hasAttribute('forwardwhen')?explode(' ', $child->getAttribute('forwardwhen')):[],
-                    $child->hasAttribute('rewindto')?$child->getAttribute('rewindto'):'',
-                    $child->hasAttribute('rewindwhen')?explode(' ', $child->getAttribute('rewindwhen')):[],
-                );
-            case 'dateFollowUp':
-                $day = CalendarDayFactory::createCalendarDay(
-                    (int) $child->getAttribute('day'),
-                    (int) $child->getAttribute('month'),
-                    ($child->hasAttribute('calendar')?$child->getAttribute('calendar'): 'gregorian')
-                );
-
-                return new DateFollowUp(
-                    $child->textContent,
-                    $this->getFree($child),
-                    $day,
-                    $child->getAttribute('followup'),
-                    ($child->hasAttribute('replaced')?explode(' ', $child->getAttribute('replaced')):[])
-                );
-            case 'relative':
-                return new Relative(
-                    $child->textContent,
-                    $this->getFree($child),
-                    (int) $child->getAttribute('day'),
-                    (int) $child->getAttribute('month'),
-                    $child->getAttribute('relation')
-                );
-            default:
-                throw new RuntimeException('Unknown element encountered');
-        }
+		return $iterator;
 	}
 
-    private function getFree(DOMElement $element): bool
-    {
-        return ($element->getAttribute('free') === "true");
-    }
+	/**
+	 * Create a HolidayIterator from an ISO 3166-code.
+	 *
+	 * @param string $isoCode
+	 *
+	 * @return HolidayIterator
+	 */
+	public function createIteratorFromISO3166(string $isoCode): HolidayIterator
+	{
+		$file = __DIR__ . '/../share/%s.xml';
+		$file1 = sprintf($file, $isoCode);
+
+		if (!is_readable($file1)) {
+			throw new UnexpectedValueException(sprintf(
+				'There is no holiday-file for %s',
+				$isoCode
+			));
+		}
+
+		return $this->createIteratorFromXmlFile($file1);
+	}
+
+	private function getElement(DOMElement $child): HolidayIteratorItemInterface
+	{
+		foreach ($this->factories as $factory) {
+			$element = $factory->itemFromDomElement($child);
+			if ($element instanceof HolidayIteratorItemInterface) {
+				return $element;
+			}
+		}
+
+		throw new RuntimeException('Unknown element encountered');
+	}
+
+	private function decorateElement(HolidayIteratorItemInterface $element, DOMElement $child): HolidayIteratorItemInterface
+	{
+		foreach ($this->decorators as $decorator) {
+			$element = $decorator->decorate($element, $child);
+		}
+
+		return $element;
+	}
 }
