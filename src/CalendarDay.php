@@ -10,8 +10,6 @@ declare(strict_types=1);
 
 namespace Org_Heigl\Holidaychecker;
 
-use DateTime;
-use DateTimeImmutable;
 use DateTimeInterface;
 use IntlCalendar;
 
@@ -95,21 +93,15 @@ class CalendarDay
 
     public function isFollowUpDay(DateTimeInterface $dateTime, string $followUpDay): bool
     {
-	    if ($dateTime instanceof DateTime) {
-		    $dateTime = DateTimeImmutable::createFromMutable($dateTime);
-	    }
 	    return $this->isModifiedDate($dateTime, $followUpDay, 'next');
     }
 
     public function isPreviousDay(DateTimeInterface $dateTime, string $previousDay): bool
     {
-		if ($dateTime instanceof DateTime) {
-			$dateTime = DateTimeImmutable::createFromMutable($dateTime);
-		}
 		return $this->isModifiedDate($dateTime, $previousDay, 'previous');
     }
 
-	private function isModifiedDate(DateTimeImmutable $dateTime, string $modifiedDay, string $direction): bool
+	private function isModifiedDate(DateTimeInterface $dateTime, string $modifiedDay, string $direction): bool
 	{
 		$cal = clone $this->calendar;
 		$cal = self::setGregorianYearForDate((int) $dateTime->format('Y'), $cal);
