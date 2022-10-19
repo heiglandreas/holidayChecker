@@ -50,6 +50,10 @@
     <xs:attributeGroup name="restriction">
         <xs:attribute name="restriction" type="xs:string" />
     </xs:attributeGroup>
+    <xs:attributeGroup name="observanceRestrictions">
+        <xs:attribute name="firstobservance" type="xs:integer"/>
+        <xs:attribute name="lastobservance" type="xs:integer"/>
+    </xs:attributeGroup>
     <xs:attributeGroup name="easterAttributes">
         <xs:attribute name="offset" type="xs:integer" use="required"/>
         <xs:attribute name="free" type="xs:boolean" use="required"/>
@@ -132,6 +136,7 @@
                             <xs:extension base="xs:string">
                                 <xs:attributeGroup ref="easterAttributes"/>
                                 <xs:attributeGroup ref="restriction"/>
+                                <xs:attributeGroup ref="observanceRestrictions"/>
                             </xs:extension>
                         </xs:simpleContent>
                     </xs:complexType>
@@ -148,6 +153,7 @@
                             <xs:extension base="xs:string">
                                 <xs:attributeGroup ref="easterAttributes"/>
                                 <xs:attributeGroup ref="restriction"/>
+                                <xs:attributeGroup ref="observanceRestrictions"/>
                             </xs:extension>
                         </xs:simpleContent>
                     </xs:complexType>
@@ -169,6 +175,7 @@
                                 <xs:attributeGroup ref="rewind"/>
                                 <xs:attributeGroup ref="forward"/>
                                 <xs:attributeGroup ref="restriction"/>
+                                <xs:attributeGroup ref="observanceRestrictions"/>
                             </xs:extension>
                         </xs:simpleContent>
                     </xs:complexType>
@@ -179,6 +186,7 @@
                             <xs:extension base="xs:string">
                                 <xs:attributeGroup ref="dateFollowUpAttributes"/>
                                 <xs:attributeGroup ref="restriction"/>
+                                <xs:attributeGroup ref="observanceRestrictions"/>
                             </xs:extension>
                         </xs:simpleContent>
                     </xs:complexType>
@@ -200,6 +208,7 @@
                             <xs:extension base="xs:string">
                                 <xs:attributeGroup ref="relativeAttributes"/>
                                 <xs:attributeGroup ref="restriction"/>
+                                <xs:attributeGroup ref="observanceRestrictions"/>
                             </xs:extension>
                         </xs:simpleContent>
                     </xs:complexType>

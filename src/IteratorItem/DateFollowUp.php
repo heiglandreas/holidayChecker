@@ -36,11 +36,15 @@ use DateTimeInterface;
 use IntlCalendar;
 use Org_Heigl\Holidaychecker\CalendarDay;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
+use Org_Heigl\Holidaychecker\ObservanceInterface;
+use Org_Heigl\Holidaychecker\ObservanceTrait;
 use function array_map;
 use function in_array;
 
-class DateFollowUp implements HolidayIteratorItemInterface
+class DateFollowUp implements HolidayIteratorItemInterface, ObservanceInterface
 {
+    use ObservanceTrait;
+
     /** @var CalendarDay */
     private $day;
 
@@ -67,7 +71,12 @@ class DateFollowUp implements HolidayIteratorItemInterface
 
     public function dateMatches(DateTimeInterface $date): bool
     {
-        $weekday = $this->day->getWeekdayForGregorianYear((int) $date->format('Y'));
+        $gregorianYear = (int) $date->format('Y');
+        if (! $this->isWithinObservance($gregorianYear)) {
+            return false;
+        }
+
+        $weekday = $this->day->getWeekdayForGregorianYear($gregorianYear);
 
         if (in_array($weekday, $this->replaced)) {
             return $this->day->isFollowUpDay($date, $this->followup);

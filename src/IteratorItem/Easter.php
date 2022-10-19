@@ -38,10 +38,14 @@ use DateTimeInterface;
 use DateTimeZone;
 use Org_Heigl\DateIntervalComparator\DateIntervalComparator;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
+use Org_Heigl\Holidaychecker\ObservanceInterface;
+use Org_Heigl\Holidaychecker\ObservanceTrait;
 use function easter_days;
 
-class Easter implements HolidayIteratorItemInterface
+class Easter implements HolidayIteratorItemInterface, ObservanceInterface
 {
+    use ObservanceTrait;
+
     private $offset;
 
     private $holiday;
@@ -57,7 +61,12 @@ class Easter implements HolidayIteratorItemInterface
 
     public function dateMatches(DateTimeInterface $date): bool
     {
-        $easter = $this->getEaster((int) $date->format('Y'));
+        $year = (int) $date->format('Y');
+        if (! $this->isWithinObservance($year)) {
+            return false;
+        }
+
+        $easter = $this->getEaster($year);
         if ($this->offset < 0) {
             $day = $easter->sub(new DateInterval('P' . $this->offset * -1 . 'D'));
         } else {
