@@ -5,29 +5,7 @@ declare(strict_types=1);
 /**
  * Copyright (c) Andreas Heigl<andreas@heigl.org>
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @author    Andreas Heigl<andreas@heigl.org>
- * @copyright Andreas Heigl
- * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
- * @since     20.02.2018
- * @link      http://github.com/heiglandreas/org.heigl.Holidaychecker
+ * Licensed under the MIT-license. For details see the included file LICENSE.md
  */
 
 namespace Org_Heigl\Holidaychecker;
@@ -44,7 +22,7 @@ class CalendarDay
     private $month;
 
     /** @var int|null */
-    private $year;
+    private $year = null;
 
     /** @var IntlCalendar */
     private $calendar;
@@ -53,7 +31,6 @@ class CalendarDay
     {
         $this->day      = $day;
         $this->month    = $month;
-        $this->year     = null;
         $this->calendar = $calendar;
         $this->calendar->set(IntlCalendar::FIELD_DAY_OF_MONTH, $day);
         $this->calendar->set(IntlCalendar::FIELD_MONTH, $month - 1);
@@ -116,45 +93,34 @@ class CalendarDay
 
     public function isFollowUpDay(DateTimeInterface $dateTime, string $followUpDay): bool
     {
-        $cal = clone $this->calendar;
-        $cal = self::setGregorianYearForDate((int) $dateTime->format('Y'), $cal);
-        $day = $cal->toDateTime();
-        $day->modify('next ' . $followUpDay);
-        $cal->setTime($day->getTimestamp() * 1000);
-        $cal2         = clone $this->calendar;
-        $cal2->setTime($dateTime->getTimestamp() * 1000);
-
-        if (null !== $this->year && $cal->get(IntlCalendar::FIELD_YEAR) !== $cal2->get(IntlCalendar::FIELD_YEAR)) {
-            return false;
-        }
-
-        if ($cal->get(IntlCalendar::FIELD_MONTH) !== $cal2->get(IntlCalendar::FIELD_MONTH)) {
-            return false;
-        }
-
-        return $cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) === $cal2->get(IntlCalendar::FIELD_DAY_OF_MONTH);
+	    return $this->isModifiedDate($dateTime, $followUpDay, 'next');
     }
 
     public function isPreviousDay(DateTimeInterface $dateTime, string $previousDay): bool
     {
-        $cal = clone $this->calendar;
-        $cal = self::setGregorianYearForDate((int) $dateTime->format('Y'), $cal);
-        $day = $cal->toDateTime();
-        $day->modify('previous ' . $previousDay);
-        $cal->setTime($day->getTimestamp() * 1000);
-        $cal2         = clone $this->calendar;
-        $cal2->setTime($dateTime->getTimestamp() * 1000);
-
-        if (null !== $this->year && $cal->get(IntlCalendar::FIELD_YEAR) !== $cal2->get(IntlCalendar::FIELD_YEAR)) {
-            return false;
-        }
-
-        if ($cal->get(IntlCalendar::FIELD_MONTH) !== $cal2->get(IntlCalendar::FIELD_MONTH)) {
-            return false;
-        }
-
-        return $cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) === $cal2->get(IntlCalendar::FIELD_DAY_OF_MONTH);
+		return $this->isModifiedDate($dateTime, $previousDay, 'previous');
     }
+
+	private function isModifiedDate(DateTimeInterface $dateTime, string $modifiedDay, string $direction): bool
+	{
+		$cal = clone $this->calendar;
+		$cal = self::setGregorianYearForDate((int) $dateTime->format('Y'), $cal);
+		$day = $cal->toDateTime();
+		$day->modify($direction . ' ' . $modifiedDay);
+		$cal->setTime($day->getTimestamp() * 1000);
+		$cal2         = clone $this->calendar;
+		$cal2->setTime($dateTime->getTimestamp() * 1000);
+
+		if (null !== $this->year && $cal->get(IntlCalendar::FIELD_YEAR) !== $cal2->get(IntlCalendar::FIELD_YEAR)) {
+			return false;
+		}
+
+		if ($cal->get(IntlCalendar::FIELD_MONTH) !== $cal2->get(IntlCalendar::FIELD_MONTH)) {
+			return false;
+		}
+
+		return $cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) === $cal2->get(IntlCalendar::FIELD_DAY_OF_MONTH);
+	}
 
     public function getWeekdayForGregorianYear(int $year): int
     {
