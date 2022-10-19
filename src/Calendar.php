@@ -32,6 +32,8 @@ declare(strict_types=1);
 
 namespace Org_Heigl\Holidaychecker;
 
+use function in_array;
+
 class Calendar
 {
     public const BUDDHIST  = 'buddhist';
@@ -51,25 +53,21 @@ class Calendar
 
     public static function isValidCalendarName(string $calendarname): bool
     {
-        switch ($calendarname) {
-            case self::BUDDHIST:
-            case self::CHINESE:
-            case self::COPTIC:
-            case self::ETHIOPIAN:
-            case self::GREGORIAN:
-            case self::HEBREW:
-            case self::INDIAN:
-            case self::ISLAMIC:
-            case self::ISLAMIC_CIVIL:
-            case self::ISLAMIC_RGSA:
-            case self::ISLAMIC_TBLA:
-            case self::ISLAMIC_UMALQURA:
-            case self::JAPANESE:
-            case self::PERSIAN:
-                return true;
-            default:
-        }
-
-        return false;
-    }
+        return in_array($calendarname, [
+            self::BUDDHIST,
+            self::CHINESE,
+            self::COPTIC,
+            self::ETHIOPIAN,
+            self::GREGORIAN,
+            self::HEBREW,
+            self::INDIAN,
+            self::ISLAMIC,
+            self::ISLAMIC_CIVIL,
+            self::ISLAMIC_RGSA,
+            self::ISLAMIC_TBLA,
+            self::ISLAMIC_UMALQURA,
+            self::JAPANESE,
+            self::PERSIAN,
+        ]);
+	}
 }
