@@ -41,6 +41,7 @@ use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
 use RuntimeException;
+use Throwable;
 use UnexpectedValueException;
 use function explode;
 use function is_readable;
@@ -76,7 +77,21 @@ class HolidayIteratorFactory
             if ($child->nodeName === 'resources') {
                 continue;
             }
-            $iterator->append($this->getElement($child));
+
+			try {
+				$element = $this->getElement($child);
+				if ($child->hasAttribute('firstobservance') || $child->hasAttribute('lastobservance')) {
+					$element = new ObservanceDecorator(
+						$element,
+						$child->hasAttribute('firstobservance') ? (int) $child->getAttribute('firstobservance') : null,
+						$child->hasAttribute('lastobservance') ? (int) $child->getAttribute('lastobservance') : null,
+					);
+				}
+
+				$iterator->append($element);
+			} catch (Throwable $e) {
+				// Do nothing on purpose
+			}
         }
 
         return $iterator;
@@ -162,7 +177,7 @@ class HolidayIteratorFactory
             default:
                 throw new RuntimeException('Unknown element encountered');
         }
-    }
+	}
 
     private function getFree(DOMElement $element): bool
     {

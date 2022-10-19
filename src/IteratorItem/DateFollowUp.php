@@ -67,7 +67,8 @@ class DateFollowUp implements HolidayIteratorItemInterface
 
     public function dateMatches(DateTimeInterface $date): bool
     {
-        $weekday = $this->day->getWeekdayForGregorianYear((int) $date->format('Y'));
+        $gregorianYear = (int) $date->format('Y');
+        $weekday = $this->day->getWeekdayForGregorianYear($gregorianYear);
 
         if (in_array($weekday, $this->replaced)) {
             return $this->day->isFollowUpDay($date, $this->followup);

@@ -77,7 +77,8 @@ class Date implements HolidayIteratorItemInterface
 
     public function dateMatches(DateTimeInterface $date): bool
     {
-        $weekday = $this->calendarDay->getWeekdayForGregorianYear((int) $date->format('Y'));
+        $year = (int) $date->format('Y');
+		$weekday = $this->calendarDay->getWeekdayForGregorianYear($year);
         if (in_array($weekday, $this->forwardWhen, true)) {
             return $this->calendarDay->isFollowUpDay($date, $this->forwardTo);
         }

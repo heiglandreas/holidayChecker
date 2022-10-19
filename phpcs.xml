@@ -1,215 +1,221 @@
 <?xml version="1.0"?>
 <ruleset name="HolidayChecker">
-    <description>The coding standard for HolidayChecker</description>
+	<description>The coding standard for HolidayChecker</description>
 
-    <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
-    <autoload>vendor/autoload.php</autoload>
+	<config name="installed_paths" value="vendor/slevomat/coding-standard"/>
+	<autoload>vendor/autoload.php</autoload>
 
-    <arg name="basepath" value="."/>
-    <arg name="extensions" value="php"/>
-    <arg name="cache" value=".phpcs-cache"/>
-    <arg name="colors"/>
+	<arg name="basepath" value="."/>
+	<arg name="extensions" value="php"/>
+	<arg name="cache" value=".phpcs-cache"/>
+	<arg name="colors"/>
 
-    <arg name="colors"/>
-    <arg value="nps"/>
+	<arg name="colors"/>
+	<arg value="nps"/>
 
-    <!-- Paths to check -->
-    <file>src</file>
-    <file>tests</file>
+	<!-- Paths to check -->
+	<file>src</file>
+	<file>tests</file>
 
-    <rule ref="PSR2">
-        <!-- checked by SlevomatCodingStandard.Namespaces.UseSpacing -->
-        <exclude name="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse"/>
-        <!-- checked by SlevomatCodingStandard.Namespaces.NamespaceSpacing -->
-        <exclude name="PSR2.Namespaces.NamespaceDeclaration.BlankLineAfter"/>
-    </rule>
+	<rule ref="PSR2">
+		<!-- checked by SlevomatCodingStandard.Namespaces.UseSpacing -->
+		<exclude name="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse"/>
+		<!-- checked by SlevomatCodingStandard.Namespaces.NamespaceSpacing -->
+		<exclude name="PSR2.Namespaces.NamespaceDeclaration.BlankLineAfter"/>
+		<exclude name="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" />
+	</rule>
 
-    <!-- Force array element indentation with 4 spaces -->
-    <rule ref="Generic.Arrays.ArrayIndent"/>
-    <!-- Forbid `array(...)` -->
-    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
-    <!-- Force whitespace after a type cast -->
-    <rule ref="Generic.Formatting.SpaceAfterCast"/>
-    <!-- Forbid any content before opening tag -->
-    <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
-    <!-- Forbid deprecated functions -->
-    <rule ref="Generic.PHP.DeprecatedFunctions"/>
-    <!-- Force parameter and return type declarations to be lowercased -->
-    <rule ref="Generic.PHP.LowerCaseType"/>
-    <!-- Require comma after last element in multi-line array -->
-    <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
-    <!-- Require presence of constant visibility -->
-    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility">
-        <properties>
-            <property name="fixable" value="true"/>
-        </properties>
-    </rule>
-    <!-- Forbid empty lines around class braces -->
-    <rule ref="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces">
-        <properties>
-            <property name="linesCountAfterOpeningBrace" value="0"/>
-            <property name="linesCountBeforeClosingBrace" value="0"/>
-        </properties>
-    </rule>
-    <!-- Forbid prefix and suffix "Exception" for exception classes -->
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
-    <!-- Forbid prefix and suffix "Interface" for interfaces -->
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming">
-        <exclude-pattern>src/HolidayIteratorItemInterface.php</exclude-pattern>
-    </rule>
-    <!-- Forbid suffix "Trait" for traits -->
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
-    <!-- Require usage of null coalesce operator when possible -->
-    <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
-    <!-- Forbid usage of conditions when a simple return can be used -->
-    <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
-    <!-- Forbid useless unreachable catch blocks -->
-    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
-    <!-- Require using Throwable instead of Exception -->
-    <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
-    <!-- Require use statements to be alphabetically sorted -->
-    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
-    <!-- Forbid fancy group uses -->
-    <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
-    <!-- Forbid multiple use statements on same line -->
-    <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
-    <!-- Require newlines around namespace declaration -->
-    <rule ref="SlevomatCodingStandard.Namespaces.NamespaceSpacing"/>
-    <!-- Forbid using absolute class name references (except global ones) -->
-    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
-        <properties>
-            <property name="allowFallbackGlobalConstants" value="false"/>
-            <property name="allowFallbackGlobalFunctions" value="false"/>
-            <property name="allowFullyQualifiedGlobalClasses" value="true"/>
-            <property name="allowFullyQualifiedGlobalConstants" value="false"/>
-            <property name="allowFullyQualifiedGlobalFunctions" value="false"/>
-            <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
-            <property name="allowFullyQualifiedNameForCollidingConstants" value="true"/>
-            <property name="allowFullyQualifiedNameForCollidingFunctions" value="true"/>
-            <property name="searchAnnotations" value="true"/>
-        </properties>
-    </rule>
-    <!-- Forbid unused use statements -->
-    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
-        <properties>
-            <property name="searchAnnotations" value="true"/>
-        </properties>
-    </rule>
-    <!-- Forbid superfluous leading backslash in use statements -->
-    <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
-    <!-- Forbid useless uses of the same namespace -->
-    <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
-    <!-- Require empty newlines before and after uses -->
-    <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
-        <properties>
-            <property name="linesCountAfterLastUse" value="1"/>
-            <property name="linesCountBeforeFirstUse" value="1"/>
-            <property name="linesCountBetweenUseTypes" value="0"/>
-        </properties>
-    </rule>
-    <!-- Forbid useless alias for classes, constants and functions -->
-    <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
-    <!-- Forbid weak comparisons -->
-    <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
-    <!-- Require no spacing after spread operator -->
-    <rule ref="SlevomatCodingStandard.Operators.SpreadOperatorSpacing"/>
-    <!-- Forbid argument unpacking for functions specialized by PHP VM -->
-    <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
-    <!-- Forbid `list(...)` syntax -->
-    <rule ref="SlevomatCodingStandard.PHP.ShortList"/>
-    <!-- Forbid use of longhand cast operators -->
-    <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
-    <!-- Require presence of declare(strict_types=1) -->
-    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
-        <properties>
-            <property
-                    name="newlinesCountBetweenOpenTagAndDeclare"
-                    value="2"
-            />
-            <property
-                    name="spacesCountAroundEqualsSign"
-                    value="0"
-            />
-            <property
-                    name="newlinesCountAfterDeclare"
-                    value="2"
-            />
-        </properties>
-    </rule>
-    <!-- Forbid useless parentheses -->
-    <rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
-    <!-- Forbid useless semicolon `;` -->
-    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
-    <!-- Require use of short versions of scalar types (i.e. int instead of integer) -->
-    <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
-    <!-- Require the `null` type hint to be in the last position of annotations -->
-    <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
-    <!-- Require ? when default value is null -->
-    <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
-    <!-- Require one space between typehint and variable, require no space between nullability sign and typehint -->
-    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
-    <!-- Forbid space before colon in return types -->
-    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing"/>
-    <!-- Forbid spaces around square brackets -->
-    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
-    <!-- Force `self::` for self-reference, force lower-case self, forbid spaces around `::` -->
-    <rule ref="Squiz.Classes.SelfMemberReference"/>
-    <!-- Forbid global functions -->
-    <rule ref="Squiz.Functions.GlobalFunction"/>
-    <!-- Force camelCase variables -->
-    <rule ref="Squiz.NamingConventions.ValidVariableName">
-        <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore" />
-    </rule>
-    <!-- Forbid `AND` and `OR`, require `&&` and `||` -->
-    <rule ref="Squiz.Operators.ValidLogicalOperators"/>
-    <!-- Forbid `global` -->
-    <rule ref="Squiz.PHP.GlobalKeyword"/>
-    <!-- Forbid functions inside functions -->
-    <rule ref="Squiz.PHP.InnerFunctions"/>
-    <!-- Require PHP function calls in lowercase -->
-    <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
-    <!-- Forbid dead code -->
-    <rule ref="Squiz.PHP.NonExecutableCode"/>
-    <!-- Forbid `$this` inside static function -->
-    <rule ref="Squiz.Scope.StaticThisUsage"/>
-    <!-- Force whitespace before and after concatenation -->
-    <rule ref="Squiz.Strings.ConcatenationSpacing">
-        <properties>
-            <property name="spacing" value="1"/>
-            <property name="ignoreNewlines" value="true"/>
-        </properties>
-    </rule>
-    <!-- Forbid spaces in type casts -->
-    <rule ref="Squiz.WhiteSpace.CastSpacing"/>
-    <!-- Forbid blank line after function opening brace -->
-    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
-    <!-- Require 1 line before and after function, except at the top and bottom -->
-    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
-        <properties>
-            <property name="spacing" value="1" />
-            <property name="spacingBeforeFirst" value="0"/>
-            <property name="spacingAfterLast" value="0"/>
-        </properties>
-    </rule>
-    <!-- Require there be no space between increment/decrement operator and its operand -->
-    <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
-    <!-- Require space after language constructs -->
-    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
-    <!-- Require space around logical operators -->
-    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
-    <!-- Forbid spaces around `->` operator -->
-    <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing">
-        <properties>
-            <property name="ignoreNewlines" value="true"/>
-        </properties>
-    </rule>
-    <!-- Forbid spaces before semicolon `;` -->
-    <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
-    <!-- Forbid superfluous whitespaces -->
-    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
-        <properties>
-            <!-- turned on by PSR2 -> turning back off -->
-            <property name="ignoreBlankLines" value="false"/>
-        </properties>
-    </rule>
+	<!-- Force array element indentation with 4 spaces -->
+	<rule ref="Generic.Arrays.ArrayIndent"/>
+	<!-- Forbid `array(...)` -->
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+	<!-- Force whitespace after a type cast -->
+	<rule ref="Generic.Formatting.SpaceAfterCast"/>
+	<!-- Forbid any content before opening tag -->
+	<rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
+	<!-- Forbid deprecated functions -->
+	<rule ref="Generic.PHP.DeprecatedFunctions"/>
+	<!-- Force parameter and return type declarations to be lowercased -->
+	<rule ref="Generic.PHP.LowerCaseType"/>
+	<!-- Require comma after last element in multi-line array -->
+	<rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
+	<!-- Require presence of constant visibility -->
+	<rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility">
+		<properties>
+			<property name="fixable" value="true"/>
+		</properties>
+	</rule>
+	<!-- Forbid empty lines around class braces -->
+	<rule ref="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces">
+		<properties>
+			<property name="linesCountAfterOpeningBrace" value="0"/>
+			<property name="linesCountBeforeClosingBrace" value="0"/>
+		</properties>
+	</rule>
+	<!-- Forbid prefix and suffix "Exception" for exception classes -->
+	<rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
+	<!-- Forbid prefix and suffix "Interface" for interfaces -->
+	<rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming">
+		<exclude-pattern>src/HolidayIteratorItemInterface.php</exclude-pattern>
+		<exclude-pattern>src/ObservanceInterface.php</exclude-pattern>
+	</rule>
+	<!-- Forbid suffix "Trait" for traits -->
+	<rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming">
+		<exclude-pattern>src/ObservanceTrait.php</exclude-pattern>
+	</rule>
+	<!-- Require usage of null coalesce operator when possible -->
+	<rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
+	<!-- Forbid usage of conditions when a simple return can be used -->
+	<rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn">
+		<exclude-pattern>src/ObservanceTrait.php</exclude-pattern>
+	</rule>
+	<!-- Forbid useless unreachable catch blocks -->
+	<rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
+	<!-- Require using Throwable instead of Exception -->
+	<rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
+	<!-- Require use statements to be alphabetically sorted -->
+	<rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+	<!-- Forbid fancy group uses -->
+	<rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
+	<!-- Forbid multiple use statements on same line -->
+	<rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
+	<!-- Require newlines around namespace declaration -->
+	<rule ref="SlevomatCodingStandard.Namespaces.NamespaceSpacing"/>
+	<!-- Forbid using absolute class name references (except global ones) -->
+	<rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
+		<properties>
+			<property name="allowFallbackGlobalConstants" value="false"/>
+			<property name="allowFallbackGlobalFunctions" value="false"/>
+			<property name="allowFullyQualifiedGlobalClasses" value="true"/>
+			<property name="allowFullyQualifiedGlobalConstants" value="false"/>
+			<property name="allowFullyQualifiedGlobalFunctions" value="false"/>
+			<property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
+			<property name="allowFullyQualifiedNameForCollidingConstants" value="true"/>
+			<property name="allowFullyQualifiedNameForCollidingFunctions" value="true"/>
+			<property name="searchAnnotations" value="true"/>
+		</properties>
+	</rule>
+	<!-- Forbid unused use statements -->
+	<rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+		<properties>
+			<property name="searchAnnotations" value="true"/>
+		</properties>
+	</rule>
+	<!-- Forbid superfluous leading backslash in use statements -->
+	<rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
+	<!-- Forbid useless uses of the same namespace -->
+	<rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
+	<!-- Require empty newlines before and after uses -->
+	<rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
+		<properties>
+			<property name="linesCountAfterLastUse" value="1"/>
+			<property name="linesCountBeforeFirstUse" value="1"/>
+			<property name="linesCountBetweenUseTypes" value="0"/>
+		</properties>
+	</rule>
+	<!-- Forbid useless alias for classes, constants and functions -->
+	<rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
+	<!-- Forbid weak comparisons -->
+	<rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
+	<!-- Require no spacing after spread operator -->
+	<rule ref="SlevomatCodingStandard.Operators.SpreadOperatorSpacing"/>
+	<!-- Forbid argument unpacking for functions specialized by PHP VM -->
+	<rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
+	<!-- Forbid `list(...)` syntax -->
+	<rule ref="SlevomatCodingStandard.PHP.ShortList"/>
+	<!-- Forbid use of longhand cast operators -->
+	<rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
+	<!-- Require presence of declare(strict_types=1) -->
+	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+		<properties>
+			<property
+				name="newlinesCountBetweenOpenTagAndDeclare"
+				value="2"
+			/>
+			<property
+				name="spacesCountAroundEqualsSign"
+				value="0"
+			/>
+			<property
+				name="newlinesCountAfterDeclare"
+				value="2"
+			/>
+		</properties>
+	</rule>
+	<!-- Forbid useless parentheses -->
+	<rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
+	<!-- Forbid useless semicolon `;` -->
+	<rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
+	<!-- Require use of short versions of scalar types (i.e. int instead of integer) -->
+	<rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
+	<!-- Require the `null` type hint to be in the last position of annotations -->
+	<rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
+	<!-- Require ? when default value is null -->
+	<rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
+	<!-- Require one space between typehint and variable, require no space between nullability sign and typehint -->
+	<rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
+	<!-- Forbid space before colon in return types -->
+	<rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing"/>
+	<!-- Forbid spaces around square brackets -->
+	<rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+	<!-- Force `self::` for self-reference, force lower-case self, forbid spaces around `::` -->
+	<rule ref="Squiz.Classes.SelfMemberReference"/>
+	<!-- Forbid global functions -->
+	<rule ref="Squiz.Functions.GlobalFunction"/>
+	<!-- Force camelCase variables -->
+	<rule ref="Squiz.NamingConventions.ValidVariableName">
+		<exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+	</rule>
+	<!-- Forbid `AND` and `OR`, require `&&` and `||` -->
+	<rule ref="Squiz.Operators.ValidLogicalOperators"/>
+	<!-- Forbid `global` -->
+	<rule ref="Squiz.PHP.GlobalKeyword"/>
+	<!-- Forbid functions inside functions -->
+	<rule ref="Squiz.PHP.InnerFunctions"/>
+	<!-- Require PHP function calls in lowercase -->
+	<rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+	<!-- Forbid dead code -->
+	<rule ref="Squiz.PHP.NonExecutableCode"/>
+	<!-- Forbid `$this` inside static function -->
+	<rule ref="Squiz.Scope.StaticThisUsage"/>
+	<!-- Force whitespace before and after concatenation -->
+	<rule ref="Squiz.Strings.ConcatenationSpacing">
+		<properties>
+			<property name="spacing" value="1"/>
+			<property name="ignoreNewlines" value="true"/>
+		</properties>
+	</rule>
+	<!-- Forbid spaces in type casts -->
+	<rule ref="Squiz.WhiteSpace.CastSpacing"/>
+	<!-- Forbid blank line after function opening brace -->
+	<rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
+	<!-- Require 1 line before and after function, except at the top and bottom -->
+	<rule ref="Squiz.WhiteSpace.FunctionSpacing">
+		<properties>
+			<property name="spacing" value="1"/>
+			<property name="spacingBeforeFirst" value="0"/>
+			<property name="spacingAfterLast" value="0"/>
+		</properties>
+	</rule>
+	<!-- Require there be no space between increment/decrement operator and its operand -->
+	<rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
+	<!-- Require space after language constructs -->
+	<rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+	<!-- Require space around logical operators -->
+	<rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+	<!-- Forbid spaces around `->` operator -->
+	<rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing">
+		<properties>
+			<property name="ignoreNewlines" value="true"/>
+		</properties>
+	</rule>
+	<!-- Forbid spaces before semicolon `;` -->
+	<rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+	<!-- Forbid superfluous whitespaces -->
+	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+		<properties>
+			<!-- turned on by PSR2 -> turning back off -->
+			<property name="ignoreBlankLines" value="false"/>
+		</properties>
+	</rule>
 </ruleset>

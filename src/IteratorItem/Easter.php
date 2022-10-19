@@ -57,7 +57,9 @@ class Easter implements HolidayIteratorItemInterface
 
     public function dateMatches(DateTimeInterface $date): bool
     {
-        $easter = $this->getEaster((int) $date->format('Y'));
+        $year = (int) $date->format('Y');
+
+		$easter = $this->getEaster($year);
         if ($this->offset < 0) {
             $day = $easter->sub(new DateInterval('P' . $this->offset * -1 . 'D'));
         } else {

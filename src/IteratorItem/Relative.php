@@ -60,9 +60,11 @@ class Relative implements HolidayIteratorItemInterface
 
     public function dateMatches(DateTimeInterface $date): bool
     {
+        $year = (int) $date->format('Y');
+
         $day = new DateTimeImmutable(sprintf(
             '%s-%s-%s',
-            $date->format('Y'),
+            $year,
             $this->month,
             $this->day
         ));

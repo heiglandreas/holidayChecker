@@ -10,27 +10,16 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 max_line_length = 120
 charset = utf-8
-
-# Matches multiple files with brace expansion notation
-# Set default charset
-[*.{js,py,php}]
-charset = utf-8
-
-# 4 space indentation
-[*.{py|php}]
-indent_style = space
-indent_size = 4
-
-# Tab indentation (no size specified)
-[Makefile]
+indent_size = tab
 indent_style = tab
-
-# Indentation override for all JS under lib directory
-[lib/**.js]
-indent_style = space
-indent_size = 2
+tab_width = 4
 
 # Matches the exact files either package.json or .travis.yml
 [{package.json,.travis.yml,composer.json}]
-indent_style = space
-indent_size = 2
+tab_width = 2
+
+[*.xml]
+tab_width = 2
+
+[COMMIT_EDITMSG]
+max_line_length = 72
