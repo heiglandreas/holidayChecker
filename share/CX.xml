@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Christmas_Island" lastChecked="2022-10-19">Wikipedia</resource>
+    </resources>
+    <date day="1" month="1" free="true">New Year's Day</date>
+    <date day="26" month="1" free="true">Australia Day</date>
+    <date day="1" month="1" free="true" calendar="chinese">Chinese New Year</date>
+    <date day="2" month="1" free="true" calendar="chinese">Chinese New Year</date>
+    <relative day="1" month="3" relation="fourth monday" free="true">Labour Day</relative>
+    <easter offset="-2" free="true">Good Friday</easter>
+    <date day="25" month="4" free="true">Anzac Day</date>
+    <date day="1" month="10" free="true" calendar="islamic-civil">Eid al-Fitr</date>
+    <date day="10" month="12" free="true" calendar="islamic-civil">Eid al-Adha</date>
+    <date day="6" month="10" free="true">Territory Day</date>
+    <date day="25" month="12" free="true">Christmas Day</date>
+    <date day="26" month="12" free="true">Boxing Day</date>
+</holidays>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Christmas_Island" lastChecked="2022-10-19">Wikipedia</resource>
+    </resources>
+    <date day="1" month="1" free="true">New Year's Day</date>
+    <date day="26" month="1" free="true">Australia Day</date>
+    <date day="6" month="3" free="true">Norfolk Island Foundation Day</date>
+    <easter offset="-2" free="true">Good Friday</easter>
+    <easter offset="1" free="true">Easter Monday</easter>
+    <date day="25" month="4" free="true">Anzac Day</date>
+    <date day="8" month="6" free="true">Bounty Day</date>
+    <relative day="1" month="6" relation="second monday" free="true">King's Birthday</relative>
+    <relative day="1" month="10" relation="second monday" free="true">Norfolk Island Agricultural Show</relative>
+    <relative day="1" month="11" relation="fourth wednesday" free="true">Thanksgiving Day</relative>
+    <date day="25" month="12" free="true">Christmas Day</date>
+    <date day="26" month="12" free="true">Boxing Day</date>
+</holidays>
