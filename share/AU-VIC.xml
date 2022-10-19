@@ -12,7 +12,7 @@
     <easter offset="0" free="true">Easter Sunday</easter>
     <date day="25" month="4" free="true">Anzac Day</date>
     <relative day="1" month="6" relation="second monday" free="true">Kings Birthday</relative>
-    <relative day="1" month="10" relation="last saturday - 1 day" free="true" comment="The last saturday in september usually is the date for the finals"
+    <relative day="1" month="10" relation="last saturday - 1 day" free="true" comment="The last saturday in september usually is the date for the finals">Friday before the Australian Football League Grand Final</relative>
     <relative day="1" month="10" relation="first tuesday" free="true">Melbourne Cup</relative>
     <date day="26" month="12" free="true" forwardwhen="saturday sunday" forwardto="monday">Boxing Day</date>
     <xi:include href="AU.xml" parse="xml" xpointer="xpointer(*/*)">
