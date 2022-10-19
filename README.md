@@ -102,6 +102,7 @@ Currently these countries are available:
 * Antigua and Barbuda
 * Argentina
 * Armenia
+* Australia including Christmas Island, Cocos (Keeling) Islands and Norfolk Island
 
 But the list is constantly extending.
 
