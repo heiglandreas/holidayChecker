@@ -125,7 +125,7 @@ class HolidaycheckerTest extends TestCase
 
         $time = microtime(true);
         foreach ($period as $date) {
-            $result = $checker->check($date);
+            $checker->check($date);
         }
         $duration = microtime(true) - $time;
 
