@@ -39,6 +39,7 @@ use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
+use Org_Heigl\Holidaychecker\ObservanceDecorator;
 use PHPUnit\Framework\TestCase;
 use Throwable;
 use UnexpectedValueException;
@@ -93,7 +94,7 @@ class HolidayIteratorFactoryTest extends TestCase
      */
     public function testThatFactoryThrowsExceptionForUnknownISOCode()
     {
-        self::expectException(UnexpectedValueException::class);
+        $this->expectException(UnexpectedValueException::class);
 
         $factory = new HolidayIteratorFactory();
 
@@ -102,10 +103,21 @@ class HolidayIteratorFactoryTest extends TestCase
 
     public function testThatFactoryThrowsExceptionForInvalidXmlFile(): void
     {
-        self::expectException(Throwable::class);
+        $this->expectException(Throwable::class);
 
         $factory = new HolidayIteratorFactory();
 
         $factory->createIteratorFromXmlFile(__DIR__ . '/_assets/invalid.xml');
     }
+
+	public function testThatExistenceOfObservanceAttributesResultsInObservanceDecorator(): void
+	{
+		$factory = new HolidayIteratorFactory();
+		$result = $factory->createIteratorFromXmlFile(__DIR__ . '/_assets/testDecoration.xml');
+
+		$this->assertInstanceof(HolidayIterator::class, $result);
+		foreach($result as $item) {
+			$this->assertInstanceOf(ObservanceDecorator::class, $item);
+		}
+	}
 }
