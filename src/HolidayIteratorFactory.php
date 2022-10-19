@@ -41,6 +41,7 @@ use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
 use RuntimeException;
+use Throwable;
 use UnexpectedValueException;
 use function explode;
 use function is_readable;
@@ -76,7 +77,21 @@ class HolidayIteratorFactory
             if ($child->nodeName === 'resources') {
                 continue;
             }
-            $iterator->append($this->getElement($child));
+
+			try {
+				$element = $this->getElement($child);
+				if ($child->hasAttribute('firstobservance') || $child->hasAttribute('lastobservance')) {
+					$element = new ObservanceDecorator(
+						$element,
+						$child->hasAttribute('firstobservance') ? (int) $child->getAttribute('firstobservance') : null,
+						$child->hasAttribute('lastobservance') ? (int) $child->getAttribute('lastobservance') : null,
+					);
+				}
+
+				$iterator->append($element);
+			} catch (Throwable $e) {
+				// Do nothing on purpose
+			}
         }
 
         return $iterator;
@@ -108,19 +123,17 @@ class HolidayIteratorFactory
     {
         switch ($child->nodeName) {
             case 'easter':
-                $return = new Easter(
+                return new Easter(
                     $child->textContent,
                     $this->getFree($child),
                     (int) $child->getAttribute('offset')
                 );
-                break;
             case 'easterorthodox':
-                $return = new EasterOrthodox(
+                return new EasterOrthodox(
                     $child->textContent,
                     $this->getFree($child),
                     (int) $child->getAttribute('offset')
                 );
-                break;
             case 'date':
                 $day = CalendarDayFactory::createCalendarDay(
                     (int) $child->getAttribute('day'),
@@ -130,7 +143,7 @@ class HolidayIteratorFactory
                 if ($child->hasAttribute('year')) {
                     $day->setYear((int) $child->getAttribute('year'));
                 }
-                $return = new Date(
+                return new Date(
                     $child->textContent,
                     $this->getFree($child),
                     $day,
@@ -139,7 +152,6 @@ class HolidayIteratorFactory
                     $child->hasAttribute('rewindto')?$child->getAttribute('rewindto'):'',
                     $child->hasAttribute('rewindwhen')?explode(' ', $child->getAttribute('rewindwhen')):[],
                 );
-                break;
             case 'dateFollowUp':
                 $day = CalendarDayFactory::createCalendarDay(
                     (int) $child->getAttribute('day'),
@@ -147,36 +159,25 @@ class HolidayIteratorFactory
                     ($child->hasAttribute('calendar')?$child->getAttribute('calendar'): 'gregorian')
                 );
 
-                $return = new DateFollowUp(
+                return new DateFollowUp(
                     $child->textContent,
                     $this->getFree($child),
                     $day,
                     $child->getAttribute('followup'),
                     ($child->hasAttribute('replaced')?explode(' ', $child->getAttribute('replaced')):[])
                 );
-                break;
             case 'relative':
-                $return = new Relative(
+                return new Relative(
                     $child->textContent,
                     $this->getFree($child),
                     (int) $child->getAttribute('day'),
                     (int) $child->getAttribute('month'),
                     $child->getAttribute('relation')
                 );
-                break;
             default:
                 throw new RuntimeException('Unknown element encountered');
         }
-        if ($child->hasAttribute('firstobservance') || $child->hasAttribute('lastobservance')) {
-            $return = new ObservanceDecorator(
-				$return,
-                $child->hasAttribute('firstobservance')?(int) $child->getAttribute('firstobservance'):null,
-                $child->hasAttribute('lastobservance')?(int) $child->getAttribute('lastobservance'):null,
-            );
-        }
-
-        return $return;
-    }
+	}
 
     private function getFree(DOMElement $element): bool
     {

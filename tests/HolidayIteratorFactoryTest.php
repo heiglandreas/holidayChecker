@@ -116,7 +116,7 @@ class HolidayIteratorFactoryTest extends TestCase
 		$result = $factory->createIteratorFromXmlFile(__DIR__ . '/_assets/testDecoration.xml');
 
 		$this->assertInstanceof(HolidayIterator::class, $result);
-		foreach($result as $item) {
+		foreach ($result as $item) {
 			$this->assertInstanceOf(ObservanceDecorator::class, $item);
 		}
 	}
