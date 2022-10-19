@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Azerbaijan" lastChecked="2022-10-19">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Yeni il</date>
+	<date day="2" month="1" free="true" comment="New Year's Day">Yeni il</date>
+	<date day="20" month="1" free="true" comment="Martyrs' Day">Qara Yanvar</date>
+	<date day="8" month="3" free="true" comment="Women's Day">Qadınlar günü</date>
+	<date day="20" month="3" free="true" comment="Spring Festival">Novruz</date>
+	<date day="21" month="3" free="true" comment="Spring Festival">Novruz</date>
+	<date day="22" month="3" free="true" comment="Spring Festival">Novruz</date>
+	<date day="23" month="3" free="true" comment="Spring Festival">Novruz</date>
+	<date day="24" month="3" free="true" comment="Spring Festival">Novruz</date>
+	<date day="9" month="5" free="true" comment="Victory Day over Fascism">Faşizm üzərinə qələbə günü</date>
+	<date day="28" month="5" free="true" comment="Independence Day">Müstəqillik Günü</date>
+	<date day="15" month="6" free="true" comment="National Salvation Day">Azərbaycan xalqının Milli Qurtuluş günü</date>
+	<date day="26" month="6" free="true" comment="Azerbaijan Armed Forces Day">Azərbaycan Respublikasının Silahlı Qüvvələri günü</date>
+	<date day="8" month="11" free="true" comment="Victory Day">Zəfər Günü</date>
+	<date day="9" month="11" free="true" comment="Flag Day">Dövlət Bayrağı günü</date>
+	<date day="31" month="12" free="true" comment="International Solidarity Day of Azerbaijanis">Dünya Azərbaycanlılarının Həmrəyliyi günü</date>
+	<date day="1" month="10" calendar="islamic-umalqura" free="true" comment="Eid al-Fitr">Ramazan Bayramı</date>
+	<date day="2" month="10" calendar="islamic-umalqura" free="true" comment="Eid al-Fitr">Ramazan Bayramı</date>
+	<date day="10" month="12" calendar="islamic-umalqura" free="true" comment="Eid al-Adha">Qurban Bayramı</date>
+	<date day="11" month="12" calendar="islamic-umalqura" free="true" comment="Eid al-Adha">Qurban Bayramı</date>
+</holidays>
