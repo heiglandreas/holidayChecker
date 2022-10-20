@@ -4,7 +4,7 @@
           xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
 >
     <date day="1" month="1" free="true">Nowy Rok</date>
-    <date day="6" month="6" free="true">Święto Trzech Króli</date>
+    <date day="6" month="1" free="true">Święto Trzech Króli</date>
     <easter offset="0" free="true">pierwszy dzień Wielkiej Nocy</easter>
     <easter offset="1" free="true">drugi dzień Wielkiej Nocy </easter>
     <date day="1" month="5" free="true">Święto Państwowe</date>
