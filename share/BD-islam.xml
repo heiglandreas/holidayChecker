@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<date day="10" month="1" free="true" calendar="islamic-umalqura" comment="Ashura">আশুরা</date>
+	<date day="12" month="3" free="true" calendar="islamic-umalqura" comment="Eid-e-Miladun-Nabi">ঈদে মিলাদুন্নবী</date>
+	<date day="1" month="10" free="true" calendar="islamic-umalqura" comment="Eid ul-Fitr">ঈদুল ফিতর</date>
+	<date day="2" month="10" free="true" calendar="islamic-umalqura" comment="Eid ul-Fitr">ঈদুল ফিতর</date>
+	<date day="3" month="10" free="true" calendar="islamic-umalqura" comment="Eid ul-Fitr">ঈদুল ফিতর</date>
+	<date day="10" month="12" free="true" calendar="islamic-umalqura" comment="Eid ul-Adha">ঈদুল আযহা</date>
+	<date day="11" month="12" free="true" calendar="islamic-umalqura" comment="Eid ul-Adha">ঈদুল আযহা</date>
+	<date day="12" month="12" free="true" calendar="islamic-umalqura" comment="Eid ul-Adha">ঈদুল আযহা</date>
+	<xi:include href="BD.xml" parse="xml" xpointer="xpointer(*/*)">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+</holidays>

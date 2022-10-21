@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<!--date day="10" month="1" free="true" calendar="" comment="Krishna Janmashtami">জন্মাষ্টমী</date-->
+	<!--date day="10" month="1" free="true" calendar="" comment="Durga Puja">দুর্গা পূজা</date-->
+	<xi:include href="BD.xml" parse="xml" xpointer="xpointer(*/*)">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+</holidays>
