@@ -31,20 +31,27 @@
     </xs:simpleType>
     <xs:simpleType name="calendars">
         <xs:restriction base="xs:string">
+			<!--
+			as described in the language files of ICU
+			see https://github.com/unicode-org/icu/blob/d453c12bfacde783b7e985cdb4eb15c6db277f78/icu4c/source/data/lang/en.txt#L951-L970
+			-->
             <xs:enumeration value="buddhist"/>
             <xs:enumeration value="chinese"/>
             <xs:enumeration value="coptic"/>
-            <xs:enumeration value="ethiopian"/>
+            <xs:enumeration value="dangi"/>
+            <xs:enumeration value="ethiopic"/>
+            <xs:enumeration value="ethiopic-amete-alem"/>
             <xs:enumeration value="gregorian"/>
             <xs:enumeration value="hebrew"/>
             <xs:enumeration value="indian"/>
             <xs:enumeration value="islamic"/>
             <xs:enumeration value="islamic-civil"/>
             <xs:enumeration value="islamic-umalqura"/>
-            <xs:enumeration value="islamic-rgsa"/>
             <xs:enumeration value="islamic-tbla"/>
+            <xs:enumeration value="iso8601"/>
             <xs:enumeration value="japanese"/>
             <xs:enumeration value="persian"/>
+            <xs:enumeration value="roc"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:attributeGroup name="restriction">
