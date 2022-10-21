@@ -106,11 +106,6 @@ class CalendarDay
 	    return $this->isModifiedDate($dateTime, $followUpDay, 'next');
     }
 
-    public function isPreviousDay(DateTimeInterface $dateTime, string $previousDay): bool
-    {
-		return $this->isModifiedDate($dateTime, $previousDay, 'previous');
-    }
-
 	private function isModifiedDate(DateTimeInterface $dateTime, string $modifiedDay, string $direction): bool
 	{
 		$cal = clone $this->calendar;

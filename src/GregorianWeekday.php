@@ -110,7 +110,10 @@ final class GregorianWeekday
 	public static function fromString(string $weekday): self
 	{
 		if (! method_exists(self::class, strtolower($weekday))) {
-			throw new RuntimeException('Weekday not found');
+			throw new RuntimeException(sprintf(
+				'Weekday "%s" is not known',
+				$weekday
+			));
 		}
 
 		/** @var GregorianWeekday $gregorianWeekday */

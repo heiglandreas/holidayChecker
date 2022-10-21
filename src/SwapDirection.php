@@ -38,9 +38,9 @@ final class SwapDirection
 				return 'previous';
 			case self::FORWARD:
 				return 'next';
-			default:
-				return '';
 		}
+
+		return '';
 	}
 
 	public static function forward(): self
