@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Belize" lastChecked="2022-10-21">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" forwardto="monday" forwardwhen="sunday">New Year's Day</date>
+	<date day="9" month="3" free="true" forwardto="monday" forwardwhen="friday sunday" rewindto="monday" rewindwhen="tuesday wednesday thursday">National Heroes &amp; Benefactors Day</date>
+	<easter offset="-2" free="true">Good Friday</easter>
+	<easter offset="-1" free="true">Holy Saturday</easter>
+	<easter offset="0" free="true">Easter</easter>
+	<easter offset="1" free="true">Easter Monday</easter>
+	<date day="1" month="5" free="true" forwardto="monday" forwardwhen="friday sunday">Labour Day</date>
+	<date day="1" month="8" free="true" forwardto="monday" forwardwhen="friday sunday">Emancipation Day</date>
+	<date day="24" month="5" free="true" forwardto="monday" forwardwhen="friday sunday" rewindto="monday" rewindwhen="tuesday wednesday thursday">Commonwealth Day</date>
+	<date day="10" month="9" free="true" forwardto="monday" forwardwhen="friday sunday">Saint George's Caye Day</date>
+	<date day="21" month="9" free="true" forwardto="monday" forwardwhen="friday sunday">Independence Day</date>
+	<date day="12" month="10" free="true" forwardto="monday" forwardwhen="friday sunday" rewindto="monday" rewindwhen="tuesday wednesday thursday">Pan America Day</date>
+	<date day="19" month="11" free="true" forwardto="monday" forwardwhen="friday sunday">Garifuna Settlement Day</date>
+	<date day="25" month="12" free="true" forwardto="monday" forwardwhen="friday sunday">Christmas Day</date>
+	<date day="26" month="12" free="true" forwardto="monday" forwardwhen="friday sunday">Boxing Day</date>
+</holidays>

@@ -108,6 +108,7 @@ Currently these countries are available:
 * Bangladesh (missing calculation of Hindu and Buddhist holidays)
 * Barbados
 * Belarus
+* Belize
 
 But the list is constantly extending.
 
