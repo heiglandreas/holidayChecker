@@ -93,6 +93,7 @@ Currently the holidays for these countries are available:
 * Armenia
 * Australia including Christmas Island, Cocos (Keeling) Islands and Norfolk Island
 * Azerbaijan
+* Bahrain
 
 But the list is constantly extending.
 
