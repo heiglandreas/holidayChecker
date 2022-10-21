@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<date day="1" month="1" free="true">New Year's Eve</date>
+	<date day="21" month="1" free="true">Errol Barrow Day</date>
+	<easter offset="-2" free="true">Good Friday</easter>
+	<easter offset="1" free="true">Easter Monday</easter>
+	<date day="28" month="4" free="true">National Heroes' Day</date>
+	<date day="1" month="5" free="true">May Day/Labour Day</date>
+	<easter offset="50" free="true">Whit Monday</easter>
+	<date day="1" month="8" free="true">Emancipation Day</date>
+	<relative day="31" month="7" relation="next monday" free="true">Kadooment Day</relative>
+	<date day="30" month="11" free="true">Independence Day</date>
+	<date day="25" month="12" free="true">Christmas Day</date>
+	<date day="26" month="12" free="true">Boxing Day</date>
+</holidays>
