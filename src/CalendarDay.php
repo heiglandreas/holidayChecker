@@ -91,6 +91,16 @@ class CalendarDay
         return $cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) === $this->calendar->get(IntlCalendar::FIELD_DAY_OF_MONTH);
     }
 
+	public function getCalendar(): IntlCalendar
+	{
+		return clone $this->calendar;
+	}
+
+	public function hasYearSet(): bool
+	{
+		return null !== $this->year;
+	}
+
     public function isFollowUpDay(DateTimeInterface $dateTime, string $followUpDay): bool
     {
 	    return $this->isModifiedDate($dateTime, $followUpDay, 'next');
@@ -135,8 +145,6 @@ class CalendarDay
         $cal->set(IntlCalendar::FIELD_MONTH, $this->month - 1);
         $cal->set(IntlCalendar::FIELD_DAY_OF_MONTH, $this->day);
 
-        $cal = self::setGregorianYearForDate($gregorianYear, $cal);
-
-        return $cal;
+        return self::setGregorianYearForDate($gregorianYear, $cal);
     }
 }

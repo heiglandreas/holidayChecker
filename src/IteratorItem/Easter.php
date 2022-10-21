@@ -66,6 +66,10 @@ class Easter implements HolidayIteratorItemInterface
             $day = $easter->add(new DateInterval('P' . $this->offset . 'D'));
         }
 
+		if (false === $day) {
+			return false;
+		}
+
         $comparator = new DateIntervalComparator();
         return 0 > $comparator->compare($day->diff($date), new DateInterval('P1D'));
     }

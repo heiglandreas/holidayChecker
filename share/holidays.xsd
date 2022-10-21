@@ -90,10 +90,14 @@
     <xs:attributeGroup name="forward">
         <xs:attribute name="forwardto" type="daynames" use="optional"/>
         <xs:attribute name="forwardwhen" type="daynamelist" use="optional" />
+		<xs:attribute name="alternateforwardto" type="daynames"/>
+		<xs:attribute name="alternateforwardwhen" type="daynamelist"/>
     </xs:attributeGroup>
     <xs:attributeGroup name="rewind">
         <xs:attribute name="rewindto" type="daynames" use="optional"/>
         <xs:attribute name="rewindwhen" type="daynamelist" use="optional" />
+		<xs:attribute name="alternaterewindto" type="daynames"/>
+		<xs:attribute name="alternaterewindwhen" type="daynamelist"/>
     </xs:attributeGroup>
     <xs:element name="resources">
 
@@ -208,7 +212,9 @@
                             <xs:extension base="xs:string">
                                 <xs:attributeGroup ref="relativeAttributes"/>
                                 <xs:attributeGroup ref="restriction"/>
-                                <xs:attributeGroup ref="observanceRestrictions"/>
+								<xs:attributeGroup ref="rewind"/>
+								<xs:attributeGroup ref="forward"/>
+								<xs:attributeGroup ref="observanceRestrictions"/>
                             </xs:extension>
                         </xs:simpleContent>
                     </xs:complexType>
