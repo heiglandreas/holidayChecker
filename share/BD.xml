@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Bangladesh" lastChecked="2022-10-21">Wikipedia</resource>
+	</resources>
+	<date day="21" month="2" free="true" calendar="gregorian" comment="Language Martyrs' Day/International Mother Language Day">শহীদ দিবস</date>
+	<date day="17" month="3" free="true" calendar="gregorian" comment="Mujib's Birthday &amp; Children's Day">মুজিব জয়ন্তী</date>
+	<date day="26" month="3" free="true" calendar="gregorian" comment="Independence Day">স্বাধীনতা দিবস</date>
+	<date day="14" month="4" free="true" calendar="gregorian" comment="Bengali New Year's Day">পহেলা বৈশাখ</date>
+	<date day="1" month="5" free="true" calendar="gregorian" comment="May DAy">মে দিবস</date>
+	<date day="15" month="8" free="true" calendar="gregorian" comment="National Mourning Day">জাতীয় শোক দিবস</date>
+	<date day="16" month="12" free="true" calendar="gregorian" comment="Victory Day">বিজয় দিবস</date>
+</holidays>

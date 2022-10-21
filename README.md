@@ -105,6 +105,7 @@ Currently these countries are available:
 * Azerbaijan
 * Bahamas
 * Bahrain
+* Bangladesh (missing calculation of Hindu and Buddhist holidays)
 
 But the list is constantly extending.
 
