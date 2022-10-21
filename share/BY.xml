@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Belarus" lastChecked="2022-10-21">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Новы год</date>
+	<date day="2" month="1" free="true" comment="New Year's Day">Новы год</date>
+	<date day="7" month="1" free="true" comment="Orthodox Christmas">Каляды праваслаўныя</date>
+	<date day="8" month="3" free="true" comment="International Womens Day">Мiжнародны жаночы дзень</date>
+	<easterorthodox offset="9" free="true" comment="Radonitsa">Радунiца</easterorthodox>
+	<date day="1" month="5" free="true" comment="Labour Day">Дзень працы</date>
+	<date day="9" month="5" free="true" comment="Victory Day">Дзень Перамогi</date>
+	<date day="3" month="7" free="true" comment="Independence Day">Дзень Незалежнасцi</date>
+	<date day="7" month="11" free="true" comment="October Revolution Day">Дзень Кастрычніцкай рэвалюцыі</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Каляды каталiцкiя</date>
+</holidays>
