@@ -43,6 +43,7 @@ use Org_Heigl\Holidaychecker\Factory\EasterOrthodoxFactory;
 use Org_Heigl\Holidaychecker\Factory\ItemFromDomElementCreator;
 use Org_Heigl\Holidaychecker\Factory\ObservanceDecoratorFactory;
 use Org_Heigl\Holidaychecker\Factory\RelativeFactory;
+use Org_Heigl\Holidaychecker\Factory\SwapDecoratorFactory;
 use RuntimeException;
 use Throwable;
 use UnexpectedValueException;
@@ -69,6 +70,7 @@ class HolidayIteratorFactory
 
 		$this->decorators = [
 			new ObservanceDecoratorFactory(),
+			new SwapDecoratorFactory(),
 		];
 	}
 

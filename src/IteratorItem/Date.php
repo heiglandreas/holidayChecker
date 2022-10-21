@@ -32,14 +32,9 @@ declare(strict_types=1);
 
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
-use DateTime;
-use DateTimeImmutable;
 use DateTimeInterface;
-use IntlCalendar;
 use Org_Heigl\Holidaychecker\CalendarDay;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
-use function array_map;
-use function in_array;
 
 class Date implements HolidayIteratorItemInterface
 {
@@ -52,44 +47,15 @@ class Date implements HolidayIteratorItemInterface
     /** @var string */
     private $name;
 
-    /** @var string */
-    private $forwardTo;
-
-    /** @var array */
-    private $forwardWhen;
-
-    /** @var string */
-    private $rewindTo;
-
-    /** @var array */
-    private $rewindWhen;
-
-    public function __construct(string $name, bool $holiday, CalendarDay $day, string $forwardTo = '', array $forwardWhen = [], string $rewindTo = '', array $rewindWhen = [])
+    public function __construct(string $name, bool $holiday, CalendarDay $day)
     {
         $this->calendarDay = $day;
         $this->holiday = $holiday;
         $this->name = $name;
-        $this->forwardTo = $forwardTo;
-        $this->forwardWhen = self::replacedDays($forwardWhen);
-        $this->rewindTo = $rewindTo;
-        $this->rewindWhen = self::replacedDays($rewindWhen);
     }
 
     public function dateMatches(DateTimeInterface $date): bool
     {
-        $year = (int) $date->format('Y');
-		$weekday = $this->calendarDay->getWeekdayForGregorianYear($year);
-        if (in_array($weekday, $this->forwardWhen, true)) {
-            return $this->calendarDay->isFollowUpDay($date, $this->forwardTo);
-        }
-
-        if (in_array($weekday, $this->rewindWhen, true)) {
-            return $this->calendarDay->isPreviousDay($date, $this->rewindTo);
-        }
-
-        if ($date instanceof DateTime) {
-            $date = DateTimeImmutable::createFromMutable($date);
-        }
         return $this->calendarDay->isSameDay($date);
     }
 
@@ -101,25 +67,5 @@ class Date implements HolidayIteratorItemInterface
     public function isHoliday(): bool
     {
         return $this->holiday;
-    }
-
-    private static function replacedDays(array $replaced): array
-    {
-        $daymap = [
-            'sunday' => IntlCalendar::DOW_SUNDAY,
-            'monday' => IntlCalendar::DOW_MONDAY,
-            'tuesday' => IntlCalendar::DOW_TUESDAY,
-            'wednesday' => IntlCalendar::DOW_WEDNESDAY,
-            'thursday' => IntlCalendar::DOW_THURSDAY,
-            'friday' => IntlCalendar::DOW_FRIDAY,
-            'saturday' => IntlCalendar::DOW_SATURDAY,
-        ];
-
-        return array_map(function (string $day) use ($daymap) {
-            if (! isset($daymap[$day])) {
-                return null;
-            }
-            return $daymap[$day];
-        }, $replaced);
     }
 }

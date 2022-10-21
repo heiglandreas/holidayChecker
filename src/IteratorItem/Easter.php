@@ -33,6 +33,7 @@ declare(strict_types=1);
 namespace Org_Heigl\Holidaychecker\IteratorItem;
 
 use DateInterval;
+use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
@@ -60,11 +61,11 @@ class Easter implements HolidayIteratorItemInterface
         $year = (int) $date->format('Y');
 
 		$easter = $this->getEaster($year);
-        if ($this->offset < 0) {
-            $day = $easter->sub(new DateInterval('P' . $this->offset * -1 . 'D'));
-        } else {
-            $day = $easter->add(new DateInterval('P' . $this->offset . 'D'));
-        }
+		$day = $this->getOffsetDay($easter, $this->offset);
+
+		if (false === $day) {
+			return false;
+		}
 
         $comparator = new DateIntervalComparator();
         return 0 > $comparator->compare($day->diff($date), new DateInterval('P1D'));
@@ -87,4 +88,17 @@ class Easter implements HolidayIteratorItemInterface
 
         return $base->add(new DateInterval("P{$days}D"));
     }
+
+	/**
+	 * @param DateTime|DateTimeImmutable $date
+	 * @return DateTime|DateTimeImmutable|false
+	 */
+	private function getOffsetDay($date, int $offset)
+	{
+		if ($offset < 0) {
+			return $date->sub(new DateInterval('P' . $offset * -1 . 'D'));
+		}
+
+		return $date->add(new DateInterval('P' . $offset . 'D'));
+	}
 }
