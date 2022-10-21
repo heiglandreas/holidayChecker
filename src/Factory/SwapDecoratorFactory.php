@@ -24,20 +24,7 @@ final class SwapDecoratorFactory implements DecorateFromDomElement
 {
 	public function decorate(HolidayIteratorItemInterface $element, DOMElement $domElement): HolidayIteratorItemInterface
 	{
-		$rules = [];
-
-		if ($domElement->hasAttribute('forwardto') && $domElement->hasAttribute('forwardwhen')) {
-			$rules[] = $this->createRuleFrom($domElement->getAttribute('forwardto'), $domElement->getAttribute('forwardwhen'), SwapDirection::forward());
-		}
-		if ($domElement->hasAttribute('alternateforwardto') && $domElement->hasAttribute('alternateforwardwhen')) {
-			$rules[] = $this->createRuleFrom($domElement->getAttribute('alternateforwardto'), $domElement->getAttribute('alternateforwardwhen'), SwapDirection::forward());
-		}
-		if ($domElement->hasAttribute('rewindto') && $domElement->hasAttribute('rewindwhen')) {
-			$rules[] = $this->createRuleFrom($domElement->getAttribute('rewindto'), $domElement->getAttribute('rewindwhen'), SwapDirection::rewind());
-		}
-		if ($domElement->hasAttribute('alternaterewindto') && $domElement->hasAttribute('alternaterewindwhen')) {
-			$rules[] = $this->createRuleFrom($domElement->getAttribute('alternaterewindto'), $domElement->getAttribute('alternaterewindwhen'), SwapDirection::rewind());
-		}
+		$rules = $this->getRulesFromDomElement($domElement);
 
 		if ($rules === []) {
 			return $element;
@@ -65,5 +52,27 @@ final class SwapDecoratorFactory implements DecorateFromDomElement
 				return GregorianWeekday::fromString($item);
 			}, explode(' ', $when))
 		);
+	}
+
+	/**
+	 * @return SwapRule[]
+	 */
+	private function getRulesFromDomElement(DOMElement $domElement): array
+	{
+		$attributes = [
+			'forward' => SwapDirection::forward(),
+			'alternateforward' => SwapDirection::forward(),
+			'rewind' => SwapDirection::rewind(),
+			'alternaterewind' => SwapDirection::rewind(),
+		];
+
+		$rules = [];
+		foreach ($attributes as $attribute => $direction) {
+			if ($domElement->hasAttribute($attribute . 'to') && $domElement->hasAttribute($attribute . 'when')) {
+				$rules[] = $this->createRuleFrom($domElement->getAttribute($attribute . 'to'), $domElement->getAttribute($attribute . 'when'), $direction);
+			}
+		}
+
+		return $rules;
 	}
 }
