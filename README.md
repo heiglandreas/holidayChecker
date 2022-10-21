@@ -104,6 +104,7 @@ Currently these countries are available:
 * Australia including Christmas Island, Cocos (Keeling) Islands and Norfolk Island
 * Azerbaijan
 * Bahrain
+* Bangladesh (missing calculation of Hindu and Buddhist holidays)
 
 But the list is constantly extending.
 
