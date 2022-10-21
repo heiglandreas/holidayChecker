@@ -103,6 +103,7 @@ Currently these countries are available:
 * Armenia
 * Australia including Christmas Island, Cocos (Keeling) Islands and Norfolk Island
 * Azerbaijan
+* Bahamas
 * Bahrain
 * Bangladesh (missing calculation of Hindu and Buddhist holidays)
 

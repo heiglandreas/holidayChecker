@@ -2,10 +2,19 @@
 <holidays xmlns="https://heigl.org/holidays"
 					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
-					xmlns:xi="http://www.w3.org/2001/XInclude"
 >
 	<resources>
 		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_the_Bahamas" lastChecked="2022-10-20">Wikipedia</resource>
 	</resources>
-	<date day="1" month="1" free="true" forwardwhen="saturday sunday" forwardto="monday" rewindwhen="tuesday" rewindto="monday">New Year's Day</date>
+	<date day="1" month="1" free="true" forwardwhen="saturday sunday" forwardto="monday" rewindwhen="tuesday" rewindto="monday" alternateforwardto="friday" alternateforwardwhen="wednesday thursday">New Year's Day</date>
+	<date day="10" month="1" free="true" forwardwhen="saturday sunday" forwardto="monday" rewindwhen="tuesday" rewindto="monday" alternateforwardto="friday" alternateforwardwhen="wednesday thursday">Majority Rule Day</date>
+	<easter offset="-2" free="true">Good Friday</easter>
+	<easter offset="1" free="true">Easter Monday</easter>
+	<easter offset="50" free="true">Whit Monday</easter>
+	<relative day="31" month="5" relation="next friday" free="true">Randol Fawkes — Labour Day</relative>
+	<date day="10" month="6" free="true">Independence Day</date>
+	<relative day="31" month="7" relation="next monday" free="true">Emancipation Day/August Monday</relative>
+	<relative day="30" month="9" relation="second monday" free="true">National Heroes' Day </relative>
+	<date day="25" month="12" free="true">Christmas Day</date>
+	<date day="26" month="12" free="true">Boxing Day</date>
 </holidays>
