@@ -111,6 +111,7 @@ Currently these countries are available:
 * Belize
 * Benin
 * Bermuda
+* Bhutan
 
 But the list is constantly extending.
 

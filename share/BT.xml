@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Bhutan" lastChecked="2022-10-23">Wikipedia</resource>
+	</resources>
+	<date day="2" month="1" free="true" comment="Winter Solstice">ཉིན་ལོང་</date>
+	<!--<date day="1" month="12" free="true" comment="Traditional Day of Offering" calendar="tibetan"></date>-->
+	<date day="1" month="1" free="true" calendar="buddhist" comment="Losar">ལོ་གསར་</date>
+	<!--<date day="1" month="1" free="true" calendar="tibetan" comment="Losar">ལོ་གསར་</date>-->
+	<date day="21" month="2" free="true">Birthday of King Jigme Khesar Namgyel Wangchuck</date>
+	<date day="22" month="2" free="true">Birthday of King Jigme Khesar Namgyel Wangchuck</date>
+	<date day="23" month="2" free="true">Birthday of King Jigme Khesar Namgyel Wangchuck</date>
+	<date day="10" month="4" free="true" calendar="buddhist">Zhabdrung Kuchoe</date>
+	<!--<date day="10" month="4" free="true" calendar="tibetan">Zhabdrung Kuchoe</date>-->
+	<date day="2" month="5" free="true">Birthday of King Jigme Dorji Wangchuck</date>
+	<date day="2" month="6" free="true">Coronation of King Jigme Singye Wangchuck</date>
+	<date day="15" month="6" free="true">Parinirvana Day</date>
+	<date day="10" month="7" free="true">Birthday of Guru Rinpoche</date>
+	<date day="3" month="8" free="true">First Sermon of Buddha</date>
+	<!--<date day="1" month="9" free="true" comment="auspicious day in Monsoon moon">Blessed Rainy Day</date>-->
+	<date day="6" month="10" free="true">Dashain</date>
+	<date day="1" month="11" free="true">Coronation of King Jigme Khesar Namgyel Wangchuck</date>
+	<date day="11" month="11" free="true">Birthday of King Jigme Singye Wangchuck</date>
+	<date day="22" month="9" free="true" calendar="buddhist">Lhabab Duchen</date>
+	<!--<date day="22" month="9" free="true" calendar="tibetan">Lhabab Duchen</date>-->
+	<date day="17" month="12" free="true">National Day</date>
+</holidays>
