@@ -114,6 +114,7 @@ Currently these countries are available:
 * Bhutan
 * Bolivia
 * Bosnia and Herzegovina
+* Botswana
 
 But the list is constantly extending.
 
