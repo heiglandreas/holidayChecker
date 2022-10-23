@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Bolivia" lastChecked="2022-10-23">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true">Año Nuevo </date>
+	<date day="22" month="1" free="true">Nacimiento del Estado Plurinacional de Bolivia</date>
+	<date day="2" month="2" free="true">Fiesta de la Virgen de Candelaria </date>
+	<date day="1" month="3" free="true">Feriado por Carnaval</date>
+	<date day="2" month="3" free="true">Feriado por Carnaval</date>
+	<easter offset="-2" free="true">Viernes Santo</easter>
+	<easter offset="60" free="true">Corpus Christi</easter>
+	<date day="1" month="5" free="true" forwardwhen="sunday" forwardto="monday">Dia del trabajo</date>
+	<date day="21" month="6" free="true" comment="Andean New Year">Año Nuevo Andino</date>
+	<date day="2" month="8" free="true">Día de la Revolución Agraria, Productiva y Comunitaria</date>
+	<date day="6" month="8" free="true">Dia de la Patria</date>
+	<date day="2" month="11" free="true">Todos Santos</date>
+	<date day="25" month="12" free="true">Navidad</date>
+</holidays>

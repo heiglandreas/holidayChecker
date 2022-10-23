@@ -112,6 +112,7 @@ Currently these countries are available:
 * Benin
 * Bermuda
 * Bhutan
+* Bolivia
 
 But the list is constantly extending.
 
