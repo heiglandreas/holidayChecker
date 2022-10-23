@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+	<date day="1" month="1" free="true">New Year's Day</date>
+	<easter offset="-2" free="true">Good Friday</easter>
+	<relative day="1" month="5" free="true" relation="last friday of may">Bermuda Day</relative>
+	<relative day="1" month="6" relation="third monday of june" free="true" firstobservance="2008">National Heroes Day</relative>
+	<relative day="1" month="8" relation="first monday of august" free="true" rewindwhen="monday" rewindto="thursday">Emancipation Day</relative>
+	<relative day="1" month="8" relation="first monday of august" free="true" rewindwhen="monday" rewindto="friday">Somers' Day</relative>
+	<relative day="1" month="9" relation="first monday of september" free="true">Labour Day</relative>
+	<date day="11" month="11" free="true">Remembrance Day</date>
+	<date day="25" month="12" free="true">Christmas Day</date>
+	<date day="26" month="12" free="true">Boxing Day</date>
+</holidays>

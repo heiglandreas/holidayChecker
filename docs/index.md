@@ -100,6 +100,7 @@ Currently the holidays for these countries are available:
 * Belarus
 * Belize
 * Benin
+* Bermuda
 
 But the list is constantly extending.
 
