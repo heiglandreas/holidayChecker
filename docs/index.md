@@ -103,6 +103,7 @@ Currently the holidays for these countries are available:
 * Bermuda
 * Bhutan
 * Bolivia
+* Bosnia and Herzegovina
 
 But the list is constantly extending.
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Bosnia_and_Herzegovina" lastChecked="2022-10-23">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Nova Godina</date>
+	<date day="2" month="1" free="true" comment="second day of the New Year">Drugi dan Nove Godine</date>
+	<date day="1" month="5" free="true" comment="Labour Day">Dan rada</date>
+	<date day="2" month="5" free="true" comment="second day of the Labour Day">Drugi dan Dana rada</date>
+</holidays>
