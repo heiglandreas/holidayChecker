@@ -109,6 +109,7 @@ Currently these countries are available:
 * Barbados
 * Belarus
 * Belize
+* Benin
 
 But the list is constantly extending.
 
