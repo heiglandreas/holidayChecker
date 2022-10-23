@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Benin" lastChecked="2022-10-23">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true">New Year's Day</date>
+	<date day="10" month="1" free="true">Traditional Day</date>
+	<date day="8" month="3" free="true">International Women's Day</date>
+	<date day="1" month="5" free="true">Labour Day</date>
+	<easter offset="1" free="true">Easter Monday</easter>
+	<easter offset="40" free="true">Ascension Day</easter>
+	<date day="1" month="8" free="true">Independence Day</date>
+	<date day="15" month="8" free="true">Assumption</date>
+	<date day="26" month="10" free="true">Armed Forces Day</date>
+	<date day="1" month="11" free="true">All Saints' Day</date>
+	<date day="30" month="11" free="true">National Day</date>
+	<date day="25" month="12" free="true">Christmas Day</date>
+	<date day="26" month="12" free="true">Boxing Day</date>
+	<date day="10" month="12" free="true" calendar="islamic-umalqura" comment="Eid al-Adha">Tabaski</date>
+	<date day="12" month="3" free="true" calendar="islamic-umalqura" comment="Prophet's Birthday">Maouloud</date>
+	<date day="1" month="10" free="true" calendar="islamic-umalqura" comment="Eid al-Fitr">Korité</date>
+	<easter offset="0" free="true">Pâques</easter>
+</holidays>
