@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Bosnia_and_Herzegovina" lastChecked="2022-10-23">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" calendar="islamic-umalqura" comment="Islamic New Year">Muslimanska Nova Godina</date>
+	<date day="12" month="3" free="true" calendar="islamic-umalqura" comment="Prophets Anniversary">Mevlud</date>
+	<date day="10" month="12" free="true" calendar="islamic-umalqura" comment="Eid ul-Adha">Kurban Bajram</date>
+	<date day="11" month="12" free="true" calendar="islamic-umalqura" comment="Eid ul-Adha">Kurban Bajram</date>
+	<date day="12" month="12" free="true" calendar="islamic-umalqura" comment="Eid ul-Adha">Kurban Bajram</date>
+	<date day="13" month="12" free="true" calendar="islamic-umalqura" comment="Eid ul-Adha">Kurban Bajram</date>
+	<date day="1" month="10" free="true" calendar="islamic-umalqura" comment="Eid ul-Fitr">Ramazanski Bajram</date>
+	<date day="2" month="10" free="true" calendar="islamic-umalqura" comment="Eid ul-Fitr">Ramazanski Bajram</date>
+	<date day="3" month="10" free="true" calendar="islamic-umalqura" comment="Eid ul-Fitr">Ramazanski Bajram</date>
+</holidays>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Bosnia_and_Herzegovina" lastChecked="2022-10-23">Wikipedia</resource>
+	</resources>
+	<date day="6" month="1" free="true" comment="Orthodox Christmas">Božić (Божић)</date>
+	<date day="14" month="1" free="true" comment="New Year's Day">Nova godina (Нова година)</date>
+	<easterorthodox offset="0" free="true">Vaskrs (Васкрс)</easterorthodox>
+	<date day="28" month="8" free="true" comment="Assumption of Mary">Velika Gospojina (Велика Госпојина)</date>
+</holidays>

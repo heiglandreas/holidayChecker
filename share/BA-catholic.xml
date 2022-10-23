@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<date day="6" month="1" free="true" comment="Epiphany">Bogojavljenje (Sveta Tri kralja)</date>
+	<easter offset="0" free="true">Uskrs</easter>
+	<easter offset="1" free="true">Uskrsni ponedjeljak</easter>
+	<easter offset="60" free="true" comment="Corpus Christi">Tijelovo (Tijelo i Krv Kristova)</easter>
+	<date day="15" month="8" free="true" comment="Assumption of Mary">Uznesenje Blažene Djevice Marije (Velika Gospa)</date>
+	<date day="1" month="11" free="true" comment="All Saints Day">Svi Sveti</date>
+	<date day="2" month="11" free="true" comment="All souls Day">Dušni dan</date>
+	<date day="25" month="12" free="true" comment="Catholic Christmas">Božić</date>
+	<date day="26" month="12" free="true" comment="St. Stephen's Day">Stipandan (Stjepandan)</date>
+</holidays>

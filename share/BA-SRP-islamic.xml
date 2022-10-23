@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<xi:include href="BA-SRP.xml" parse="xml" xpointer="xpointer(*/*)">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+	<xi:include href="BA-islamic.xml" parse="xml" xpointer="xpointer(*/*)">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+</holidays>
