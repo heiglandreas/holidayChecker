@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Burkina_Faso" lastChecked="2022-10-24">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true">New Year's Day</date>
+	<date day="3" month="1" free="true">Revolution Day</date>
+	<date day="8" month="3" free="true">International Women's Day</date>
+	<easter offset="1" free="true">Easter Monday</easter>
+	<date day="1" month="5" free="true">Labour Day</date>
+	<easter offset="40" free="true">Ascension Day</easter>
+	<date day="5" month="8" free="true">Independence Day</date>
+	<date day="15" month="8" free="true">Asumption Day</date>
+	<date day="31" month="10" free="true">Martyr's Day</date>
+	<date day="1" month="11" free="true">All Saints Day</date>
+	<date day="11" month="12" free="true">Proclamation of Independence Day</date>
+	<date day="25" month="12" free="true">Christmas Day</date>
+	<date day="1" month="10" calendar="islamic-umalqura" free="true">Korité</date>
+	<date day="10" month="12" calendar="islamic-umalqura" free="true">Tabaski</date>
+	<date day="12" month="3" calendar="islamic-umalqura" free="true">Mawlid</date>
+</holidays>
