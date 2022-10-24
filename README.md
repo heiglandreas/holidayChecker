@@ -115,6 +115,7 @@ Currently these countries are available:
 * Bolivia
 * Bosnia and Herzegovina
 * Botswana
+* Brunei
 
 But the list is constantly extending.
 

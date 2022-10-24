@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Brunei" lastChecked="2022-10-24">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Awal Tahun Masihi</date>
+	<date day="23" month="2" free="true" comment="National Day">Hari Kebangsaan</date>
+	<date day="31" month="5" free="true" comment="Armed Forces Day">Hari Angkatan Bersenjata Diraja Brunei</date>
+	<date day="15" month="7" free="true" comment="Sultans Birthday">Hari Keputeraan KDYMM Sultan Brunei</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Hari Natal</date>
+	<date day="1" month="9" calendar="islamic-umalqura" free="true" comment="Start Of Ramadan">Hari Pertama Berpuasa</date>
+	<date day="17" month="9" calendar="islamic-umalqura" free="true" comment="Nuzul Al-Quran">Hari Nuzul Al-Quran</date>
+	<date day="1" month="10" calendar="islamic-umalqura" free="true" comment="Aid al-Fitr">Hari Raya Aidil Fitri</date>
+	<date day="2" month="10" calendar="islamic-umalqura" free="true" comment="Aid al-Fitr">Hari Raya Aidil Fitri</date>
+	<date day="3" month="10" calendar="islamic-umalqura" free="true" comment="Aid al-Fitr">Hari Raya Aidil Fitri</date>
+	<date day="10" month="12" calendar="islamic-umalqura" free="true" comment="Aid al-Adha">Hari Raya Aidil Adha</date>
+	<date day="1" month="1" calendar="islamic-umalqura" free="true" comment="Islamic New Year">Awal Tahun Hijrah</date>
+	<date day="12" month="3" calendar="islamic-umalqura" free="true" comment="Birth of the Prophet">Maulidur Rasul</date>
+	<date day="27" month="7" calendar="islamic-umalqura" free="true" comment="Isra Mi'raj">Israk dan Mikraj</date>
+	<date day="1" month="1" free="true" calendar="chinese" comment="Chinese New Year">Tahun Baru Cina</date>
+</holidays>
