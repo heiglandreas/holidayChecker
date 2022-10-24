@@ -108,6 +108,7 @@ Currently the holidays for these countries are available:
 * Brunei
 * Burkina Faso
 * Burundi
+* Bulgaria
 
 But the list is constantly extending.
 
