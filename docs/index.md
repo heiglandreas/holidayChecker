@@ -107,6 +107,7 @@ Currently the holidays for these countries are available:
 * Botswana
 * Brunei
 * Burkina Faso
+* Burundi
 
 But the list is constantly extending.
 
