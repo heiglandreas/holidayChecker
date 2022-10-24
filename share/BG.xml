@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Bulgaria" lastChecked="2022-10-24">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Нова година</date>
+	<date day="3" month="3" free="true" comment="Liberation Day">Ден на Освобождението на България от османско иго</date>
+	<date day="1" month="5" free="true" comment="International Workers Day">Ден на труда и на международната работническа солидарност</date>
+	<date day="6" month="5" free="true" comment="Saint George's Day">Гергьовден, ден на храбростта и Българската армия</date>
+	<date day="24" month="5" free="true" comment="Bulgarian Education and Culture and Slavonic Literature Day">Ден на българската просвета и култура и на славянската писменост</date>
+	<date day="6" month="9" free="true" comment="Unification Day">Ден на Съединението</date>
+	<date day="22" month="9" free="true" comment="Independence Day">Ден на независимостта на България</date>
+	<date day="1" month="11" free="false" comment="National Awakening Day">Ден на народните будители</date>
+	<date day="24" month="12" free="true" comment="Christmas Eve">Бъдни вечер</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Рождество Христово</date>
+	<date day="26" month="12" free="true" comment="Christmas Day">Рождество Христово</date>
+	<easterorthodox offset="-2" free="true" comment="Orthodox Good Friday">Велики петък</easterorthodox>
+	<easterorthodox offset="-1" free="true" comment="Holy Saturday">Holy Saturday</easterorthodox>
+	<easterorthodox offset="0" free="true" comment="Easter Sunday">Велика събота</easterorthodox>
+	<easterorthodox offset="1" free="true" comment="Easter Monday">Велика Великден</easterorthodox>
+</holidays>
