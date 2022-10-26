@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Cambodia" lastChecked="2022-10-26">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">ទិវាបុណ្យចូលឆ្នាំសកល</date>
+	<date day="7" month="1" free="true" comment="Victory Over the Genocidal Regime Day">ទិវាជ័យជម្នះលើរបបប្រល័យពូជសាសន៍</date>
+	<date day="8" month="3" free="true" comment="International Womens Day">ទិវានារីអន្តរជាតិ</date>
+	<!-- TODO: Base on correct calendar! -->
+	<date day="14" month="4" free="true" comment="Cambodian New Year">ពិធីបុណ្យចូលឆ្នាំថ្មី ប្រពៃណីជាតិ</date>
+	<date day="15" month="4" free="true" comment="Cambodian New Year">ពិធីបុណ្យចូលឆ្នាំថ្មី ប្រពៃណីជាតិ</date>
+	<date day="16" month="4" free="true" comment="Cambodian New Year">ពិធីបុណ្យចូលឆ្នាំថ្មី ប្រពៃណីជាតិ</date>
+	<!-- TODO: Base on correct calendar and use correct day and month (fullmoon of Vaisakha)! -->
+	<date day="16" month="5" year="2022" free="true" comment="Visakh Bochea">ពិធីបុណ្យវិសាខបូជា</date>
+	<date day="1" month="5" free="true" comment="Labour Day">ទិវាពលកម្មអន្តរជាតិ</date>
+	<!-- TODO: Base on correct calendar and use correct day and month (4th day of the 6th months wanning moon) -->
+	<!-- <date day="4" month="6" free="true" comment="Royal Ploughing Ceremony">ព្រះរាជពិធីច្រត់ព្រះនង្គ័ល</date> -->
+	<date day="14" month="5" free="true" comment="King Sihamoni's Birthday">ព្រះរាជពិធីបុណ្យចម្រើនព្រះជន្មព្រះករុណាព្រះបាទសម្ដេចព្រះបរមនាថ នរោត្ដម សីហមុនី</date>
+	<date day="20" month="5" free="true" comment="National Day of Remembrance">ទិវាជាតិនៃការចងចាំ</date>
+	<date day="18" month="6" free="true" comment="Queen Mother's Birthday">ព្រះរាជពិធីបុណ្យចម្រើនព្រះជន្មព្រះមហាក្សត្រី នរោត្ដម មុនីនាថ សីហនុ</date>
+	<date day="24" month="9" free="true" comment="Constitution Day">ទិវាប្រកាសរដ្ឋធម្មនុញ្ញ</date>
+	<!-- TODO: Base on correct calendar "khmer"-->
+	<!-- <date day="15" month="10" free="true" comment="Pchum Ben">ពិធីបុណ្យភ្ជុំបិណ្ឌ</date> -->
+	<!-- <date day="16" month="10" free="true" comment="Pchum Ben">ពិធីបុណ្យភ្ជុំបិណ្ឌ</date> -->
+	<!-- <date day="17" month="10" free="true" comment="Pchum Ben">ពិធីបុណ្យភ្ជុំបិណ្ឌ</date> -->
+	<date day="15" month="10" free="true" comment="Commemoration Day of the King's Father">ព្រះរាជពិធីគោរពព្រះវិញ្ញាណក្ខន្ធព្រះករុណាព្រះបាទសម្ដេចព្រះ នរោត្ដម សីហនុ</date>
+	<date day="29" month="10" free="true" comment="Coronation day of King Sihamoni">ព្រះរាជពិធីគ្រងព្រះបរមរាជសម្បត្តិរបស់ព្រះករុណាព្រះបាទសម្ដេចព្រះបរមនាថ នរោត្ដម សីហមុនី</date>
+	<date day="9" month="11" free="true" comment="Independence Day">ទិវាបុណ្យឯករាជ្យជាតិ</date>
+	<!-- TODO: Base on correct calendar and use correct date -->
+	<date day="18" month="11" year="2021" free="true" comment="Water Festival">ពិធីបុណ្យអុំទូក បណ្ដែតប្រទីប អកអំបុក និងសំពះព្រះខែ</date>
+	<date day="19" month="11" year="2021" free="true" comment="Water Festival">ពិធីបុណ្យអុំទូក បណ្ដែតប្រទីប អកអំបុក និងសំពះព្រះខែ</date>
+	<date day="20" month="11" year="2021" free="true" comment="Water Festival">ពិធីបុណ្យអុំទូក បណ្ដែតប្រទីប អកអំបុក និងសំពះព្រះខែ</date>
+	<date day="7" month="11" year="2022" free="true" comment="Water Festival">ពិធីបុណ្យអុំទូក បណ្ដែតប្រទីប អកអំបុក និងសំពះព្រះខែ</date>
+	<date day="8" month="11" year="2022" free="true" comment="Water Festival">ពិធីបុណ្យអុំទូក បណ្ដែតប្រទីប អកអំបុក និងសំពះព្រះខែ</date>
+	<date day="9" month="11" year="2022" free="true" comment="Water Festival">ពិធីបុណ្យអុំទូក បណ្ដែតប្រទីប អកអំបុក និងសំពះព្រះខែ</date>
+	<date day="26" month="11" year="2023" free="true" comment="Water Festival">ពិធីបុណ្យអុំទូក បណ្ដែតប្រទីប អកអំបុក និងសំពះព្រះខែ</date>
+	<date day="27" month="11" year="2023" free="true" comment="Water Festival">ពិធីបុណ្យអុំទូក បណ្ដែតប្រទីប អកអំបុក និងសំពះព្រះខែ</date>
+	<date day="28" month="11" year="2023" free="true" comment="Water Festival">ពិធីបុណ្យអុំទូក បណ្ដែតប្រទីប អកអំបុក និងសំពះព្រះខែ</date>
+</holidays>

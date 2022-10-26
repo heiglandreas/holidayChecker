@@ -109,6 +109,7 @@ Currently the holidays for these countries are available:
 * Burkina Faso
 * Burundi
 * Bulgaria
+* Cambodia
 
 But the list is constantly extending.
 
