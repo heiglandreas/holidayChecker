@@ -123,6 +123,7 @@ Currently these countries are available:
 * Cameroon
 * Cape Verde
 * Central African Republic
+* Mexico
 
 But the list is constantly extending.
 

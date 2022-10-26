@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+>
+		<resources>
+				<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Mexico" lastChecked="2022-10-26">Wikipedia</resource>
+		</resources>
+
+		<!-- Statutory holidays -->
+    <date day="1" month="1" forwardto="monday" forwardwhen="sunday" rewindto="friday" rewindwhen="saturday" free="true" comment="New Year's Day">Año Nuevo</date>
+    <relative day="1" month="2" relation="first monday of this month" forwardto="monday" forwardwhen="sunday" rewindto="friday" rewindwhen="saturday" free="true" comment="Constitution Day">Día de la Constitución</relative>
+    <date day="21" month="3" forwardto="monday" forwardwhen="sunday" rewindto="friday" rewindwhen="saturday" free="true" comment="Benito Juárez's Birthday">Natalicio de Benito Juárez</date>
+    <date day="1" month="5" forwardto="monday" forwardwhen="sunday" rewindto="friday" rewindwhen="saturday" free="true" comment="Labour Day">Día del Trabajo</date>
+    <date day="16" month="9" forwardto="monday" forwardwhen="sunday" rewindto="friday" rewindwhen="saturday" free="true" comment="Independence Day">Día de la Independencia</date>
+    <date day="20" month="11" forwardto="monday" forwardwhen="sunday" rewindto="friday" rewindwhen="saturday" free="true" comment="Revolution Day">Día de la Revolución</date>
+    <date day="25" month="12" forwardto="monday" forwardwhen="sunday" rewindto="friday" rewindwhen="saturday" free="true" comment="Christmas Day">Navidad</date>
+
+		<!-- Civic holidays -->
+    <date day="20" month="2" free="false" comment="Mexican Army Day">Día del Ejército</date>
+    <date day="24" month="2" free="false" comment="Flag Day">Día de la Bandera</date>
+    <date day="18" month="3" free="false" comment="Anniversary of the Oil Expropriation">Aniversario de la Expropiación petrolera</date>
+    <date day="21" month="4" free="false" comment="Heroic Defense of Veracruz">Heroica Defensa de Veracruz</date>
+    <date day="5" month="5" free="false" comment="Fifth of May">Cinco de Mayo</date>
+    <date day="8" month="5" free="false" comment="Miguel Hidalgo's birthday">Natalicio de Miguel Hidalgo</date>
+    <date day="1" month="6" free="false" comment="National Maritime Day">Día de la Marina</date>
+    <date day="13" month="9" free="false" comment="Anniversary of the 'Boy Heroes' or 'Heroic Cadets'">Día de los Niños Héroes</date>
+    <date day="16" month="9" free="false" comment="Cry of Dolores">Grito de Dolores</date>
+    <date day="27" month="9" free="false" comment="Culmination of the Mexican War of Independence">Consumación de la Independencia</date>
+    <date day="30" month="9" free="false" comment="Morelos' birthday">Natalicio de José Mª Morelos y Pavón</date>
+    <date day="23" month="11" free="false" comment="Mexican Navy Day">Dia de la Armada de Mexico</date>
+
+		<!-- Festivities -->
+		<date day="6" month="1" free="false" comment="Epiphany">Día de los Reyes Magos</date>
+		<date day="2" month="2" free="false" comment="Candlemas">Día de la Candelaria</date>
+		<easter offset="52" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="51" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="50" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="49" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="48" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="47" free="false" comment="Carnival">Carnaval</easter>
+		<date day="14" month="2" free="false" comment="Valentine's Day">Día del Amor y la Amistad</date>
+		<date day="8" month="3" free="false" comment="International Women's Day">Día Internacional de la Mujer</date>
+		<easter offset="-3"  free="false" comment="Holy Thursday">Jueves Santo</easter>
+		<easter offset="-2" free="false" comment="Good Friday">Viernes Santo</easter>
+		<date day="30" month="4" free="false" comment="Children's Day">Día del Niño</date>
+		<date day="10" month="5" free="false" comment="Mother's Day">Día de las Madres</date>
+		<date day="15" month="5" free="false" comment="Teacher's Day">Día del Maestros</date>
+		<date day="23" month="5" free="false" comment="Students' Day">Día del estudiante</date>
+		<relative day="1" month="6" relation="third sunday of this month" free="false" comment="Father's Day">Día del Padre</relative>
+		<date day="1" month="11" free="false" comment="All Saints' Day (Day of the Dead)">Día de Todos los Santos</date>
+		<date day="2" month="11" free="false" comment="All Souls' Day (Day of the Dead)">Día de Muertos</date>
+		<date day="12" month="12" free="false" comment="Feast of Our Lady of Guadalupe">Día de la Virgen de Guadalupe</date>
+		<date day="16" month="12" free="false" comment="Las Posadas">Las Posadas</date>
+		<date day="17" month="12" free="false" comment="Las Posadas">Las Posadas</date>
+		<date day="18" month="12" free="false" comment="Las Posadas">Las Posadas</date>
+		<date day="19" month="12" free="false" comment="Las Posadas">Las Posadas</date>
+		<date day="20" month="12" free="false" comment="Las Posadas">Las Posadas</date>
+		<date day="21" month="12" free="false" comment="Las Posadas">Las Posadas</date>
+		<date day="22" month="12" free="false" comment="Las Posadas">Las Posadas</date>
+		<date day="23" month="12" free="false" comment="Las Posadas">Las Posadas</date>
+		<date day="24" month="12" free="false" comment="Las Posadas">Las Posadas</date>
+		<date day="24" month="12" free="false" comment="Christmas Eve">Nochebuena</date>
+		<date day="28" month="12" free="false" comment="Holy Innocents Day">Día de los Santos Inocentes</date>
+		<date day="31" month="12" free="false" comment="New Year's Eve">Víspera de Año Nuevo</date>
+</holidays>
