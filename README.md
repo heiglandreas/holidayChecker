@@ -122,6 +122,7 @@ Currently these countries are available:
 * Cambodia
 * Cameroon
 * Cape Verde
+* Central African Republic
 
 But the list is constantly extending.
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_the_Central_African_Republic" lastChecked="2022-10-22">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true">New Year's Day</date>
+	<date day="29" month="3" free="true">Barthelemy Boganda Day</date>
+	<easter offset="1" free="true">Easter Monday</easter>
+	<easter offset="40" free="true">Ascension Day</easter>
+	<easter offset="50" free="true">Whit Monday</easter>
+	<date day="1" month="5" free="true">Labour Day</date>
+	<date day="30" month="6" free="true">General Prayer Day</date>
+	<date day="13" month="8" free="true">Independence Day</date>
+	<date day="15" month="8" free="true">Assumption Day</date>
+	<date day="1" month="11" free="true">All Saints Day</date>
+	<date day="1" month="12" free="true">National Day</date>
+	<date day="25" month="12" free="true">Christmas Day</date>
+	<date day="1" month="10" calendar="islamic-umalqura" free="true">Korité</date>
+	<date day="10" month="12" calendar="islamic-umalqura" free="true">Tabaski</date>
+</holidays>
