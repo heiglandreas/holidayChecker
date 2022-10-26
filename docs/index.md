@@ -111,6 +111,7 @@ Currently the holidays for these countries are available:
 * Bulgaria
 * Cambodia
 * Cameroon
+* Cape Verde
 
 But the list is constantly extending.
 

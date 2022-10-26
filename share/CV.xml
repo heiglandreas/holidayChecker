@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Cape_Verde" lastChecked="2022-10-26">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Ano Novo</date>
+	<date day="13" month="1" free="true" comment="Democracy Day">Dia da Liberdade e Democracia </date>
+	<date day="20" month="1" free="true" comment="Heroes Day">Dia da Nacionalidade e dos Heróis Nacionais</date>
+	<date day="1" month="5" free="true" comment="Heroes Day">Dia do Trabalhador</date>
+	<date day="1" month="6" free="true" comment="Youth Day">Dia Mundial da Criança</date>
+	<date day="5" month="7" free="true" comment="Independence Day">Dia da Independência Nacional</date>
+	<date day="15" month="8" free="true" comment="Assumption day">Dia da Assunção</date>
+	<date day="1" month="11" free="true" comment="ALl Saints Day">Dia de Todos os Santos</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Natal</date>
+</holidays>
