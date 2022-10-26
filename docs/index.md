@@ -114,6 +114,7 @@ Currently the holidays for these countries are available:
 * Cape Verde
 * Central African Republic
 * Mexico
+* Chad
 
 But the list is constantly extending.
 
