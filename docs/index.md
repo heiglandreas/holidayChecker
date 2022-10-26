@@ -110,6 +110,7 @@ Currently the holidays for these countries are available:
 * Burundi
 * Bulgaria
 * Cambodia
+* Cameroon
 
 But the list is constantly extending.
 

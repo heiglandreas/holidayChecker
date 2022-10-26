@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Cameroon" lastChecked="2022-10-26">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Nouvel An</date>
+	<date day="11" month="2" free="true" comment="Youth Day">Journée de la jeunesse</date>
+	<date day="1" month="5" free="true" comment="Labour Day">Fête du Travail</date>
+	<date day="20" month="5" free="true" comment="National Day">Fête Nationale</date>
+	<date day="15" month="8" free="true" comment="Assumption Day">Assomption</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Noël</date>
+	<easter offset="-2" free="true">Good Friday</easter>
+	<easter offset="39" free="true">Ascension Day</easter>
+	<date day="1" month="10" free="true" calendar="islamic-umalqura">Eid al-Fitr</date>
+	<date day="10" month="12" free="true" calendar="islamic-umalqura">Eid al-Adha</date>
+	<date day="12" month="3" free="true" calendar="islamic-umalqura">Mawlid</date>
+</holidays>
