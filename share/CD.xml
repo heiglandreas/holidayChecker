@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://heigl.org/xml/xsd/holidays.xsd"
+>
+		<resources>
+				<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_the_Democratic_Republic_of_the_Congo" lastChecked="2022-10-27">Wikipedia</resource>
+		</resources>
+
+		<!-- Statutory holidays -->
+    <date day="1" month="1" free="true">New Year's Day</date>
+    <date day="4" month="1" free="true">Martyrs Day</date>
+    <date day="16" month="1" free="true">Laurent-Désiré Kabila Assassination</date>
+    <date day="17" month="1" free="true">Patrice Lumumba Assassination</date>
+    <date day="1" month="5" free="true">Labor Day</date>
+    <date day="17" month="5" free="true">Liberation Day</date>
+    <date day="30" month="6" free="true">Independence Day</date>
+    <date day="1" month="8" free="true">Parents' Day</date>
+    <date day="17" month="11" free="true">Army Day</date>
+    <date day="25" month="12" free="true">Christmas Day</date>
+</holidays>
