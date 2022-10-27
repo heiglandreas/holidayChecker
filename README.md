@@ -125,6 +125,9 @@ Currently these countries are available:
 * Central African Republic
 * Mexico
 * Chad
+* Chile
+* Ivory Coast
+* Democratic Republic of Congo
 
 But the list is constantly extending.
 

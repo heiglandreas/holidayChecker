@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+    <resources>
+        <resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Chile" lastChecked="2022-10-27">Wikipedia</resource>
+    </resources>
+    <date day="1" month="1" free="true" comment="New Year's Day">Año Nuevo</date>
+		<easter offset="-2" free="true" comment="Good Friday">Viernes Santo</easter>
+		<easter offset="-1" free="true" comment="Holy Saturday">Sábado Santo</easter>
+    <date day="1" month="5" free="true" comment="Labour Day">Día del Trabajo</date>
+    <date day="21" month="5" free="true" comment="Navy Day">Día de las Glorias Navales</date>
+    <date day="7" month="6" free="true" comment="Battle of Arica">Asalto y Toma del Morro de Arica</date>
+    <date day="21" month="6" free="true" comment="National Day of Aboriginal Peoples">Día Nacional de los Pueblos Indígenas</date>
+    <date day="27" month="6" forwardto="monday" forwardwhen="tuesday wednesday thursday" rewindto="monday" rewindwhen="friday" free="true" comment="Saint Peter and Saint Paul">San Pedro y San Pablo</date>
+    <date day="16" month="7" forwardto="monday" forwardwhen="tuesday wednesday thursday" rewindto="monday" rewindwhen="friday" free="true" comment="Our Lady of Mount Carmel">Virgen del Carmen</date>
+    <date day="15" month="8" free="true" comment="Assumption of Mary">Asunción de la Virgen</date>
+    <date day="20" month="8" free="true" comment="Nativity of Liberator Bernardo O'Higgins">Nacimiento del Prócer de la Independencia</date>
+    <date day="4" month="9" free="true" comment="National plebiscite">Plebiscito nacional</date>
+    <date day="18" month="9" free="true" comment="National Day">Fiestas Patrias</date>
+    <date day="19" month="9" free="true" comment="Army Day">Día de las Glorias del Ejército</date>
+    <date day="12" month="10" forwardto="monday" forwardwhen="tuesday wednesday thursday" rewindto="monday" rewindwhen="friday" free="true" comment="Columbus Day">Día de las Glorias del Ejército</date>
+    <date day="31" month="10" free="true" comment="Reformation Day">Día Nacional de las Iglesias Evangélicas y Protestantes</date>
+    <date day="1" month="11" free="true" comment="All Saints">Día de Todos los Santos</date>
+    <date day="8" month="12" free="true" comment="Immaculate Conception">Inmaculada Concepción</date>
+    <date day="25" month="12" free="true" comment="Christmas Day">Navidad / Natividad del Señor</date>
+</holidays>
