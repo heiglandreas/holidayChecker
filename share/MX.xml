@@ -33,12 +33,12 @@
 		<!-- Festivities -->
 		<date day="6" month="1" free="false" comment="Epiphany">Día de los Reyes Magos</date>
 		<date day="2" month="2" free="false" comment="Candlemas">Día de la Candelaria</date>
-		<easter offset="52" free="false" comment="Carnival">Carnaval</easter>
-		<easter offset="51" free="false" comment="Carnival">Carnaval</easter>
-		<easter offset="50" free="false" comment="Carnival">Carnaval</easter>
-		<easter offset="49" free="false" comment="Carnival">Carnaval</easter>
-		<easter offset="48" free="false" comment="Carnival">Carnaval</easter>
-		<easter offset="47" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="-52" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="-51" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="-50" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="-49" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="-48" free="false" comment="Carnival">Carnaval</easter>
+		<easter offset="-47" free="false" comment="Carnival">Carnaval</easter>
 		<date day="14" month="2" free="false" comment="Valentine's Day">Día del Amor y la Amistad</date>
 		<date day="8" month="3" free="false" comment="International Women's Day">Día Internacional de la Mujer</date>
 		<easter offset="-3"  free="false" comment="Holy Thursday">Jueves Santo</easter>
