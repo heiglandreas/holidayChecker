@@ -115,6 +115,7 @@ Currently the holidays for these countries are available:
 * Central African Republic
 * Mexico
 * Chad
+* Chile
 
 But the list is constantly extending.
 
