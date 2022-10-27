@@ -127,6 +127,7 @@ Currently these countries are available:
 * Chad
 * Chile
 * Ivory Coast
+* Democratic Republic of Congo
 
 But the list is constantly extending.
 
