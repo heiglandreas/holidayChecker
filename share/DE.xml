@@ -23,7 +23,7 @@
     <relative day="25" month="12" free="false" relation="last sunday -2 weeks">2. Advent</relative>
     <relative day="25" month="12" free="false" relation="last sunday -1 weeks">3. Advent</relative>
     <relative day="25" month="12" free="false" relation="last sunday">4. Advent</relative>
-    <date day="24" month="12" free="false">Heilig Abend</date>
+    <date day="24" month="12" free="false">Heiligabend</date>
     <date day="25" month="12" free="true">1. Weihnachtstag</date>
     <date day="26" month="12" free="true">2. Weihnachtstag</date>
     <date day="31" month="12" free="false">Silvester</date>
