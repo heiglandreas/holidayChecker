@@ -63,10 +63,6 @@ class Easter implements HolidayIteratorItemInterface
 		$easter = $this->getEaster($year);
 		$day = $this->getOffsetDay($easter, $this->offset);
 
-		if (false === $day) {
-			return false;
-		}
-
         $comparator = new DateIntervalComparator();
         return 0 > $comparator->compare($day->diff($date), new DateInterval('P1D'));
     }
@@ -91,7 +87,7 @@ class Easter implements HolidayIteratorItemInterface
 
 	/**
 	 * @param DateTime|DateTimeImmutable $date
-	 * @return DateTime|DateTimeImmutable|false
+	 * @return DateTime|DateTimeImmutable
 	 */
 	private function getOffsetDay($date, int $offset)
 	{
