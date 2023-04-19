@@ -40,11 +40,12 @@ jobs:
       matrix:
         # operating-system: [ubuntu-latest, windows-latest, macos-latest]
         php-versions: ['7.3', '7.4', '8.0', '8.1', '8.2']
+        icu-versions: ['73.1', '71.1', '69.1', '67.1']
         experimental: [false]
         include:
           - php-versions: '8.3'
             experimental: true
-    name: PHP ${{ matrix.php-versions }} # Test on ${{ matrix.operating-system }}
+    name: PHP ${{ matrix.php-versions }}-icu${{ matrix.icu-versions }} # Test on ${{ matrix.operating-system }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -52,7 +53,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: sodium
+          extensions: sodium, intl-${{matrix.icu-version}}
           ini-values: post_max_size=256M, short_open_tag=On
           coverage: xdebug
       - name: prepare
