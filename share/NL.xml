@@ -8,7 +8,8 @@
     <easter offset="1" free="true">Pasen</easter>
     <easter offset="0" free="false">Pasen</easter>
     <date day="27" month="4" free="true">Koningsdag</date>
-    <date day="5" month="5" free="true">Bevrijdingsdag</date>
+    <date day="5" month="5" interval="5" firstobservance="1945" lastobservance="1990" free="true">Bevrijdingsdag</date>
+    <date day="5" month="5" firstobservance="1991" free="true" restriction="paid free day only every 5 years">Bevrijdingsdag</date>
     <easter offset="40" free="true">Hemelvaartsdag</easter>
     <easter offset="49" free="true">Pinksteren</easter>
     <easter offset="50" free="true">Pinksteren</easter>

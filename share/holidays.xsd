@@ -57,10 +57,22 @@
     <xs:attributeGroup name="restriction">
         <xs:attribute name="restriction" type="xs:string" />
     </xs:attributeGroup>
+	<xs:attribute name="firstobservance" type="xs:gYear"/>
+	<xs:attribute name="lastobservance" type="xs:gYear"/>
     <xs:attributeGroup name="observanceRestrictions">
-        <xs:attribute name="firstobservance" type="xs:integer"/>
-        <xs:attribute name="lastobservance" type="xs:integer"/>
+		<xs:annotation xml:lang="en">
+			<xs:documentation>
+				The attributes firstobservance and lastobservance are including.
+				The attribute interval describes that the holiday is only observed every $interval years with the first observance in year $firstobservance.
+			</xs:documentation>
+		</xs:annotation>
+        <xs:attribute name="firstobservance" type="xs:gYear"/>
+        <xs:attribute name="lastobservance" type="xs:gYear"/>
+		<xs:attribute name="interval" type="xs:integer"/>
     </xs:attributeGroup>
+	<xs:attributeGroup name="observanceInterval">
+		<xs:attribute ref="firstobservance" use="required"/>
+	</xs:attributeGroup>
     <xs:attributeGroup name="easterAttributes">
         <xs:attribute name="offset" type="xs:integer" use="required"/>
         <xs:attribute name="free" type="xs:boolean" use="required"/>
@@ -107,9 +119,120 @@
 		<xs:attribute name="alternaterewindwhen" type="daynamelist"/>
     </xs:attributeGroup>
     <xs:element name="resources">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="resource" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attributeGroup ref="resourceAttributes"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 
-    </xs:element>
-    <xs:element name="holidays">
+	<xs:element name="easter">
+		<!--
+		Days that are relative to the Easter date as calculated for the
+		Western christian churches. The actual day is referenced by an
+		offset from easter-sunday. Days before easter sunday have a
+		negative offset, days after have a positive offset
+		-->
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="easterAttributes"/>
+					<xs:attributeGroup ref="restriction"/>
+					<xs:attributeGroup ref="observanceRestrictions"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="easterorthodox">
+		<!--
+		Days that are relative to the Easter date as calculated for the
+		Eastern Christian churches. The actual day is referenced by an
+		offset from easter-sunday. Days before easter sunday have a
+		negative offset, days after have a positive offset
+		-->
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="easterAttributes"/>
+					<xs:attributeGroup ref="restriction"/>
+					<xs:attributeGroup ref="observanceRestrictions"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="date">
+		<!--
+		Days that are defined by their actual date like the 4th of July
+		or 25th of December.
+
+		The actual day is referenced by at least a day and a month attribute.
+		For special occasions where a day is only a holiday in a certain year
+		it can also have a year attribute. Note that you will need multiple
+		entries for multiple years.
+		-->
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="dateAttributes"/>
+					<xs:attributeGroup ref="rewind"/>
+					<xs:attributeGroup ref="forward"/>
+					<xs:attributeGroup ref="restriction"/>
+					<xs:attributeGroup ref="observanceRestrictions"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="dateFollowUp">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="dateFollowUpAttributes"/>
+					<xs:attributeGroup ref="restriction"/>
+					<xs:attributeGroup ref="observanceRestrictions"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="relative">
+		<!--
+		This is similar to the dateFollowUp but the relation can be
+		more complext.
+
+		Again the date the relation is referenced from is given via
+		day and month attributes but the relation itself is given in
+		the relation attribute and can be anything that
+		http://php.net/manual/de/datetimeimmutable.modify.php
+		can handle. Like "last sunday -3 weeks" from 25th of december
+		would be the 1st sunday in advent
+		-->
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="relativeAttributes"/>
+					<xs:attributeGroup ref="restriction"/>
+					<xs:attributeGroup ref="rewind"/>
+					<xs:attributeGroup ref="forward"/>
+					<xs:attributeGroup ref="observanceRestrictions"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+
+
+	<xs:element name="holidays">
         <!--
         All elements have to be within the root element "holidays".
 
@@ -120,112 +243,12 @@
         -->
         <xs:complexType>
             <xs:choice maxOccurs="unbounded">
-                <xs:element name="resources" minOccurs="0" maxOccurs="1">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="resource" minOccurs="0" maxOccurs="unbounded">
-                                <xs:complexType>
-                                    <xs:simpleContent>
-                                        <xs:extension base="xs:string">
-                                            <xs:attributeGroup ref="resourceAttributes"/>
-                                        </xs:extension>
-                                    </xs:simpleContent>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="easter" minOccurs="0" maxOccurs="unbounded">
-                    <!--
-                    Days that are relative to the Easter date as calculated for the
-                    Western christian churches. The actual day is referenced by an
-                    offset from easter-sunday. Days before easter sunday have a
-                    negative offset, days after have a positive offset
-                    -->
-                    <xs:complexType>
-                        <xs:simpleContent>
-                            <xs:extension base="xs:string">
-                                <xs:attributeGroup ref="easterAttributes"/>
-                                <xs:attributeGroup ref="restriction"/>
-                                <xs:attributeGroup ref="observanceRestrictions"/>
-                            </xs:extension>
-                        </xs:simpleContent>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="easterorthodox" minOccurs="0" maxOccurs="unbounded">
-                    <!--
-                    Days that are relative to the Easter date as calculated for the
-                    Eastern Christian churches. The actual day is referenced by an
-                    offset from easter-sunday. Days before easter sunday have a
-                    negative offset, days after have a positive offset
-                    -->
-                    <xs:complexType>
-                        <xs:simpleContent>
-                            <xs:extension base="xs:string">
-                                <xs:attributeGroup ref="easterAttributes"/>
-                                <xs:attributeGroup ref="restriction"/>
-                                <xs:attributeGroup ref="observanceRestrictions"/>
-                            </xs:extension>
-                        </xs:simpleContent>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="date" minOccurs="0" maxOccurs="unbounded">
-                    <!--
-                    Days that are defined by their actual date like the 4th of July
-                    or 25th of December.
-
-                    The actual day is referenced by at least a day and a month attribute.
-                    For special occasions where a day is only a holiday in a certain year
-                    it can also have a year attribute. Note that you will need multiple
-                    entries for multiple years.
-                    -->
-                    <xs:complexType>
-                        <xs:simpleContent>
-                            <xs:extension base="xs:string">
-                                <xs:attributeGroup ref="dateAttributes"/>
-                                <xs:attributeGroup ref="rewind"/>
-                                <xs:attributeGroup ref="forward"/>
-                                <xs:attributeGroup ref="restriction"/>
-                                <xs:attributeGroup ref="observanceRestrictions"/>
-                            </xs:extension>
-                        </xs:simpleContent>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="dateFollowUp" minOccurs="0" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:simpleContent>
-                            <xs:extension base="xs:string">
-                                <xs:attributeGroup ref="dateFollowUpAttributes"/>
-                                <xs:attributeGroup ref="restriction"/>
-                                <xs:attributeGroup ref="observanceRestrictions"/>
-                            </xs:extension>
-                        </xs:simpleContent>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="relative" minOccurs="0" maxOccurs="unbounded">
-                    <!--
-                    This is similar to the dateFollowUp but the relation can be
-                    more complext.
-
-                    Again the date the relation is referenced from is given via
-                    day and month attributes but the relation itself is given in
-                    the relation attribute and can be anything that
-                    http://php.net/manual/de/datetimeimmutable.modify.php
-                    can handle. Like "last sunday -3 weeks" from 25th of december
-                    would be the 1st sunday in advent
-                    -->
-                    <xs:complexType>
-                        <xs:simpleContent>
-                            <xs:extension base="xs:string">
-                                <xs:attributeGroup ref="relativeAttributes"/>
-                                <xs:attributeGroup ref="restriction"/>
-								<xs:attributeGroup ref="rewind"/>
-								<xs:attributeGroup ref="forward"/>
-								<xs:attributeGroup ref="observanceRestrictions"/>
-                            </xs:extension>
-                        </xs:simpleContent>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element ref="resources" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="easter" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="easterorthodox" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="date" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="dateFollowUp" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="relative" minOccurs="0" maxOccurs="unbounded" />
             </xs:choice>
         </xs:complexType>
     </xs:element>
