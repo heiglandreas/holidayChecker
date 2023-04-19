@@ -10,7 +10,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.1"
+          php-version: "8.2"
           tools: phive
       - name: Download codesniffer
         run: phive --no-progress install --trust-gpg-keys 31C7E470E2138192 phpcs
@@ -27,7 +27,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.1"
+          php-version: "8.2"
       - name: Install xmllint
         run: sudo apt-get install libxml2-utils
       - name: lint
@@ -85,7 +85,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.1"
+          php-version: "8.2"
           tools: phive
       - name: Download psalm
         run: phive --no-progress install --trust-gpg-keys 8A03EA3B385DBAA1,12CE0F1D262429A5 psalm
