@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Croatia" lastChecked="2023-08-05">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Nova godina</date>
+	<date day="6" month="1" free="true" comment="Epiphany">Sveta tri kralja</date>
+	<easter offset="0" free="true" comment="Easter">Uskrs</easter>
+	<easter offset="1" free="true" comment="Easter Monday">Uskrsni ponedjeljak</easter>
+	<date day="1" month="5" free="true" comment="Labour Day">Praznik rada</date>
+	<date day="30" month="5" free="true" comment="National Day" firstobservance="1991" lastobservance="2001">Dan državnosti</date>
+	<date day="30" month="5" free="true" comment="National Day" firstobservance="2020">Dan državnosti</date>
+	<date day="30" month="5" free="false" comment="Day of the Croatian Parliament" firstobservance="2002" lastobservance="2019">Dan Hrvatskoga sabora</date>
+	<easter offset="60" free="true" comment="Corpus Christi">Tijelovo</easter>
+	<date day="22" month="6" free="true" comment="Anti-Fascist Struggle Day">Dan antifašističke borbe</date>
+	<date day="5" month="8" free="true" comment="Victory and Homeland Thanksgiving Day">Dan pobjede i domovinske zahvalnosti</date>
+	<date day="15" month="8" free="true" comment="Assumption of Mary">Velika Gospa</date>
+	<date day="1" month="11" free="true" comment="All Saint's Day">Dan svih svetih</date>
+	<date day="18" month="11" free="true" comment="Day of Remembrance of Victims of the Homeland War" firstobservance="2020">Dan sjećanja na žrtve Domovinskog rata</date>
+	<date day="25" month="12" free="true" comment="Christmas">Božić</date>
+	<date day="26" month="12" free="true" comment="Saint Stephen's Day">Sveti Stjepan</date>
+	<date day="9" month="1" free="false" comment="Day of Unification of Medimurje with its Parent Body Croatia">Dan sjedinjenja Medimurja s maticom zemljom Hrvatskom</date>
+	<date day="15" month="1" free="false" comment="Day of international recognition of the Republic of Croatia and Day of peaceful reintegration of the Croatian Danube Region">Dan međunarodnoga priznanja Republike Hrvatske i Dan mirne reintegracije hrvatskog Podunavlja </date>
+	<date day="15" month="3" free="false" comment="Day of founding of the People's Prodection">Dan osnivanja Narodne zaštite</date>
+	<date day="30" month="4" free="false" comment="Day of the Death of Zrinski and Frankopan">Dan pogibije Zrinskog i Frankopana</date>
+	<date day="9" month="5" free="false" comment="Europe Day and Day of vitory over fascism">Dan Europe i Dan pobjede nad fašizmom</date>
+	<date day="15" month="5" free="false" alternateforwardto="saturday" alternateforwardwhen="wednesday thursday friday" alternaterewindto="sunday" alternaterewindwhen="monday tuesday" comment="Day of Remembrance of Croatian Victims in the Fight for Freedom and Independence">Dan spomena na hrvatske žrtve u borbi za slobodu i nezavisnost</date>
+	<date day="25" month="6" free="true" comment="Statehood Day" lastobservance="2019">Dan neovisnosti</date>
+	<date day="25" month="6" free="false" comment="Independence Day" firstobservance="2020">Dan neovisnosti</date>
+	<date day="23" month="8" free="false" comment="European Day of Remembrance for Victims of Stalinism and Nazism">Europski dan sjećanja na žrtve totalitarnih i autoritarnih režima – nacizma, fašizma i komunizma </date>
+	<date day="30" month="8" free="false" comment="Day of Remembrance of Missing Persons in the War of Independence">Dan sjećanja na nestale osobe u Domovinskom ratu</date>
+	<date day="25" month="9" free="false" comment="Day of the Deciscion about the Unification of Istria, Rijeka, Zadar and the Islands with the Parent Body Croatia ">Dan donošenja Odluke o sjedinjenju Istre, Rijeke, Zadra i otoka s maticom zemljom Hrvatskom </date>
+	<date day="8" month="10" free="false" comment="Day of the Croatian Parliament" firstobservance="2020">Dan Hrvatskoga sabora</date>
+	<date day="8" month="10" free="true" comment="Independence Day" lastobservance="2019">Dan neovisnosti</date>
+</holidays>

@@ -132,6 +132,7 @@ Currently these countries are available:
 * Democratic Republic of Congo
 * Republic of Congo
 * Costa Rica
+* Croatia
 * Switzerland
 
 But the list is constantly extending.
