@@ -134,6 +134,7 @@ Currently these countries are available:
 * Costa Rica
 * Croatia
 * Cuba
+* Cyprus
 * Switzerland
 
 But the list is constantly extending.
