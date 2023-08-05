@@ -158,6 +158,8 @@ We'd be very thankfull!
 
 ## Comparison
 
+### Yasumi
+
 The main other library in the PHP-ecosystem that also provides holiday-calendars
 is the [Yasumi-library](https://packagist.org/packages/azuyalabs/yasumi). There are some
 differences between those two libraries though that I want to highlight here.
@@ -185,9 +187,30 @@ available this library requires the DOM-extension (XML) as well as the INTL-exte
 holidays based on different calendaring systems. This library also requires a library to compare dateintervals which is
 used in the calculation of the easter-date.
 
-### Missing Features
+### Calendarific
 
-#### Business-Days
+[Calendarific](https://calendarific.com) is an SaaS Provider that provides worldwide Bank-Holidays and Observances via
+An API.
+
+They are currently supporting all countries worldwide. Their API can be queried for holiday information on a per country
+and year basis. It is possible to only fetch information to a sub-area of a country (like states in the US or Kantone
+in Switzerland). YOu can also just check one specific day by providing the day and the month along with the year.
+
+As the pricing of the API limits the number of API calls per month, calling the API on a per-day basis migth not be the
+best of ideas. Also the API provides information for either local, national or religious holidays as well as observances
+(where observances in one region can be national or regional holidays in another region). Sadly it seems not to be
+possible to fetch only regional and national holidays in one request. It is either all of them or only a single one.
+And as the "observation" type is rather chatty (it contains a lot of special dates that might or might not have any
+relevance at all - like astronomical observations that might be calculated better using separate libraries)
+
+So as consumer it requires a lot of work afterwards to get the actualy required data when wanting to get the information
+whether a certain day is a holiday in the requested area or not.
+
+It serves a purpose and is readily available. At a price.
+
+## Missing Features
+
+### Business-Days
 Some people were asking about a feature to calculate working days. While that seems to be a neat function I decided against
 implementing it in the library as business-days are very domain-specific. While there are some generally accepted
 terms of "working days" being monday through saturday excludign the public holidays that is not always and
