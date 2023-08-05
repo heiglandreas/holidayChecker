@@ -133,6 +133,7 @@ Currently these countries are available:
 * Republic of Congo
 * Costa Rica
 * Croatia
+* Cuba
 * Switzerland
 
 But the list is constantly extending.
