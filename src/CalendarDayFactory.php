@@ -34,6 +34,7 @@ namespace Org_Heigl\Holidaychecker;
 
 use IntlCalendar;
 use Org_Heigl\Holidaychecker\Exceptions\UnknownCalendar;
+use UnexpectedValueException;
 use function sprintf;
 
 class CalendarDayFactory
@@ -47,6 +48,9 @@ class CalendarDayFactory
             ));
         }
         $calendar = IntlCalendar::createInstance('UTC', '@calendar=' . $calendar);
+		if (null === $calendar) {
+			throw new UnexpectedValueException('Expected instance of IntlCalendar, got null');
+		}
 
         return new CalendarDay($day, $month, $calendar);
     }
