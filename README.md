@@ -128,6 +128,7 @@ Currently these countries are available:
 * Chile
 * Ivory Coast
 * Colombia
+* Comoros
 * Democratic Republic of Congo
 * Switzerland
 
