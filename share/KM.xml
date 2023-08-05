@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_the_Comoros" lastChecked="2023-08-05">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true">New Year's Day</date>
+	<date day="18" month="3" free="true">Cheikh Al Maarouf Day</date>
+	<date day="1" month="5" free="true">Labour Day</date>
+	<date day="6" month="7" free="true">National Day</date>
+	<date day="12" month="11" free="true" firstobservance="2006">Maore Day</date>
+	<date day="1" month="10" free="true" calendar="islamic">Eid al-Fitr</date>
+	<date day="10" month="12" free="true" calendar="islamic">Eid al-Adha</date>
+	<date day="1" month="1" free="true" calendar="islamic">Islamic New Year</date>
+	<date day="12" month="3" free="true" calendar="islamic" comment="Birthday of the Prophet">Mawlid</date>
+	<date day="27" month="7" free="true" calendar="islamic" comment="Ascension of the Prophet">Laylat al-Mi'raj</date>
+</holidays>
