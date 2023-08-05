@@ -131,6 +131,7 @@ Currently these countries are available:
 * Comoros
 * Democratic Republic of Congo
 * Republic of Congo
+* Costa Rica
 * Switzerland
 
 But the list is constantly extending.

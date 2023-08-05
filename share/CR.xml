@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Costa_Rica" lastChecked="2023-08-05">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Año Nuevo</date>
+	<easter offset="-3" free="true" comment="Maundy Thursday">Jueves Santo</easter>
+	<easter offset="-2" free="true" comment="Good Friday">Viernes Santo</easter>
+	<date day="11" month="4" free="true" comment="Juan Santamaría Day">Día de Juan Santamaría</date>
+	<date day="1" month="5" free="true" comment="Labour Day">Día Internacional del Trabajo</date>
+	<date day="25" month="7" free="true" comment="Annexation of the Party of Nicoya to Costa Rica">Anexión del Partido de Nicoya a Costa Rica</date>
+	<date day="2" month="8" free="true" comment="Feat of our Lady of the Angels">Fiesta de Nuestra Señora de los Ángeles</date>
+	<date day="15" month="8" free="true" comment="Mothers Day">Día de la Madre</date>
+	<date day="24" month="8" free="true" comment="National Parks Day">Día de los Parques Nacionales</date>
+	<date day="9" month="9" free="true">Día del Niño</date>
+	<date day="13" month="9" free="true" comment="Independence Day">Día de la Independencia</date>
+	<date day="1" month="12" free="true" comment="Army Abolition Day">Día de la Abolición del Ejército</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Navidad</date>
+</holidays>
