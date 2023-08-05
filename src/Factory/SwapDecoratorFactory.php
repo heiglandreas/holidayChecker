@@ -43,17 +43,6 @@ final class SwapDecoratorFactory implements DecorateFromDomElement
 		return new SwapDecorator($element, $day, ...$rules);
 	}
 
-	private function createRuleFrom(string $to, string $when, SwapDirection $direction): SwapRule
-	{
-		return new SwapRule(
-			$direction,
-			GregorianWeekday::fromString($to),
-			...array_map(function ($item) {
-				return GregorianWeekday::fromString($item);
-			}, explode(' ', $when))
-		);
-	}
-
 	/**
 	 * @return SwapRule[]
 	 */
@@ -74,5 +63,16 @@ final class SwapDecoratorFactory implements DecorateFromDomElement
 		}
 
 		return $rules;
+	}
+
+	private function createRuleFrom(string $to, string $when, SwapDirection $direction): SwapRule
+	{
+		return new SwapRule(
+			$direction,
+			GregorianWeekday::fromString($to),
+			...array_map(function ($item) {
+				return GregorianWeekday::fromString($item);
+			}, explode(' ', $when))
+		);
 	}
 }

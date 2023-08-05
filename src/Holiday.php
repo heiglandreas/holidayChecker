@@ -34,28 +34,28 @@ namespace Org_Heigl\Holidaychecker;
 
 class Holiday
 {
-    private $holiday;
+	private $holiday;
 
-    private $name;
+	private $name;
 
-    public function __construct(bool $holiday, string $name = '')
-    {
-        $this->holiday = $holiday;
-        $this->name = $name;
-    }
+	public function __construct(bool $holiday, string $name = '')
+	{
+		$this->holiday = $holiday;
+		$this->name = $name;
+	}
 
-    public function isHoliday(): bool
-    {
-        return $this->holiday;
-    }
+	public function isHoliday(): bool
+	{
+		return $this->holiday;
+	}
 
-    public function isNamed(): bool
-    {
-        return $this->name !== '';
-    }
+	public function isNamed(): bool
+	{
+		return $this->name !== '';
+	}
 
-    public function getName(): string
-    {
-        return $this->name;
-    }
+	public function getName(): string
+	{
+		return $this->name;
+	}
 }

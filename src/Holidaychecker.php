@@ -36,21 +36,21 @@ use DateTimeInterface;
 
 class Holidaychecker
 {
-    private $iterator;
+	private $iterator;
 
-    public function __construct(HolidayIterator $iterator)
-    {
-        $this->iterator = $iterator;
-    }
+	public function __construct(HolidayIterator $iterator)
+	{
+		$this->iterator = $iterator;
+	}
 
-    public function check(DateTimeInterface $date): Holiday
-    {
-        foreach ($this->iterator as $entry) {
-            if ($entry->dateMatches($date)) {
-                return new Holiday($entry->isHoliday(), $entry->getName());
-            }
-        }
+	public function check(DateTimeInterface $date): Holiday
+	{
+		foreach ($this->iterator as $entry) {
+			if ($entry->dateMatches($date)) {
+				return new Holiday($entry->isHoliday(), $entry->getName());
+			}
+		}
 
-        return new Holiday(false);
-    }
+		return new Holiday(false);
+	}
 }

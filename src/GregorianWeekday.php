@@ -20,12 +20,6 @@ use function strtolower;
 
 final class GregorianWeekday
 {
-	/** @var string */
-	private $value;
-
-	/** @var array<string, GregorianWeekday> */
-	private static $instances = [];
-
 	private const MONDAY = 'monday';
 	private const TUESDAY = 'tuesday';
 	private const WEDNESDAY = 'wednesday';
@@ -33,20 +27,19 @@ final class GregorianWeekday
 	private const FRIDAY = 'friday';
 	private const SATURDAY = 'saturday';
 	private const SUNDAY = 'sunday';
+	/** @var array<string, GregorianWeekday> */
+	private static $instances = [];
+	/** @var string */
+	private $value;
 
 	private function __construct(string $value)
-    {
-		$this->value = $value;
-	}
-
-	public function getValue(): string
 	{
-		return $this->value;
+		$this->value = $value;
 	}
 
 	public static function monday(): self
 	{
-		if (! isset(self::$instances[self::MONDAY])) {
+		if (!isset(self::$instances[self::MONDAY])) {
 			self::$instances[self::MONDAY] = new self(self::MONDAY);
 		}
 
@@ -55,7 +48,7 @@ final class GregorianWeekday
 
 	public static function tuesday(): self
 	{
-		if (! isset(self::$instances[self::TUESDAY])) {
+		if (!isset(self::$instances[self::TUESDAY])) {
 			self::$instances[self::TUESDAY] = new self(self::TUESDAY);
 		}
 
@@ -64,7 +57,7 @@ final class GregorianWeekday
 
 	public static function wednesday(): self
 	{
-		if (! isset(self::$instances[self::WEDNESDAY])) {
+		if (!isset(self::$instances[self::WEDNESDAY])) {
 			self::$instances[self::WEDNESDAY] = new self(self::WEDNESDAY);
 		}
 
@@ -73,7 +66,7 @@ final class GregorianWeekday
 
 	public static function thursday(): self
 	{
-		if (! isset(self::$instances[self::THURSDAY])) {
+		if (!isset(self::$instances[self::THURSDAY])) {
 			self::$instances[self::THURSDAY] = new self(self::THURSDAY);
 		}
 
@@ -82,7 +75,7 @@ final class GregorianWeekday
 
 	public static function friday(): self
 	{
-		if (! isset(self::$instances[self::FRIDAY])) {
+		if (!isset(self::$instances[self::FRIDAY])) {
 			self::$instances[self::FRIDAY] = new self(self::FRIDAY);
 		}
 
@@ -91,7 +84,7 @@ final class GregorianWeekday
 
 	public static function saturday(): self
 	{
-		if (! isset(self::$instances[self::SATURDAY])) {
+		if (!isset(self::$instances[self::SATURDAY])) {
 			self::$instances[self::SATURDAY] = new self(self::SATURDAY);
 		}
 
@@ -100,16 +93,21 @@ final class GregorianWeekday
 
 	public static function sunday(): self
 	{
-		if (! isset(self::$instances[self::SUNDAY])) {
+		if (!isset(self::$instances[self::SUNDAY])) {
 			self::$instances[self::SUNDAY] = new self(self::SUNDAY);
 		}
 
 		return self::$instances[self::SUNDAY];
 	}
 
+	public static function fromDateTimeInterface(DateTimeInterface $date): self
+	{
+		return self::fromString($date->format('l'));
+	}
+
 	public static function fromString(string $weekday): self
 	{
-		if (! method_exists(self::class, strtolower($weekday))) {
+		if (!method_exists(self::class, strtolower($weekday))) {
 			throw new RuntimeException(sprintf(
 				'Weekday "%s" is not known',
 				$weekday
@@ -122,23 +120,18 @@ final class GregorianWeekday
 		return $gregorianWeekday;
 	}
 
-	public static function fromDateTimeInterface(DateTimeInterface $date): self
-	{
-		return self::fromString($date->format('l'));
-	}
-
 	public static function fromIntlWeekday(int $weekday): self
 	{
 		$mapper = [
-			IntlCalendar::DOW_SUNDAY    => 'sunday',
-			IntlCalendar::DOW_MONDAY    => 'monday',
-			IntlCalendar::DOW_TUESDAY   => 'tuesday',
+			IntlCalendar::DOW_SUNDAY => 'sunday',
+			IntlCalendar::DOW_MONDAY => 'monday',
+			IntlCalendar::DOW_TUESDAY => 'tuesday',
 			IntlCalendar::DOW_WEDNESDAY => 'wednesday',
-			IntlCalendar::DOW_THURSDAY  => 'thursday',
-			IntlCalendar::DOW_FRIDAY    => 'friday',
-			IntlCalendar::DOW_SATURDAY  => 'saturday',
+			IntlCalendar::DOW_THURSDAY => 'thursday',
+			IntlCalendar::DOW_FRIDAY => 'friday',
+			IntlCalendar::DOW_SATURDAY => 'saturday',
 		];
-		if (! isset($mapper[$weekday])) {
+		if (!isset($mapper[$weekday])) {
 			throw new UnexpectedValueException(sprintf(
 				'IntlCalendar weekday %s could not be resolved',
 				$weekday
@@ -151,5 +144,10 @@ final class GregorianWeekday
 	public function __toString(): string
 	{
 		return $this->getValue();
+	}
+
+	public function getValue(): string
+	{
+		return $this->value;
 	}
 }

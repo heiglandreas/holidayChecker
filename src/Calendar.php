@@ -36,38 +36,38 @@ use function in_array;
 
 class Calendar
 {
-    public const BUDDHIST  = 'buddhist';
-    public const CHINESE   = 'chinese';
-    public const COPTIC    = 'coptic';
-    public const ETHIOPIAN = 'ethiopian';
-    public const GREGORIAN = 'gregorian';
-    public const HEBREW    = 'hebrew';
-    public const INDIAN    = 'indian';
-    public const ISLAMIC   = 'islamic';
-    public const ISLAMIC_CIVIL    = 'islamic-civil';
-    public const ISLAMIC_UMALQURA = 'islamic-umalqura';
-    public const ISLAMIC_RGSA     = 'islamic-rgsa';
-    public const ISLAMIC_TBLA     = 'islamic-tbla';
-    public const JAPANESE  = 'japanese';
-    public const PERSIAN   = 'persian';
+	public const BUDDHIST = 'buddhist';
+	public const CHINESE = 'chinese';
+	public const COPTIC = 'coptic';
+	public const ETHIOPIAN = 'ethiopian';
+	public const GREGORIAN = 'gregorian';
+	public const HEBREW = 'hebrew';
+	public const INDIAN = 'indian';
+	public const ISLAMIC = 'islamic';
+	public const ISLAMIC_CIVIL = 'islamic-civil';
+	public const ISLAMIC_UMALQURA = 'islamic-umalqura';
+	public const ISLAMIC_RGSA = 'islamic-rgsa';
+	public const ISLAMIC_TBLA = 'islamic-tbla';
+	public const JAPANESE = 'japanese';
+	public const PERSIAN = 'persian';
 
-    public static function isValidCalendarName(string $calendarname): bool
-    {
-        return in_array($calendarname, [
-            self::BUDDHIST,
-            self::CHINESE,
-            self::COPTIC,
-            self::ETHIOPIAN,
-            self::GREGORIAN,
-            self::HEBREW,
-            self::INDIAN,
-            self::ISLAMIC,
-            self::ISLAMIC_CIVIL,
-            self::ISLAMIC_RGSA,
-            self::ISLAMIC_TBLA,
-            self::ISLAMIC_UMALQURA,
-            self::JAPANESE,
-            self::PERSIAN,
-        ]);
+	public static function isValidCalendarName(string $calendarname): bool
+	{
+		return in_array($calendarname, [
+			self::BUDDHIST,
+			self::CHINESE,
+			self::COPTIC,
+			self::ETHIOPIAN,
+			self::GREGORIAN,
+			self::HEBREW,
+			self::INDIAN,
+			self::ISLAMIC,
+			self::ISLAMIC_CIVIL,
+			self::ISLAMIC_RGSA,
+			self::ISLAMIC_TBLA,
+			self::ISLAMIC_UMALQURA,
+			self::JAPANESE,
+			self::PERSIAN,
+		]);
 	}
 }

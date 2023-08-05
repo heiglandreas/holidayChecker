@@ -33,23 +33,24 @@ declare(strict_types=1);
 namespace Org_Heigl\Holidaychecker;
 
 use ArrayObject;
+use ReturnTypeWillChange;
 
 /**
  * @template-extends ArrayObject<int, HolidayIteratorItemInterface>
  */
 class HolidayIterator extends ArrayObject
 {
-    /**
-     * @param mixed $value
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function append($value)
-    {
-        if (! $value instanceof HolidayIteratorItemInterface) {
-            return;
-        }
+	/**
+	 * @param mixed $value
+	 * @return void
+	 */
+	#[ReturnTypeWillChange]
+	public function append($value)
+	{
+		if (!$value instanceof HolidayIteratorItemInterface) {
+			return;
+		}
 
-        parent::append($value);
-    }
+		parent::append($value);
+	}
 }

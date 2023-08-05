@@ -38,34 +38,34 @@ use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
 
 class Date implements HolidayIteratorItemInterface
 {
-    /** @var CalendarDay */
-    private $calendarDay;
+	/** @var CalendarDay */
+	private $calendarDay;
 
-    /** @var bool  */
-    private $holiday;
+	/** @var bool */
+	private $holiday;
 
-    /** @var string */
-    private $name;
+	/** @var string */
+	private $name;
 
-    public function __construct(string $name, bool $holiday, CalendarDay $day)
-    {
-        $this->calendarDay = $day;
-        $this->holiday = $holiday;
-        $this->name = $name;
-    }
+	public function __construct(string $name, bool $holiday, CalendarDay $day)
+	{
+		$this->calendarDay = $day;
+		$this->holiday = $holiday;
+		$this->name = $name;
+	}
 
-    public function dateMatches(DateTimeInterface $date): bool
-    {
-        return $this->calendarDay->isSameDay($date);
-    }
+	public function dateMatches(DateTimeInterface $date): bool
+	{
+		return $this->calendarDay->isSameDay($date);
+	}
 
-    public function getName(): string
-    {
-        return $this->name;
-    }
+	public function getName(): string
+	{
+		return $this->name;
+	}
 
-    public function isHoliday(): bool
-    {
-        return $this->holiday;
-    }
+	public function isHoliday(): bool
+	{
+		return $this->holiday;
+	}
 }

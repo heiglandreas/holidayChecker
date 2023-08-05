@@ -39,53 +39,53 @@ use function sprintf;
 
 class Relative implements HolidayIteratorItemInterface
 {
-    private $day;
+	private $day;
 
-    private $month;
+	private $month;
 
-    private $relation;
+	private $relation;
 
-    private $holiday;
+	private $holiday;
 
-    private $name;
+	private $name;
 
-    public function __construct(string $name, bool $holiday, int $day, int $month, string $relation)
-    {
-        $this->day = $day;
-        $this->month = $month;
-        $this->relation = $relation;
-        $this->holiday = $holiday;
-        $this->name = $name;
-    }
+	public function __construct(string $name, bool $holiday, int $day, int $month, string $relation)
+	{
+		$this->day = $day;
+		$this->month = $month;
+		$this->relation = $relation;
+		$this->holiday = $holiday;
+		$this->name = $name;
+	}
 
-    public function dateMatches(DateTimeInterface $date): bool
-    {
-        $year = (int) $date->format('Y');
+	public function dateMatches(DateTimeInterface $date): bool
+	{
+		$year = (int) $date->format('Y');
 
-        $day = new DateTimeImmutable(sprintf(
-            '%s-%s-%s',
-            $year,
-            $this->month,
-            $this->day
-        ));
+		$day = new DateTimeImmutable(sprintf(
+			'%s-%s-%s',
+			$year,
+			$this->month,
+			$this->day
+		));
 
 		/** @var DateTimeImmutable|false $day */
-        $day = $day->modify($this->relation);
+		$day = $day->modify($this->relation);
 
 		if ($day === false) {
 			return false;
 		}
 
-        return $date->format('Y-m-d') === $day->format('Y-m-d');
-    }
+		return $date->format('Y-m-d') === $day->format('Y-m-d');
+	}
 
-    public function getName(): string
-    {
-        return $this->name;
-    }
+	public function getName(): string
+	{
+		return $this->name;
+	}
 
-    public function isHoliday(): bool
-    {
-        return $this->holiday;
-    }
+	public function isHoliday(): bool
+	{
+		return $this->holiday;
+	}
 }

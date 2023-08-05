@@ -39,19 +39,19 @@ use function sprintf;
 
 class CalendarDayFactory
 {
-    public static function createCalendarDay(int $day, int $month, string $calendar): CalendarDay
-    {
-        if (! Calendar::isValidCalendarName($calendar)) {
-            throw new UnknownCalendar(sprintf(
-                'The calendar %s is not known to the ICU',
-                $calendar
-            ));
-        }
-        $calendar = IntlCalendar::createInstance('UTC', '@calendar=' . $calendar);
+	public static function createCalendarDay(int $day, int $month, string $calendar): CalendarDay
+	{
+		if (!Calendar::isValidCalendarName($calendar)) {
+			throw new UnknownCalendar(sprintf(
+				'The calendar %s is not known to the ICU',
+				$calendar
+			));
+		}
+		$calendar = IntlCalendar::createInstance('UTC', '@calendar=' . $calendar);
 		if (null === $calendar) {
 			throw new UnexpectedValueException('Expected instance of IntlCalendar, got null');
 		}
 
-        return new CalendarDay($day, $month, $calendar);
-    }
+		return new CalendarDay($day, $month, $calendar);
+	}
 }

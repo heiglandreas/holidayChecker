@@ -36,9 +36,9 @@ use DateTimeInterface;
 
 interface HolidayIteratorItemInterface
 {
-    public function dateMatches(DateTimeInterface $date): bool;
+	public function dateMatches(DateTimeInterface $date): bool;
 
-    public function getName(): string;
+	public function getName(): string;
 
-    public function isHoliday(): bool;
+	public function isHoliday(): bool;
 }
