@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Colombia" lastChecked="2023-08-05"></resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Years Day">Año Nuevo</date>
+	<date day="6" month="1" free="true" comment="Epiphany">Día de los Reyes Magos</date>
+	<date day="19" month="3" free="true" comment="St. Josephs Day">Día de San José</date>
+	<easter offset="-3" free="true" comment="Maundy Thursday">Jueves Santo</easter>
+	<easter offset="-2" free="true" comment="Good Friday">Viernes Santo</easter>
+	<easter offset="0" free="true" comment="Easter Sunday">Easter Sunday</easter>
+	<date day="1" month="5" free="true" comment="Labour Day">Primero de Mayo</date>
+	<easter offset="39" free="true" comment="Ascension of Jesus">Ascensión del señor</easter>
+	<easter offset="60" free="true">Corpus Christi</easter>
+	<easter offset="68" free="true" comment="Sacred Heart">Sagrado Corazón</easter>
+	<date day="29" month="6" free="true" comment="Saint Peter and Saint Paul">San Pedro y San Pablo</date>
+	<date day="20" month="7" free="true" comment="Declaration of independence">Declaración de la Independencia de Colombia</date>
+	<date day="7" month="8" free="true">Battle of Boyacá</date>
+	<date day="15" month="8" free="true" comment="Assumption of Mary">La Asunción</date>
+	<date day="12" month="10" free="true" comment="Columbus Day">Día de la Raza</date>
+	<date day="1" month="11" free="true" comment="All Saints Day">Día de los Santos</date>
+	<date day="11" month="11" free="true" comment="Independence from Cartagena">Independencia de Cartagena</date>
+	<date day="8" month="12" free="true" comment="Immaculate conception">La Inmaculada Concepción</date>
+	<date day="25" month="12" free="true" comment="Christmas">Navidad</date>
+	<easter offset="-48" free="true" comment="Carnival Monday" restriction="only in the city of Barranquilla">Carnival Monday</easter>
+	<easter offset="-47" free="true" comment="Carnival Tuesday" restriction="only in the city of Barranquilla">Carnival Tuesday</easter>
+</holidays>
