@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://www.centralbank.cy/images/media/pdf/Bank-Holidays-2025-English.pdf" lastChecked="2023-08-05">Bank of Cyprus - english</resource>
+		<resource href="https://www.centralbank.cy/images/media/pdf_el/Bank-Holidays-2025-Greek.pdf" lastChecked="2023-08-05">Bank of Cyprus - greek</resource>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Cyprus" lastChecked="2023-08-05">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Πρωτοχρονιά</date>
+	<date day="6" month="1" free="true" comment="Epiphany Day">Ημέρα των Θεοφανίων</date>
+	<easterorthodox offset="-48" free="true" comment="Green Monday">Καθαρά Δευτέρα</easterorthodox>
+	<date day="25" month="3" free="true" comment="Greek Independence Day">Ημέρα της Ελληνικής Ανεξαρτησίας</date>
+	<date day="1" month="4" free="true" comment="Cyprus National Day">Εθνική Γιορτή</date>
+	<easterorthodox offset="-2" free="true" comment="Good Friday">Μεγάλη Παρασκευή</easterorthodox>
+	<easterorthodox offset="1" free="true" comment="Easter Monday">Δευτέρα της Διακαινησίμου</easterorthodox>
+	<easterorthodox offset="2" free="true" comment="Easter Tuesday">Τρίτη της Διακαινησίμου</easterorthodox>
+	<date day="1" month="5" free="true" comment="Labour Day">Πρωτομαγιά</date>
+	<easterorthodox offset="50" free="true" comment="Pentecost">Δευτέρα του Αγίου Πνεύματος</easterorthodox>
+	<date day="15" month="8" free="true" comment="Assumption Day">Κοίμηση της Θεοτόκου</date>
+	<date day="1" month="10" free="true" comment="Cyprus Independence Day">Ημέρα της Κυπριακής Ανεξαρτησίας</date>
+	<date day="28" month="10" free="true" comment="Greek National Day">Εθνική Γιορτή</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Χριστούγεννα</date>
+	<date day="26" month="12" free="true" comment="Boxing Day">Επομένη Χριστουγέννων</date>
+</holidays>
