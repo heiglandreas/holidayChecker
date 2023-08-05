@@ -130,6 +130,7 @@ Currently these countries are available:
 * Colombia
 * Comoros
 * Democratic Republic of Congo
+* Republic of Congo
 * Switzerland
 
 But the list is constantly extending.
