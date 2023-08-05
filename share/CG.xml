@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_the_Republic_of_the_Congo" lastChecked="2023-08-05">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">Jour de l'An</date>
+	<date day="1" month="5" free="true" comment="Labours Day">Fête du Travail</date>
+	<date day="10" month="6" free="true" comment="Reconciliation Day">Fête de la Réconciliation</date>
+	<date day="15" month="8" free="true" comment="National Day">Fête Nationale</date>
+	<date day="1" month="11" free="true" comment="All Saints Day">Toussaint</date>
+	<date day="28" month="11" free="true" comment="Republic Day">Jour de la République</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Noël</date>
+	<easter offset="1" free="true" comment="Easter Monday">Lundi de Pâques</easter>
+	<easter offset="40" free="true" comment="Ascension Day">Ascension</easter>
+	<easter offset="50" free="true" comment="Whit Monday">Lundi de Pentecôte</easter>
+</holidays>
