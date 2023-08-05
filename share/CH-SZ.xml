@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Switzerland" lastChecked="2023-04-21">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true">Neujahrstag</date>
+	<date day="6" month="1" free="true">Heilige Drei Könige</date>
+	<date day="19" month="3" free="true">Josefstag</date>
+	<easter offset="-2" free="true">Karfreitag</easter>
+	<easter offset="1" free="true">Ostermontag</easter>
+	<easter offset="39" free="true">Auffahrt</easter>
+	<easter offset="50" free="true">Pfingstmontag</easter>
+	<easter offset="60" free="true">Frohnleichnam</easter>
+	<date day="1" month="8" free="true">Bundesfeier</date>
+	<date day="15" month="8" free="true">Mariä Himmelfahrt</date>
+	<date day="1" month="11" free="true">Allerheiligen</date>
+	<date day="8" month="12" free="true">Mariä Empfängnis</date>
+	<date day="25" month="12" free="true">Weihnachtstag</date>
+	<date day="26" month="12" free="true">Stephanstag</date>
+</holidays>
