@@ -14,38 +14,38 @@ use DateTimeInterface;
 
 final class ObservanceDecorator implements HolidayIteratorItemInterface
 {
-    /** @var int|null */
-    private $firstObservance;
+	/** @var int|null */
+	private $firstObservance;
 
-    /** @var int|null */
-    private $lastObservance;
+	/** @var int|null */
+	private $lastObservance;
 
 	/** @var HolidayIteratorItemInterface */
 	private $wrapped;
 
 	public function __construct(HolidayIteratorItemInterface $wrapped, ?int $firstObservance, ?int $lastObservance)
-    {
+	{
 		$this->wrapped = $wrapped;
-        $this->firstObservance = $firstObservance;
-        $this->lastObservance = $lastObservance;
-    }
-
-    private function isWithinObservance(int $gregorianYear): bool
-    {
-        if (null !== $this->firstObservance && $this->firstObservance > $gregorianYear) {
-            return false;
-        }
-
-        return null === $this->lastObservance || $this->lastObservance >= $gregorianYear;
-    }
+		$this->firstObservance = $firstObservance;
+		$this->lastObservance = $lastObservance;
+	}
 
 	public function dateMatches(DateTimeInterface $date): bool
 	{
-		if (! $this->isWithinObservance((int) $date->format('Y'))) {
+		if (!$this->isWithinObservance((int) $date->format('Y'))) {
 			return false;
 		}
 
 		return $this->wrapped->dateMatches($date);
+	}
+
+	private function isWithinObservance(int $gregorianYear): bool
+	{
+		if (null !== $this->firstObservance && $this->firstObservance > $gregorianYear) {
+			return false;
+		}
+
+		return null === $this->lastObservance || $this->lastObservance >= $gregorianYear;
 	}
 
 	public function getName(): string

@@ -21,13 +21,13 @@ use function in_array;
 
 class SwapDecorator implements HolidayIteratorItemInterface
 {
-	/** @var HolidayIteratorItemInterface  */
+	/** @var HolidayIteratorItemInterface */
 	private $rule;
 
-	/** @var CalendarDay  */
+	/** @var CalendarDay */
 	private $day;
 
-	/** @var SwapRule[]  */
+	/** @var SwapRule[] */
 	private $swapRules;
 
 	public function __construct(HolidayIteratorItemInterface $rule, CalendarDay $day, SwapRule ...$swapRules)
@@ -48,16 +48,6 @@ class SwapDecorator implements HolidayIteratorItemInterface
 		}
 
 		return $this->rule->dateMatches($date);
-	}
-
-	public function getName(): string
-	{
-		return $this->rule->getName();
-	}
-
-	public function isHoliday(): bool
-	{
-		return $this->rule->isHoliday();
 	}
 
 	private function ruleMatches(SwapRule $rule, GregorianWeekday $weekday): bool
@@ -84,5 +74,15 @@ class SwapDecorator implements HolidayIteratorItemInterface
 		}
 
 		return $cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) === $cal2->get(IntlCalendar::FIELD_DAY_OF_MONTH);
+	}
+
+	public function getName(): string
+	{
+		return $this->rule->getName();
+	}
+
+	public function isHoliday(): bool
+	{
+		return $this->rule->isHoliday();
 	}
 }

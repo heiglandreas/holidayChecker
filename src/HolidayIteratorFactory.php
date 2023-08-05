@@ -75,6 +75,28 @@ class HolidayIteratorFactory
 	}
 
 	/**
+	 * Create a HolidayIterator from an ISO 3166-code.
+	 *
+	 * @param string $isoCode
+	 *
+	 * @return HolidayIterator
+	 */
+	public function createIteratorFromISO3166(string $isoCode): HolidayIterator
+	{
+		$file = __DIR__ . '/../share/%s.xml';
+		$file1 = sprintf($file, $isoCode);
+
+		if (!is_readable($file1)) {
+			throw new UnexpectedValueException(sprintf(
+				'There is no holiday-file for %s',
+				$isoCode
+			));
+		}
+
+		return $this->createIteratorFromXmlFile($file1);
+	}
+
+	/**
 	 * Create a HolidayIterator from an XML-File
 	 *
 	 * The provided XML-File has to validate against the holiday.xsd-file you
@@ -113,28 +135,6 @@ class HolidayIteratorFactory
 		}
 
 		return $iterator;
-	}
-
-	/**
-	 * Create a HolidayIterator from an ISO 3166-code.
-	 *
-	 * @param string $isoCode
-	 *
-	 * @return HolidayIterator
-	 */
-	public function createIteratorFromISO3166(string $isoCode): HolidayIterator
-	{
-		$file = __DIR__ . '/../share/%s.xml';
-		$file1 = sprintf($file, $isoCode);
-
-		if (!is_readable($file1)) {
-			throw new UnexpectedValueException(sprintf(
-				'There is no holiday-file for %s',
-				$isoCode
-			));
-		}
-
-		return $this->createIteratorFromXmlFile($file1);
 	}
 
 	private function getElement(DOMElement $child): HolidayIteratorItemInterface

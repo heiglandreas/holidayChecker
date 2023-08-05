@@ -18,7 +18,7 @@ class ObservanceDecoratorFactory implements DecorateFromDomElement
 {
 	public function decorate(HolidayIteratorItemInterface $element, DOMElement $domElement): HolidayIteratorItemInterface
 	{
-		if (! $domElement->hasAttribute('firstobservance') && ! $domElement->hasAttribute('lastobservance')) {
+		if (!$domElement->hasAttribute('firstobservance') && !$domElement->hasAttribute('lastobservance')) {
 			return $element;
 		}
 

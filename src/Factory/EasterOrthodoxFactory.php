@@ -24,7 +24,7 @@ class EasterOrthodoxFactory implements ItemFromDomElementCreator
 
 		return new EasterOrthodox(
 			$element->textContent,
-            $element->getAttribute('free') === "true",
+			$element->getAttribute('free') === "true",
 			(int) $element->getAttribute('offset')
 		);
 	}

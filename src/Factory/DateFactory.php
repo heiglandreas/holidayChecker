@@ -35,7 +35,7 @@ class DateFactory implements ItemFromDomElementCreator
 
 		$date = new Date(
 			$element->textContent,
-            $element->getAttribute('free') === "true",
+			$element->getAttribute('free') === "true",
 			$day,
 		);
 

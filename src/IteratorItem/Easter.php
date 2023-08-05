@@ -43,47 +43,37 @@ use function easter_days;
 
 class Easter implements HolidayIteratorItemInterface
 {
-    private $offset;
+	private $offset;
 
-    private $holiday;
+	private $holiday;
 
-    private $name;
+	private $name;
 
-    public function __construct(string $name, bool $holiday, int $offset)
-    {
-        $this->offset = $offset;
-        $this->holiday = $holiday;
-        $this->name = $name;
-    }
+	public function __construct(string $name, bool $holiday, int $offset)
+	{
+		$this->offset = $offset;
+		$this->holiday = $holiday;
+		$this->name = $name;
+	}
 
-    public function dateMatches(DateTimeInterface $date): bool
-    {
-        $year = (int) $date->format('Y');
+	public function dateMatches(DateTimeInterface $date): bool
+	{
+		$year = (int) $date->format('Y');
 
 		$easter = $this->getEaster($year);
 		$day = $this->getOffsetDay($easter, $this->offset);
 
-        $comparator = new DateIntervalComparator();
-        return 0 > $comparator->compare($day->diff($date), new DateInterval('P1D'));
-    }
+		$comparator = new DateIntervalComparator();
+		return 0 > $comparator->compare($day->diff($date), new DateInterval('P1D'));
+	}
 
-    public function getName(): string
-    {
-        return $this->name;
-    }
+	protected function getEaster(int $year): DateTimeImmutable
+	{
+		$base = new DateTimeImmutable($year . "-03-21", new DateTimeZone('UTC'));
+		$days = easter_days($year);
 
-    public function isHoliday(): bool
-    {
-        return $this->holiday;
-    }
-
-    protected function getEaster(int $year): DateTimeImmutable
-    {
-        $base = new DateTimeImmutable($year . "-03-21", new DateTimeZone('UTC'));
-        $days = easter_days($year);
-
-        return $base->add(new DateInterval("P{$days}D"));
-    }
+		return $base->add(new DateInterval("P{$days}D"));
+	}
 
 	/**
 	 * @param DateTime|DateTimeImmutable $date
@@ -96,5 +86,15 @@ class Easter implements HolidayIteratorItemInterface
 		}
 
 		return $date->add(new DateInterval('P' . $offset . 'D'));
+	}
+
+	public function getName(): string
+	{
+		return $this->name;
+	}
+
+	public function isHoliday(): bool
+	{
+		return $this->holiday;
 	}
 }

@@ -12,18 +12,34 @@ namespace Org_Heigl\Holidaychecker;
 
 final class SwapDirection
 {
+	private const FORWARD = 'forward';
+	private const REWIND = 'rewind';
+	/** @var array<string, self> */
+	private static $instances = [];
 	/** @var string */
 	private $value;
 
-	/** @var array<string, self> */
-	private static $instances = [];
-
-	private const FORWARD = 'forward';
-	private const REWIND = 'rewind';
-
 	private function __construct(string $value)
-    {
+	{
 		$this->value = $value;
+	}
+
+	public static function forward(): self
+	{
+		if (!isset(self::$instances[self::FORWARD])) {
+			self::$instances[self::FORWARD] = new self(self::FORWARD);
+		}
+
+		return self::$instances[self::FORWARD];
+	}
+
+	public static function rewind(): self
+	{
+		if (!isset(self::$instances[self::REWIND])) {
+			self::$instances[self::REWIND] = new self(self::REWIND);
+		}
+
+		return self::$instances[self::REWIND];
 	}
 
 	public function getValue(): string
@@ -41,23 +57,5 @@ final class SwapDirection
 		}
 
 		return '';
-	}
-
-	public static function forward(): self
-	{
-		if (! isset(self::$instances[self::FORWARD])) {
-			self::$instances[self::FORWARD] = new self(self::FORWARD);
-		}
-
-		return self::$instances[self::FORWARD];
-	}
-
-	public static function rewind(): self
-	{
-		if (! isset(self::$instances[self::REWIND])) {
-			self::$instances[self::REWIND] = new self(self::REWIND);
-		}
-
-		return self::$instances[self::REWIND];
 	}
 }
