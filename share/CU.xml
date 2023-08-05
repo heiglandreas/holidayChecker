@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Cuba" lastChecked="2023-08-05">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="Liberation Day">Día de la Liberación</date>
+	<date day="2" month="1" free="true" comment="Victory Day">Día de la Victoria</date>
+	<easter offset="-2" free="true" comment="Good Friday" firstobservance="2012">Viernes Santo</easter>
+	<date day="1" month="5" free="true" comment="International Worker's Day">Día de los trabajadores</date>
+	<date day="25" month="7" free="true" comment="Day before the Commemoration of the Assault on the Moncada Garrison">Conmemoración del asalto a Moncada</date>
+	<date day="26" month="7" free="true" comment="Commemoration of the Assault on the Moncada Garrison">Día de la Rebeldía Nacional</date>
+	<date day="27" month="7" free="true" comment="Day after the Commemoration of the Assault on the Moncada Garrison">Conmemoración del asalto a Moncada</date>
+	<date day="10" month="10" free="true" comment="Independence Day">Día de la Independencia</date>
+	<date day="25" month="12" free="true" comment="Christmas Day" firstobservance="1998">Navidad</date>
+</holidays>
