@@ -40,7 +40,7 @@ jobs:
       matrix:
         # operating-system: [ubuntu-latest, windows-latest, macos-latest]
         php-versions: ['7.3', '7.4', '8.0', '8.1', '8.2']
-        icu-versions: ['73.1', '71.1', '69.1', '67.1']
+        icu-versions: ['73.2', '73.1', '71.1', '69.1', '67.1']
         experimental: [false]
         include:
           - php-versions: '8.3'
