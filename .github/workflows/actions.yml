@@ -44,6 +44,7 @@ jobs:
         experimental: [false]
         include:
           - php-versions: '8.4'
+            icu-versions: '74.1'
             experimental: true
     name: PHP ${{ matrix.php-versions }}-icu${{ matrix.icu-versions }} # Test on ${{ matrix.operating-system }}
     steps:
