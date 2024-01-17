@@ -13,7 +13,7 @@ jobs:
           php-version: "8.2"
           tools: phive
       - name: Download codesniffer
-        run: phive --no-progress install --trust-gpg-keys 31C7E470E2138192 phpcs
+        run: phive --no-progress install --trust-gpg-keys 5E6DDE998AB73B8E phpcs
       - name: Install
         run: composer install
       - name: check
