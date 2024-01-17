@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Hungary" lastChecked="2024-01-17">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New years day">Újév</date>
+	<date day="15" month="3" free="true" comment="National Day">Nemzeti ünnep</date>
+	<easter offset="-2" free="true" comment="Good Friday" firstobservance="2017">Nagypéntek</easter>
+	<easter offset="1" free="true" comment="Easter Monday">Húsvéthétfő</easter>
+	<date day="1" month="5" free="true" comment="Labour day">A munka ünnepe</date>
+	<easter offset="50" free="true" comment="Whit Monday">Pünkösdhétfő</easter>
+	<date day="20" month="8" free="true" comment="State foundation day">Az államalapítás ünnepe</date>
+	<date day="23" month="10" free="true" comment="National Day">Nemzeti ünnep</date>
+	<date day="1" month="11" free="true" comment="All Saints Day">Mindenszentek</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Karácsony</date>
+	<date day="26" month="12" free="true" comment="Second day of christmas">Karácsony másnapja</date>
+	<date day="22" month="1" free="false" comment="Day of the Hungarian Culture">A magyar kultúra napja</date>
+	<date day="1" month="2" free="false" comment="Memorial Day of the Republic">A köztársaság emléknapja</date>
+	<date day="25" month="2" free="false" comment="Memorial Day for the vivtims of the Communist Dictatorship">A kommunista diktatúrák áldozatainak emléknapja</date>
+	<date day="16" month="4" free="false" comment="Memorial Day for the victims of the Holocaust">A holokauszt áldozatainak emléknapja</date>
+	<date day="21" month="5" free="false" comment="National Defense Day">Honvédelmi nap</date>
+	<date day="4" month="6" free="false" comment="National Unity Day">A nemzeti összetartozás napja </date>
+	<date day="19" month="6" free="false" comment="Independen Hungary Day">A független Magyarország napja</date>
+	<date day="6" month="10" free="false" comment="Memorial Day for the Martyrs of Arad">Az aradi vértanúk emléknapja</date>
+</holidays>

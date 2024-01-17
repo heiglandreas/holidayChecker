@@ -10,10 +10,10 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.2"
+          php-version: "8.3"
           tools: phive
       - name: Download codesniffer
-        run: phive --no-progress install --trust-gpg-keys 31C7E470E2138192 phpcs
+        run: phive --no-progress install --trust-gpg-keys 5E6DDE998AB73B8E phpcs
       - name: Install
         run: composer install
       - name: check
@@ -27,7 +27,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.2"
+          php-version: "8.3"
       - name: Install xmllint
         run: sudo apt-get install libxml2-utils
       - name: lint
@@ -39,11 +39,12 @@ jobs:
     strategy:
       matrix:
         # operating-system: [ubuntu-latest, windows-latest, macos-latest]
-        php-versions: ['7.3', '7.4', '8.0', '8.1', '8.2']
-        icu-versions: ['73.2', '73.1', '71.1', '69.1', '67.1']
+        php-versions: ['7.3', '7.4', '8.0', '8.1', '8.2', '8.3']
+        icu-versions: ['74.1', '73.2', '73.1', '71.1', '69.1', '67.1']
         experimental: [false]
         include:
-          - php-versions: '8.3'
+          - php-versions: '8.4'
+            icu-versions: '74.1'
             experimental: true
     name: PHP ${{ matrix.php-versions }}-icu${{ matrix.icu-versions }} # Test on ${{ matrix.operating-system }}
     steps:
@@ -53,7 +54,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: sodium, intl-${{matrix.icu-version}}
+          extensions: sodium, intl-${{matrix.icu-versions}}
           ini-values: post_max_size=256M, short_open_tag=On
           coverage: xdebug
       - name: prepare
@@ -86,7 +87,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.2"
+          php-version: "8.3"
           tools: phive
       - name: Download psalm
         run: phive --no-progress install --trust-gpg-keys 8A03EA3B385DBAA1,12CE0F1D262429A5 psalm

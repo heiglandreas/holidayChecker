@@ -137,6 +137,7 @@ Currently these countries are available:
 * Cyprus
 * Czech Republic
 * Switzerland
+* Hungary
 
 But the list is constantly extending.
 
