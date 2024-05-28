@@ -43,13 +43,13 @@ by adding the [ISO 639-1 language-code](https://en.wikipedia.org/wiki/ISO_3166-2
 
 ```php
 // Get the holidays for mainland france
-$iterator = $factory->createIteratorFromIso3166('FR');
+$iterator = $factory->createIteratorFromISO3166('FR');
 
 // Get the holidays for the french overseas-department La Reunion
-$iterator = $factory->createIteratorFromIso3166('FR-RE');
+$iterator = $factory->createIteratorFromISO3166('FR-RE');
 
 // Get the dutch holidays for belgium
-$iterator = $factory->createIteratorFromIso3166('fr_BE');
+$iterator = $factory->createIteratorFromISO3166('fr_BE');
 ```
 
 ## Available Countries
