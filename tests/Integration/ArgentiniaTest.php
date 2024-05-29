@@ -21,7 +21,7 @@ class ArgentiniaTest extends TestCase
     public function testMainArgeninianHolidays()
     {
         $factory  = new HolidayIteratorFactory();
-        $iterator = $factory->createIteratorFromISO3166('AR');
+        $iterator = $factory->createIteratorFromIso3166('AR');
         $checker  = new Holidaychecker($iterator);
 
         self::assertTrue($checker->check(new DateTimeImmutable('2022-01-01 12:00:00'))->isHoliday());
@@ -45,7 +45,7 @@ class ArgentiniaTest extends TestCase
     public function testArmenianArgeninianHolidays()
     {
         $factory  = new HolidayIteratorFactory();
-        $iterator = $factory->createIteratorFromISO3166('AR-armenian');
+        $iterator = $factory->createIteratorFromIso3166('AR-armenian');
         $checker  = new Holidaychecker($iterator);
 
         self::assertTrue($checker->check(new DateTimeImmutable('2022-04-24 12:00:00'))->isHoliday());
@@ -54,7 +54,7 @@ class ArgentiniaTest extends TestCase
     public function testCatholicArgeninianHolidays()
     {
         $factory  = new HolidayIteratorFactory();
-        $iterator = $factory->createIteratorFromISO3166('AR-catholic');
+        $iterator = $factory->createIteratorFromIso3166('AR-catholic');
         $checker  = new Holidaychecker($iterator);
 
         self::assertTrue($checker->check(new DateTimeImmutable('2022-04-13 12:00:00'))->isHoliday());
@@ -63,7 +63,7 @@ class ArgentiniaTest extends TestCase
     public function testJewishArgeninianHolidays()
     {
         $factory  = new HolidayIteratorFactory();
-        $iterator = $factory->createIteratorFromISO3166('AR-judaism');
+        $iterator = $factory->createIteratorFromIso3166('AR-judaism');
         $checker  = new Holidaychecker($iterator);
 
         self::assertTrue($checker->check(new DateTimeImmutable('2022-04-16 12:00:00'))->isHoliday());
@@ -78,7 +78,7 @@ class ArgentiniaTest extends TestCase
     public function testIslamicArgeninianHolidays()
     {
         $factory  = new HolidayIteratorFactory();
-        $iterator = $factory->createIteratorFromISO3166('AR-islam');
+        $iterator = $factory->createIteratorFromIso3166('AR-islam');
         $checker  = new Holidaychecker($iterator);
 
         self::assertTrue($checker->check(new DateTimeImmutable('2022-05-02 12:00:00', new DateTimeZone('America/Buenos_Aires')))->isHoliday());

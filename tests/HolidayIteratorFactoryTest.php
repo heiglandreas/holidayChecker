@@ -73,7 +73,7 @@ class HolidayIteratorFactoryTest extends TestCase
     /**
      * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::getElement
      * @covers \Org_Heigl\Holidaychecker\HolidayIterator::append
-     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::createIteratorFromISO3166
+     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::createIteratorFromIso3166
      * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::createIteratorFromXmlFile
      * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::getFree
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::__construct
@@ -84,13 +84,13 @@ class HolidayIteratorFactoryTest extends TestCase
     public function testThatFactoryReturnsCorrectStuffFromISOCode()
     {
         $factory = new HolidayIteratorFactory();
-        $result = $factory->createIteratorFromISO3166('DE');
+        $result = $factory->createIteratorFromIso3166('DE');
 
         $this->assertInstanceof(HolidayIterator::class, $result);
     }
 
     /**
-     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::createIteratorFromISO3166
+     * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::createIteratorFromIso3166
      */
     public function testThatFactoryThrowsExceptionForUnknownISOCode()
     {
@@ -98,7 +98,7 @@ class HolidayIteratorFactoryTest extends TestCase
 
         $factory = new HolidayIteratorFactory();
 
-        $factory->createIteratorFromISO3166('unknown');
+        $factory->createIteratorFromIso3166('unknown');
     }
 
     public function testThatFactoryThrowsExceptionForInvalidXmlFile(): void
