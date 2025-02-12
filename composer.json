@@ -10,7 +10,6 @@
   }],
   "require": {
     "php": "^7.3|^8.0",
-		"ext-dom": "*",
     "ext-intl": "*",
     "ext-dom": "*",
     "org_heigl/dateintervalcomparator": "^1.0",
