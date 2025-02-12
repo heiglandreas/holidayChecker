@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Peru" lastChecked="2025-02-12"/>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Years Day">Año Nuevo</date>
+	<easter offset="-3" free="true" comment="Maundy Thursday">Jueves Santo</easter>
+	<easter offset="-2" free="true" comment="Good Friday">Viernes Santo</easter>
+	<date day="1" month="5" free="true" comment="Labour Day">Día del Trabajo</date>
+	<date day="7" month="6" free="true" comment="Flag Day">Día de la Bandera</date>
+	<date day="29" month="6" free="true" comment="Peter and Paul">San Pedro y San Pablo</date>
+	<date day="23" month="7" free="true" comment="AirForce Day">Día de la Fuerza Aérea</date>
+	<date day="28" month="7" free="true" comment="Independence Day">Día de la Independencia</date>
+	<date day="29" month="7" free="true" comment="Independence Day">Día de la Independencia</date>
+	<date day="6" month="8" free="true" comment="Battle of Junin">Batalla de Junin</date>
+	<date day="30" month="8" free="true" comment="Santa Rosa de Lima">Día de Santa Rosa de Lima</date>
+	<date day="8" month="10" free="true" comment="Battle of Angamos">Combate de Angamos</date>
+	<date day="1" month="11" free="true" comment="All Saints day">Día de Todos los Santos</date>
+	<date day="8" month="12" free="true" comment="Immaculate Conception">Inmaculada Concepción</date>
+	<date day="9" month="12" free="true" comment="Battle of Ayacucho">Batalla de Ayacucho</date>
+	<date day="25" month="12" free="true"	comment="Christmas Day">Navidad</date>
+</holidays>
