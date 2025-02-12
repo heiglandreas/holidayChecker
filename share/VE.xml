@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://www.officeholidays.com/countries/venezuela" lastChecked="2025-02-12"/>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Venezuela" lastChecked="2025-02-12"/>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Years Day">Día de Año Nuevo</date>
+	<date day="6" month="1" free="false" comment="Epiphany, Banks closed">Día de Reyes</date>
+	<easter offset="-48" free="true" comment="Carnival">Carnaval</easter>
+	<easter offset="-47" free="true" comment="Carnival">Carnaval</easter>
+	<date day="19" month="3" free="false" comment="St. Josephs Day, Banks closed">Día de San José</date>
+	<easter offset="-6" free="false" comment="Holy Week, Public Sector usually free">Semana Santa</easter>
+	<easter offset="-5" free="false" comment="Holy Week, Public Sector usually free">Semana Santa</easter>
+	<easter offset="-4" free="false" comment="Holy Week, Public Sector usually free">Semana Santa</easter>
+	<easter offset="-3" free="true" comment="Maundy Thursday">Semana Santa</easter>
+	<easter offset="-2" free="true" comment="Good Friday">Semana Santa</easter>
+	<date day="19" month="4" free="true" comment="Independence declaration day">Diecinueve de abril</date>
+	<date day="1" month="5" free="true" comment="Labour Day">Día del Trabajador</date>
+	<relative day="7" month="5" relation="next sunday" free="false" comment="Mothers day">Día de las Madres</relative>
+	<relative day="14" month="6" relation="next sunday" free="false" comment="Fathers Day">Día de los Padres</relative>
+	<easter offset="30" free="false" comment="Ascension Day, Banks only">Día de la ascención</easter>
+	<easter offset="60" free="false" comment="Corpus Christi, banks only">Corpus Christi</easter>
+	<date day="24" month="6" free="true" comment="St. Johns Day">Día de San Juan Bautista y Aniversario de la Batalla de Carabobo</date>
+	<date day="29" month="6" free="true" comment="St Peter and Paul">Día de San Pedro y San Pablo</date>
+	<date day="5" month="7" free="true" comment="Independence Day">Cinco de julio</date>
+	<date day="24" month="7" free="true" comment="Birth of Simon Bolivar">Natalicio del Libertador</date>
+	<date day="15" month="8" free="true" comment="Assumption Day">Día de la Asunción</date>
+	<relative day="7" month="9" relation="next sunday" free="false" comment="Feast of our Lady of Coromoto, Banks closed">Aparicion del Virgen del Coromoto</relative>
+	<date day="13" month="10" free="true" comment="Indigenous resistance day">Día de la Resistencia Indígena</date>
+	<date day="3" month="11" free="true" comment="Al Saints Day">Día de Todos los Santos</date>
+	<date day="8" month="12" free="false" comment="Immacualte COnception Day, Banks closed">Inmaculada Concepción</date>
+	<date day="24" month="12" free="true"	comment="Christmas Eve">Nochebuena</date>
+	<date day="25" month="12" free="true" comment="Christmas">Navidad</date>
+	<date day="31" month="12" free="true" comment="New Years Eve">Nochevieja</date>
+</holidays>
