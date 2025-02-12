@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Culture_of_Suriname" lastChecked="2025-02-12"/>
+	</resources>
+	<date day="1" month="1" free="true">New Years Day</date>
+	<date day="1" month="5" free="true">Labour Day</date>
+	<date day="15" month="12" free="true" calendar="indian">Phagwah</date>
+	<easter offset="-2" free="true">Good Friday</easter>
+	<date day="5" month="6" free="true">Prawas Din</date>
+	<date day="1" month="7" free="true">Keti koti</date>
+	<!-- Javanese Arrival Day -->
+	<date day="9" month="8" free="true">Indigenous People's Day</date>
+	<!-- Day of the Maroons -->
+	<!-- Chinese Arrival Date -->
+	<!-- Independence Day -->
+	<date day="27" month="7" free="true" calendar="indian">Diwali</date>
+	<date day="10" month="12" free="true" calendar="islamic-civil">Eid-ul-Adha</date>
+  <date day="31" month="10" free="false">Halloween</date>
+	<date day="25" month="12" free="true">Christmas Day</date>
+</holidays>
