@@ -67,16 +67,16 @@ class DateTest extends TestCase
     }
 
 	/**
-	 * @return array{
-	 *     DateTime,
-	 *     int,
-	 *	   int,
-	 *     int|null,
-	 *     boolean,
-	 *     string,
-	 *     boolean
-	 * }[]
-	 */
+     * @return array{
+     *     DateTime,
+     *     int,
+     *     int,
+     *     int|null,
+     *     bool,
+     *     string,
+     *     bool
+     * }[]
+     */
 	public function dateProvider()
     {
         return [

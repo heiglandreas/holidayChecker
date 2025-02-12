@@ -35,7 +35,6 @@ namespace Org_Heigl\HolidaycheckerTest;
 use DateTimeImmutable;
 use DateTimeInterface;
 use IntlCalendar;
-use Mockery as M;
 use Org_Heigl\Holidaychecker\Calendar;
 use Org_Heigl\Holidaychecker\CalendarDay;
 use PHPUnit\Framework\TestCase;

@@ -62,16 +62,16 @@ class RelativeTest extends TestCase
     }
 
 	/**
-	 * @return array{
-	 *     DateTime,
-	 *     int,
-	 *	   int,
-	 *     string,
-	 *     boolean,
-	 *     string,
-	 *     boolean
-	 * }[]
-	 */
+     * @return array{
+     *     DateTime,
+     *     int,
+     *     int,
+     *     string,
+     *     bool,
+     *     string,
+     *     bool
+     * }[]
+     */
     public function dateProvider()
     {
         return [

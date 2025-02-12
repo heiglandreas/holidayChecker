@@ -61,14 +61,14 @@ class EasterTest extends TestCase
     }
 
 	/**
-	 * @return array{
-	 *     DateTime,
-	 *     int,
-	 *     boolean,
-	 *     string,
-	 *     boolean
-	 * }[]
-	 */
+     * @return array{
+     *     DateTime,
+     *     int,
+     *     bool,
+     *     string,
+     *     bool
+     * }[]
+     */
     public function easterProvider()
     {
         return [

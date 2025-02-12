@@ -84,13 +84,13 @@ class HolidaycheckerTest extends TestCase
     }
 
 	/**
-	 * @return array{
-	 *     DateTime,
-	 *     boolean,
-	 *     boolean,
-	 *     string
-	 * }[]
-	 */
+     * @return array{
+     *     DateTime,
+     *     bool,
+     *     bool,
+     *     string
+     * }[]
+     */
     public function integrationProvider()
     {
         return [

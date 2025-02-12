@@ -36,6 +36,7 @@ use DateTimeInterface;
 use IntlCalendar;
 use Org_Heigl\Holidaychecker\CalendarDay;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
+use function array_filter;
 use function array_map;
 use function in_array;
 

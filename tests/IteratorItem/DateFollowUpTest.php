@@ -76,17 +76,17 @@ class DateFollowUpTest extends TestCase
     }
 
 	/**
-	 * @return array{
-	 *     DateTimeImmutable,
-	 *     int,
-	 *	   int,
-	 *     string,
-	 *     string[],
-	 *     boolean,
-	 *     string,
-	 *     boolean
-	 * }[]
-	 */
+     * @return array{
+     *     DateTimeImmutable,
+     *     int,
+     *     int,
+     *     string,
+     *     string[],
+     *     bool,
+     *     string,
+     *     bool
+     * }[]
+     */
     public function dateProvider()
     {
         return [

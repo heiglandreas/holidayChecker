@@ -65,11 +65,12 @@ class EasterOrthodoxTest extends TestCase
 	 * @return array{
 	 *     DateTime,
 	 *     int,
-	 *     boolean,
+	 *     bool,
 	 *     string,
-	 *     boolean
+	 *     bool
 	 * }[]
-	 */    public function easterProvider()
+	 */
+	public function easterProvider()
     {
         return [
             [new DateTime('2016-04-20 12:00:00+00:00'), -10, true, 'test', true],

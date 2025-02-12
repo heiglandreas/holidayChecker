@@ -14,7 +14,7 @@ use DateTimeInterface;
 use IntlCalendar;
 use RuntimeException;
 use UnexpectedValueException;
-use function method_exists;
+use function is_callable;
 use function sprintf;
 use function strtolower;
 
