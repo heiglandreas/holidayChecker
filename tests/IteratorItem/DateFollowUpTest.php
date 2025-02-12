@@ -47,7 +47,16 @@ class DateFollowUpTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::dateMatches
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::replacedDays
-     */
+	 * @param DateTimeImmutable $dateTime
+	 * @param int $day
+	 * @param int $month
+	 * @param string $followup
+	 * @param array<"sunday"|"monday"|"tuesday"|"wednesday"|"thursday"|"friday"|"saturday"> $replaced
+	 * @param bool $result
+	 * @param string $name
+	 * @param bool $isHoliday
+	 * @return void
+	 */
     public function testThatDateFollowupTestWorks(
         $dateTime,
         $day,
@@ -66,6 +75,18 @@ class DateFollowUpTest extends TestCase
         $this->assertEquals($isHoliday, $followUp->isHoliday());
     }
 
+	/**
+	 * @return array{
+	 *     DateTimeImmutable,
+	 *     int,
+	 *	   int,
+	 *     string,
+	 *     string[],
+	 *     boolean,
+	 *     string,
+	 *     boolean
+	 * }[]
+	 */
     public function dateProvider()
     {
         return [

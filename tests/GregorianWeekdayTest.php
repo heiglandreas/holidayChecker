@@ -30,6 +30,9 @@ class GregorianWeekdayTest extends TestCase
 		self::assertSame($expected, GregorianWeekday::fromString($string));
 	}
 
+	/**
+	 * @return array{string}[]
+	 */
 	public function workdayProvider(): array
 	{
 		return [

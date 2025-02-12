@@ -42,17 +42,29 @@ use PHPUnit\Framework\TestCase;
 
 class CalendarDayTest extends TestCase
 {
+	/**
+	 * @return void
+	 */
     public function testConstructorCalendar()
     {
-        $calendar = M::mock(IntlCalendar::class);
-        $calendar->shouldReceive('set')->times(4);
+        $calendar = $this->getMockBuilder(IntlCalendar::class)->disableOriginalConstructor()->getMock();
+        $calendar->expects($this->exactly(4))->method('set');
 
         $class = new CalendarDay(2, 3, $calendar);
 
         self::assertInstanceOf(CalendarDay::class, $class);
     }
 
-    /** @dataProvider theSameDayWithoutCheckingYearProvider */
+    /**
+	 * @dataProvider theSameDayWithoutCheckingYearProvider
+	 * @param int $day
+	 * @param int $month
+	 * @param int|null $year
+	 * @param string $calendar
+	 * @param DateTimeImmutable $compare
+	 * @param bool $result
+	 * @return void
+	 */
     public function testIsSameDay($day, $month, $year, $calendar, $compare, $result)
     {
         $cal = IntlCalendar::createInstance(null, '@calendar=' . $calendar);
@@ -65,7 +77,17 @@ class CalendarDayTest extends TestCase
         $this->assertSame($result, $class->isSameDay($compare));
     }
 
-    public function theSameDayWithoutCheckingYearProvider()
+	/**
+	 * @return array{
+	 *     int,
+	 *     int,
+	 *     int|null,
+	 *     string,
+	 *     DateTimeImmutable,
+	 *     bool
+	 * }[]
+	 */
+    public static function theSameDayWithoutCheckingYearProvider()
     {
         return [
             'Month doesnt match' => [1, 1, null, Calendar::GREGORIAN, new DateTimeImmutable('1.2.2000'), false],
@@ -79,7 +101,14 @@ class CalendarDayTest extends TestCase
         ];
     }
 
-    /** @dataProvider provideTheWeekdayIsReturnedCorrectly */
+    /**
+	 * @dataProvider provideTheWeekdayIsReturnedCorrectly
+	 * @param int $day
+	 * @param int $month
+	 * @param int $year
+	 * @param string $calendar
+	 * @param bool $result
+	 * @return void*/
     public function testThatTheWeekdayIsReturnedCorrectly($day, $month, $year, $calendar, $result)
     {
         $cal = IntlCalendar::createInstance(null, '@calendar=' . $calendar);
@@ -88,7 +117,16 @@ class CalendarDayTest extends TestCase
         $this->assertSame($result, $class->getWeekdayForGregorianYear($year));
     }
 
-    public function provideTheWeekdayIsReturnedCorrectly()
+	/**
+	 * @return array<string, array{
+	 *     int,
+	 *     int,
+	 *     int,
+	 *     string,
+	 *     int
+	 * }>
+	 */
+	public static function provideTheWeekdayIsReturnedCorrectly()
     {
         return [
             '1.January.2018 is Monday'   =>
@@ -120,9 +158,7 @@ class CalendarDayTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider followUpIsCalculatedCorrectlyProvider
-     */
+    /** @dataProvider followUpIsCalculatedCorrectlyProvider */
     public function testThatFollowUpIsCalculatedCorrectly(
         int $day,
         int $month,
@@ -137,7 +173,16 @@ class CalendarDayTest extends TestCase
         self::assertTrue($class->isFollowUpDay($dateTime, $followUp));
     }
 
-    public function followUpIsCalculatedCorrectlyProvider(): array
+	/**
+	 * @return array{
+	 *     int,
+	 *     int,
+	 *     DateTimeImmutable,
+	 *     string
+	 * }[]
+	 */
+
+	public function followUpIsCalculatedCorrectlyProvider(): array
     {
         return [
             [25, 11, new DateTimeImmutable('2020-11-29T12:00:00Z'), 'sunday'],

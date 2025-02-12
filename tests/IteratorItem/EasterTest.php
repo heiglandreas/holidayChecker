@@ -45,7 +45,13 @@ class EasterTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::dateMatches
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::getEaster
-     */
+	 * @param DateTime $dateTime
+	 * @param int $offset
+	 * @param bool $result
+	 * @param string $name
+	 * @param bool $isHoliday
+	 * @return void
+	 */
     public function testThatEasterIsIdentifiedCorrectly($dateTime, $offset, $result, $name, $isHoliday)
     {
         $easter = new Easter($name, $isHoliday, $offset);
@@ -54,6 +60,15 @@ class EasterTest extends TestCase
         $this->assertEquals($isHoliday, $easter->isHoliday());
     }
 
+	/**
+	 * @return array{
+	 *     DateTime,
+	 *     int,
+	 *     boolean,
+	 *     string,
+	 *     boolean
+	 * }[]
+	 */
     public function easterProvider()
     {
         return [

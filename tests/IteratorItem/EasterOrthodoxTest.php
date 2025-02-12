@@ -46,7 +46,13 @@ class EasterOrthodoxTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::dateMatches
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::getOrthodoxEaster
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::getEaster
-     */
+	 * @param DateTime $dateTime
+	 * @param int $offset
+	 * @param bool $result
+	 * @param string $name
+	 * @param bool $isHoliday
+	 * @return void
+	 */
     public function testThatEasterIsIdentifiedCorrectly($dateTime, $offset, $result, $name, $isHoliday)
     {
         $easter = new EasterOrthodox($name, $isHoliday, $offset);
@@ -55,7 +61,15 @@ class EasterOrthodoxTest extends TestCase
         $this->assertEquals($isHoliday, $easter->isHoliday());
     }
 
-    public function easterProvider()
+	/**
+	 * @return array{
+	 *     DateTime,
+	 *     int,
+	 *     boolean,
+	 *     string,
+	 *     boolean
+	 * }[]
+	 */    public function easterProvider()
     {
         return [
             [new DateTime('2016-04-20 12:00:00+00:00'), -10, true, 'test', true],

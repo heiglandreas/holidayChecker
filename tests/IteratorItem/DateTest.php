@@ -46,7 +46,14 @@ class DateTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::isHoliday
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::dateMatches
-     */
+	 * @param DateTime $dateTime
+	 * @param int $day
+	 * @param int $month
+	 * @param int|null $year
+	 * @param bool $result
+	 * @param string $name
+	 * @param bool $isHoliday
+	 * @return void*/
     public function testThatDateTestWorks($dateTime, $day, $month, $year, $result, $name, $isHoliday)
     {
         $calendarDate = CalendarDayFactory::createCalendarDay($day, $month, Calendar::GREGORIAN);
@@ -59,7 +66,18 @@ class DateTest extends TestCase
         $this->assertEquals($isHoliday, $easter->isHoliday());
     }
 
-    public function dateProvider()
+	/**
+	 * @return array{
+	 *     DateTime,
+	 *     int,
+	 *	   int,
+	 *     int|null,
+	 *     boolean,
+	 *     string,
+	 *     boolean
+	 * }[]
+	 */
+	public function dateProvider()
     {
         return [
             [new DateTime('2017-12-24 12:00:00+00:00'), 24, 12, null, true, 'test', true],

@@ -65,6 +65,11 @@ class HolidaycheckerTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::getName
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::isHoliday
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::__construct
+	 * @param DateTime $date
+	 * @param bool $holiday
+	 * @param bool $named
+	 * @param string $name
+	 * @return void
      */
     public function testIntegration($date, $holiday, $named, $name)
     {
@@ -78,6 +83,14 @@ class HolidaycheckerTest extends TestCase
         $this->assertEquals($name, $result->getName());
     }
 
+	/**
+	 * @return array{
+	 *     DateTime,
+	 *     boolean,
+	 *     boolean,
+	 *     string
+	 * }[]
+	 */
     public function integrationProvider()
     {
         return [
@@ -110,6 +123,7 @@ class HolidaycheckerTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::dateMatches
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::getName
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::isHoliday
+	 * @return void
      */
     public function testSpeed()
     {
@@ -141,6 +155,7 @@ class HolidaycheckerTest extends TestCase
 
     /**
      * @dataProvider datesProvider
+	 * @return void
      */
     public function testDates(string $code, DateTimeImmutable $date, string $dayname)
     {
@@ -152,6 +167,13 @@ class HolidaycheckerTest extends TestCase
         $this->assertEquals($dayname, $result->getName());
     }
 
+	/**
+	 * @return array{
+	 *     string,
+	 *     DateTimeImmutable,
+	 *     string
+	 * }[]
+	 */
     public function datesProvider()
     {
         return [

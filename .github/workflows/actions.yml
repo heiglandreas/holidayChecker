@@ -89,12 +89,12 @@ jobs:
         with:
           php-version: "8.3"
           tools: phive
-      - name: Download psalm
-        run: phive --no-progress install --trust-gpg-keys 8A03EA3B385DBAA1,12CE0F1D262429A5 psalm
+      - name: Download phpstan
+        run: phive --no-progress install --trust-gpg-keys CA7C2C7A30C8E8E1274A847651C67305FFC2E5C0 phpstan
       - name: install
         run: composer update --no-dev
       - name: analyze
-        run: ./tools/psalm
+        run: ./tools/phpstan
   coverage:
     needs: test
     runs-on: ubuntu-latest

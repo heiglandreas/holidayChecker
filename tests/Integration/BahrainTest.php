@@ -20,6 +20,8 @@ class BahrainTest extends TestCase
 {
 	/**
 	 * @dataProvider dayProvider
+	 * @param DateTimeImmutable $day
+	 * @return void
 	 */
 	public function testBahrainHolidays($day)
 	{
@@ -31,7 +33,7 @@ class BahrainTest extends TestCase
 	}
 
 	/**
-	 * @return array<array{DateTimeImmutable}>
+	 * @return array{DateTimeImmutable}[]
 	 */
 	public function dayProvider(): array
 	{

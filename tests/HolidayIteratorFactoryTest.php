@@ -55,6 +55,7 @@ class HolidayIteratorFactoryTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::__construct
+	 * @return void
      */
     public function testThatFactoryReturnsCorrectStuffFromFile()
     {
@@ -80,6 +81,7 @@ class HolidayIteratorFactoryTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::__construct
+	 * @return void
      */
     public function testThatFactoryReturnsCorrectStuffFromISOCode()
     {
@@ -91,6 +93,7 @@ class HolidayIteratorFactoryTest extends TestCase
 
     /**
      * @covers \Org_Heigl\Holidaychecker\HolidayIteratorFactory::createIteratorFromISO3166
+	 * @return void
      */
     public function testThatFactoryThrowsExceptionForUnknownISOCode()
     {

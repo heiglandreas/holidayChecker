@@ -53,9 +53,12 @@ class DateFollowUp implements HolidayIteratorItemInterface
 	/** @var string */
 	private $followup;
 
-	/** @var array */
+	/** @var IntlCalendar::DOW*[] */
 	private $replaced;
 
+	/**
+	 * @param array<"sunday"|"monday"|"tuesday"|"wednesday"|"thursday"|"friday"|"saturday"> $replaced
+	 */
 	public function __construct(string $name, bool $holiday, CalendarDay $day, string $followup, array $replaced = [])
 	{
 		$this->day = $day;
@@ -65,6 +68,10 @@ class DateFollowUp implements HolidayIteratorItemInterface
 		$this->replaced = $this->replacedDays($replaced);
 	}
 
+	/**
+	 * @param array<"sunday"|"monday"|"tuesday"|"wednesday"|"thursday"|"friday"|"saturday"|"foo"> $replaced
+	 * @return IntlCalendar::DOW_*[]
+	 */
 	private static function replacedDays(array $replaced): array
 	{
 		$daymap = [
@@ -84,12 +91,12 @@ class DateFollowUp implements HolidayIteratorItemInterface
 			];
 		}
 
-		return array_map(function (string $day) use ($daymap) {
+		return array_filter(array_map(function (string $day) use ($daymap) {
 			if (!isset($daymap[$day])) {
 				return null;
 			}
 			return $daymap[$day];
-		}, $replaced);
+		}, $replaced));
 	}
 
 	public function dateMatches(DateTimeInterface $date): bool

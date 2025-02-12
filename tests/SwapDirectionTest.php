@@ -20,6 +20,7 @@ class SwapDirectionTest extends TestCase
 	 * @covers \Org_Heigl\Holidaychecker\SwapDirection::__construct
 	 * @covers \Org_Heigl\Holidaychecker\SwapDirection::rewind
 	 * @covers \Org_Heigl\Holidaychecker\SwapDirection::getValue
+	 * @return void
 	 */
 	public function testGettingValue(): void
 	{
@@ -32,6 +33,7 @@ class SwapDirectionTest extends TestCase
 	 * @covers \Org_Heigl\Holidaychecker\SwapDirection::__construct
 	 * @covers \Org_Heigl\Holidaychecker\SwapDirection::rewind
 	 * @covers \Org_Heigl\Holidaychecker\SwapDirection::getDateTimeDirection
+	 * @return void
 	 */
 	public function testGettingDateModifyValue(): void
 	{

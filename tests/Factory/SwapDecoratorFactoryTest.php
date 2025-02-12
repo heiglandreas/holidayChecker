@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Org_Heigl\HolidaycheckerTest\Factory;
 
 use DOMDocument;
+use DOMElement;
 use Org_Heigl\Holidaychecker\Factory\SwapDecoratorFactory;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
 use Org_Heigl\Holidaychecker\IteratorItem\SwapDecorator;
@@ -18,11 +19,16 @@ use PHPUnit\Framework\TestCase;
 
 class SwapDecoratorFactoryTest extends TestCase
 {
+	/**
+	 * @return void
+	 * @throws \DOMException
+	 */
 	public function testCreatingAllTheRules(): void
 	{
 		$doc = new DOMDocument('1.0');
 		$elem = $doc->createElement('date');
 		$node = $doc->appendChild($elem);
+		$this->assertInstanceOf(DOMElement::class, $node);
 		$node->setAttribute('forwardto', 'monday');
 		$node->setAttribute('forwardwhen', 'saturday sunday');
 		$node->setAttribute('alternateforwardto', 'monday');

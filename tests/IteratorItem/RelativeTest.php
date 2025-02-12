@@ -44,6 +44,14 @@ class RelativeTest extends TestCase
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::isHoliday
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::__construct
      * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::dateMatches
+	 * @param DateTime $dateTime
+	 * @param int $day
+	 * @param int $month
+	 * @param string $relation
+	 * @param bool $result
+	 * @param string $name
+	 * @param bool $isHoliday
+	 * @return void
      */
     public function testThatDateTestWorks($dateTime, $day, $month, $relation, $result, $name, $isHoliday)
     {
@@ -53,6 +61,17 @@ class RelativeTest extends TestCase
         $this->assertEquals($isHoliday, $easter->isHoliday());
     }
 
+	/**
+	 * @return array{
+	 *     DateTime,
+	 *     int,
+	 *	   int,
+	 *     string,
+	 *     boolean,
+	 *     string,
+	 *     boolean
+	 * }[]
+	 */
     public function dateProvider()
     {
         return [

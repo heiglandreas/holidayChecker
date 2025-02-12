@@ -1,0 +1,24 @@
+# run with: bin/phpstan analyse
+# update baseline with: bin/phpstan analyse -b
+
+includes:
+#    - phpstan-baseline.neon
+
+parameters:
+    level: 8
+    checkExplicitMixedMissingReturn: true
+    reportUnmatchedIgnoredErrors: false
+    treatPhpDocTypesAsCertain: false
+
+    parallel:
+        processTimeout: 300.0
+    editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'
+
+    paths:
+        - src/
+        - tests/
+
+    reportMaybesInMethodSignatures: false
+    reportMaybesInPropertyPhpDocTypes: false
+    reportWrongPhpDocTypeInVarTag: false
+

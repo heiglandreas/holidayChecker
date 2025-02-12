@@ -107,7 +107,9 @@ final class GregorianWeekday
 
 	public static function fromString(string $weekday): self
 	{
-		if (!method_exists(self::class, strtolower($weekday))) {
+		$weekday = strtolower($weekday);
+		$callable = [self::class, $weekday];
+		if (! is_callable($callable)) {
 			throw new RuntimeException(sprintf(
 				'Weekday "%s" is not known',
 				$weekday
@@ -115,7 +117,7 @@ final class GregorianWeekday
 		}
 
 		/** @var GregorianWeekday $gregorianWeekday */
-		$gregorianWeekday = [self::class, strtolower($weekday)]();
+		$gregorianWeekday = $callable();
 
 		return $gregorianWeekday;
 	}
