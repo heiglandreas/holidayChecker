@@ -24,7 +24,7 @@ class BahrainTest extends TestCase
 	public function testBahrainHolidays($day)
 	{
 		$factory = new HolidayIteratorFactory();
-		$iterator = $factory->createIteratorFromISO3166('BH');
+		$iterator = $factory->createIteratorFromIso3166('BH');
 		$checker = new Holidaychecker($iterator);
 
 		self::assertTrue($checker->check($day)->isHoliday());

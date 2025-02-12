@@ -239,7 +239,7 @@ use Org_Heigl\Holidaychecker\Holidaychecker;
 use Org_Heigl\Holidaychecker\HolidayIteratorFactory;
 
 $factory  = new HolidayIteratorFactory();
-$iterator = $factory->createIteratorFromISO3166('DE');
+$iterator = $factory->createIteratorFromIso3166('DE');
 $checker  = new Holidaychecker($iterator);
 
 $startDate = new DateTimeImmutable('2022-10-10');
