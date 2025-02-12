@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Uruguay" lastChecked="2025-02-12"/>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Years day">Año Nuevo</date>
+	<date day="6" month="1" free="true" comment="Childrens Day">Día de los Niños</date>
+	<easter offset="-48" free="true" comment="Carnival">Carnaval</easter>
+	<easter offset="-47" free="true" comment="Carnival">Carnaval</easter>
+	<easter offset="-46" free="true" comment="Carnival">Carnaval</easter>
+	<easter offset="-7" free="true" comment="Tourism Week">Semana de Turismo</easter>
+	<easter offset="-6" free="true" comment="Tourism Week">Semana de Turismo</easter>
+	<easter offset="-5" free="true" comment="Tourism Week">Semana de Turismo</easter>
+	<easter offset="-4" free="true" comment="Tourism Week">Semana de Turismo</easter>
+	<easter offset="-3" free="true" comment="Tourism Week">Semana de Turismo</easter>
+	<date day="19" month="4" free="true" comment="Landing of the 33 Patriots day">Desembarco de los 33 Orientales</date>
+	<date day="1" month="5" free="true" comment="International Workers Day">Día de los Trabajadores</date>
+	<date day="18" month="5" free="true" comment="Battle of Las Piedras">Batalla de las Piedras</date>
+	<date day="18" month="6" free="true" comment="Birthday of Jose Gervasio Artigas">Natalicio de Artigas</date>
+	<date day="18" month="7" free="true" comment="Constitution Day">Jura de la Constitución</date>
+	<date day="25" month="8" free="true" comment="Independence Day">Declaratoria de la Independencia</date>
+	<date day="12" month="10" free="true" comment="Da of the Armericans">Día de las Américas</date>
+	<date day="2" month="11" free="true" comment="All Souls Day">Día de los Difuntos</date>
+	<date day="25" month="12" free="true" comment="Family Day">Día de la Familia</date>
+</holidays>
