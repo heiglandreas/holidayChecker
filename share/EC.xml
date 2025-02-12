@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Ecuador" lastChecked="2025-02-12"/>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Years Day">Año Nuevo</date>
+	<date day="12" month="2" free="false" comment="Galapagos Day">dia de la Provincia de Galápagos</date>
+	<easter offset="-48" free="true" comment="Carnival">Carnaval</easter>
+	<easter offset="-47" free="true" comment="Carnival">Carnaval</easter>
+	<easter offset="-2" free="true" comment="Good Friday">Viernes Santo</easter>
+	<date day="1" month="5" free="true" comment="Labour Day">Día del Trabajo</date>
+	<date day="24" month="5" free="true" comment="Battle of Pichincha">Batalla de Pichincha</date>
+	<date day="10" month="8" free="true" comment="Declaration of Independence of Ecuador">Primer Grito de Independencia</date>
+	<date day="9" month="10" free="true" comment="Independence of Guayaquil">Independencia de Guayaquil</date>
+	<date day="2" month="11" free="true" comment="All Souls day">Día de Muertos</date>
+	<date day="3" month="11" free="true" comment="Independence of Cuenca">Independencia de Cuenca</date>
+	<date day="6" month="12" free="true" comment="Foundation of Quito">Fundación de Quito</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Día de Navidad</date>
+</holidays>
