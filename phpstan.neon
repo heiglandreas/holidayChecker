@@ -16,7 +16,6 @@ parameters:
 
     paths:
         - src/
-        - tests/
 
     reportMaybesInMethodSignatures: false
     reportMaybesInPropertyPhpDocTypes: false

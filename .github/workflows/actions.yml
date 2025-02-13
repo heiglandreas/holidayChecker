@@ -59,6 +59,8 @@ jobs:
           coverage: xdebug
       - name: prepare
         run: composer update
+      - name: Install PHPUnit
+        run: composer require --dev phpunit/phpunit
       - name: test
         run: composer test
 #  upload-xsd-file:
@@ -105,10 +107,12 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.0"
+          php-version: "8.3"
           coverage: xdebug
       - name: Install
         run: composer update
+      - name: Install PHPUnit
+        run: composer require --dev phpunit/phpunit
       - name: run testsuite
         run: composer test-coverage
       - name: upload to coveralls

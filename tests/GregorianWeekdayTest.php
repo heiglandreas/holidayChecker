@@ -13,15 +13,15 @@ namespace Org_Heigl\HolidaycheckerTest;
 use DateTimeImmutable;
 use IntlCalendar;
 use Org_Heigl\Holidaychecker\GregorianWeekday;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use UnexpectedValueException;
 
 class GregorianWeekdayTest extends TestCase
 {
-	/**
-	 * @dataProvider workdayProvider
-	 */
+	/** @dataProvider workdayProvider */
+	#[DataProvider('workdayProvider')]
 	public function testFromStringWorksAsExpectedForKnownWeekdays(string $string): void
 	{
 		$expected = GregorianWeekday::fromString($string);
@@ -33,7 +33,7 @@ class GregorianWeekdayTest extends TestCase
 	/**
 	 * @return array{string}[]
 	 */
-	public function workdayProvider(): array
+	public static function workdayProvider(): array
 	{
 		return [
 			['monday'],
@@ -49,7 +49,7 @@ class GregorianWeekdayTest extends TestCase
 	public function testFromStringThrowsWithUnknownString(): void
 	{
 		$this->expectException(RuntimeException::class);
-		$this->expectErrorMessage('Weekday "wtf" is not known');
+		$this->expectExceptionMessage('Weekday "wtf" is not known');
 		GregorianWeekday::fromString('wtf');
 	}
 
