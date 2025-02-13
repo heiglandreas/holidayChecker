@@ -36,37 +36,28 @@ use DateTimeImmutable;
 use Org_Heigl\Holidaychecker\Calendar;
 use Org_Heigl\Holidaychecker\CalendarDayFactory;
 use Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(DateFollowUp::class)]
 class DateFollowUpTest extends TestCase
 {
     /**
-     * @dataProvider dateProvider
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::getName
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::isHoliday
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::__construct
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::dateMatches
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\DateFollowUp::replacedDays
-	 * @param DateTimeImmutable $dateTime
-	 * @param int $day
-	 * @param int $month
-	 * @param string $followup
-	 * @param array<"sunday"|"monday"|"tuesday"|"wednesday"|"thursday"|"friday"|"saturday"> $replaced
-	 * @param bool $result
-	 * @param string $name
-	 * @param bool $isHoliday
-	 * @return void
+	 * @dataProvider dateProvider
+     * @param array<"sunday"|"monday"|"tuesday"|"wednesday"|"thursday"|"friday"|"saturday"> $replaced
 	 */
+	#[DataProvider('dateProvider')]
     public function testThatDateFollowupTestWorks(
-        $dateTime,
-        $day,
-        $month,
-        $followup,
-        $replaced,
-        $result,
-        $name,
-        $isHoliday
-    ) {
+        DateTimeImmutable $dateTime,
+        int $day,
+        int $month,
+        string $followup,
+        array $replaced,
+        bool $result,
+        string $name,
+        bool $isHoliday
+    ): void {
         $calendarDate = CalendarDayFactory::createCalendarDay($day, $month, Calendar::GREGORIAN);
 
         $followUp = new DateFollowUp($name, $isHoliday, $calendarDate, $followup, $replaced);
@@ -87,7 +78,7 @@ class DateFollowUpTest extends TestCase
      *     bool
      * }[]
      */
-    public function dateProvider()
+    public static function dateProvider()
     {
         return [
             [new DateTimeImmutable('2018-03-01 12:00:00+00:00'), 25, 2, 'thursday', [], true, 'test', true],

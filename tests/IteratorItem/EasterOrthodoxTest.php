@@ -34,27 +34,22 @@ namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
 use DateTime;
 use Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(EasterOrthodox::class)]
 class EasterOrthodoxTest extends TestCase
 {
-    /**
-     * @dataProvider easterProvider
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::getName
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::isHoliday
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::__construct
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::dateMatches
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::getOrthodoxEaster
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\EasterOrthodox::getEaster
-	 * @param DateTime $dateTime
-	 * @param int $offset
-	 * @param bool $result
-	 * @param string $name
-	 * @param bool $isHoliday
-	 * @return void
-	 */
-    public function testThatEasterIsIdentifiedCorrectly($dateTime, $offset, $result, $name, $isHoliday)
-    {
+	/** @dataProvider easterProvider */
+	#[DataProvider('easterProvider')]
+    public function testThatEasterIsIdentifiedCorrectly(
+		DateTime $dateTime,
+		int $offset,
+		bool $result,
+		string $name,
+		bool $isHoliday
+	): void {
         $easter = new EasterOrthodox($name, $isHoliday, $offset);
         $this->assertEquals($result, $easter->dateMatches($dateTime));
         $this->assertEquals($name, $easter->getName());
@@ -70,7 +65,7 @@ class EasterOrthodoxTest extends TestCase
 	 *     bool
 	 * }[]
 	 */
-	public function easterProvider()
+	public static function easterProvider()
     {
         return [
             [new DateTime('2016-04-20 12:00:00+00:00'), -10, true, 'test', true],

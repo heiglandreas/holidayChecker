@@ -36,26 +36,24 @@ use DateTime;
 use Org_Heigl\Holidaychecker\Calendar;
 use Org_Heigl\Holidaychecker\CalendarDayFactory;
 use Org_Heigl\Holidaychecker\IteratorItem\Date;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(Date::class)]
 class DateTest extends TestCase
 {
-    /**
-     * @dataProvider dateProvider
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::getName
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::isHoliday
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::__construct
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Date::dateMatches
-	 * @param DateTime $dateTime
-	 * @param int $day
-	 * @param int $month
-	 * @param int|null $year
-	 * @param bool $result
-	 * @param string $name
-	 * @param bool $isHoliday
-	 * @return void*/
-    public function testThatDateTestWorks($dateTime, $day, $month, $year, $result, $name, $isHoliday)
-    {
+	/** @dataProvider dateProvider */
+	#[DataProvider('dateProvider')]
+    public function testThatDateTestWorks(
+		DateTime $dateTime,
+		int $day,
+		int $month,
+		?int $year,
+		bool $result,
+		string $name,
+		bool $isHoliday
+	): void {
         $calendarDate = CalendarDayFactory::createCalendarDay($day, $month, Calendar::GREGORIAN);
         if ($year) {
             $calendarDate->setYear($year);
@@ -77,7 +75,7 @@ class DateTest extends TestCase
      *     bool
      * }[]
      */
-	public function dateProvider()
+	public static function dateProvider()
     {
         return [
             [new DateTime('2017-12-24 12:00:00+00:00'), 24, 12, null, true, 'test', true],
