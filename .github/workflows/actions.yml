@@ -93,13 +93,13 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.4"
-          tools: phive
       - name: Download phpstan
-        run: phive --no-progress install --trust-gpg-keys CA7C2C7A30C8E8E1274A847651C67305FFC2E5C0 phpstan
+        run: |
+            composer require phpstan/phpstan
       - name: install
         run: composer update --no-dev
       - name: analyze
-        run: ./tools/phpstan
+        run: ./vendor/bin/phpstan
   coverage:
     needs: test
     runs-on: ubuntu-latest

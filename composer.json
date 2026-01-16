@@ -14,10 +14,6 @@
     "ext-dom": "*",
     "org_heigl/dateintervalcomparator": "^1.0"
   },
-  "require-dev": {
-    "slevomat/coding-standard": "^6.4 || ^7.0 || ^8.0",
-    "squizlabs/php_codesniffer": "^3.0"
-  },
   "autoload" : {
     "psr-4" : {
       "Org_Heigl\\Holidaychecker\\" : "src/"
@@ -30,9 +26,6 @@
   },
   "config": {
     "sort-packages": true,
-    "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
   },
   "scripts" : {
     "check": [
@@ -44,18 +37,20 @@
       "chmod 755 coveralls",
       "./coveralls -v"
     ],
-    "cs-download" : [
-      "curl -o phpcs -L https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.2.2/phpcs.phar",
-      "curl -o phpcs.asc -L https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.2.2/phpcs.phar.asc",
-      "# gpg --verify phpcs.asc phpcs",
-      "chmod 755 phpcs"
+    "cs-install" : [
+      "cd tools/phpcs",
+			"composer install",
+			"cd ../.."
     ],
 
     "cs-check": [
-      "@cs-download",
-      "./phpcs --version && ./phpcs"
+      "@cs-install",
+      "./tools/phpcs/vendor/bin/phpcs --version && ./tools/phpcs/vendor/bin/phpcs"
     ],
-    "cs-fix": "phpcbf",
+    "cs-fix": [
+			"@cs-install",
+			"/tools/phpcs/vendor/bin/phpcbf"
+		],
     "test": "phpunit --colors=always",
     "lintxml" : "for i in `ls share/*.xml` ; do xmllint --xinclude --noout --schema share/holidays.xsd $i; if [ ! $? -eq 0 ] ; then exit 1; fi; done || exit 1",
     "test-coverage": "phpunit -c phpunit-coverage.xml.dist --colors=always --coverage-clover clover.xml"
