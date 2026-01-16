@@ -12,7 +12,8 @@
     "php": "^7.3|^8.0",
     "ext-intl": "*",
     "ext-dom": "*",
-    "org_heigl/dateintervalcomparator": "^1.0"
+    "org_heigl/dateintervalcomparator": "^1.0",
+		"roukmoute/polyfill-calendar": "^0.5.0"
   },
   "require-dev": {
     "slevomat/coding-standard": "^6.4 || ^7.0 || ^8.0",
