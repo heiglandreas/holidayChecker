@@ -81,7 +81,7 @@ class HolidayIteratorFactory
 	 *
 	 * @return HolidayIterator
 	 */
-	public function createIteratorFromISO3166(string $isoCode): HolidayIterator
+	public function createIteratorFromIso3166(string $isoCode): HolidayIterator
 	{
 		$file = __DIR__ . '/../share/%s.xml';
 		$file1 = sprintf($file, $isoCode);
