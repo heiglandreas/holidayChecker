@@ -12,6 +12,7 @@
     "php": "^7.3|^8.0",
     "ext-intl": "*",
     "ext-dom": "*",
+		"ext-calendar": "*",
     "org_heigl/dateintervalcomparator": "^1.0"
   },
   "autoload" : {
