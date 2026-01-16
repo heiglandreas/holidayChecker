@@ -117,7 +117,12 @@ class HolidayIteratorFactory
 		if (!@$dom->schemaValidate(__DIR__ . '/../share/holidays.xsd')) {
 			throw new Exception('XML-File does not validate agains schema');
 		}
-		foreach ($dom->documentElement->childNodes as $child) {
+
+		$element = $dom->documentElement;
+		if ($element === null) {
+			return $iterator;
+		}
+		foreach ($element->childNodes as $child) {
 			if (!$child instanceof DOMElement) {
 				continue;
 			}

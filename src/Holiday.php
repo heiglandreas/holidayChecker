@@ -34,8 +34,10 @@ namespace Org_Heigl\Holidaychecker;
 
 class Holiday
 {
+	/** @var bool */
 	private $holiday;
 
+	/** @var string */
 	private $name;
 
 	public function __construct(bool $holiday, string $name = '')

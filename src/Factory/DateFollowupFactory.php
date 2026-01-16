@@ -30,12 +30,18 @@ class DateFollowupFactory implements ItemFromDomElementCreator
 			($element->hasAttribute('calendar') ? $element->getAttribute('calendar') : 'gregorian')
 		);
 
+		$replaced = [];
+		if ($element->hasAttribute('replaced')) {
+			/** @var array<"sunday"|"monday"|"tuesday"|"wednesday"|"thursday"|"friday"|"saturday"> $replaced */
+			$replaced = explode(' ', $element->getAttribute('replaced'));
+		}
+
 		return new DateFollowUp(
 			$element->textContent,
 			$element->getAttribute('free') === "true",
 			$day,
 			$element->getAttribute('followup'),
-			($element->hasAttribute('replaced') ? explode(' ', $element->getAttribute('replaced')) : [])
+			$replaced
 		);
 	}
 }

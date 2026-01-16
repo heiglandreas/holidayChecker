@@ -12,16 +12,15 @@ namespace Org_Heigl\Holidaychecker;
 
 class SwapRule
 {
+	/** @var SwapDirection */
 	private $swapDirection;
 
+	/** @var GregorianWeekday */
 	private $swapToDay;
 
 	/** @var GregorianWeekday[] */
 	private $swapWhenDay;
 
-	/**
-	 * @param GregorianWeekday[] $swapWhenGregorianDay
-	 */
 	public function __construct(SwapDirection $direction, GregorianWeekday $swapToGregorianDay, GregorianWeekday ...$swapWhenGregorianDay)
 	{
 		$this->swapDirection = $direction;
@@ -39,6 +38,9 @@ class SwapRule
 		return $this->swapToDay;
 	}
 
+	/**
+	 * @return GregorianWeekday[]
+	 */
 	public function getSwapWhenDays(): array
 	{
 		return $this->swapWhenDay;

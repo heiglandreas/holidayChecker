@@ -43,10 +43,13 @@ use function easter_days;
 
 class Easter implements HolidayIteratorItemInterface
 {
+	/** @var int */
 	private $offset;
 
+	/** @var bool */
 	private $holiday;
 
+	/** @var string */
 	private $name;
 
 	public function __construct(string $name, bool $holiday, int $offset)

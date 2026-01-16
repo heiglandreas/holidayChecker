@@ -34,27 +34,38 @@ namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
 use DateTime;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(Easter::class)]
 class EasterTest extends TestCase
 {
-    /**
-     * @dataProvider easterProvider
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::getName
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::isHoliday
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::__construct
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::dateMatches
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Easter::getEaster
-     */
-    public function testThatEasterIsIdentifiedCorrectly($dateTime, $offset, $result, $name, $isHoliday)
-    {
+	/** @dataProvider easterProvider */
+	#[DataProvider('easterProvider')]
+    public function testThatEasterIsIdentifiedCorrectly(
+		DateTime $dateTime,
+		int $offset,
+		bool $result,
+		string $name,
+		bool $isHoliday
+	): void {
         $easter = new Easter($name, $isHoliday, $offset);
         $this->assertEquals($result, $easter->dateMatches($dateTime));
         $this->assertEquals($name, $easter->getName());
         $this->assertEquals($isHoliday, $easter->isHoliday());
     }
 
-    public function easterProvider()
+	/**
+     * @return array{
+     *     DateTime,
+     *     int,
+     *     bool,
+     *     string,
+     *     bool
+     * }[]
+     */
+    public static function easterProvider()
     {
         return [
             [new DateTime('2017-04-06 12:00:00+00:00'), -10, true, 'test', true],

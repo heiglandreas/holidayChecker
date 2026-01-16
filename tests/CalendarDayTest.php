@@ -35,26 +35,38 @@ namespace Org_Heigl\HolidaycheckerTest;
 use DateTimeImmutable;
 use DateTimeInterface;
 use IntlCalendar;
-use Mockery as M;
 use Org_Heigl\Holidaychecker\Calendar;
 use Org_Heigl\Holidaychecker\CalendarDay;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class CalendarDayTest extends TestCase
 {
-    public function testConstructorCalendar()
+	public function testConstructorCalendar(): void
     {
-        $calendar = M::mock(IntlCalendar::class);
-        $calendar->shouldReceive('set')->times(4);
+        $calendar = IntlCalendar::createInstance();
 
         $class = new CalendarDay(2, 3, $calendar);
 
         self::assertInstanceOf(CalendarDay::class, $class);
-    }
+		self::assertSame(2, $calendar->get(IntlCalendar::FIELD_DAY_OF_MONTH));
+		self::assertSame(2, $calendar->get(IntlCalendar::FIELD_MONTH));
+		self::assertSame(12, $calendar->get(IntlCalendar::FIELD_HOUR_OF_DAY));
+		self::assertSame(0, $calendar->get(IntlCalendar::FIELD_MINUTE));
+		self::assertSame(0, $calendar->get(IntlCalendar::FIELD_SECOND));
+		self::assertSame(0, $calendar->get(IntlCalendar::FIELD_MILLISECOND));
+	}
 
-    /** @dataProvider theSameDayWithoutCheckingYearProvider */
-    public function testIsSameDay($day, $month, $year, $calendar, $compare, $result)
-    {
+	/** @dataProvider theSameDayWithoutCheckingYearProvider */
+	#[DataProvider('theSameDayWithoutCheckingYearProvider')]
+    public function testIsSameDay(
+		int $day,
+		int $month,
+		?int $year,
+		string $calendar,
+		DateTimeImmutable $compare,
+		bool $result
+	): void {
         $cal = IntlCalendar::createInstance(null, '@calendar=' . $calendar);
 
         $class = new CalendarDay($day, $month, $cal);
@@ -65,8 +77,18 @@ class CalendarDayTest extends TestCase
         $this->assertSame($result, $class->isSameDay($compare));
     }
 
-    public function theSameDayWithoutCheckingYearProvider()
-    {
+	/**
+	 * @return array{
+	 *     int,
+	 *     int,
+	 *     int|null,
+	 *     string,
+	 *     DateTimeImmutable,
+	 *     bool
+	 * }[]
+	 */
+    public static function theSameDayWithoutCheckingYearProvider(): array
+	{
         return [
             'Month doesnt match' => [1, 1, null, Calendar::GREGORIAN, new DateTimeImmutable('1.2.2000'), false],
             'Day doesnt match'   => [1, 1, null, Calendar::GREGORIAN, new DateTimeImmutable('2.1.2000'), false],
@@ -79,16 +101,31 @@ class CalendarDayTest extends TestCase
         ];
     }
 
-    /** @dataProvider provideTheWeekdayIsReturnedCorrectly */
-    public function testThatTheWeekdayIsReturnedCorrectly($day, $month, $year, $calendar, $result)
-    {
+	/** @dataProvider provideTheWeekdayIsReturnedCorrectly */
+	#[DataProvider('provideTheWeekdayIsReturnedCorrectly')]
+    public function testThatTheWeekdayIsReturnedCorrectly(
+		int $day,
+		int $month,
+		int $year,
+		string $calendar,
+		int $result
+	): void {
         $cal = IntlCalendar::createInstance(null, '@calendar=' . $calendar);
         $class = new CalendarDay($day, $month, $cal);
 
         $this->assertSame($result, $class->getWeekdayForGregorianYear($year));
     }
 
-    public function provideTheWeekdayIsReturnedCorrectly()
+	/**
+	 * @return array<string, array{
+	 *     int,
+	 *     int,
+	 *     int,
+	 *     string,
+	 *     int
+	 * }>
+	 */
+	public static function provideTheWeekdayIsReturnedCorrectly()
     {
         return [
             '1.January.2018 is Monday'   =>
@@ -120,9 +157,8 @@ class CalendarDayTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider followUpIsCalculatedCorrectlyProvider
-     */
+	/** @dataProvider followUpIsCalculatedCorrectlyProvider */
+    #[DataProvider('followUpIsCalculatedCorrectlyProvider')]
     public function testThatFollowUpIsCalculatedCorrectly(
         int $day,
         int $month,
@@ -137,7 +173,16 @@ class CalendarDayTest extends TestCase
         self::assertTrue($class->isFollowUpDay($dateTime, $followUp));
     }
 
-    public function followUpIsCalculatedCorrectlyProvider(): array
+	/**
+	 * @return array{
+	 *     int,
+	 *     int,
+	 *     DateTimeImmutable,
+	 *     string
+	 * }[]
+	 */
+
+	public static function followUpIsCalculatedCorrectlyProvider(): array
     {
         return [
             [25, 11, new DateTimeImmutable('2020-11-29T12:00:00Z'), 'sunday'],

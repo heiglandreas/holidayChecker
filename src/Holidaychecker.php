@@ -36,6 +36,7 @@ use DateTimeInterface;
 
 class Holidaychecker
 {
+	/** @var HolidayIterator */
 	private $iterator;
 
 	public function __construct(HolidayIterator $iterator)

@@ -34,26 +34,42 @@ namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
 use DateTime;
 use Org_Heigl\Holidaychecker\IteratorItem\Relative;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(Relative::class)]
 class RelativeTest extends TestCase
 {
-    /**
-     * @dataProvider dateProvider
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::getName
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::isHoliday
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::__construct
-     * @covers \Org_Heigl\Holidaychecker\IteratorItem\Relative::dateMatches
-     */
-    public function testThatDateTestWorks($dateTime, $day, $month, $relation, $result, $name, $isHoliday)
-    {
+	/** @dataProvider dateProvider */
+	#[DataProvider('dateProvider')]
+    public function testThatDateTestWorks(
+		DateTime $dateTime,
+		int $day,
+		int $month,
+		string $relation,
+		bool $result,
+		string $name,
+		bool $isHoliday
+	): void {
         $easter = new Relative($name, $isHoliday, $day, $month, $relation);
         $this->assertEquals($result, $easter->dateMatches($dateTime));
         $this->assertEquals($name, $easter->getName());
         $this->assertEquals($isHoliday, $easter->isHoliday());
     }
 
-    public function dateProvider()
+	/**
+     * @return array{
+     *     DateTime,
+     *     int,
+     *     int,
+     *     string,
+     *     bool,
+     *     string,
+     *     bool
+     * }[]
+     */
+    public static function dateProvider()
     {
         return [
             [new DateTime('2017-12-03 12:00:00+00:00'), 25, 12, 'last sunday -3 weeks', true, 'test', true],

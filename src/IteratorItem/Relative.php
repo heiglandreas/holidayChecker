@@ -39,14 +39,19 @@ use function sprintf;
 
 class Relative implements HolidayIteratorItemInterface
 {
+	/** @var int */
 	private $day;
 
+	/** @var int */
 	private $month;
 
+	/** @var string */
 	private $relation;
 
+	/** @var bool */
 	private $holiday;
 
+	/** @var string */
 	private $name;
 
 	public function __construct(string $name, bool $holiday, int $day, int $month, string $relation)

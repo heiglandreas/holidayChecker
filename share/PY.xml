@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Paraguay" lastChecked="2025-02-12"/>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year">Ano Nuevo</date>
+	<date day="1" month="3" free="true" comment="National Heroes Day">Dia de los héroes</date>
+	<easter offset="-4" free="true" comment="Maundy Thursday">Jueves Santo</easter>
+	<easter offset="-3" free="true" comment="Good Friday">Viernes Santo</easter>
+	<date day="1" month="5" free="true" comment="Labour Day">Día de los Trabajadores</date>
+	<date day="14" month="5" free="true" comment="Independence Day">Dia de la Independencia</date>
+	<date day="12" month="6" free="true" comment="Chaco Armistice Day">Dia de la Paz del Chaco</date>
+	<date day="15" month="8" free="true" comment="Foundation of Asunción">Fundación de Asunción</date>
+	<date day="29" month="9" free="true" comment="Battle of Boqueron">Victoria de Boquerón</date>
+	<date day="8" month="12" free="true" comment="Virgin of Caacupe">Virgen de Caacupé</date>
+	<date day="25" month="12" free="true"	comment="Christmas Day">Día de Navidad</date>
+</holidays>

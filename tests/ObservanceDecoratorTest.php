@@ -13,13 +13,13 @@ namespace Org_Heigl\HolidaycheckerTest;
 use DateTimeImmutable;
 use Org_Heigl\Holidaychecker\HolidayIteratorItemInterface;
 use Org_Heigl\Holidaychecker\ObservanceDecorator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class ObservanceDecoratorTest extends TestCase
 {
-    /**
-     * @dataProvider provider
-     */
+	/** @dataProvider provider */
+	#[DataProvider('provider')]
     public function testDecoratorWorksAsExpected(?int $firstObservance, ?int $lastObservance, int $testYear, bool $expectedResult): void
     {
 		$decorated = $this->getMockBuilder(HolidayIteratorItemInterface::class)->getMock();
@@ -36,7 +36,7 @@ class ObservanceDecoratorTest extends TestCase
     /**
      * @return array<array{(int|null), (int|null), int, bool}>
      */
-    public function provider(): array
+    public static function provider(): array
     {
         return [
             [null, null, 2022, true],

@@ -13,7 +13,7 @@ jobs:
           php-version: "8.3"
           tools: phive
       - name: Download codesniffer
-        run: phive --no-progress install --trust-gpg-keys 5E6DDE998AB73B8E phpcs
+        run: phive --no-progress install --trust-gpg-keys 689DAD778FF08760E046228BA978220305CD5C32 phpcs
       - name: Install
         run: composer install
       - name: check
@@ -39,11 +39,11 @@ jobs:
     strategy:
       matrix:
         # operating-system: [ubuntu-latest, windows-latest, macos-latest]
-        php-versions: ['7.3', '7.4', '8.0', '8.1', '8.2', '8.3']
+        php-versions: ['7.3', '7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
         icu-versions: ['74.1', '73.2', '73.1', '71.1', '69.1', '67.1']
         experimental: [false]
         include:
-          - php-versions: '8.4'
+          - php-versions: '8.5'
             icu-versions: '74.1'
             experimental: true
     name: PHP ${{ matrix.php-versions }}-icu${{ matrix.icu-versions }} # Test on ${{ matrix.operating-system }}
@@ -59,6 +59,8 @@ jobs:
           coverage: xdebug
       - name: prepare
         run: composer update
+      - name: Install PHPUnit
+        run: composer require --dev phpunit/phpunit
       - name: test
         run: composer test
 #  upload-xsd-file:
@@ -89,12 +91,12 @@ jobs:
         with:
           php-version: "8.3"
           tools: phive
-      - name: Download psalm
-        run: phive --no-progress install --trust-gpg-keys 8A03EA3B385DBAA1,12CE0F1D262429A5 psalm
+      - name: Download phpstan
+        run: phive --no-progress install --trust-gpg-keys CA7C2C7A30C8E8E1274A847651C67305FFC2E5C0 phpstan
       - name: install
         run: composer update --no-dev
       - name: analyze
-        run: ./tools/psalm
+        run: ./tools/phpstan
   coverage:
     needs: test
     runs-on: ubuntu-latest
@@ -105,10 +107,12 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.0"
+          php-version: "8.3"
           coverage: xdebug
       - name: Install
         run: composer update
+      - name: Install PHPUnit
+        run: composer require --dev phpunit/phpunit
       - name: run testsuite
         run: composer test-coverage
       - name: upload to coveralls

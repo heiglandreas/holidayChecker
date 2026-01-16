@@ -14,14 +14,14 @@ use DateTimeImmutable;
 use DateTimeZone;
 use Org_Heigl\Holidaychecker\Holidaychecker;
 use Org_Heigl\Holidaychecker\HolidayIteratorFactory;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class BahrainTest extends TestCase
 {
-	/**
-	 * @dataProvider dayProvider
-	 */
-	public function testBahrainHolidays($day)
+	/** @dataProvider dayProvider */
+	#[DataProvider('dayProvider')]
+	public function testBahrainHolidays(DateTimeImmutable $day): void
 	{
 		$factory = new HolidayIteratorFactory();
 		$iterator = $factory->createIteratorFromIso3166('BH');
@@ -31,9 +31,9 @@ class BahrainTest extends TestCase
 	}
 
 	/**
-	 * @return array<array{DateTimeImmutable}>
+	 * @return array{DateTimeImmutable}[]
 	 */
-	public function dayProvider(): array
+	public static function dayProvider(): array
 	{
 		return [
 			'New Year' => [new DateTimeImmutable('2015-01-01 12:00:00', new DateTimeZone('Asia/Bahrain'))],

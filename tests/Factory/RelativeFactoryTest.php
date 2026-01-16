@@ -31,6 +31,7 @@ class RelativeFactoryTest extends TestCase
 		$doc = new DOMDocument('1.0');
 		$elem = $doc->createElement('relative');
 		$node = $doc->appendChild($elem);
+		$this->assertInstanceOf(DOMElement::class, $node);
 		$node->setAttribute('free', 'true');
 		$node->setAttribute('day', '1');
 		$node->setAttribute('month', '12');

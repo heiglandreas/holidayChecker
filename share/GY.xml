@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+					xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Guyana" lastChecked="2025-02-12"/>
+	</resources>
+	<date day="1" month="1" free="true">New Year's Day</date>
+	<date day="23" month="2" free="true">Republic Day</date>
+	<date day="15" month="12" free="true" calendar="indian">Phagwah</date>
+	<easter offset="-2" free="true">Good Friday</easter>
+	<easter offset="1" free="true">Easter Monday</easter>
+	<date day="1" month="5" free="true">Labour</date>
+	<date day="5" month="5" free="true">Arrival Day</date>
+	<date day="26" month="5" free="true">Independence Day</date>
+	<relative day="30" month="6" relation="next Monday" free="true">CARICOM Day</relative>
+	<date day="1" month="8" free="true">Emancipation Day</date>
+	<date day="27" month="7" free="true" calendar="indian">Diwali</date>
+	<date day="25" month="12" free="true">Christmas Day</date>
+	<date day="26" month="12" free="true">Boxing Day</date>
+	<date day="12" month="3" free="true" calendar="islamic-civil">Youman-Nabi</date>
+	<date day="15" month="3" free="true" calendar="islamic-civil">Youman-Nabi</date>
+	<date day="10" month="12" free="true" calendar="islamic-civil">Eid-ul-Adha</date>
+</holidays>

@@ -18,6 +18,9 @@ use PHPUnit\Framework\TestCase;
 
 class ArgentiniaTest extends TestCase
 {
+	/**
+	 * @return void
+	 */
     public function testMainArgeninianHolidays()
     {
         $factory  = new HolidayIteratorFactory();
@@ -42,6 +45,9 @@ class ArgentiniaTest extends TestCase
         self::assertTrue($checker->check(new DateTimeImmutable('2022-12-25 12:00:00'))->isHoliday());
     }
 
+	/**
+	 * @return void
+	 */
     public function testArmenianArgeninianHolidays()
     {
         $factory  = new HolidayIteratorFactory();
@@ -51,6 +57,9 @@ class ArgentiniaTest extends TestCase
         self::assertTrue($checker->check(new DateTimeImmutable('2022-04-24 12:00:00'))->isHoliday());
     }
 
+	/**
+	 * @return void
+	 */
     public function testCatholicArgeninianHolidays()
     {
         $factory  = new HolidayIteratorFactory();
@@ -60,6 +69,9 @@ class ArgentiniaTest extends TestCase
         self::assertTrue($checker->check(new DateTimeImmutable('2022-04-13 12:00:00'))->isHoliday());
     }
 
+	/**
+	 * @return void
+	 */
     public function testJewishArgeninianHolidays()
     {
         $factory  = new HolidayIteratorFactory();
@@ -75,6 +87,10 @@ class ArgentiniaTest extends TestCase
         self::assertTrue($checker->check(new DateTimeImmutable('2022-10-05 12:00:00'))->isHoliday());
     }
 
+	/**
+	 * @return void
+	 * @throws \DateMalformedStringException
+	 */
     public function testIslamicArgeninianHolidays()
     {
         $factory  = new HolidayIteratorFactory();
