@@ -14,11 +14,13 @@ jobs:
           tools: phive
       - name: Install codesniffer
         run: |
-            composer require --dev squizlabs/php_codesniffer
+            cd tools/phpcs
+            composer install
+            cd ../..
       - name: Install
         run: composer install
       - name: check
-        run: ./vendor/bin/phpcs
+        run: ./tools/phpcs/vendor/bin/phpcs
   xml-lint:
     runs-on: ubuntu-latest
     continue-on-error: false
