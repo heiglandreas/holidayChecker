@@ -66,7 +66,8 @@ class ArgentiniaTest extends TestCase
         $iterator = $factory->createIteratorFromIso3166('AR-catholic');
         $checker  = new Holidaychecker($iterator);
 
-        self::assertTrue($checker->check(new DateTimeImmutable('2022-04-13 12:00:00'))->isHoliday());
+		// Good Friday western church is 15th of April 2022
+        self::assertTrue($checker->check(new DateTimeImmutable('2022-04-15 12:00:00'))->isHoliday());
     }
 
 	/**

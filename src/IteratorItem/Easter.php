@@ -67,6 +67,9 @@ class Easter implements HolidayIteratorItemInterface
 		$day = $this->getOffsetDay($easter, $this->offset);
 
 		$comparator = new DateIntervalComparator();
+
+		$date = new DateTimeImmutable($date->format('Y-m-d') . 'T00:00:00', new DateTimeZone('UTC'));
+
 		return 0 > $comparator->compare($day->diff($date), new DateInterval('P1D'));
 	}
 
