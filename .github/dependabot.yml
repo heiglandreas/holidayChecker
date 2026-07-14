@@ -5,6 +5,8 @@ updates:
   schedule:
     interval: daily
     time: "04:00"
+  cooldown:
+      default-days: 5
   open-pull-requests-limit: 10
 - package-ecosystem: bundler
   directory: "/docs"
@@ -12,3 +14,9 @@ updates:
     interval: daily
     time: "04:00"
   open-pull-requests-limit: 10
+- package-ecosystem: github-actions
+  directory: '/'
+  schedule:
+      interval: weekly
+  cooldown:
+      default-days: 5

@@ -33,6 +33,7 @@ declare(strict_types=1);
 namespace Org_Heigl\HolidaycheckerTest\IteratorItem;
 
 use DateTime;
+use DateTimeZone;
 use Org_Heigl\Holidaychecker\IteratorItem\Easter;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -72,6 +73,8 @@ class EasterTest extends TestCase
             [new DateTime('2017-04-16 12:00:00+00:00'), 0, true, 'test', true],
             [new DateTime('2017-04-17 12:00:00+00:00'), 0, false, 'test', false],
             [new DateTime('2017-04-17 12:00:00+00:00'), 1, true, 'test', true],
+            [new DateTime('2026-04-02 12:43:00', new DateTimeZone('Europe/Berlin')), -2, false, 'test', true],
+            [new DateTime('2026-04-03 12:43:00', new DateTimeZone('Europe/Berlin')), -2, true, 'test', true],
         ];
     }
 }
