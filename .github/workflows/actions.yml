@@ -129,7 +129,7 @@ jobs:
           composer global require php-coveralls/php-coveralls
           php-coveralls --coverage_clover=clover.xml -v
       - name: upload to codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v7
         with:
           #token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: ./clover.xml # optional
