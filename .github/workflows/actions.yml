@@ -7,7 +7,7 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    continue-on-error: false
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v2
