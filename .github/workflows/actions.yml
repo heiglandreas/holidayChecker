@@ -4,15 +4,22 @@ on:
   push:
     branches:
       - 'main'
+permissions: {}
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
 jobs:
   check:
+    name: Check Codestyle
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # 7.0.1
+        with:
+          persist-credentials: false
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
         with:
           php-version: "8.4"
           tools: phive
@@ -26,13 +33,16 @@ jobs:
       - name: check
         run: ./tools/phpcs/vendor/bin/phpcs
   xml-lint:
+    name: Lint XML-Files
     runs-on: ubuntu-latest
     continue-on-error: false
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # 7.0.1
+        with:
+          persist-credentials: false
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
         with:
           php-version: "8.4"
       - name: Install xmllint
@@ -56,9 +66,11 @@ jobs:
     name: "PHP ${{ matrix.php-versions }}-icu${{ matrix.icu-versions }} # Test on ${{ matrix.operating-system }}"
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # 7.0.1
+        with:
+          persist-credentials: false
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: sodium, intl-${{matrix.icu-versions}}
@@ -87,14 +99,17 @@ jobs:
 #        run: |
 #          curl --ftp-create-dirs -T share/holidays.xsd -u "$FTP_USER":"$FTP_PASS" ftp://ftp.heigl.org:21/holidays.xsd
   analyze:
+    name: Run static analysis
     needs: test
     runs-on: ubuntu-latest
     continue-on-error: false
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # 7.0.1
+        with:
+          persist-credentials: false
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
         with:
           php-version: "8.4"
       - name: Download phpstan
@@ -105,14 +120,17 @@ jobs:
       - name: analyze
         run: ./vendor/bin/phpstan
   coverage:
+    name: Create code-coverage
     needs: test
     runs-on: ubuntu-latest
     continue-on-error: false
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # 7.0.1
+        with:
+          persist-credentials: false
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # 2.37.2
         with:
           php-version: "8.4"
           coverage: xdebug
@@ -129,7 +147,7 @@ jobs:
           composer global require php-coveralls/php-coveralls
           php-coveralls --coverage_clover=clover.xml -v
       - name: upload to codecov
-        uses: codecov/codecov-action@v7
+        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # 7.0.0
         with:
           #token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: ./clover.xml # optional
