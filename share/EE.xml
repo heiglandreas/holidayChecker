@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Estonia" lastChecked="2026-07-26">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year's Day">uusaasta</date>
+	<date day="24" month="2" free="true" comment="Independence Day">iseseisvuspäev</date>
+	<easter offset="-2" free="true" comment="Good Friday">suur reede</easter>
+	<easter offset="0" free="true" comment="Easter Sunday">lihavõtted</easter>
+	<date day="1" month="5" free="true" comment="Spring Day">kevadpüha</date>
+	<easter offset="49" free="true" comment="Whit Sunday">nelipühade 1. püha</easter>
+	<date day="23" month="6" free="true" comment="Victory Day">Võidupüha</date>
+	<date day="24" month="6" free="true" comment="Saint John's Day">Jaanipäev</date>
+	<date day="20" month="8" free="true" comment="Independence Restoration Day">taasiseseisvumispäev</date>
+	<date day="24" month="12" free="true" comment="Christmas Eve">jõululaupäev</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">esimene jõulupüha</date>
+	<date day="26" month="12" free="true" comment="Second Day of Christmas">teine jõulupüha</date>
+</holidays>

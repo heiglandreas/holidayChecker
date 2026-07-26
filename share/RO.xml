@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Romania" lastChecked="2026-07-26">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New years day">Anul Nou</date>
+	<date day="2" month="1" free="true" comment="New years day">Anul Nou</date>
+	<date day="6" month="1" free="true" comment="Epiphany">Boboteaza</date>
+	<date day="7" month="1" free="true" comment="John the Baptist">Sfântul Ioan Botezătorul</date>
+	<date day="24" month="1" free="true" comment="Day of the Unification of the Romanian Principalities">Ziua Unirii Principatelor Române</date>
+	<date day="1" month="5" free="true" comment="Labour Day">Ziua Muncii</date>
+	<easterorthodox offset="-2" free="true" comment="Good Friday">Paștele</easterorthodox>
+	<easterorthodox offset="0" free="true" comment="Easter Sunday">Paștele</easterorthodox>
+	<easterorthodox offset="1" free="true" comment="Easter Monday">Paștele</easterorthodox>
+	<date day="1" month="6" free="true" comment="Childrens Day">Ziua Copilului</date>
+	<easterorthodox offset="50" free="true" comment="Pentecost">Rusaliile</easterorthodox>
+	<easterorthodox offset="51" free="true" comment="Pentecost">Rusaliile</easterorthodox>
+	<date day="15" month="8" free="true" comment="Dormition of the Mother of God">Adormirea Maicii Domnului</date>
+	<date day="30" month="11" free="true" comment="Saint Andrews Day">Sfântul Andrei</date>
+	<date day="1" month="12" free="true" comment="National Day of Romania">Ziua Națională a României</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Crăciunul</date>
+	<date day="26" month="12" free="true" comment="Christmas Day">Crăciunul</date>
+</holidays>

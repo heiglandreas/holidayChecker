@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Serbia" lastChecked="2026-07-26">Wikipedia</resource>
+	</resources>
+	<dateFollowUp day="1" month="1" followup="monday" replaced="sunday"  free="true" comment="New Years Day">Нова година</dateFollowUp>
+	<dateFollowUp day="2" month="1" followup="monday" replaced="sunday" free="true" comment="New Years Day">Нова година</dateFollowUp>
+	<date day="7" month="1" free="true" comment="Christmas Day">Божић</date>
+	<dateFollowUp followup="monday" replaced="sunday" day="15" month="2" free="true" comment="Statehood Day">Дан државности</dateFollowUp>
+	<dateFollowUp followup="monday" replaced="sunday" day="16" month="2" free="true" comment="Statehood Day">Дан државности</dateFollowUp>
+	<easterorthodox offset="-2" free="true" comment="Good Friday">Велики петак</easterorthodox>
+	<easterorthodox offset="1" free="true" comment="Easter Monday">Васкрсни понедељак</easterorthodox>
+	<dateFollowUp day="1" month="5" followup="monday" free="true" replaced="sunday" comment="Labour Day">Празник рада</dateFollowUp>
+	<dateFollowUp day="2" month="5" followup="monday" free="true" replaced="sunday" comment="Labour Day">Празник рада</dateFollowUp>
+	<dateFollowUp day="11" month="11" followup="monday" free="true" replaced="sunday" comment="Armistice Day">Дан примирја</dateFollowUp>
+	<date day="27" month="1" free="false" comment="Saint Sava Day">Савиндан</date>
+	<date day="22" month="4" free="false" comment="Holocaust, Genocide and other Fascist Crimes Victims of the World War II Remembrance Day">Дан сећања на жртве холокауста, геноцида и других жртава фашизма у Другом светском рату</date>
+	<date day="9" month="5" free="false" comment="Victory Day">Дан победе</date>
+	<date day="28" month="6" free="false" comment="Vidovdan">Видовдан</date>
+	<date day="15" month="9" free="false" comment="Day of Serb Unity, Freedom, and the National Flag">Дан српског јединства, слободе и националне заставе</date>
+	<date day="21" month="10" free="false" comment="World War II Serbian Victims Remembrance Day">Дан сећања на српске жртве у Другом светском рату</date>
+</holidays>

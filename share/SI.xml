@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Slovenia" lastChecked="2026-07-26">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New years Day">novo leto</date>
+	<date day="2" month="1" free="true"	comment="New Years Day" firstobservance="2017">novo leto</date>
+	<date day="2" month="1" free="true"	comment="New Years Day" firstobservance="1955" lastobservance="2012">novo leto</date>
+	<date day="8" month="2" free="true" comment="Prešeren Day">Prešernov dan</date>
+	<easter offset="0" free="true" comment="Easter Sunday">velikonočna nedelja</easter>
+	<easter offset="1" free="true" comment="Easter Monday">velikonočni ponedeljek</easter>
+	<date day="27" month="4" free="true" comment="Day of Uprising Against Occupation">dan upora proti okupatorju</date>
+	<date day="1" month="5" free="true" comment="May Day">praznik dela</date>
+	<date day="2" month="5" free="true" comment="May Day">praznik dela</date>
+	<easter offset="49" free="true" comment="Whit Sunday">binkošti</easter>
+	<date day="25" month="6" free="true" comment="Statehood Day">dan državnosti</date>
+	<date day="15" month="8" free="true" comment="Assumption Day" firstobservance="1992">Marijino vnebovzetje</date>
+	<date day="31" month="10" free="true" comment="Reformation Day" firstobservance="1992">dan reformacije</date>
+	<date day="1" month="11" free="true" comment="All Saints Day" lastobservance="1990">dan mrtvih</date>
+	<date day="1" month="11" free="true" comment="All Saints Day" firstobservance="1991">dan spomina</date>
+	<date day="25" month="12" free="true" comment="Christmas Day" lastobservance="1953">božič</date>
+	<date day="25" month="12" free="true" comment="Christmas Day" firstobservance="1991">božič</date>
+	<date day="26" month="12" free="true" comment="independence and unbity day">dan samostojnosti in enotnosti</date>
+</holidays>
