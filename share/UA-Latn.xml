@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Ukraine" lastChecked="2026-07-26">Wikipedia - Note that during the war public holidays are working days!</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year">Novyi Rik</date>
+	<date day="8" month="3" free="true" comment="International Wommens Day">Mizhnarodnyi zhinochyi den</date>
+	<easterorthodox offset="0" free="true" comment="Easter" lastobservance="2023">Velykden</easterorthodox>
+	<easter offset="0" free="true" comment="Easter" firstobservance="2024">Velykden</easter>
+	<easterorthodox offset="49" free="true" comment="Pentecost" lastobservance="2023">Triitsia</easterorthodox>
+	<easter offset="49" free="true" comment="Pentecost" firstobservance="2024">Triitsia</easter>
+	<date day="1" month="5" free="true" comment="International Workers Day">Den pratsi</date>
+	<date day="2" month="5" free="true" comment="International Workers Day" lastobservance="2018">Den pratsi</date>
+	<date day="8" month="5" free="true" comment="Day of Remembrance and Victory over Nazism in World War II, 1939–1945">Den pamiati ta peremohy nad natsyzmom u Druhii svitovii viini 1939–1945 rokiv</date>
+	<date day="28" month="6" free="true" comment="Constitution Day">Den Konstytutsii Ukrainy</date>
+	<date day="15" month="7" free="true" comment="Statehood Day" firstobservance="2024">Den Ukrainskoi Derzhavnosti</date>
+	<date day="28" month="7" free="true" comment="Statehood Day" lastobservance="2023">Den Ukrainskoi Derzhavnosti</date>
+	<date day="24" month="8" free="true" comment="Independence Day">Den Nezalezhnosti Ukrainy</date>
+	<date day="1" month="10" free="true" comment="Defenders of Ukraine Day" firstobservance="2023">Den zakhysnykiv i zakhysnyts Ukrainy</date>
+	<date day="14" month="10" free="true" comment="Defenders of Ukraine Day" firstobservance="2015" lastobservance="2022">Den zakhysnykiv i zakhysnyts Ukrainy</date>
+	<date day="25" month="12" free="true" comment="Christmas" firstobservance="2017">Rizdvo Khrystove</date>
+	<date day="7" month="1" free="true" comment="Christmas (Gregorian Calendar)" lastobservance="2022">Rizdvo Khrystove</date>
+</holidays>

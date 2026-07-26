@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Ukraine" lastChecked="2026-07-26">Wikipedia - Note that during the war public holidays are working days!</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="New Year">Новий рік</date>
+	<date day="8" month="3" free="true" comment="International Wommens Day">Міжнародний жіночий день</date>
+	<easterorthodox offset="0" free="true" comment="Easter" lastobservance="2023">Великдень</easterorthodox>
+	<easter offset="0" free="true" comment="Easter" firstobservance="2024">Великдень</easter>
+	<easterorthodox offset="49" free="true" comment="Pentecost" lastobservance="2023">Трійця</easterorthodox>
+	<easter offset="49" free="true" comment="Pentecost" firstobservance="2024">Трійця</easter>
+	<date day="1" month="5" free="true" comment="International Workers Day">День праці</date>
+	<date day="2" month="5" free="true" comment="International Workers Day" lastobservance="2018">День праці</date>
+	<date day="8" month="5" free="true" comment="Day of Remembrance and Victory over Nazism in World War II, 1939–1945">День пам'яті та перемоги над нацизмом у Другій світовій війні 1939–1945 років</date>
+	<date day="28" month="6" free="true" comment="Constitution Day">День Конституції України</date>
+	<date day="15" month="7" free="true" comment="Statehood Day" firstobservance="2024">День Української Державності </date>
+	<date day="28" month="7" free="true" comment="Statehood Day" lastobservance="2023">День Української Державності </date>
+	<date day="24" month="8" free="true" comment="Independence Day">День Незалежності України</date>
+	<date day="1" month="10" free="true" comment="Defenders of Ukraine Day" firstobservance="2023">День захисників і захисниць України</date>
+	<date day="14" month="10" free="true" comment="Defenders of Ukraine Day" firstobservance="2015" lastobservance="2022">День захисників і захисниць України</date>
+	<date day="25" month="12" free="true" comment="Christmas" firstobservance="2017">Різдво Христове</date>
+	<date day="7" month="1" free="true" comment="Christmas (Gregorian Calendar)" lastobservance="2022">Різдво Христове</date>
+</holidays>
