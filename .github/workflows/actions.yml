@@ -55,15 +55,29 @@ jobs:
     continue-on-error: ${{ matrix.experimental }}
     strategy:
       matrix:
-        # operating-system: [ubuntu-latest, windows-latest, macos-latest]
-        php-versions: ['7.3', '7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5']
-        icu-versions: ['74.1', '73.2', '73.1', '71.1', '69.1', '67.1']
+        # All currently supported PHP-Versions are tested against all ICU-versions that were active since release of
+        # the oldest PHP-Version
+        php-versions: ['8.2', '8.3', '8.4', '8.5']
+        icu-versions: ['74.1', '74.2', '75.1', '76.1', '77.1', '78.1', '78.2', '78.3']
         experimental: [false]
         include:
+          # The nightly version is only tested against the latest ICU-version
           - php-versions: '8.6'
-            icu-versions: '74.1'
+            icu-versions: '78.3'
             experimental: true
-    name: "PHP ${{ matrix.php-versions }}-icu${{ matrix.icu-versions }} # Test on ${{ matrix.operating-system }}"
+          - php-versions: '7.3' # EOL 06.12.2021, last release: 7.3.33 on 18.11.2021
+            icu-versions: '70.1' # release: 28.10.2021
+            experimental: false
+          - php-versions: '7.4' # EOL 28.11.2022, last release: 7.4.33 on 03.11.2022
+            icu-versions: '72.1' # release: 18.10.2022
+            experimental: false
+          - php-versions: '8.0' # EOL 26.11.2023, last release: 8.0.30 on 03.08.2023
+            icu-versions: '73.2' # release: 13.06.2023
+            experimental: false
+          - php-versions: '8.1' # EOL 31.12.2025, last release: 8.1.34 on 18.12.2025
+            icu-versions: '78.1' # release: 30.10.2023
+            experimental: false
+    name: "Test on PHP ${{ matrix.php-versions }} with icu${{ matrix.icu-versions }}"
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # 7.0.1
