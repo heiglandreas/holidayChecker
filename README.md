@@ -138,6 +138,13 @@ Currently these countries are available:
 * Czech Republic
 * Switzerland
 * Hungary
+* Slovenia
+* Slovakia
+* Serbia
+* Romania
+* Ukraine
+* Moldova
+* Estonia
 
 But the list is constantly extending.
 
