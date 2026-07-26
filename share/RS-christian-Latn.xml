@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<xi:include href="BA-SRP.xml" parse="xml" xpointer="xpointer(*/*)">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+	<date day="25" month="12" free="true" comment="Christmas Day (Julian Calendar)">Božić</date>
+	<easter offset="-2" free="true" comment="Good Friday">Veliki petak</easter>
+	<easter offset="1" free="true" comment="Easter Monday">Uskrsni ponedeljak</easter>
+</holidays>
