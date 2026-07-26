@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Slovakia" lastChecked="2026-07-26">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true" comment="Day of the Establishment of the Slovak Republic" firstobservance="1993">Deň vzniku Slovenskej republiky</date>
+	<date day="6" month="1" free="true" comment="Epiphany">Zjavenie Pána</date>
+	<easter offset="-2" free="true" comment="Good Friday">Veľkonočný piatok</easter>
+	<easter offset="1" free="true" comment="Easter Monday">Veľkonočný pondelok</easter>
+	<date day="1" month="5" free="true" comment="Labour Day">	Sviatok práce</date>
+	<date day="8" month="5" free="false" comment="Day of Victory over Fascism" firstobservance="2026">Deň víťazstva nad fašizmom</date>
+	<date day="8" month="5" free="true" comment="Day of Victory over Fascism" lastobservance="2025">Deň víťazstva nad fašizmom</date>
+	<date day="5" month="6" free="true" comment="Saints Cyril and Methodius Day"> Sviatok svätého Cyrila a Metoda</date>
+	<date day="29" month="8" free="true" comment="Slovak National Uprising Anniversary">Výročie Slovenského národného povstania</date>
+	<date day="1" month="9" free="true" comment="Constitution Day of the Slovak Republic" firstobservance="1992" lastobservance="2023">Deň Ústavy Slovenskej republiky</date>
+	<date day="1" month="9" free="false" comment="Constitution Day of the Slovak Republic" firstobservance="2024">Deň Ústavy Slovenskej republiky</date>
+	<date day="15" month="9" free="true" comment="Day of Our Lady of the Seven Sorrows" lastobservance="2025">Sviatok Panny Márie Sedembolestnej</date>
+	<date day="15" month="9" free="false" comment="Day of Our Lady of the Seven Sorrows" firstobservance="2026">Sviatok Panny Márie Sedembolestnej</date>
+	<date day="28" month="10" free="false" comment="Day of the Establishment of an Independent Czecho-Slovak State">Deň vzniku samostatného česko-slovenského štátu</date>
+	<date day="1" month="11" free="true" comment="All Saints Day">Sviatok všetkých svätých</date>
+	<date day="17" month="11" free="false" comment="Struggle for Freedom and Democracy Day" firstobservance="2025">Deň boja za slobodu a demokraciu</date>
+	<date day="17" month="11" free="true" comment="Struggle for Freedom and Democracy Day" lastobservance="2024">Deň boja za slobodu a demokraciu</date>
+	<date day="24" month="12" free="true" comment="Christmas Eve">Štedrý deň</date>
+	<date day="25" month="12" free="true" comment="Christmas Day">Prvý sviatok vianočný</date>
+	<date day="26" month="12" free="true" comment="Second Day of Christmas">Druhý sviatok vianočný</date>
+</holidays>
