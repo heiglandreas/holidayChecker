@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Moldova" lastChecked="2026-07-26">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true">New Year's Day</date>
+	<date day="7" month="1" free="true">Orthodox Christmas</date>
+	<date day="8" month="1" free="true">Orthodox Christmas</date>
+	<date day="8" month="3" free="true">International Women's Day</date>
+	<easterorthodox offset="0" free="true">Orthodox Easter</easterorthodox>
+	<easterorthodox offset="9" free="true">Easter of Blajini</easterorthodox>
+	<date day="1" month="5" free="true">Labour Day</date>
+	<date day="9" month="5" free="true">Europe Day</date>
+	<date day="1" month="6" free="true">Children's Day</date>
+	<date day="27" month="8" free="true">Independence Day</date>
+	<date day="31" month="8" free="true">National Language Day</date>
+	<date day="25" month="12" free="true">Christmas Day</date>
+</holidays>
