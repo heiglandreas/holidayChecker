@@ -2,7 +2,7 @@
 <ruleset name="HolidayChecker">
 	<description>The coding standard for HolidayChecker</description>
 
-	<config name="installed_paths" value="vendor/slevomat/coding-standard"/>
+	<config name="installed_paths" value="tools/phpcs/vendor/slevomat/coding-standard"/>
 	<autoload>vendor/autoload.php</autoload>
 
 	<arg name="basepath" value="."/>
@@ -200,7 +200,7 @@
 	<!-- Require there be no space between increment/decrement operator and its operand -->
 	<rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
 	<!-- Require space after language constructs -->
-	<rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+	<rule ref="Generic.WhiteSpace.LanguageConstructSpacing"/>
 	<!-- Require space around logical operators -->
 	<rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
 	<!-- Forbid spaces around `->` operator -->
