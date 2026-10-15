@@ -146,6 +146,7 @@ Currently these countries are available:
 * Moldova
 * Estonia
 * Liechtenstein
+* Iceland
 
 But the list is constantly extending.
 

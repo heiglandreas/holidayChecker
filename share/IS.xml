@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Iceland" lastChecked="2026-10-15">Wikipedia</resource>
+		<resource href="https://is.wikipedia.org/wiki/L%C3%B6gbundnir_fr%C3%ADdagar_%C3%A1_%C3%8Dslandi" lastChecked="2026-10-15">Wikipedia (is)</resource>
+		<resource href="https://www.visindavefur.is/svar.php?id=1692" lastChecked="2026-10-15">Vísindavefurinn</resource>
+	</resources>
+	<date day="1" month="1" free="true">Nýársdagur</date>
+	<easter offset="-3" free="true">Skírdagur</easter>
+	<easter offset="-2" free="true">Föstudagurinn langi</easter>
+	<easter offset="0" free="true">Páskadagur</easter>
+	<easter offset="1" free="true">Annar í páskum</easter>
+	<relative day="18" month="4" relation="next thursday" free="true">Sumardagurinn fyrsti</relative>
+	<date day="1" month="5" free="true">Verkalýðsdagurinn</date>
+	<easter offset="39" free="true">Uppstigningardagur</easter>
+	<easter offset="49" free="true">Hvítasunnudagur</easter>
+	<easter offset="50" free="true">Annar í hvítasunnu</easter>
+	<date day="17" month="6" free="true">Þjóðhátíðardagurinn</date>
+	<relative day="1" month="8" relation="first monday of this month" free="true">Frídagur verslunarmanna</relative>
+	<date day="24" month="12" free="true" restriction="from 13:00">Aðfangadagur</date>
+	<date day="25" month="12" free="true">Jóladagur</date>
+	<date day="26" month="12" free="true">Annar í jólum</date>
+	<date day="31" month="12" free="true" restriction="from 13:00">Gamlársdagur</date>
+</holidays>
