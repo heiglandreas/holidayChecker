@@ -145,6 +145,7 @@ Currently these countries are available:
 * Ukraine
 * Moldova
 * Estonia
+* Lithuania
 
 But the list is constantly extending.
 
