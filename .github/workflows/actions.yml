@@ -46,7 +46,7 @@ jobs:
         with:
           php-version: "8.4"
       - name: Install xmllint
-        run: sudo apt-get install libxml2-utils
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
       - name: lint
         run: composer lintxml
   test:
@@ -63,6 +63,10 @@ jobs:
         include:
           # The nightly version is only tested against the latest ICU-version
           - php-versions: '8.6'
+            icu-versions: '78.3'
+            experimental: true
+          # The nightly version is only tested against the latest ICU-version
+          - php-versions: '8.7'
             icu-versions: '78.3'
             experimental: true
           - php-versions: '7.3' # EOL 06.12.2021, last release: 7.3.33 on 18.11.2021
