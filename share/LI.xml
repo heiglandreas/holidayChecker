@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://www.gesetze.li/konso/1967006000" lastChecked="2026-10-15">Arbeitsgesetz, Art. 18</resource>
+		<resource href="https://tourismus.li/en/our-country/about-liechtenstein/bank-holidays-in-liechtenstein/" lastChecked="2026-10-15">Liechtenstein Marketing</resource>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Liechtenstein" lastChecked="2026-10-15">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true">Neujahr</date>
+	<date day="2" month="1" free="false">Berchtoldstag</date>
+	<date day="6" month="1" free="true">Heilige Drei Könige</date>
+	<date day="2" month="2" free="true">Mariä Lichtmess</date>
+	<easter offset="-47" free="false">Fasnachtsdienstag</easter>
+	<date day="19" month="3" free="true">Josefstag</date>
+	<easter offset="-2" free="false">Karfreitag</easter>
+	<easter offset="0" free="true">Ostersonntag</easter>
+	<easter offset="1" free="true">Ostermontag</easter>
+	<date day="1" month="5" free="true">Tag der Arbeit</date>
+	<easter offset="39" free="true">Auffahrt</easter>
+	<easter offset="49" free="true">Pfingstsonntag</easter>
+	<easter offset="50" free="true">Pfingstmontag</easter>
+	<easter offset="60" free="true">Fronleichnam</easter>
+	<date day="15" month="8" free="true">Staatsfeiertag</date>
+	<date day="8" month="9" free="true">Mariä Geburt</date>
+	<date day="1" month="11" free="true">Allerheiligen</date>
+	<date day="8" month="12" free="true">Mariä Empfängnis</date>
+	<date day="24" month="12" free="false">Heiligabend</date>
+	<date day="25" month="12" free="true">Weihnachten</date>
+	<date day="26" month="12" free="true">Stephanstag</date>
+	<date day="31" month="12" free="false">Silvester</date>
+</holidays>
