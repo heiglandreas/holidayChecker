@@ -75,6 +75,12 @@ class EasterOrthodoxTest extends TestCase
             [new DateTime('2018-04-08 12:00:00+00:00'), 0, true, 'test', true],
             [new DateTime('2026-04-09 13:00:00', new DateTimeZone('Europe/Berlin')), -2, false, 'test', true],
             [new DateTime('2026-04-10 12:00:00', new DateTimeZone('Europe/Berlin')), -2, true, 'test', true],
+            [new DateTime('1969-04-13 12:00:00+00:00'), 0, true, 'test', true],
+            [new DateTime('1965-04-25 12:00:00+00:00'), 0, true, 'test', true],
+            [new DateTime('1965-04-23 12:00:00+00:00'), -2, true, 'test', true],
+            [new DateTime('1900-04-22 12:00:00+00:00'), 0, true, 'test', true],
+            [new DateTime('1850-05-05 12:00:00+00:00'), 0, true, 'test', true],
+            [new DateTime('1850-05-06 12:00:00+00:00'), 0, false, 'test', true],
         ];
     }
 }

@@ -34,18 +34,19 @@ namespace Org_Heigl\Holidaychecker\IteratorItem;
 
 use DateInterval;
 use DateTimeImmutable;
-use function jdtounix;
+use DateTimeZone;
+use function explode;
+use function jdtogregorian;
 use function jewishtojd;
 use function juliantojd;
+use function sprintf;
 
 class EasterOrthodox extends Easter
 {
 	protected function getEaster(int $year): DateTimeImmutable
 	{
 		$jewishYear = 3760 + $year;
-		$endOfPessach = new DateTimeImmutable(
-			'@' . jdtounix(jewishtojd(1, 20, $jewishYear))
-		);
+		$endOfPessach = $this->fromJulianDayCount(jewishtojd(1, 20, $jewishYear));
 		$orthodoxEaster = $this->getOrthodoxEaster($year);
 		if ($endOfPessach > $orthodoxEaster) {
 			$weekday = (int) $endOfPessach->format('w');
@@ -75,6 +76,19 @@ class EasterOrthodox extends Easter
 		// Don't touch this. It just seems to work…
 		// And doing the "same" in DateTime (adding a period of $rC days doesn't
 		// yield the same result…
-		return new DateTimeImmutable('@' . jdtounix(juliantojd(3, 21, $year) + $rC));
+		return $this->fromJulianDayCount(juliantojd(3, 21, $year) + $rC);
+	}
+
+	/**
+	 * jdtounix() only takes days from 1970 on, so go through jdtogregorian()
+	 */
+	private function fromJulianDayCount(int $julianDayCount): DateTimeImmutable
+	{
+		[$month, $day, $year] = explode('/', jdtogregorian($julianDayCount));
+
+		return new DateTimeImmutable(
+			sprintf('%04d-%02d-%02d', $year, $month, $day),
+			new DateTimeZone('UTC')
+		);
 	}
 }
