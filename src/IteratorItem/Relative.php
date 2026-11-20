@@ -74,12 +74,7 @@ class Relative implements HolidayIteratorItemInterface
 			$this->day
 		));
 
-		/** @var DateTimeImmutable|false $day */
 		$day = $day->modify($this->relation);
-
-		if ($day === false) {
-			return false;
-		}
 
 		return $date->format('Y-m-d') === $day->format('Y-m-d');
 	}
