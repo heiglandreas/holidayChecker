@@ -84,4 +84,29 @@ class DateTest extends TestCase
             [new DateTime('2016-04-17 12:00:00+00:00'), 17, 04, 2017, false, 'test', true],
         ];
     }
+
+	/** @dataProvider chineseLeapMonthProvider */
+	#[DataProvider('chineseLeapMonthProvider')]
+	public function testThatChineseDateDoesNotMatchInLeapMonth(DateTime $dateTime, int $day, int $month, bool $result): void
+	{
+		$calendarDate = CalendarDayFactory::createCalendarDay($day, $month, Calendar::CHINESE);
+		$date = new Date('test', true, $calendarDate);
+		$this->assertSame($result, $date->dateMatches($dateTime));
+	}
+
+	/**
+	 * @return array{DateTime, int, int, bool}[]
+	 */
+	public static function chineseLeapMonthProvider(): array
+	{
+		return [
+			// 2009 has a leap 5th month. Dragon Boat Festival (5/5) is on 2009-05-28.
+			[new DateTime('2009-05-28 12:00:00+00:00'), 5, 5, true],
+			// 2009-06-27 is the 5th day of the leap 5th month, not the Dragon Boat Festival.
+			[new DateTime('2009-06-27 12:00:00+00:00'), 5, 5, false],
+			// 2028 has a leap 5th month as well.
+			[new DateTime('2028-05-28 12:00:00+00:00'), 5, 5, true],
+			[new DateTime('2028-06-27 12:00:00+00:00'), 5, 5, false],
+		];
+	}
 }
