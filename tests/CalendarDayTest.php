@@ -216,4 +216,30 @@ class CalendarDayTest extends TestCase
 			[new DateTimeImmutable('2009-07-01T12:00:00Z'), false],
 		];
 	}
+
+	/** @dataProvider chineseSameDayInLeapMonthProvider */
+	#[DataProvider('chineseSameDayInLeapMonthProvider')]
+	public function testThatChineseSameDayDoesNotMatchInLeapMonth(
+		DateTimeInterface $dateTime,
+		bool $result
+	): void {
+		$cal = IntlCalendar::createInstance(null, '@calendar=' . Calendar::CHINESE);
+
+		$class = new CalendarDay(5, 5, $cal);
+
+		self::assertSame($result, $class->isSameDay($dateTime));
+	}
+
+	/**
+	 * @return array{DateTimeImmutable, bool}[]
+	 */
+	public static function chineseSameDayInLeapMonthProvider(): array
+	{
+		return [
+			// 2009-05-28 is 5/5, the Dragon Boat Festival.
+			[new DateTimeImmutable('2009-05-28T12:00:00Z'), true],
+			// 2009-06-27 is 5/5 of the leap 5th month.
+			[new DateTimeImmutable('2009-06-27T12:00:00Z'), false],
+		];
+	}
 }
