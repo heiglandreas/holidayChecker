@@ -34,6 +34,7 @@ class CalendarDay
 		$this->calendar = $calendar;
 		$this->calendar->set(IntlCalendar::FIELD_DAY_OF_MONTH, $day);
 		$this->calendar->set(IntlCalendar::FIELD_MONTH, $month - 1);
+		$this->calendar->set(IntlCalendar::FIELD_IS_LEAP_MONTH, 0);
 		$this->calendar->set(IntlCalendar::FIELD_HOUR_OF_DAY, 12);
 		$this->calendar->set(IntlCalendar::FIELD_MINUTE, 0);
 		$this->calendar->set(IntlCalendar::FIELD_SECOND, 0);
@@ -72,6 +73,10 @@ class CalendarDay
 			return false;
 		}
 
+		if ($cal->get(IntlCalendar::FIELD_IS_LEAP_MONTH) !== $this->calendar->get(IntlCalendar::FIELD_IS_LEAP_MONTH)) {
+			return false;
+		}
+
 		return $cal->get(IntlCalendar::FIELD_DAY_OF_MONTH) === $this->calendar->get(IntlCalendar::FIELD_DAY_OF_MONTH);
 	}
 
@@ -105,6 +110,10 @@ class CalendarDay
 		}
 
 		if ($cal->get(IntlCalendar::FIELD_MONTH) !== $cal2->get(IntlCalendar::FIELD_MONTH)) {
+			return false;
+		}
+
+		if ($cal->get(IntlCalendar::FIELD_IS_LEAP_MONTH) !== $cal2->get(IntlCalendar::FIELD_IS_LEAP_MONTH)) {
 			return false;
 		}
 
