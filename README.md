@@ -147,6 +147,7 @@ Currently these countries are available:
 * Estonia
 * Liechtenstein
 * Iceland
+* Lithuania
 
 But the list is constantly extending.
 

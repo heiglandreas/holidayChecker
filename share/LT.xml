@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<holidays xmlns="https://heigl.org/holidays"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="holidays.xsd https://heigl.org/xml/xsd/holidays.xsd"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+>
+	<resources>
+		<resource href="https://lrvalstybe.lt/istatymai/straipsnis/123-straipsnis-svenciu-dienos" lastChecked="2026-10-15">Darbo kodeksas, 123 straipsnis</resource>
+		<resource href="https://en.wikipedia.org/wiki/Public_holidays_in_Lithuania" lastChecked="2026-10-15">Wikipedia</resource>
+	</resources>
+	<date day="1" month="1" free="true">Naujųjų metų diena</date>
+	<date day="16" month="2" free="true">Lietuvos valstybės atkūrimo diena</date>
+	<date day="11" month="3" free="true">Lietuvos nepriklausomybės atkūrimo diena</date>
+	<easter offset="0" free="true">Velykos</easter>
+	<easter offset="1" free="true">Antroji Velykų diena</easter>
+	<date day="1" month="5" free="true">Tarptautinė darbo diena</date>
+	<relative day="1" month="5" relation="first sunday of this month" free="true">Motinos diena</relative>
+	<relative day="1" month="6" relation="first sunday of this month" free="true">Tėvo diena</relative>
+	<date day="24" month="6" free="true">Rasos ir Joninių diena</date>
+	<date day="6" month="7" free="true">Valstybės ir Tautiškos giesmės diena</date>
+	<date day="15" month="8" free="true">Žolinė</date>
+	<date day="1" month="11" free="true">Visų Šventųjų diena</date>
+	<date day="2" month="11" free="true" firstobservance="2020">Mirusiųjų atminimo diena</date>
+	<date day="24" month="12" free="true">Kūčių diena</date>
+	<date day="25" month="12" free="true">Kalėdos</date>
+	<date day="26" month="12" free="true">Antroji Kalėdų diena</date>
+</holidays>
